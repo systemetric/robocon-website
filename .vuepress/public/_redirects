@@ -1,0 +1,6 @@
+https://hr-robocon.netlify.com/* https://hr-robocon.org/:splat 301!
+/forum/:id /forum/#:id
+/sign-up        /about/sign-up.html
+/rules          /docs/rules.html
+/config.yml     /admin/config.yml   200
+

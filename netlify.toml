@@ -1,0 +1,7 @@
+[build]
+  command = "yarn build"
+  publish = ".vuepress/dist"
+  functions = ".vuepress/functions/dist"
+
+[context.production]
+  environment = { GO_VERSION = "1.12" }

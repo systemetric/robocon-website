@@ -1,0 +1,119 @@
+backend:
+  name: github
+  repo: systemetric/robocon-website
+  branch: master
+publish_mode: editorial_workflow  
+media_folder: ".vuepress/public/images"
+public_folder: "images"
+collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Home Page"
+        name: "Home"
+        file: "README.md"
+        fields:
+          - { label: "Home", name: "home", widget: "hidden", default: true }
+          - {
+              label: "Hero Image",
+              name: "heroImage",
+              widget: "image",
+              required: false,
+            }
+          - { label: "Hero Text", name: "heroText", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Action Text", name: "actionText", widget: "string" }
+          - {
+              label: "Action Link",
+              name: "actionLink",
+              widget: "string",
+              default: "/docs/",
+            }
+          - { label: "Title Text", name: "titleText", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Footer", name: "footer", widget: "string" }
+      - label: "Gallery"
+        name: "Gallery"
+        file: "gallery/README.md"
+        fields:
+          - {
+            label: "Layout",
+            name: "layout",
+            widget: "hidden",
+            default: "GalleryLayout",
+          }
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            field: { label: "Image", name: "image", widget: "image" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Data Protection Policy"
+        name: "Data Protection Policy"
+        file: "privacy.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+  - name: "about"
+    label: "About"
+    folder: "about"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "hidden",
+          default: "None",
+        }
+      - {
+          label: "Position",
+          name: "position",
+          widget: "number",
+          default: 1,
+          valueType: "int",
+          min: 1,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "doc"
+    label: "Documentation"
+    folder: "docs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["None", "Tools", "Programming", "Hardware", "Tutorials"]
+      - {
+          label: "Position",
+          name: "position",
+          widget: "number",
+          default: 1,
+          valueType: "int",
+          min: 1,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "post"
+    label: "Post"
+    folder: "blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image", allow_multiple: false, required: false }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD HH:mm:ss",
+        }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - {
+          label: "Layout",
+          name: "layout",
+          widget: "hidden",
+          default: "PostLayout",
+        }
+      - { label: "Body", name: "body", widget: "markdown" }

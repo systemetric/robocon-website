@@ -1,0 +1,17 @@
+html
+  overflow-y scroll
+
+.columns
+  display flex
+  flex-direction row
+  .column
+    padding 0 0.5rem 1rem
+    table
+      display table
+    > *
+      width 100%
+  @media(max-width 768px)
+    flex-direction column
+    .column
+      padding 0
+      width 100% !important

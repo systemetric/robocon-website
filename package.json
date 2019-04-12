@@ -1,0 +1,41 @@
+{
+  "name": "robocon-site",
+  "version": "1.0.0",
+  "main": "README.md",
+  "private": true,
+  "scripts": {
+    "build": "yarn build:images && yarn build:vuepress && yarn build:functions",
+    "build:images": "node ./.vuepress/imageProcessor.js",
+    "build:vuepress": "vuepress build",
+    "build:functions": "cd ./.vuepress/functions/gosrc && make build",
+    "dev": "yarn build:images && vuepress dev"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@firebase/app-types": "^0.3.7",
+    "@types/image-size": "^0.7.0",
+    "@types/sharp": "^0.21.2",
+    "@vue/eslint-config-prettier": "^3.0.0-rc.4",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^8.0.4",
+    "eslint": "^5.1.0",
+    "eslint-plugin-vue": "^4.6.0",
+    "front-matter": "^2.3.0",
+    "image-size": "^0.7.1",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.0.3",
+    "sharp": "^0.21.3",
+    "vuepress": "^0.14.10",
+    "webpack-bundle-analyzer": "^3.2.0"
+  },
+  "dependencies": {
+    "firebase": "^5.2.0",
+    "markdown-it": "^8.4.2",
+    "node-fetch": "^2.3.0",
+    "simplemde": "^1.11.2",
+    "vue-firestore": "^0.2.9",
+    "vue-loaders": "^2.0.0",
+    "vue-masonry-css": "^1.0.3"
+  }
+}
