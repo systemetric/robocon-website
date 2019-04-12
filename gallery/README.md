@@ -1,0 +1,83 @@
+---
+layout: GalleryLayout
+images:
+  - /images/groupphoto.jpg
+  - /images/fungroupphoto.jpg
+  - /images/003-C3140-768x512COMPRSD.jpg
+  - /images/004-C3140-768x512COMPRSD.jpg
+  - /images/007-C3140-768x512COMPRSD.jpg
+  - /images/010-C3140COMPRSD.jpg
+  - /images/013-C3140COMPRSD.jpg
+  - /images/018-C3140COMPRSD.jpg
+  - /images/024-C3140COMPRSD.jpg
+  - /images/025-C3140-768x512COMPRSD.jpg
+  - /images/027-C3140-768x512COMPRSD.jpg
+  - /images/030-C3140COMPRSD.jpg
+  - /images/044-C3140COMPRSD.jpg
+  - /images/056-C3140-768x512COMPRSD.jpg
+  - /images/058-C3140COMPRSD.jpg
+  - /images/063-C3140COMPRSD.jpg
+  - /images/069-C3140COMPRSD.jpg
+  - /images/076-C3140-768x512 (1)COMPRSD.jpg
+  - /images/076-C3140-768x512COMPRSD.jpg
+  - /images/081-C3140COMPRSD.jpg
+  - /images/098-C3140COMPRSD.jpg
+  - /images/101-C3140COMPRSD.jpg
+  - /images/106-C3140-768x512COMPRSD.jpg
+  - /images/109-C3140-768x512COMPRSD.jpg
+  - /images/112-C3140-768x512COMPRSD.jpg
+  - /images/IMG_2956-768x512COMPRSD.jpg
+  - /images/IMG_2963-768x512COMPRSD.jpg
+  - /images/IMG_2980-768x512COMPRSD.jpg
+  - /images/IMG_3001-768x512COMPRSD.jpg
+  - /images/IMG_3013COMPRSD.jpg
+  - /images/IMG_3060-768x512COMPRSD.jpg
+  - /images/IMG_3065-768x512COMPRSD.jpg
+  - /images/IMG_3068-768x512COMPRSD.jpg
+  - /images/IMG_3075COMPRSD.jpg
+  - /images/IMG_3080COMPRSD.jpg
+  - /images/IMG_3085COMPRSD.jpg
+  - /images/IMG_3089-1-768x512COMPRSD.jpg
+  - /images/IMG_3089COMPRSD.jpg
+  - /images/IMG_3111-768x512COMPRSD.jpg
+  - /images/IMG_3113-768x512COMPRSD.jpg
+  - /images/IMG_3123COMPRSD.jpg
+  - /images/IMG_3124COMPRSD.jpg
+  - /images/IMG_3129COMPRSD.jpg
+  - /images/IMG_3132 - CopyCOMPRSD.jpg
+  - /images/IMG_3132 - Copy_resultCOMPRSD.jpg
+  - /images/IMG_3132COMPRSD.jpg
+  - /images/IMG_3132_resultCOMPRSD.jpg
+  - /images/IMG_3167COMPRSD.jpg
+  - /images/IMG_3167_resultCOMPRSD.jpg
+  - /images/IMG_3192-768x512COMPRSD.jpg
+  - /images/IMG_3192-768x512_resultCOMPRSD.jpg
+  - /images/IMG_3197COMPRSD.jpg
+  - /images/IMG_3197_resultCOMPRSD.jpg
+  - /images/IMG_3223COMPRSD.jpg
+  - /images/IMG_3223_resultCOMPRSD.jpg
+  - /images/IMG_3239COMPRSD.jpg
+  - /images/IMG_3239_resultCOMPRSD.jpg
+  - /images/IMG_3316COMPRSD.jpg
+  - /images/IMG_3316_resultCOMPRSD.jpg
+  - /images/IMG_3390COMPRSD.jpg
+  - /images/IMG_3390_resultCOMPRSD.jpg
+  - /images/RoboCon 2018 055COMPRSD.jpg
+  - /images/RoboCon 2018 055_resultCOMPRSD.jpg
+  - /images/RoboCon 2018 062COMPRSD.jpg
+  - /images/RoboCon 2018 062_resultCOMPRSD.jpg
+  - /images/RoboCon 2018 096COMPRSD.jpg
+  - /images/RoboCon 2018 096_resultCOMPRSD.jpg
+  - /images/RoboCon-2018-027-768x512COMPRSD.jpg
+  - /images/RoboCon-2018-027-768x512_resultCOMPRSD.jpg
+  - /images/RoboCon-2018-036-768x363COMPRSD.jpg
+  - /images/RoboCon-2018-036-768x363_resultCOMPRSD.jpg
+  - /images/RoboCon-2018-039-768x617COMPRSD.jpg
+  - /images/RoboCon-2018-039-768x617_resultCOMPRSD.jpg
+  - /images/RoboCon-2018-050-768x768COMPRSD.jpg
+  - /images/RoboCon-2018-050-768x768_resultCOMPRSD.jpg
+---
+
+# Gallery
+
+DO NOT EDIT!
