@@ -2,7 +2,7 @@ backend:
   name: github
   repo: systemetric/robocon-website
   branch: master
-publish_mode: editorial_workflow  
+publish_mode: editorial_workflow
 media_folder: ".vuepress/public/images"
 public_folder: "images"
 collections:
@@ -42,10 +42,15 @@ collections:
             widget: "hidden",
             default: "GalleryLayout",
           }
-          - label: "Images"
-            name: "images"
+          - label: "Galleries"
+            name: "galleries"
             widget: "list"
-            field: { label: "Image", name: "image", widget: "image" }
+            fields:
+              - { label: "Name" name: "name", widget: "string" }
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                field: { label: "Image", name: "image", widget: "image" }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "Data Protection Policy"
         name: "Data Protection Policy"
