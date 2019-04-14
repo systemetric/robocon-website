@@ -21,6 +21,7 @@
     "eslint": "^5.1.0",
     "eslint-plugin-vue": "^4.6.0",
     "front-matter": "^2.3.0",
+    "guage": "^0.0.0",
     "image-size": "^0.7.1",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.9.2",

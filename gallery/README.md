@@ -5,6 +5,74 @@ galleries:
     images:
       - /images/fungroupphoto.jpg
       - /images/groupphoto.jpg
+      - /images/Actiongrab2.jpg
+      - /images/Arena.jpg
+      - /images/Arrivals.jpg
+      - /images/Atmospheric.jpg
+      - /images/Awards.jpg
+      - /images/Bassingbourne.jpg
+      - /images/Bigchris.jpg
+      - /images/Brainbox2.jpg
+      - /images/Bright.jpg
+      - /images/Chesterton.jpg
+      - /images/Coding.jpg
+      - /images/Comberton.jpg
+      - /images/Cranbrook.jpg
+      - /images/Differences.jpg
+      - /images/Doomed Pythons.jpg
+      - /images/Firstplace.jpg
+      - /images/Fivecubes.jpg
+      - /images/Funtimes.jpg
+      - /images/Goodboy.jpg
+      - /images/Grabber.jpg
+      - /images/Haydon.jpg
+      - /images/IMG_20190410_133017.jpg
+      - /images/IMG_20190410_133019.jpg
+      - /images/IMG_20190410_133021.jpg
+      - /images/IMG_20190410_133022.jpg
+      - /images/IMG_20190410_152610.jpg
+      - /images/IMG_20190410_153514.jpg
+      - /images/IMG_20190410_153516.jpg
+      - /images/IMG_20190410_153518.jpg
+      - /images/IMG_20190410_153531.jpg
+      - /images/IMG_20190410_161248.jpg
+      - /images/IMG_20190410_161250.jpg
+      - /images/IMG_20190410_161255.jpg
+      - /images/IMG_20190410_161950.jpg
+      - /images/IMG_20190410_163645.jpg
+      - /images/IMG_20190410_163704.jpg
+      - /images/IMG_20190411_084248.jpg
+      - /images/IMG_20190411_152614.jpg
+      - /images/IMG_20190411_152617.jpg
+      - /images/IMG_20190411_174241.jpg
+      - /images/IMG_20190411_174245.jpg
+      - /images/IMG_20190411_174247.jpg
+      - /images/IMG_20190411_174249.jpg
+      - /images/Judgesaward.jpg
+      - /images/Kings Ely.jpg
+      - /images/Leys.jpg
+      - /images/Longsands.jpg
+      - /images/Mechanicalaward.jpg
+      - /images/Mechanics.jpg
+      - /images/Parkside.jpg
+      - /images/Redshirts.jpg
+      - /images/Reunited.jpg
+      - /images/Sawston Village College (Both teams).jpg
+      - /images/Scoringsystem.jpg
+      - /images/Secondplace.jpg
+      - /images/St Bedes.jpg
+      - /images/St Marys.jpg
+      - /images/Teamaward.jpg
+      - /images/Teamimageaward.jpg
+      - /images/Testing.jpg
+      - /images/Thankyou.jpg
+      - /images/Thirdplace.jpg
+      - /images/Threerobots.jpg
+      - /images/Tinkering.jpg
+      - /images/Trophies.jpg
+      - /images/Tworobots.jpg
+      - /images/Wellmade.jpg
+      - /images/Workingwell.jpg
   - name: RoboCon 2018
     images:
       - /images/003-C3140-768x512COMPRSD.jpg
@@ -80,82 +148,9 @@ galleries:
       - /images/RoboCon-2018-039-768x617_resultCOMPRSD.jpg
       - /images/RoboCon-2018-050-768x768COMPRSD.jpg
       - /images/RoboCon-2018-050-768x768_resultCOMPRSD.jpg
-images:
-  - /images/003-C3140-768x512COMPRSD.jpg
-  - /images/004-C3140-768x512COMPRSD.jpg
-  - /images/007-C3140-768x512COMPRSD.jpg
-  - /images/010-C3140COMPRSD.jpg
-  - /images/013-C3140COMPRSD.jpg
-  - /images/018-C3140COMPRSD.jpg
-  - /images/024-C3140COMPRSD.jpg
-  - /images/025-C3140-768x512COMPRSD.jpg
-  - /images/027-C3140-768x512COMPRSD.jpg
-  - /images/030-C3140COMPRSD.jpg
-  - /images/044-C3140COMPRSD.jpg
-  - /images/056-C3140-768x512COMPRSD.jpg
-  - /images/058-C3140COMPRSD.jpg
-  - /images/063-C3140COMPRSD.jpg
-  - /images/069-C3140COMPRSD.jpg
-  - /images/076-C3140-768x512 (1)COMPRSD.jpg
-  - /images/076-C3140-768x512COMPRSD.jpg
-  - /images/081-C3140COMPRSD.jpg
-  - /images/098-C3140COMPRSD.jpg
-  - /images/101-C3140COMPRSD.jpg
-  - /images/106-C3140-768x512COMPRSD.jpg
-  - /images/109-C3140-768x512COMPRSD.jpg
-  - /images/112-C3140-768x512COMPRSD.jpg
-  - /images/IMG_2956-768x512COMPRSD.jpg
-  - /images/IMG_2963-768x512COMPRSD.jpg
-  - /images/IMG_2980-768x512COMPRSD.jpg
-  - /images/IMG_3001-768x512COMPRSD.jpg
-  - /images/IMG_3013COMPRSD.jpg
-  - /images/IMG_3060-768x512COMPRSD.jpg
-  - /images/IMG_3065-768x512COMPRSD.jpg
-  - /images/IMG_3068-768x512COMPRSD.jpg
-  - /images/IMG_3075COMPRSD.jpg
-  - /images/IMG_3080COMPRSD.jpg
-  - /images/IMG_3085COMPRSD.jpg
-  - /images/IMG_3089-1-768x512COMPRSD.jpg
-  - /images/IMG_3089COMPRSD.jpg
-  - /images/IMG_3111-768x512COMPRSD.jpg
-  - /images/IMG_3113-768x512COMPRSD.jpg
-  - /images/IMG_3123COMPRSD.jpg
-  - /images/IMG_3124COMPRSD.jpg
-  - /images/IMG_3129COMPRSD.jpg
-  - /images/IMG_3132 - CopyCOMPRSD.jpg
-  - /images/IMG_3132 - Copy_resultCOMPRSD.jpg
-  - /images/IMG_3132COMPRSD.jpg
-  - /images/IMG_3132_resultCOMPRSD.jpg
-  - /images/IMG_3167COMPRSD.jpg
-  - /images/IMG_3167_resultCOMPRSD.jpg
-  - /images/IMG_3192-768x512COMPRSD.jpg
-  - /images/IMG_3192-768x512_resultCOMPRSD.jpg
-  - /images/IMG_3197COMPRSD.jpg
-  - /images/IMG_3197_resultCOMPRSD.jpg
-  - /images/IMG_3223COMPRSD.jpg
-  - /images/IMG_3223_resultCOMPRSD.jpg
-  - /images/IMG_3239COMPRSD.jpg
-  - /images/IMG_3239_resultCOMPRSD.jpg
-  - /images/IMG_3316COMPRSD.jpg
-  - /images/IMG_3316_resultCOMPRSD.jpg
-  - /images/IMG_3390COMPRSD.jpg
-  - /images/IMG_3390_resultCOMPRSD.jpg
-  - /images/RoboCon 2018 055COMPRSD.jpg
-  - /images/RoboCon 2018 055_resultCOMPRSD.jpg
-  - /images/RoboCon 2018 062COMPRSD.jpg
-  - /images/RoboCon 2018 062_resultCOMPRSD.jpg
-  - /images/RoboCon 2018 096COMPRSD.jpg
-  - /images/RoboCon 2018 096_resultCOMPRSD.jpg
-  - /images/RoboCon-2018-027-768x512COMPRSD.jpg
-  - /images/RoboCon-2018-027-768x512_resultCOMPRSD.jpg
-  - /images/RoboCon-2018-036-768x363COMPRSD.jpg
-  - /images/RoboCon-2018-036-768x363_resultCOMPRSD.jpg
-  - /images/RoboCon-2018-039-768x617COMPRSD.jpg
-  - /images/RoboCon-2018-039-768x617_resultCOMPRSD.jpg
-  - /images/RoboCon-2018-050-768x768COMPRSD.jpg
-  - /images/RoboCon-2018-050-768x768_resultCOMPRSD.jpg
 ---
 
 # Gallery
 
 DO NOT EDIT!
+
