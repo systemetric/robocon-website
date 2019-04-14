@@ -4333,6 +4333,11 @@ grpc@1.16.1:
     node-pre-gyp "^0.12.0"
     protobufjs "^5.0.3"
 
+guage@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/guage/-/guage-0.0.0.tgz#4bf13f6eefae5be4dbbd1bfaea17d7c1503ab89c"
+  integrity sha1-S/E/bu+uW+TbvRv66hfXwVA6uJw=
+
 gzip-size@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-5.0.0.tgz#a55ecd99222f4c48fd8c01c625ce3b349d0a0e80"
