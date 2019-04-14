@@ -27,7 +27,7 @@
         <a href="https://www.netlify.com">
           <!--suppress HtmlRequiredAltAttribute -->
           <img
-            src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"
+            src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg"
           />
         </a>
       </div>

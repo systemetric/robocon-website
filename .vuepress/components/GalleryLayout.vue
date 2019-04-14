@@ -1,16 +1,21 @@
 <template>
   <div class="page gallery">
-    <div class="content custom">
-      <h1>Gallery</h1>
-      <div ref="grid">
-        <ClientOnly>
-          <masonry :cols="{ default: 3, 768: 2, 480: 1 }" :gutter="20">
+    <div class="content custom" ref="grid">
+      <ClientOnly>
+        <template v-for="(gallery, galleryI) in galleries">
+          <h1 :key="`${galleryI}-header`">{{ gallery.name }}</h1>
+          <masonry
+            :key="`${galleryI}-grid`"
+            :cols="{ default: 3, 768: 2, 480: 1 }"
+            :gutter="20"
+          >
             <!--suppress JSUnresolvedVariable -->
             <div
-              v-for="(image, i) in images"
-              :key="i"
+              v-for="(image, imageI) in gallery.images"
+              :key="imageI"
               class="image"
-              :data-index="i"
+              :data-gallery-index="galleryI"
+              :data-index="imageI"
               :class="{ loaded: image.loaded }"
               :style="{
                 paddingTop: `${100 / image.aspectRatio}%`,
@@ -21,8 +26,8 @@
               @click="showImage($event, image)"
             ></div>
           </masonry>
-        </ClientOnly>
-      </div>
+        </template>
+      </ClientOnly>
     </div>
     <div
       class="lightbox"
@@ -63,23 +68,32 @@ export default {
         width: "0",
         height: "0"
       },
-      images: [],
+      galleries: [],
       boundOnScroll: null
     };
   },
   created() {
     const sizes = this.$site.themeConfig.imageSizes;
-    this.images = ((this.$page.frontmatter || {}).images || []).map(image => ({
-      image: image,
-      thumbnail:
-        image.endsWith("png") || image.endsWith("jpg") || image.endsWith("jpeg")
-          ? `/thumbnails${image}`
-          : image,
-      el: null,
-      loadStarted: false,
-      loaded: false,
-      ...sizes[image]
-    }));
+    const fm = this.$page.frontmatter || {};
+
+    if (fm.galleries) {
+      this.galleries = fm.galleries.map(gallery => ({
+        name: gallery.name,
+        images: (gallery.images || []).map(image => ({
+          image: image,
+          thumbnail:
+            image.endsWith("png") ||
+            image.endsWith("jpg") ||
+            image.endsWith("jpeg")
+              ? `/thumbnails${image}`
+              : image,
+          el: null,
+          loadStarted: false,
+          loaded: false,
+          ...sizes[image]
+        }))
+      }));
+    }
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.onScroll);
@@ -93,8 +107,9 @@ export default {
         const childCount = imageElements.length;
         for (let i = 0; i < childCount; i++) {
           const imageElement = imageElements[i];
+          const galleryI = parseInt(imageElement.dataset.galleryIndex);
           const imageI = parseInt(imageElement.dataset.index);
-          this.images[imageI].el = imageElement;
+          this.galleries[galleryI].images[imageI].el = imageElement;
         }
         this.onScroll();
         window.addEventListener("scroll", this.onScroll);
@@ -104,17 +119,19 @@ export default {
   methods: {
     onScroll() {
       const maxY = window.pageYOffset + window.innerHeight * 2;
-      this.images.forEach(image => {
-        if (image.loadStarted) return;
-        const y =
-          image.el.getBoundingClientRect().top +
-          document.documentElement.scrollTop;
-        if (y < maxY) {
-          image.loadStarted = true;
-          const img = new Image();
-          img.onload = () => (image.loaded = true);
-          img.src = image.thumbnail;
-        }
+      this.galleries.forEach(gallery => {
+        gallery.images.forEach(image => {
+          if (image.loadStarted) return;
+          const y =
+            image.el.getBoundingClientRect().top +
+            document.documentElement.scrollTop;
+          if (y < maxY) {
+            image.loadStarted = true;
+            const img = new Image();
+            img.onload = () => (image.loaded = true);
+            img.src = image.thumbnail;
+          }
+        });
       });
     },
     showImage(e, image) {
