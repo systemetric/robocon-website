@@ -16,20 +16,20 @@ collections:
         fields:
           - { label: "Home", name: "home", widget: "hidden", default: true }
           - {
-              label: "Hero Image",
-              name: "heroImage",
-              widget: "image",
-              required: false,
-            }
+            label: "Hero Image",
+            name: "heroImage",
+            widget: "image",
+            required: false,
+          }
           - { label: "Hero Text", name: "heroText", widget: "string" }
           - { label: "Tagline", name: "tagline", widget: "string" }
           - { label: "Action Text", name: "actionText", widget: "string" }
           - {
-              label: "Action Link",
-              name: "actionLink",
-              widget: "string",
-              default: "/docs/",
-            }
+            label: "Action Link",
+            name: "actionLink",
+            widget: "string",
+            default: "/docs/",
+          }
           - { label: "Title Text", name: "titleText", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
           - { label: "Footer", name: "footer", widget: "string" }
@@ -47,7 +47,7 @@ collections:
             name: "galleries"
             widget: "list"
             fields:
-              - { label: "Name" name: "name", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
               - label: "Images"
                 name: "images"
                 widget: "list"
@@ -67,19 +67,19 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - {
-          label: "Category",
-          name: "category",
-          widget: "hidden",
-          default: "None",
-        }
+        label: "Category",
+        name: "category",
+        widget: "hidden",
+        default: "None",
+      }
       - {
-          label: "Position",
-          name: "position",
-          widget: "number",
-          default: 1,
-          valueType: "int",
-          min: 1,
-        }
+        label: "Position",
+        name: "position",
+        widget: "number",
+        default: 1,
+        valueType: "int",
+        min: 1,
+      }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "doc"
     label: "Documentation"
@@ -93,13 +93,13 @@ collections:
         widget: "select"
         options: ["None", "Tools", "Programming", "Hardware", "Tutorials"]
       - {
-          label: "Position",
-          name: "position",
-          widget: "number",
-          default: 1,
-          valueType: "int",
-          min: 1,
-        }
+        label: "Position",
+        name: "position",
+        widget: "number",
+        default: 1,
+        valueType: "int",
+        min: 1,
+      }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "post"
     label: "Post"
@@ -110,16 +110,16 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Image", name: "image", widget: "image", allow_multiple: false, required: false }
       - {
-          label: "Date",
-          name: "date",
-          widget: "datetime",
-          format: "YYYY-MM-DD HH:mm:ss",
-        }
+        label: "Date",
+        name: "date",
+        widget: "datetime",
+        format: "YYYY-MM-DD HH:mm:ss",
+      }
       - { label: "Excerpt", name: "excerpt", widget: "text" }
       - {
-          label: "Layout",
-          name: "layout",
-          widget: "hidden",
-          default: "PostLayout",
-        }
+        label: "Layout",
+        name: "layout",
+        widget: "hidden",
+        default: "PostLayout",
+      }
       - { label: "Body", name: "body", widget: "markdown" }
