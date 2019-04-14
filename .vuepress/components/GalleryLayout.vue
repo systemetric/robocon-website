@@ -81,12 +81,7 @@ export default {
         name: gallery.name,
         images: (gallery.images || []).map(image => ({
           image: image,
-          thumbnail:
-            image.endsWith("png") ||
-            image.endsWith("jpg") ||
-            image.endsWith("jpeg")
-              ? `/thumbnails${image}`
-              : image,
+          thumbnail: `${image}?nf_resize=fit&w=410`,
           el: null,
           loadStarted: false,
           loaded: false,

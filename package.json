@@ -4,11 +4,10 @@
   "main": "README.md",
   "private": true,
   "scripts": {
-    "build": "yarn build:images && yarn build:vuepress && yarn build:functions",
-    "build:images": "node ./.vuepress/imageProcessor.js",
+    "build": "yarn build:vuepress && yarn build:functions",
     "build:vuepress": "vuepress build",
     "build:functions": "cd ./.vuepress/functions/gosrc && make build",
-    "dev": "yarn build:images && vuepress dev"
+    "dev": "vuepress dev"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",

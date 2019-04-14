@@ -181,4 +181,4 @@ $RECYCLE.BIN/
 sizes.json
 .vuepress/public/thumbnails
 
-netlify-build.sh
+.netlify
