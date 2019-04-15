@@ -10,14 +10,13 @@ const request = require("request-promise-native");
 const requestSizeOf = require("request-image-size");
 
 (async () => {
-  /*const imagesPath = path.resolve(
+  const imagesPath = path.resolve(
     __dirname,
     "..",
     ".vuepress",
     "public",
     "images"
-  );*/
-  const imagesPath = "D:\\Desktop\\robocon-website\\.vuepress\\public\\images";
+  );
 
   const images = fs.readdirSync(imagesPath);
   const imagesLength = images.length;
