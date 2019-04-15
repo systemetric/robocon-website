@@ -25,4 +25,3 @@ footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
     <router-link class="feature-button" to="/about/sponsors.html">Do something great!</router-link>
   </div>
 </div>
-
