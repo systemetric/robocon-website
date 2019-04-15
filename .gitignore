@@ -182,3 +182,4 @@ sizes.json
 .vuepress/public/thumbnails
 
 .netlify
+.env

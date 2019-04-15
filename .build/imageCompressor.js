@@ -2,9 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const sharp = require("sharp");
 const mkdirp = require("mkdirp").sync;
-const Gauge = require("gauge");
-
-var gauge = new Gauge();
+// noinspection NpmUsedModulesInstalled
+const gauge = new (require("gauge"))();
 
 function promisesAllSerial(promises) {
   return promises.reduce((promiseChain, currentTask) => {
@@ -15,8 +14,20 @@ function promisesAllSerial(promises) {
 }
 
 (async () => {
-  const imagesPath = path.resolve(__dirname, "public", "images");
-  const compressedImagesPath = path.resolve(__dirname, "public", "compressed");
+  const imagesPath = path.resolve(
+    __dirname,
+    "..",
+    ".vuepress",
+    "public",
+    "images"
+  );
+  const compressedImagesPath = path.resolve(
+    __dirname,
+    "..",
+    ".vuepress",
+    "public",
+    "compressed"
+  );
   mkdirp(compressedImagesPath);
 
   const images = fs.readdirSync(imagesPath);

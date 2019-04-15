@@ -59,7 +59,7 @@ const docsSidebar = makeSidebar(
 const aboutSidebar = makeSidebar(path.resolve(__dirname, "..", "about"), []);
 
 const imageSizes = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, "..", "sizes.json"), {
+  fs.readFileSync(path.resolve(__dirname, "..", ".build", "sizes.json"), {
     encoding: "utf8"
   })
 );
