@@ -3,7 +3,14 @@
     <div class="content custom" ref="grid">
       <ClientOnly>
         <template v-for="(gallery, galleryI) in galleries">
-          <h1 :key="`${galleryI}-header`">{{ gallery.name }}</h1>
+          <h1 :id="gallery.id" :key="`${galleryI}-header`">
+            <a :href="`#${gallery.id}`" aria-hidden="true" class="header-anchor"
+              >#</a
+            >
+            {{ gallery.name }}
+          </h1>
+
+          <!--<h1 :id="gallery.id" :key="`${galleryI}-header`">{{ gallery.name }}</h1>-->
           <masonry
             :key="`${galleryI}-grid`"
             :cols="{ default: 3, 768: 2, 480: 1 }"
@@ -79,6 +86,7 @@ export default {
     if (fm.galleries) {
       this.galleries = fm.galleries.map(gallery => ({
         name: gallery.name,
+        id: gallery.name.toLowerCase().replace(/ /g, "-"),
         images: (gallery.images || []).map(image => ({
           image: image,
           thumbnail: `${image}?nf_resize=fit&w=410`,
@@ -175,6 +183,7 @@ export default {
 <style lang="sass">
 $cross-size: 20px
 $cross-height: 3px
+$navbarHeight: 3.6rem
 
 .gallery
   .content
@@ -183,6 +192,8 @@ $cross-height: 3px
     padding: 0 20px 20px 20px
 
     h1
+      margin-top: (0.5rem - $navbarHeight)
+      padding-top: ($navbarHeight + 1rem)
       margin-bottom: 0
 
   .image

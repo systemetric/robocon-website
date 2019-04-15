@@ -64,6 +64,19 @@ const imageSizes = JSON.parse(
   })
 );
 
+function makeGallerySidebar() {
+  const galleries = fm(
+    fs.readFileSync(path.resolve(__dirname, "..", "gallery", "README.md"), {
+      encoding: "utf-8"
+    })
+  ).attributes.galleries;
+
+  return galleries.map(gallery => ({
+    customTitle: gallery.name,
+    link: `/gallery/#${gallery.name.toLowerCase().replace(/ /g, "-")}`
+  }));
+}
+
 module.exports = {
   title: "RoboCon",
   head: [
@@ -88,7 +101,8 @@ module.exports = {
     sidebar: {
       "/docs/": docsSidebar,
       "/about/": aboutSidebar,
-      "/competition/": ["/competition/", "/competition/rounds.md"]
+      "/competition/": ["/competition/", "/competition/rounds.md"],
+      "/gallery/": makeGallerySidebar()
     },
     imageSizes: imageSizes
   },

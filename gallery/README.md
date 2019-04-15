@@ -1,5 +1,6 @@
 ---
 layout: GalleryLayout
+sidebar: true
 galleries:
   - name: RoboCon 2019
     images:

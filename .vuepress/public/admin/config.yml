@@ -43,6 +43,12 @@ collections:
             widget: "hidden",
             default: "GalleryLayout",
           }
+          - {
+            label: "Sidebar",
+            name: "sidebar",
+            widget: "hidden",
+            default: true,
+          }
           - label: "Galleries"
             name: "galleries"
             widget: "list"

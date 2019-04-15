@@ -205,6 +205,11 @@ function resolveItem (item, pages, base, isNested) {
         'Consider using navbar + categories instead.'
       )
     }
+    if (item.customTitle && item.link) {
+      const page = resolvePage(pages, item.link, base);
+      page.title = item.customTitle;
+      return page;
+    }
     const children = item.children || []
     return {
       type: 'group',
