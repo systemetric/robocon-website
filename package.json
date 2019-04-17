@@ -4,20 +4,24 @@
   "main": "README.md",
   "private": true,
   "scripts": {
-    "build": "yarn images:sizes && yarn build:vuepress && yarn build:functions",
+    "build": "yarn images:sizes && yarn images:zip && yarn build:vuepress && yarn build:functions",
     "build:vuepress": "vuepress build",
     "build:functions": "cd ./.vuepress/functions/gosrc && make build",
     "images:compress": "node ./.build/imageCompressor.js",
     "images:sizes": "node ./.build/imageSizes.js",
+    "images:zip": "node ./.build/imageZipCreator.js",
     "dev": "yarn images:sizes && vuepress dev",
-    "netlify:dev": "netlify dev"
+    "netlify:dev": "netlify dev",
+    "netlify:dev:live": "netlify dev --live"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
     "@firebase/app-types": "^0.3.7",
+    "@types/archiver": "^2.1.3",
     "@types/image-size": "^0.7.0",
     "@types/sharp": "^0.21.2",
     "@vue/eslint-config-prettier": "^3.0.0-rc.4",
+    "archiver": "^3.0.0",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^8.0.4",
     "dotenv": "^7.0.0",

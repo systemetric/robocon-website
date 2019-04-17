@@ -9,8 +9,8 @@
             >
             {{ gallery.name }}
           </h1>
+          <button @click="downloadZip(gallery.id)" :key="`${galleryI}-button`">Download as ZIP</button>
 
-          <!--<h1 :id="gallery.id" :key="`${galleryI}-header`">{{ gallery.name }}</h1>-->
           <masonry
             :key="`${galleryI}-grid`"
             :cols="{ default: 3, 768: 2, 480: 1 }"
@@ -175,6 +175,9 @@ export default {
         this.selectedImageRect.width = "0";
         this.selectedImageRect.height = "0";
       }, 500);
+    },
+    downloadZip(id) {
+      window.location = `/galleryzips/${id}.zip`;
     }
   }
 };
@@ -184,6 +187,9 @@ export default {
 $cross-size: 20px
 $cross-height: 3px
 $navbarHeight: 3.6rem
+$border-colour: #CFD4DB
+$text-colour: #2C3E50
+$accentColor: #0094FF
 
 .gallery
   .content
@@ -254,4 +260,29 @@ $navbarHeight: 3.6rem
     background-size: contain
     background-repeat: no-repeat
     transition: all 0.5s ease-in-out
+
+  button
+    box-sizing: border-box
+    width: 100%
+    border: 1px solid $border-colour
+    background-color: white
+    color: $text-colour
+    display: block
+    border-radius: 1rem
+    outline: none
+    transition: all 0.3s ease
+    font-size: 0.9rem
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+    padding: 0.25rem 1rem
+    height: 34px
+    margin-top: 14px
+    &:active, &:focus
+      border-color: $accentColor
+    &:not(:disabled)
+      cursor: pointer
+      &:hover
+        opacity: 0.7
+    &:disabled
+      opacity: 0.5
+      cursor: not-allowed
 </style>

@@ -178,8 +178,8 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/node,windows,webstorm
 
 .vuepress/functions/dist
-sizes.json
 .vuepress/public/thumbnails
+.vuepress/public/galleryzips
 
 .netlify
 .env
