@@ -4,7 +4,7 @@
   "main": "README.md",
   "private": true,
   "scripts": {
-    "build": "yarn images:sizes && yarn images:zip && yarn build:vuepress && yarn build:functions",
+    "build": "yarn images:sizes && yarn build:vuepress && yarn build:functions",
     "build:vuepress": "vuepress build",
     "build:functions": "cd ./.vuepress/functions/gosrc && make build",
     "images:compress": "node ./.build/imageCompressor.js",

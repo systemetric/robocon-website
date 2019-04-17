@@ -179,7 +179,6 @@ $RECYCLE.BIN/
 
 .vuepress/functions/dist
 .vuepress/public/thumbnails
-.vuepress/public/galleryzips
 
 .netlify
 .env
