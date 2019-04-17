@@ -9,8 +9,12 @@
             >
             {{ gallery.name }}
           </h1>
-          <button @click="downloadZip(gallery.id)" :key="`${galleryI}-button`">
-            Download as ZIP
+          <button
+            v-if="gallery.zipSize"
+            @click="downloadZip(gallery.id)"
+            :key="`${galleryI}-button`"
+          >
+            Download all as ZIP ({{ gallery.zipSize }})
           </button>
 
           <masonry
@@ -67,6 +71,8 @@
 </template>
 
 <script>
+import filesize from "filesize";
+
 export default {
   name: "gallery-layout",
   data() {
@@ -96,26 +102,33 @@ export default {
   },
   created() {
     const sizes = this.$site.themeConfig.imageSizes;
+    const zipSizes = this.$site.themeConfig.galleryZipSizes;
     const fm = this.$page.frontmatter || {};
 
     if (fm.galleries) {
-      this.galleries = fm.galleries.map(gallery => ({
-        name: gallery.name,
-        id: gallery.name.toLowerCase().replace(/ /g, "-"),
-        images: (gallery.images || []).map(image => ({
-          image: image,
-          // The large media transformation service is unavailable during development
-          // and loading all images at full size kills gallery performance
-          thumbnail:
-            process.env.NODE_ENV === "development"
-              ? `/thumbnails${image}`
-              : `${image}?nf_resize=fit&w=410`,
-          el: null,
-          loadStarted: false,
-          loaded: false,
-          ...sizes[image]
-        }))
-      }));
+      this.galleries = fm.galleries.map(gallery => {
+        const id = gallery.name.toLowerCase().replace(/ /g, "-");
+        return {
+          name: gallery.name,
+          id: id,
+          zipSize: zipSizes[id]
+            ? filesize(zipSizes[id], { spacer: "" })
+            : false,
+          images: (gallery.images || []).map(image => ({
+            image: image,
+            // The large media transformation service is unavailable during development
+            // and loading all images at full size kills gallery performance
+            thumbnail:
+              process.env.NODE_ENV === "development"
+                ? `/thumbnails${image}`
+                : `${image}?nf_resize=fit&w=410`,
+            el: null,
+            loadStarted: false,
+            loaded: false,
+            ...sizes[image]
+          }))
+        };
+      });
     }
   },
   beforeDestroy() {

@@ -64,6 +64,21 @@ const imageSizes = JSON.parse(
   })
 );
 
+const galleryZipSizes = {};
+const zipsPath = path.resolve(__dirname, "public", "galleryzips");
+for (const zip of fs.readdirSync(zipsPath)) {
+  const zipPath = path.join(zipsPath, zip);
+
+  let size = fs.statSync(zipPath).size;
+  const data = fs.readFileSync(zipPath, { encoding: "utf8" });
+  if (data.startsWith("version https://git-lfs.github.com/spec/v1")) {
+    const lines = data.split("\n");
+    size = parseInt(lines[2].split(" ")[1]);
+  }
+
+  galleryZipSizes[zip.substring(0, zip.length - 4)] = size;
+}
+
 function makeGallerySidebar() {
   const galleries = fm(
     fs.readFileSync(path.resolve(__dirname, "..", "gallery", "README.md"), {
@@ -104,7 +119,8 @@ module.exports = {
       "/competition/": ["/competition/", "/competition/rounds.md"],
       "/gallery/": makeGallerySidebar()
     },
-    imageSizes: imageSizes
+    imageSizes: imageSizes,
+    galleryZipSizes: galleryZipSizes
   },
   configureWebpack: (config, isServer) => {
     if (process.env.NODE_ENV !== "production") {
