@@ -9,7 +9,9 @@
             >
             {{ gallery.name }}
           </h1>
-          <button @click="downloadZip(gallery.id)" :key="`${galleryI}-button`">Download as ZIP</button>
+          <button @click="downloadZip(gallery.id)" :key="`${galleryI}-button`">
+            Download as ZIP
+          </button>
 
           <masonry
             :key="`${galleryI}-grid`"
@@ -56,7 +58,11 @@
         backgroundImage: selectedImage ? `url('${selectedImage}')` : 'none'
       }"
       @click.stop="hideImage"
-    ></div>
+    >
+      <transition name="image-loader-fade">
+        <div v-if="isFullImageLoading" class="image-loader"></div>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -79,6 +85,15 @@ export default {
       boundOnScroll: null
     };
   },
+  computed: {
+    isFullImageLoading() {
+      return (
+        this.selectedImage &&
+        (this.selectedImage.startsWith("/thumbnails/") ||
+          this.selectedImage.endsWith("?nf_resize=fit&w=410"))
+      );
+    }
+  },
   created() {
     const sizes = this.$site.themeConfig.imageSizes;
     const fm = this.$page.frontmatter || {};
@@ -89,7 +104,12 @@ export default {
         id: gallery.name.toLowerCase().replace(/ /g, "-"),
         images: (gallery.images || []).map(image => ({
           image: image,
-          thumbnail: `${image}?nf_resize=fit&w=410`,
+          // The large media transformation service is unavailable during development
+          // and loading all images at full size kills gallery performance
+          thumbnail:
+            process.env.NODE_ENV === "development"
+              ? `/thumbnails${image}`
+              : `${image}?nf_resize=fit&w=410`,
           el: null,
           loadStarted: false,
           loaded: false,
@@ -152,6 +172,8 @@ export default {
 
       const img = new Image();
       img.onload = () => (this.selectedImage = image.image);
+      // img.onload = () =>
+      //   setTimeout(() => (this.selectedImage = image.image), 1000);
 
       // Double requestAnimationFrame ensures initial animation state renders
       requestAnimationFrame(() => {
@@ -190,6 +212,8 @@ $navbarHeight: 3.6rem
 $border-colour: #CFD4DB
 $text-colour: #2C3E50
 $accentColor: #0094FF
+$imageLoaderSize: 50px
+$imageLoaderBorderSize: 6px
 
 .gallery
   .content
@@ -261,6 +285,25 @@ $accentColor: #0094FF
     background-repeat: no-repeat
     transition: all 0.5s ease-in-out
 
+  .image-loader
+    position: absolute
+    z-index: 60
+    top: 50%
+    left: 50%
+    width: $imageLoaderSize
+    height: $imageLoaderSize
+    margin-top: -($imageLoaderSize + 2 * $imageLoaderBorderSize) / 2
+    margin-left: -($imageLoaderSize + 2 * $imageLoaderBorderSize) / 2
+    border: $imageLoaderBorderSize solid transparent
+    border-radius: 50%
+    border-top-color: rgba(255, 255, 255, 0.6)
+    animation: image-loader-spin 0.75s linear 0s infinite
+
+  .image-loader-fade-enter-active, .image-loader-fade-leave-active
+    transition: opacity 0.1s ease-in-out
+  .image-loader-fade-enter, .image-loader-fade-leave-to
+    opacity: 0
+
   button
     box-sizing: border-box
     width: 100%
@@ -285,4 +328,10 @@ $accentColor: #0094FF
     &:disabled
       opacity: 0.5
       cursor: not-allowed
+
+@keyframes image-loader-spin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
 </style>

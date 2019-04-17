@@ -9,6 +9,7 @@
     "build:functions": "cd ./.vuepress/functions/gosrc && make build",
     "images:compress": "node ./.build/imageCompressor.js",
     "images:sizes": "node ./.build/imageSizes.js",
+    "images:thumbnails": "node ./.build/imageThumbnails.js",
     "images:zip": "node ./.build/imageZipCreator.js",
     "dev": "yarn images:sizes && vuepress dev",
     "netlify:dev": "netlify dev",
