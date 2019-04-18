@@ -4,4 +4,4 @@
   functions = ".vuepress/functions/dist"
 
 [context.production]
-  environment = { GO_VERSION = "1.12" }
+  environment = { GO_VERSION = "1.12.4" }
