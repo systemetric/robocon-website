@@ -154,14 +154,18 @@ export default {
   },
   methods: {
     onScroll() {
+      const minY = window.pageYOffset - window.innerHeight;
       const maxY = window.pageYOffset + window.innerHeight * 2;
+
       this.galleries.forEach(gallery => {
         gallery.images.forEach(image => {
           if (image.loadStarted) return;
+
           const y =
             image.el.getBoundingClientRect().top +
             document.documentElement.scrollTop;
-          if (y < maxY) {
+
+          if (minY < y && y < maxY) {
             image.loadStarted = true;
             const img = new Image();
             img.onload = () => (image.loaded = true);
