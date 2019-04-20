@@ -1,0 +1,9 @@
+.gallery-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4px;
+}
+
+.gallery-preview-grid span:nth-child(2n) {
+  color: #aaaaaa;
+}

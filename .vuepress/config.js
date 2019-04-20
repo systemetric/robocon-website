@@ -123,22 +123,35 @@ module.exports = {
     galleryZipSizes: galleryZipSizes
   },
   configureWebpack: (config, isServer) => {
-    if (process.env.NODE_ENV !== "production") {
+    const dev = process.env.NODE_ENV !== "production";
+
+    if (!isServer) {
       return {
         plugins: [
           new BundleAnalyzerPlugin({
+            analyzerMode: dev ? "server" : "static",
             openAnalyzer: false
           })
-        ]
-      };
-    } else if (!isServer) {
-      return {
-        plugins: [
-          new BundleAnalyzerPlugin({
-            analyzerMode: "static",
-            openAnalyzer: false
-          })
-        ]
+        ],
+        entry: {
+          admin: ["./.vuepress/public/admin/admin.jsx"]
+        },
+        module: {
+          rules: [
+            {
+              test: /\.jsx$/,
+              exclude: /node_modules/,
+              use: {
+                loader: "babel-loader",
+                options: {
+                  plugins: [
+                    ["@babel/plugin-transform-react-jsx", { pragma: "h" }]
+                  ]
+                }
+              }
+            }
+          ]
+        }
       };
     }
     return {};
