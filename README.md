@@ -6,7 +6,7 @@ tagline: Don't Walk. Do The Robot!
 actionText: Learn More
 actionLink: /about/
 titleText: I want to be...
-footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
+footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot
 ---
 
 <div class="features">
