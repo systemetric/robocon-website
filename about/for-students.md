@@ -10,3 +10,6 @@ position: 3
 If you're participating in **Robocon 2019**, you can find documentation [here](/docs/).
 
 ![Team](/images/030-C3140COMPRSD.jpg)
+
+
+Student!
