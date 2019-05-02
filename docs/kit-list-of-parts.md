@@ -14,12 +14,14 @@ The kit should be returned, if possible, at the competition, but in no case long
 *  1 Minibot
 *  1 microservo 9g SG90
 *  1 fuse in line with Brainbox
-### Start Switches:
+### Switches:
 *  Red switch, black connector: ON/OFF (latching)
 *  Black switch, green connector: Start (momentary)
 ### Batteries:
 *  2 x 12 V LiPo Battery
 *  1 x Turnigy E3 Compact 2S/3S Lipo Charger
 *  1 x Lithium Polymer Charge Pack
-### Tablet Computer:
-*  Windows operating system, paired with electronics for programming and WiFi download.
+### Computer:
+*  1 Tablet computer
+*  1 Charging brick
+*  1 Kettle lead
