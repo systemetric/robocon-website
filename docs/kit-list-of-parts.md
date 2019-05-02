@@ -8,7 +8,6 @@ We hope that the RoboCon kit was useful to you, we ask that all kits are returne
 
 ## Packing and returning the kit
 Shipping can sometimes be quite rough for the kit and so we require the following standards to be adheared to if the kit is to be shipped:
-*  The brain box should **not** be attached to the minibot
 *  The kit it should be returned inside of the Really Useful Box (RUB) provided
 *  All space inside the RUB should be filled with a packing material (carboard etc) such that the kit can not move around inside the RUB.
 *  The RUB should be wrapped in a protective layer of Carboard.
@@ -22,7 +21,6 @@ If you plan to return the kit to Hills Road in person then please email [robotic
 *  1 x 12L Really Useful Box
 ## Electronics Kit:
 *  1 Brainbox
-*  1 Minibot
 *  1 microservo 9g SG90
 *  1 fuse in line with Brainbox
 ### Switches:
@@ -36,5 +34,6 @@ If you plan to return the kit to Hills Road in person then please email [robotic
 *  1 Tablet computer
 *  1 Charging brick
 *  1 Kettle lead
-
+### Note
+You may keep the minibot
 
