@@ -3,8 +3,8 @@ title: Kit List of Parts
 category: Hardware
 position: 3
 ---
-## Returning the Kit
-The kit should be returned, if possible, at the competition, but in no case longer than 14 days. If you wish to keep the kit beyond that, then this must be arranged with us, before the competition date, via an email to [robotics@hrsfc.ac.uk](robotics@hrsfc.ac.uk). 2 flat cubes and a copy of the rules will also be provided that do not need to be returned.
+## The RoboCon kit
+We hope that the RoboCon kit was useful to you, we ask that all kits are returned to us over the summer so that we can improve them and keep this competition free for years to come.
 
 ## Packing and returning the kit
 Shipping can sometimes be quite rough for the kit and so we require the following standards to be adheared to if the kit is to be shipped:
