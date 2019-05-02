@@ -4,7 +4,16 @@ category: Hardware
 position: 3
 ---
 ## Returning the Kit
-The kit should be returned, if possible, at the competition, but in no case longer than 14 days. If you wish to keep the kit beyond that, then this must be arranged with us, before the competition date, via an email to robotics@hrsfc.ac.uk. 2 flat cubes will also be provided that do not need to be returned
+The kit should be returned, if possible, at the competition, but in no case longer than 14 days. If you wish to keep the kit beyond that, then this must be arranged with us, before the competition date, via an email to [robotics@hrsfc.ac.uk](robotics@hrsfc.ac.uk). 2 flat cubes will also be provided that do not need to be returned
+
+## Packing and returning the kit
+Shipping can sometimes be quite rough for the kit and so we require the following standards to be adheared to if the kit is to be shipped:
+*  The brain box should **not** be attached to the minibot
+*  The kit it should be returned inside of the Really Useful Box (RUB) provided
+*  All space inside the RUB should be filled with a packing material (carboard etc) such that the kit can not move around inside the RUB.
+*  If the RUB is being shipped then it should be wrapped in a protective layer of Carboard.
+*  Most couriers have rules and regulations regarding shippment of Lithium batteries, you must check with any courier before hand about lithium batteries. In most cases it is required for the batteries to be in a device meaning that the **lose batteries provided in the RoboCon kit can not be shipped**. You may find it easier to return the kit to Hills Road in person. Shippment is at your own risk.
+* Hills Road Robotics will **not** fund the shipment of kit back to us.
 
 ## Items to be returned:
 ### Containers:
@@ -25,3 +34,5 @@ The kit should be returned, if possible, at the competition, but in no case long
 *  1 Tablet computer
 *  1 Charging brick
 *  1 Kettle lead
+
+
