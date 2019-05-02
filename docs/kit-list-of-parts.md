@@ -11,9 +11,11 @@ Shipping can sometimes be quite rough for the kit and so we require the followin
 *  The brain box should **not** be attached to the minibot
 *  The kit it should be returned inside of the Really Useful Box (RUB) provided
 *  All space inside the RUB should be filled with a packing material (carboard etc) such that the kit can not move around inside the RUB.
-*  If the RUB is being shipped then it should be wrapped in a protective layer of Carboard.
+*  The RUB should be wrapped in a protective layer of Carboard.
 *  Most couriers have rules and regulations regarding shippment of Lithium batteries, you must check with any courier before hand about lithium batteries. In most cases it is required for the batteries to be in a device meaning that the **lose batteries provided in the RoboCon kit can not be shipped**. You may find it easier to return the kit to Hills Road in person. Shippment is at your own risk.
 * Hills Road Robotics will **not** fund the shipment of kit back to us.
+
+If you plan to return the kit to Hills Road in person then please email [robotics@hrsfc.ac.uk](robotics@hrsfc.ac.uk) and we will organise a time to have someone meet you at reception. 
 
 ## Items to be returned:
 ### Containers:
