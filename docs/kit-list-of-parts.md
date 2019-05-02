@@ -4,7 +4,7 @@ category: Hardware
 position: 3
 ---
 ## Returning the Kit
-The kit should be returned, if possible, at the competition, but in no case longer than 14 days. If you wish to keep the kit beyond that, then this must be arranged with us, before the competition date, via an email to [robotics@hrsfc.ac.uk](robotics@hrsfc.ac.uk). 2 flat cubes will also be provided that do not need to be returned
+The kit should be returned, if possible, at the competition, but in no case longer than 14 days. If you wish to keep the kit beyond that, then this must be arranged with us, before the competition date, via an email to [robotics@hrsfc.ac.uk](robotics@hrsfc.ac.uk). 2 flat cubes and a copy of the rules will also be provided that do not need to be returned.
 
 ## Packing and returning the kit
 Shipping can sometimes be quite rough for the kit and so we require the following standards to be adheared to if the kit is to be shipped:
