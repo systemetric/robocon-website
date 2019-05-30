@@ -4,3 +4,4 @@ build:
 	mkdir -p ../dist
 	cp ./function ../dist/post
 	cp ./function ../dist/verify
+	cp ./function ../dist/cats
