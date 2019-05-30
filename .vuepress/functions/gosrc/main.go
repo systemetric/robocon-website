@@ -8,6 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-http-utils/headers"
 	"gosrc/fire"
+	"gosrc/functions/cats"
 	"gosrc/functions/post"
 	"gosrc/functions/verify"
 	"gosrc/lambdaify"
@@ -59,6 +60,9 @@ func main() {
 		post.Register(f)
 		verify.Register(f)
 	}
+
+	c := r.Group("/.netlify/functions")
+	cats.Register(c)
 
 	if dev {
 		log.Fatal(r.Run(":9000"))
