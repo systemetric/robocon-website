@@ -9,18 +9,20 @@ Motors can be used for all sorts of things, besides just moving your robot. For 
 
 When you control motors, you can choose how much power you want to give them. This is expressed as a percentage, so 0% means a stopped motor and 100% means a motor at full power.
 
-:::warning
+:::tip
 Avoid immediately starting your motors at 100%. This may cause them to stall. Instead, start at a lower value such as 20% and work your way up. 
 :::
 
 If you want to spin your motors in reverse, just stick a negative sign in front of your percentage.
 
 ## Python
+
 You can control motors using the `motors` property of the `Robot` object. To set the power of the first motor to 20% use:
 
 ```python
 R.motors[1] = 20
 ```
+
 :::warning
 If you are using the mini-bot or similar motors. Do not exceed a motor power of 25% otherwise they will burn out.
 :::
