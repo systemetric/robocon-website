@@ -22,6 +22,6 @@ footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
   <div class="feature">
     <h2>...an impactful sponsor</h2>
     <p>Sponsor a far-reaching STEM activity building tomorrow's engineers.</p>
-    <router-link class="feature-button" to="/about/sponsors.html">Do something great!</router-link>
+    <router-link class="feature-button" to="/about/for-sponsors.html">Do something great!</router-link>
   </div>
 </div>
