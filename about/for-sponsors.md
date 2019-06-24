@@ -9,9 +9,13 @@ position: 5
 
 ([National Science Foundation](https://web.archive.org/web/20171013181600/https://www.nsf.gov/))
 
+![](/images/Brainbox2.jpg)
+
 # Why extracircular?
 
 Since 2016 GCSE's have become more accedemic, depriving students of any opotinuity to learn how to put theory in to practice. Therefore there is a need to promote STEM actively outside of lessons to ensure that students feel willing and able to choose STEM based A-levels. This ensures students are not blocked from STEM career paths further down the line.
+
+![](/images/IMG_4259.JPG)
 
 # Why RoboCon?
 
@@ -21,14 +25,11 @@ Our competition, is designed to be ultra-accessible for GCSE students at schools
 
 If you are interested in helping us in any way please [contact us](/about/contact.html). You can read about our current sponsors [here](/about/sponsors.html) and see our gallery [here](/gallery/).
 
-![](/images/IMG_4259.JPG)
+![](/images/Bigchris.jpg)
 
 ![](/images/025-C3140-768x512COMPRSD.jpg)
-
-![](/images/Bigchris.jpg)
 
 ![](/images/IMG_3080COMPRSD.jpg)
 
 ![](/images/img_4139-min.jpg)
 
-![](/images/Brainbox2.jpg)
