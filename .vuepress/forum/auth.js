@@ -3,13 +3,13 @@ import EventEmitter from "events";
 
 const webAuth = new WebAuth({
   domain: "robotics.eu.auth0.com",
-  redirectUri: `${self.location.origin}/forum/`,
+  redirectUri: `${window.location.origin}/forum/`,
   clientID: "POA0CxRyGzbOhE7dOtjsDyNsOwNqC14l",
   audience: "https://server.hr-robocon.org",
   responseType: "id_token", //token
   scope: "openid profile email"
 });
-const logoutReturnTo = `${self.location.origin}/forum/`;
+const logoutReturnTo = `${window.location.origin}/forum/`;
 
 class AuthService extends EventEmitter {
   idToken = null;
@@ -21,8 +21,8 @@ class AuthService extends EventEmitter {
   }
 
   loginSilently() {
-    if (self.location.hash.includes("_token=")) {
-      this._parseHash().then(() => (self.location.hash = ""));
+    if (window.location.hash.includes("_token=")) {
+      this._parseHash().then(() => (window.location.hash = ""));
     } else {
       this._renewTokens().catch(err => {
         console.log(err);

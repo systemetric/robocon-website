@@ -6,27 +6,29 @@
 </template>
 
 <script>
-import auth from "./auth";
-
 export default {
   name: "forum",
-  created() {
-    window.auth = auth;
-    window.logIdToken = () => {
-      auth.getIdToken().then(console.log);
-    };
-    auth.addListener("user", this.onUserChanged);
-    auth.loginSilently();
+  mounted() {
+    import("./auth").then((auth) => {
+      auth.addListener("user", this.onUserChanged);
+      auth.loginSilently();
+    });
   },
-  destroyed() {
-    auth.removeListener("user", this.onUserChanged);
+  beforeDestroy() {
+    import("./auth").then((auth) => {
+      auth.removeListener("user", this.onUserChanged);
+    });
   },
   methods: {
     login() {
-      auth.login();
+      import("./auth").then((auth) => {
+        auth.login();
+      });
     },
     logout() {
-      auth.logout();
+      import("./auth").then((auth) => {
+        auth.logout();
+      });
     },
     onUserChanged(user) {
       console.log("User:", user);
