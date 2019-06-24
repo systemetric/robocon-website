@@ -6,7 +6,7 @@ const webAuth = new WebAuth({
   redirectUri: `${self.location.origin}/forum/`,
   clientID: "POA0CxRyGzbOhE7dOtjsDyNsOwNqC14l",
   audience: "https://server.hr-robocon.org",
-  responseType: "id_token",
+  responseType: "id_token", //token
   scope: "openid profile email"
 });
 const logoutReturnTo = `${self.location.origin}/forum/`;
@@ -21,10 +21,13 @@ class AuthService extends EventEmitter {
   }
 
   loginSilently() {
-    if (self.location.hash.startsWith("#id_token=")) {
+    if (self.location.hash.includes("_token=")) {
       this._parseHash().then(() => (self.location.hash = ""));
     } else {
-      this._renewTokens().catch(() => this.emit("user", null));
+      this._renewTokens().catch(err => {
+        console.log(err);
+        this.emit("user", null);
+      });
     }
   }
 
