@@ -17,6 +17,6 @@ Since 2016 GCSE's have become more accedemic, depriving students of any opotinui
 
 RoboCon aims to fill a gap left by many STEM outreach activities. It provides a long term project where the students can explore the engineering process of design, test and improvement. It aims to provide a task where there is no "correct" solution and students can put their ideas into practice.
 
-If you are interested in helping us in any way please [contact us](/about/contact.html).
+If you are interested in helping us in any way please [contact us](/about/contact.html). You can read about our current sponsors [here](/about/sponsors.html) and see our gallery [here](/gallery/).
 
 ![](/images/IMG_4259.JPG)
