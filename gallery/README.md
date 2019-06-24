@@ -2,8 +2,7 @@
 layout: GalleryLayout
 sidebar: true
 galleries:
-  - name: RoboCon 2019
-    images:
+  - images:
       - /images/fungroupphoto.jpg
       - /images/groupphoto.jpg
       - /images/Actiongrab2.jpg
@@ -74,8 +73,12 @@ galleries:
       - /images/Tworobots.jpg
       - /images/Wellmade.jpg
       - /images/Workingwell.jpg
-  - name: RoboCon 2018
-    images:
+      - /images/img_4428.jpg
+      - /images/img_4445.jpg
+      - /images/img_4447.jpg
+      - /images/img_20181117_151319.jpg
+    name: RoboCon 2019
+  - images:
       - /images/003-C3140-768x512COMPRSD.jpg
       - /images/004-C3140-768x512COMPRSD.jpg
       - /images/007-C3140-768x512COMPRSD.jpg
@@ -149,6 +152,7 @@ galleries:
       - /images/RoboCon-2018-039-768x617_resultCOMPRSD.jpg
       - /images/RoboCon-2018-050-768x768COMPRSD.jpg
       - /images/RoboCon-2018-050-768x768_resultCOMPRSD.jpg
+    name: RoboCon 2018
 ---
 
 # Gallery
