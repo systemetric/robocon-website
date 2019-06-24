@@ -9,24 +9,24 @@
 export default {
   name: "forum",
   mounted() {
-    import("./auth").then((auth) => {
+    import("./auth").then(({ auth }) => {
       auth.addListener("user", this.onUserChanged);
       auth.loginSilently();
     });
   },
   beforeDestroy() {
-    import("./auth").then((auth) => {
+    import("./auth").then(({ auth }) => {
       auth.removeListener("user", this.onUserChanged);
     });
   },
   methods: {
     login() {
-      import("./auth").then((auth) => {
+      import("./auth").then(({ auth }) => {
         auth.login();
       });
     },
     logout() {
-      import("./auth").then((auth) => {
+      import("./auth").then(({ auth }) => {
         auth.logout();
       });
     },

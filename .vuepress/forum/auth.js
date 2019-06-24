@@ -84,4 +84,5 @@ class AuthService extends EventEmitter {
   }
 }
 
-export default new AuthService();
+const auth = new AuthService();
+export { auth };
