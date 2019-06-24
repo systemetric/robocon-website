@@ -3,10 +3,6 @@ title: For Sponsors
 category: None
 position: 5
 ---
-
-
-
-
 # Why STEM?
 
 > Scientific and technological innovations have become increasingly important as we face the benefits and challenges of both globalization and a knowledge-based economy. To succeed in this new information-based and highly technological society, students need to develop their capabilities in STEM
@@ -27,6 +23,10 @@ If you are interested in helping us in any way please [contact us](/about/contac
 
 ![](/images/025-C3140-768x512COMPRSD.jpg)
 
+![](/images/Bigchris.jpg)
+
 ![](/images/IMG_3080COMPRSD.jpg)
 
 ![](/images/img_4139-min.jpg)
+
+![](/images/Brainbox2.jpg)
