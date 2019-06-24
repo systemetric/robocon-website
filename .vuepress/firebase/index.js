@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
-import { createAuthorObject, invokeFunction } from "../forum/utils";
+import { createAuthorObject, invokeFunction } from "../fireforum/utils";
 import * as markdownIt from "markdown-it";
 
 const md = markdownIt({

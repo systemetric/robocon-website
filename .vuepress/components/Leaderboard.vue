@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import OperationAnimation from "../forum/components/OperationAnimation";
+import OperationAnimation from "../fireforum/components/OperationAnimation";
 
 const positionEndings = [
   "th",
