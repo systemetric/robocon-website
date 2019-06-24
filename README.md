@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /images/032-c3140-min.jpg
+heroImage: /images/fungroupphoto.jpg
 heroText: RoboCon 2019
 tagline: Don't Walk. Do The Robot!
 actionText: Learn More
