@@ -8,49 +8,24 @@
         {{ thread.created.toLocaleString().replace(", ", " at ") }}
       </p>
     </div>
-    <Icon
-      v-if="thread.pinned || isModerator"
-      :class="{
-        pinned: thread.pinned,
-        'can-pin': isModerator
-      }"
-      icon="pinned"
-      :tooltip="isModerator ? (thread.pinned ? 'Unpin' : 'Pin') : 'Pinned'"
-      :size="30"
-      :rotate="45"
-      @click.native.prevent.stop="togglePinned"
-    />
-    <Icon
-      v-if="thread.resolved"
-      icon="resolved"
-      tooltip="Resolved"
-      :size="30"
-    />
   </a>
 </template>
 
 <script>
-import ProfileImage from "../ProfileImage";
-import Icon from "../Icon";
+import ProfileImage from "./ProfileImage";
+import { mapGetters } from "vuex";
+
 export default {
   name: "thread",
-  components: { Icon, ProfileImage },
+  components: { ProfileImage },
   props: {
     thread: {
       type: Object,
       required: true
-    },
-    isModerator: {
-      default: false
     }
   },
-  methods: {
-    togglePinned() {
-      if (this.isModerator) {
-        console.log("toggle pin", this.thread.id);
-        this.$emit("pin", this.thread.id);
-      }
-    }
+  computed: {
+    ...mapGetters(["isModerator"])
   }
 };
 </script>

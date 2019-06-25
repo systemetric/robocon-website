@@ -9,12 +9,7 @@
         <Dropdown>
           <span
             >Welcome to the forum, <b>{{ user.nickname }}</b
-            >!<i
-              v-if="user['https://hr-robocon.org/is_moderator']"
-              class="light"
-            >
-              (Moderator)</i
-            ></span
+            >!<i v-if="isModerator" class="light"> (Moderator)</i></span
           >
           <hr />
           <a href="" @click.prevent="$emit('logout')">Logout</a>
@@ -30,17 +25,14 @@
 import Dropdown from "./Dropdown";
 import ProfileImage from "./ProfileImage";
 import Loader from "./Loader";
+import { mapState, mapGetters } from "vuex";
+
 export default {
   name: "forum-header",
   components: { Dropdown, ProfileImage, Loader },
-  props: {
-    user: {
-      required: true
-    },
-    userLoaded: {
-      required: true,
-      type: Boolean
-    }
+  computed: {
+    ...mapState(["user", "userLoaded"]),
+    ...mapGetters(["isModerator"])
   }
 };
 </script>

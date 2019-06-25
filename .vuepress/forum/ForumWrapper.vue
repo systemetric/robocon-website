@@ -1,42 +1,37 @@
 <template>
   <div class="forum-wrapper">
-    <ForumHeader
-      :user="user"
-      :user-loaded="userLoaded"
-      @login="login"
-      @logout="logout"
-    />
+    <ForumHeader @login="login" @logout="logout" />
     <main>
-      <Threads
-        v-if="threads !== null"
-        :threads="threads"
-        :is-moderator="isModerator"
-      />
+      <template v-if="threads !== null">
+        <ThreadItem
+          v-for="thread in threads"
+          :key="thread.id"
+          :thread="thread"
+        ></ThreadItem>
+      </template>
     </main>
   </div>
 </template>
 
 <script>
 import ForumHeader from "./ForumHeader";
-import * as api from "./api";
-import Threads from "./threads/Threads";
+import ThreadItem from "./ThreadItem";
+import store, { ACTION_GET_THREADS, MUTATION_SET_USER } from "./store";
+import { mapState } from "vuex";
 
 export default {
   name: "forum",
-  components: { Threads, ForumHeader },
-  data() {
-    return {
-      user: null,
-      userLoaded: false,
-      threads: null
-    };
+  components: { ThreadItem, ForumHeader },
+  computed: {
+    ...mapState(["threads"])
   },
   mounted() {
     import("./auth").then(auth => {
       auth.service.addListener("user", this.onUserChanged);
       auth.service.loginSilently();
     });
-    api.getAllThreads().then(threads => (this.threads = threads));
+    // noinspection JSIgnoredPromiseFromCall
+    this.$store.dispatch(ACTION_GET_THREADS);
   },
   beforeDestroy() {
     import("./auth").then(auth =>
@@ -52,35 +47,11 @@ export default {
     },
     onUserChanged(user) {
       console.log("User:", user);
-      this.user = user;
-      this.userLoaded = true;
+      this.$store.commit(MUTATION_SET_USER, user);
     }
   },
-  computed: {
-    isModerator() {
-      return this.user && this.user["https://hr-robocon.org/is_moderator"];
-    }
-  }
+  store
 };
 </script>
 
-<style lang="sass">
-.forum-wrapper
-  max-width: 740px
-  margin: 0 auto
-  padding: 2rem
-
-  .button
-    display: inline-block
-    line-height: 1.4
-    padding: 0.4rem 0.8rem
-    border-radius: 4px
-    border: 1px solid #cfd4db
-    text-align: center
-
-    &:hover
-      background-color: #f3f4f5
-
-  .light
-    color: #AAAAAA
-</style>
+<style lang="sass" src="./styles.sass"></style>
