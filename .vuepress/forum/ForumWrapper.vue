@@ -6,22 +6,23 @@
       @login="login"
       @logout="logout"
     />
-    <main>
-      <pre>{{ JSON.stringify(user, null, 2) }}</pre>
-    </main>
+    <main><Threads v-if="threads !== null" :threads="threads" /></main>
   </div>
 </template>
 
 <script>
 import ForumHeader from "./ForumHeader";
+import * as api from "./api";
+import Threads from "./threads/Threads";
 
 export default {
   name: "forum",
-  components: { ForumHeader },
+  components: { Threads, ForumHeader },
   data() {
     return {
       user: null,
-      userLoaded: false
+      userLoaded: false,
+      threads: null
     };
   },
   mounted() {
@@ -29,6 +30,7 @@ export default {
       auth.service.addListener("user", this.onUserChanged);
       auth.service.loginSilently();
     });
+    api.getAllThreads().then(threads => (this.threads = threads));
   },
   beforeDestroy() {
     import("./auth").then(auth =>
@@ -65,6 +67,6 @@ export default {
     text-align: center
     &:hover
       background-color: #f3f4f5
-  pre
-    overflow-x: auto
+  .light
+    color: #AAAAAA
 </style>

@@ -9,11 +9,10 @@ export default {
 </script>
 
 <style lang="sass">
-$loader-size: 2rem
-$loader-color: #0094ff
+@import "variables"
 
 .forum-loader
-  border: 6px solid rgba(0, 0, 0, 0.1)
+  border: $loader-border-size solid rgba(0, 0, 0, 0.1)
   border-left-color: $loader-color
   animation: spin 0.8s infinite linear
   position: relative

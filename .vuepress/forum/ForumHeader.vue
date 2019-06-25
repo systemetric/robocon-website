@@ -6,17 +6,13 @@
       <a v-if="user" href="" @click.prevent="$emit('create')" class="button"
         >New Thread</a
       >
-      <div
-        v-if="user"
-        class="profile-image"
-        :style="{ backgroundImage: `url(${user.picture})` }"
-      >
+      <ProfileImage v-if="user" :user="user" :small="true">
         <Dropdown>
           <span
             >Welcome to the forum, <b>{{ user.nickname }}</b
             >!<i
               v-if="user['https://hr-robocon.org/is_moderator']"
-              class="auth-detail"
+              class="light"
             >
               (Moderator)</i
             ></span
@@ -24,7 +20,7 @@
           <hr />
           <a href="" @click.prevent="$emit('logout')">Logout</a>
         </Dropdown>
-      </div>
+      </ProfileImage>
       <a v-else href="" @click.prevent="$emit('login')" class="button">Login</a>
     </template>
     <Loader v-else />
@@ -33,10 +29,11 @@
 
 <script>
 import Dropdown from "./Dropdown";
+import ProfileImage from "./ProfileImage";
 import Loader from "./Loader";
 export default {
   name: "forum-header",
-  components: { Dropdown, Loader },
+  components: { Dropdown, ProfileImage, Loader },
   props: {
     user: {
       required: true
@@ -50,7 +47,7 @@ export default {
 </script>
 
 <style lang="sass">
-$profile-image-size: 2.5rem
+@import "variables"
 
 .forum-header
   display: flex
@@ -65,18 +62,16 @@ $profile-image-size: 2.5rem
     .button
       flex-grow: 1
   .profile-image
-    width: $profile-image-size
-    height: $profile-image-size
-    min-width: $profile-image-size
-    border-radius: $profile-image-size / 2
+    width: $profile-image-size-small
+    height: $profile-image-size-small
+    min-width: $profile-image-size-small
+    border-radius: $profile-image-size-small / 2
     background-color: white
     background-position: center
     background-size: cover
     position: relative
-    .auth-detail
-      color: #AAAAAA
     .forum-dropdown
-      top: $profile-image-size
+      top: $profile-image-size-small
       right: 0
       display: none
     &:hover .forum-dropdown

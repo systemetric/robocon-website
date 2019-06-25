@@ -22,6 +22,7 @@ export default {
   background: #fff
   width: 200px
   position: absolute
+  z-index: 10
   border: 1px solid #cfd4db
   border-radius: 6px
   padding: 0.4rem
