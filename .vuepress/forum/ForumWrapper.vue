@@ -1,6 +1,11 @@
 <template>
   <div class="forum-wrapper">
-    <ForumHeader :user="user" @login="login" @logout="logout" />
+    <ForumHeader
+      :user="user"
+      :user-loaded="userLoaded"
+      @login="login"
+      @logout="logout"
+    />
     <main>
       <pre>{{ JSON.stringify(user, null, 2) }}</pre>
     </main>
@@ -15,7 +20,8 @@ export default {
   components: { ForumHeader },
   data() {
     return {
-      user: null
+      user: null,
+      userLoaded: false
     };
   },
   mounted() {
@@ -39,7 +45,7 @@ export default {
     onUserChanged(user) {
       console.log("User:", user);
       this.user = user;
-      //console.log(auth);
+      this.userLoaded = true;
     }
   }
 };
@@ -56,6 +62,7 @@ export default {
     padding: 0.4rem 0.8rem
     border-radius: 4px
     border: 1px solid #cfd4db
+    text-align: center
     &:hover
       background-color: #f3f4f5
   pre

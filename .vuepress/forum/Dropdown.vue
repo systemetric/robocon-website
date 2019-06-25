@@ -16,7 +16,7 @@ export default {
   position: absolute
   top: 0
   right: 0
-  width: calc(200px + 0.8rem)
+  width: 3rem
   height: 2.5rem
 .forum-dropdown
   background: #fff
@@ -36,9 +36,4 @@ export default {
     cursor: pointer
     &:hover
       background-color: #f3f4f5
-/*@media(max-width: 419px)
-  .forum-dropdown-wrapper::before
-    width: calc(100vw - 4rem)
-  .forum-dropdown
-    width: calc(100vw - 4.8rem)*/
 </style>
