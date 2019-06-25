@@ -36,9 +36,9 @@ export default {
     cursor: pointer
     &:hover
       background-color: #f3f4f5
-@media(max-width: 419px)
+/*@media(max-width: 419px)
   .forum-dropdown-wrapper::before
     width: calc(100vw - 4rem)
   .forum-dropdown
-    width: calc(100vw - 4.8rem)
+    width: calc(100vw - 4.8rem)*/
 </style>

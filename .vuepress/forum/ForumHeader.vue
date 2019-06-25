@@ -10,7 +10,12 @@
       <Dropdown>
         <span
           >Welcome to the forum, <b>{{ user.nickname }}</b
-          >!</span
+          >!<i
+            v-if="user['https://hr-robocon.org/is_moderator']"
+            class="auth-detail"
+          >
+            (Moderator)</i
+          ></span
         >
         <hr />
         <a href="#" @click.prevent="$emit('logout')">Logout</a>
@@ -52,6 +57,8 @@ $profile-image-size: 2.5rem
     background-position: center
     background-size: cover
     position: relative
+    .auth-detail
+      color: #AAAAAA
     .forum-dropdown
       top: $profile-image-size
       right: 0
