@@ -21,11 +21,12 @@ class AuthService extends EventEmitter {
   }
 
   loginSilently() {
+    window.auth = this;
     if (window.location.hash.includes("_token=")) {
       this._parseHash().then(() => (window.location.hash = ""));
     } else {
       this._renewTokens().catch(err => {
-        console.log(err);
+        console.error(err);
         this.emit("user", null);
       });
     }
@@ -41,10 +42,10 @@ class AuthService extends EventEmitter {
   getIdToken() {
     return new Promise((resolve, reject) => {
       if (this._isIdTokenValid()) {
-        console.log("token valid");
+        // console.log("token valid");
         resolve(this.idToken);
       } else {
-        console.log("token invalid");
+        // console.log("token invalid");
         this._renewTokens().then(authResult => {
           resolve(authResult.idToken);
         }, reject);
@@ -84,5 +85,5 @@ class AuthService extends EventEmitter {
   }
 }
 
-const auth = new AuthService();
-export { auth };
+const service = new AuthService();
+export { service };
