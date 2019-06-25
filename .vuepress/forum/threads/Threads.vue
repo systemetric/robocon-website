@@ -4,6 +4,7 @@
       v-for="thread in threads"
       :key="thread.id"
       :thread="thread"
+      :is-moderator="isModerator"
     ></Thread>
   </div>
 </template>
@@ -18,6 +19,9 @@ export default {
     threads: {
       type: Array,
       required: true
+    },
+    isModerator: {
+      default: false
     }
   }
 };

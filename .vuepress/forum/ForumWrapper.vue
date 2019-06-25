@@ -6,7 +6,13 @@
       @login="login"
       @logout="logout"
     />
-    <main><Threads v-if="threads !== null" :threads="threads" /></main>
+    <main>
+      <Threads
+        v-if="threads !== null"
+        :threads="threads"
+        :is-moderator="isModerator"
+      />
+    </main>
   </div>
 </template>
 
@@ -49,6 +55,11 @@ export default {
       this.user = user;
       this.userLoaded = true;
     }
+  },
+  computed: {
+    isModerator() {
+      return this.user && this.user["https://hr-robocon.org/is_moderator"];
+    }
   }
 };
 </script>
@@ -58,6 +69,7 @@ export default {
   max-width: 740px
   margin: 0 auto
   padding: 2rem
+
   .button
     display: inline-block
     line-height: 1.4
@@ -65,8 +77,10 @@ export default {
     border-radius: 4px
     border: 1px solid #cfd4db
     text-align: center
+
     &:hover
       background-color: #f3f4f5
+
   .light
     color: #AAAAAA
 </style>

@@ -3,9 +3,8 @@
     <h1>Forum</h1>
     <!--suppress HtmlUnknownTag -->
     <template v-if="userLoaded">
-      <a v-if="user" href="" @click.prevent="$emit('create')" class="button"
-        >New Thread</a
-      >
+      <!--suppress HtmlUnknownAnchorTarget -->
+      <a v-if="user" href="#create" class="button">New Thread</a>
       <ProfileImage v-if="user" :user="user" :small="true">
         <Dropdown>
           <span

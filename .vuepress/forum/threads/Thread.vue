@@ -9,11 +9,16 @@
       </p>
     </div>
     <Icon
-      v-if="thread.pinned"
+      v-if="thread.pinned || isModerator"
+      :class="{
+        pinned: thread.pinned,
+        'can-pin': isModerator
+      }"
       icon="pinned"
-      tooltip="Pinned"
+      :tooltip="isModerator ? (thread.pinned ? 'Unpin' : 'Pin') : 'Pinned'"
       :size="30"
       :rotate="45"
+      @click.native.prevent.stop="togglePinned"
     />
     <Icon
       v-if="thread.resolved"
@@ -34,6 +39,17 @@ export default {
     thread: {
       type: Object,
       required: true
+    },
+    isModerator: {
+      default: false
+    }
+  },
+  methods: {
+    togglePinned() {
+      if (this.isModerator) {
+        console.log("toggle pin", this.thread.id);
+        this.$emit("pin", this.thread.id);
+      }
     }
   }
 };
@@ -58,4 +74,8 @@ a.thread
       margin: 0.4rem 0
   .icon-wrapper
     margin-left: 0.75rem
+    &:not(.pinned)
+      opacity: 0
+    &.can-pin:hover
+      opacity: 0.5
 </style>
