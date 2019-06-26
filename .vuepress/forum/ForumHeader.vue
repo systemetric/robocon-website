@@ -1,10 +1,11 @@
 <template>
   <header class="forum-header">
-    <h1>Forum</h1>
+    <h1 @click="$router.push('/forum/')">Forum</h1>
+    <div v-if="!userLoaded" class="spacer"></div>
     <!--suppress HtmlUnknownTag -->
     <template v-if="userLoaded">
       <!--suppress HtmlUnknownAnchorTarget -->
-      <a v-if="user" href="#create" class="button">New Thread</a>
+      <a v-if="user" href="#new" class="button">New Thread</a>
       <ProfileImage v-if="user" :user="user" :small="true">
         <Dropdown>
           <span
@@ -47,9 +48,15 @@ export default {
   h1
     margin: 0 0 4px 0
     flex-grow: 1
+    cursor: pointer
+  .spacer
+    display: none
+    flex-grow: 1
   @media(max-width: 419px)
     h1
       display: none
+    .spacer
+      display: block
     .button
       flex-grow: 1
   .profile-image

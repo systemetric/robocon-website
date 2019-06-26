@@ -2,7 +2,7 @@
   <div class="forum-wrapper">
     <ForumHeader @login="login" @logout="logout" />
     <main>
-      <template v-if="threads !== null">
+      <template v-if="route.path === '' && threads !== null">
         <ThreadItem
           v-for="thread in threads"
           :key="thread.id"
@@ -23,15 +23,27 @@ export default {
   name: "forum",
   components: { ThreadItem, ForumHeader },
   computed: {
-    ...mapState(["threads"])
+    ...mapState(["threads"]),
+    route() {
+      let hash = this.$route.hash;
+      if (hash.startsWith("#")) hash = hash.substring(1);
+      const split = hash.split("=");
+      return {
+        path: split[0],
+        params: split[1] ? split[1].split("/") : undefined
+      };
+    }
   },
   mounted() {
     import("./auth").then(auth => {
       auth.service.addListener("user", this.onUserChanged);
       auth.service.loginSilently();
     });
-    // noinspection JSIgnoredPromiseFromCall
-    this.$store.dispatch(ACTION_GET_THREADS);
+
+    this.$watch("route", {
+      immediate: true,
+      handler: this.onRouteChanged
+    });
   },
   beforeDestroy() {
     import("./auth").then(auth =>
@@ -48,6 +60,13 @@ export default {
     onUserChanged(user) {
       console.log("User:", user);
       this.$store.commit(MUTATION_SET_USER, user);
+    },
+    onRouteChanged(route) {
+      console.log("Route:", route);
+      if (route.path === "" && this.threads === null) {
+        // noinspection JSIgnoredPromiseFromCall
+        this.$store.dispatch(ACTION_GET_THREADS);
+      }
     }
   },
   store

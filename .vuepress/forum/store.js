@@ -7,7 +7,7 @@ export const ACTION_GET_THREADS = "GET_THREADS";
 
 const store = new Vuex.Store({
   state: {
-    threads: [],
+    threads: null,
     user: null,
     userLoaded: false
   },
@@ -29,6 +29,12 @@ const store = new Vuex.Store({
     [ACTION_GET_THREADS]({ commit }) {
       return fetch("http://localhost:8085/api/forum/thread/")
         .then(res => res.json())
+        .then(res =>
+          res.map(thread => {
+            thread.created = new Date(thread.created);
+            return thread;
+          })
+        )
         .then(res => commit(MUTATION_SET_THREADS, res));
     }
   }
