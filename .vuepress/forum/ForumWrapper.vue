@@ -18,6 +18,7 @@ import ForumHeader from "./ForumHeader";
 import ThreadItem from "./ThreadItem";
 import store, { ACTION_GET_THREADS, MUTATION_SET_USER } from "./store";
 import { mapState } from "vuex";
+import nprogress from "nprogress";
 
 export default {
   name: "forum",
@@ -64,8 +65,14 @@ export default {
     onRouteChanged(route) {
       console.log("Route:", route);
       if (route.path === "" && this.threads === null) {
-        // noinspection JSIgnoredPromiseFromCall
-        this.$store.dispatch(ACTION_GET_THREADS);
+        nprogress.start();
+        this.$store
+          .dispatch(ACTION_GET_THREADS)
+          .then(() => nprogress.done())
+          .catch(err => {
+            console.error(err);
+            return nprogress.done();
+          });
       }
     }
   },
