@@ -7,7 +7,19 @@ position: 2
 
 ## What is RoboCon?
 
-RoboCon is a free to enter robotics competition aimed towards year nine to eleven students, no matter the level of experience and expertise they may have in these fields- or lack thereof. If you're interested in coming to the competition to find out more yourself, please [contact us](./contact.md).
+RoboCon is a free to enter robotics competition aimed towards year nine to eleven students, no matter the level of experience and expertise they may have in these fields. If you are interested in coming to the competition or find out more yourself, please [contact us](./contact.md).
+
+<div style="text-align:center;">
+
+<form action="https://www.surveymonkey.co.uk/r/2BVQKFF">
+
+ <input type="submit" style="background-color: #0094FF; border: none;color: white; padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;border-radius: 4px; " value="Sign up for Robocon 2020 now!" />
+
+</form>
+
+</div>
+
+__
 
 ![Team](/images/030-C3140COMPRSD.jpg)
 
@@ -17,7 +29,7 @@ By the end of the season, students will have built and programmed a totally auto
 
 ### Won't this be really hard?
 
-The kit that was put together for the teams is simple enough for anyone to put together and get running, so it should not be a challenge to create a running robot of a basic level. How the teams wish to take it further is down to them. For an example of a robot built entirely from the kit provided, assembled and programmed in one day by our Lower Sixth as part of our dry-run testing [here is a video.](https://hr-robocon.org/blog/sign-up-for-robocon-2019.html) We also run a kickoff event where we guide you through how to set up and program a basic robot.
+The kit that was put together for the teams is simple enough for anyone to get running, so it should not be a challenge to create a running robot of a basic level. How the teams wish to take it further is down to them. For an example of a robot built entirely from the kit provided, assembled and programmed in one day by our Lower Sixth as part of our dry-run testing [here is a video.](https://hr-robocon.org/blog/sign-up-for-robocon-2019.html) We also run a kickoff event where we guide you through how to set up and program a basic robot.
 
 ![Kickoff](/images/IMG_4259.JPG)
 
