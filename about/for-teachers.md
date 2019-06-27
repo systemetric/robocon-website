@@ -9,7 +9,7 @@ position: 2
 
 RoboCon is a free to enter robotics competition aimed towards year nine to eleven students, no matter the level of experience and expertise they may have in these fields. If you are interested in coming to the competition or find out more yourself, please [contact us](./contact.md).
 
-<div style="text-align:center; padding-bottom:20px;">
+<div style="text-align:center;">
 
 <form action="https://www.surveymonkey.co.uk/r/2BVQKFF">
 
@@ -18,6 +18,8 @@ RoboCon is a free to enter robotics competition aimed towards year nine to eleve
 </form>
 
 </div>
+
+⠀
 
 ![Team](/images/030-C3140COMPRSD.jpg)
 
