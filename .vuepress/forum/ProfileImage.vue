@@ -1,7 +1,7 @@
 <template>
   <div
     class="profile-image"
-    :class="{ small }"
+    :class="{ large }"
     :style="{ backgroundImage: `url(${imageUrl})` }"
   >
     <slot></slot>
@@ -15,7 +15,7 @@ export default {
     user: {
       required: true
     },
-    small: {
+    large: {
       type: Boolean,
       default: false
     }
@@ -35,15 +35,16 @@ export default {
 @import "variables"
 
 .profile-image
-  width: $profile-image-size
-  height: $profile-image-size
-  min-width: $profile-image-size
-  border-radius: $profile-image-size / 2
-  &.small
-    width: $profile-image-size-small
-    height: $profile-image-size-small
-    min-width: $profile-image-size-small
-    border-radius: $profile-image-size-small / 2
+  width: $profile-image-size-small
+  height: $profile-image-size-small
+  min-width: $profile-image-size-small
+  border-radius: $profile-image-size-small / 2
+  @media(min-width: 420px)
+    &.large
+      width: $profile-image-size
+      height: $profile-image-size
+      min-width: $profile-image-size
+      border-radius: $profile-image-size / 2
   background-color: white
   background-position: center
   background-size: cover

@@ -6,7 +6,7 @@
     <template v-if="userLoaded">
       <!--suppress HtmlUnknownAnchorTarget -->
       <a v-if="user" href="#new" class="button">New Thread</a>
-      <ProfileImage v-if="user" :user="user" :small="true">
+      <ProfileImage v-if="user" :user="user">
         <Dropdown>
           <span
             >Welcome to the forum, <b>{{ user.nickname }}</b

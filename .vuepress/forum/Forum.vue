@@ -2,12 +2,20 @@
   <div class="forum-wrapper">
     <ForumHeader @login="login" @logout="logout" />
     <main>
-      <template v-if="route.path === '' && threads !== null">
+      <template v-if="selectedRoute.path === ''">
         <ThreadItem
           v-for="thread in threads"
           :key="thread.id"
           :thread="thread"
         ></ThreadItem>
+      </template>
+      <template v-else-if="selectedRoute.path === 'thread'">
+        <MessageItem
+          v-for="message in selectedThreadsMessages"
+          :key="message.id"
+          :message="message"
+        >
+        </MessageItem>
       </template>
     </main>
   </div>
@@ -16,15 +24,28 @@
 <script>
 import ForumHeader from "./ForumHeader";
 import ThreadItem from "./ThreadItem";
-import store, { ACTION_GET_THREADS, MUTATION_SET_USER } from "./store";
+import MessageItem from "./MessageItem";
+import store, {
+  ACTION_GET_MESSAGES,
+  ACTION_GET_THREADS,
+  MUTATION_SET_USER
+} from "./store";
 import { mapState } from "vuex";
 import nprogress from "nprogress";
 
 export default {
   name: "forum",
-  components: { ThreadItem, ForumHeader },
+  components: { MessageItem, ThreadItem, ForumHeader },
+  data() {
+    return {
+      selectedRoute: {
+        path: null,
+        params: undefined
+      }
+    };
+  },
   computed: {
-    ...mapState(["threads"]),
+    ...mapState(["threads", "messages"]),
     route() {
       let hash = this.$route.hash;
       if (hash.startsWith("#")) hash = hash.substring(1);
@@ -33,6 +54,11 @@ export default {
         path: split[0],
         params: split[1] ? split[1].split("/") : undefined
       };
+    },
+    selectedThreadsMessages() {
+      return this.selectedRoute.path === "thread" && this.selectedRoute.params
+        ? this.messages[this.selectedRoute.params[0]]
+        : undefined;
     }
   },
   mounted() {
@@ -62,17 +88,29 @@ export default {
       console.log("User:", user);
       this.$store.commit(MUTATION_SET_USER, user);
     },
+    handleRouteLoadPromise(promise, route) {
+      promise
+        .then(() => (this.selectedRoute = route))
+        //TODO: replace this with a user facing error message
+        .catch(err => console.error(err))
+        .finally(() => nprogress.done());
+    },
     onRouteChanged(route) {
       console.log("Route:", route);
-      if (route.path === "" && this.threads === null) {
+      if (route.path === "") {
         nprogress.start();
-        this.$store
-          .dispatch(ACTION_GET_THREADS)
-          .then(() => nprogress.done())
-          .catch(err => {
-            console.error(err);
-            return nprogress.done();
-          });
+        this.handleRouteLoadPromise(
+          this.$store.dispatch(ACTION_GET_THREADS),
+          route
+        );
+      } else if (route.path === "thread" && route.params) {
+        nprogress.start();
+        this.handleRouteLoadPromise(
+          this.$store.dispatch(ACTION_GET_MESSAGES, route.params[0]),
+          route
+        );
+      } else {
+        //TODO: 404
       }
     }
   },

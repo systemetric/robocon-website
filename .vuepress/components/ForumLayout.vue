@@ -1,15 +1,15 @@
 <template>
-  <div class="page"><ForumWrapper /></div>
+  <div class="page"><Forum /></div>
 </template>
 
 <script>
-import ForumWrapper from "../forum/ForumWrapper";
+import Forum from "../forum/Forum";
 
 // noinspection JSUnusedGlobalSymbols
 export default {
   name: "forum-layout",
   components: {
-    ForumWrapper
+    Forum
   }
 };
 </script>

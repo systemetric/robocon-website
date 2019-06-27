@@ -1,10 +1,10 @@
 <template>
   <a class="thread" :href="`#thread=${thread.id}`">
-    <ProfileImage :user="thread.author"></ProfileImage>
+    <ProfileImage :user="thread.author" :large="true"></ProfileImage>
     <div class="thread-details">
       <h3>{{ thread.title }}</h3>
       <p class="light">
-        Created by {{ thread.author.name }} on
+        Created by {{ authorName }} on
         {{ thread.created.toLocaleString().replace(", ", " at ") }}
       </p>
     </div>
@@ -13,7 +13,7 @@
 
 <script>
 import ProfileImage from "./ProfileImage";
-import { mapGetters } from "vuex";
+import { mapState } from "vuex";
 
 export default {
   name: "thread",
@@ -25,7 +25,12 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["isModerator"])
+    ...mapState(["user"]),
+    authorName() {
+      return this.user !== null && this.user.sub === this.thread.author.id
+        ? "You"
+        : this.thread.author.name;
+    }
   }
 };
 </script>
@@ -40,7 +45,7 @@ a.thread
   font-weight: unset
   text-decoration: none
   .profile-image
-    margin-right: 0.75rem
+    margin-right: 1rem
   .thread-details
     flex-grow: 1
     h3
