@@ -96,6 +96,7 @@ module.exports = {
   title: "RoboCon",
   head: [
     ["script", { src: "/prism.js" }],
+    ['link', { rel: 'icon', href: '/favicon.png' }],
     [
       "script",
       {
