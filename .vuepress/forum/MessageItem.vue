@@ -48,9 +48,7 @@ div.message
     .message-content
       padding: 1rem
       background-color: #eeeeee
-      border-top-right-radius: 0.5rem
-      border-bottom-left-radius: 0.5rem
-      border-bottom-right-radius: 0.5rem
+      border-radius: 0 0.5rem 0.5rem
     p
       margin: 0.4rem 0
 </style>

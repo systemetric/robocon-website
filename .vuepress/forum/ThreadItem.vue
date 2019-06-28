@@ -39,7 +39,7 @@ export default {
 a.thread
   display: flex
   flex-direction: row
-  align-items: center
+  align-items: flex-start
   margin-top: 1rem
   color: unset
   font-weight: unset
