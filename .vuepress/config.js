@@ -110,7 +110,8 @@ module.exports = {
       { text: "Gallery", link: "/gallery/" },
       { text: "Docs", link: "/docs/" },
       { text: "Blog", link: "/blog/" },
-      { text: "Forum", link: "/forum/" }
+      { text: "Forum", link: "/forum/" },
+      { text: "Sign up now!", link: "/signup/" }
     ],
     sidebar: {
       "/docs/": docsSidebar,
