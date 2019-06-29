@@ -3,19 +3,18 @@
     <ForumHeader @login="login" @logout="logout" />
     <main>
       <template v-if="selectedRoute.path === ''">
-        <ThreadItem
-          v-for="thread in threads"
-          :key="thread.id"
-          :thread="thread"
-        ></ThreadItem>
+        <ThreadItem v-for="thread in threads" :key="thread.id" :thread="thread"></ThreadItem>
       </template>
       <template v-else-if="selectedRoute.path === 'thread'">
         <MessageItem
           v-for="message in selectedThreadsMessages"
           :key="message.id"
           :message="message"
-        >
-        </MessageItem>
+        ></MessageItem>
+      </template>
+      <template v-else-if="selectedRoute.path === 'new'">
+        <QuillEditor v-model="testEditorValue" />
+        <div v-html="testEditorValue"></div>
       </template>
     </main>
   </div>
@@ -25,6 +24,7 @@
 import ForumHeader from "./ForumHeader";
 import ThreadItem from "./ThreadItem";
 import MessageItem from "./MessageItem";
+import QuillEditor from "./editor/QuillEditor";
 import store, {
   ACTION_GET_MESSAGES,
   ACTION_GET_THREADS,
@@ -35,9 +35,10 @@ import nprogress from "nprogress";
 
 export default {
   name: "forum",
-  components: { MessageItem, ThreadItem, ForumHeader },
+  components: { MessageItem, ThreadItem, ForumHeader, QuillEditor },
   data() {
     return {
+      testEditorValue: "<p>Hello <b>there</b>!</p>",
       selectedRoute: {
         path: null,
         params: undefined
@@ -90,10 +91,12 @@ export default {
     },
     handleRouteLoadPromise(promise, route) {
       promise
-        .then(() => (this.selectedRoute = route))
         //TODO: replace this with a user facing error message
         .catch(err => console.error(err))
-        .finally(() => nprogress.done());
+        .finally(() => {
+          this.selectedRoute = route;
+          return nprogress.done();
+        });
     },
     onRouteChanged(route) {
       console.log("Route:", route);
@@ -110,6 +113,7 @@ export default {
           route
         );
       } else {
+        this.selectedRoute = route;
         //TODO: 404
       }
     }

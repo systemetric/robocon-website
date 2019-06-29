@@ -102,6 +102,15 @@ module.exports = {
         src:
           "https://polyfill.io/v3/polyfill.min.js?flags=gated&features=default%2CArray.from"
       }
+    ],
+    [
+      "script",
+      {},
+      "var global = global || window;var Buffer = Buffer || [];" /*
+    var process = process || {
+      env: { DEBUG: undefined },
+      version: []
+    }; */
     ]
   ],
   themeConfig: {
@@ -125,34 +134,38 @@ module.exports = {
     const dev = process.env.NODE_ENV !== "production";
 
     if (!isServer) {
-      return {
-        plugins: [
-          new BundleAnalyzerPlugin({
-            analyzerMode: dev ? "server" : "static",
-            openAnalyzer: false
-          })
-        ],
-        entry: {
-          admin: ["./.vuepress/public/admin/admin.jsx"]
-        },
-        module: {
-          rules: [
-            {
-              test: /\.jsx$/,
-              exclude: /node_modules/,
-              use: {
-                loader: "babel-loader",
-                options: {
-                  plugins: [
-                    ["@babel/plugin-transform-react-jsx", { pragma: "h" }]
-                  ]
-                }
-              }
-            }
-          ]
+      // Quill requires its SVG icons to be loaded inline, not via a file,
+      // so it needs to be excluded from the normal SVG rule and a new rule
+      // including it needs to be added
+      config.module.rules
+        .filter(rule => /svg/.test(rule.test.toString()))
+        .forEach(rule => (rule.exclude = /quill/));
+      // Make sure this rule is first in the list
+      config.module.rules.unshift({
+        test: /\.svg$/,
+        include: [path.resolve("./node_modules/quill/assets")],
+        loaders: [{ loader: "html-loader", options: { minimize: true } }]
+      });
+
+      config.plugins.push(
+        new BundleAnalyzerPlugin({
+          analyzerMode: dev ? "server" : "static",
+          openAnalyzer: false
+        })
+      );
+
+      // Add an entry point for admin.jsx and a loader to handle it
+      config.entry["admin"] = ["./.vuepress/public/admin/admin.jsx"];
+      config.module.rules.push({
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            plugins: [["@babel/plugin-transform-react-jsx", { pragma: "h" }]]
+          }
         }
-      };
+      });
     }
-    return {};
   }
 };
