@@ -1,8 +1,8 @@
-Sign up for Robocon 2020 now!!
-
-
-Are you a:
-
-
-<div style="text-align:center; padding:10px;"><form action="https://www.surveymonkey.co.uk/r/2JFZ785"> <input type="submit" style="background-color: #0094FF; border: none;color: white; padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;border-radius: 4px;font-weight: bold;width:auto%;min-width:50%" value="Independent student?" /></form></div>
-<div style="text-align:center; padding:10px;"><form action="https://www.surveymonkey.co.uk/r/2BVQKFF"> <input type="submit" style="background-color: #0094FF; border: none;color: white; padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;border-radius: 4px;font-weight: bold;width:auto%;min-width:50% " value="Teacher?" /></form></div>
+<div style="text-align: center;">
+    <h1>Sign up for RoboCon 2020 now!</h1>
+    <p style="font-size: 1.5rem;">Are you...</p>
+    <LinkButtonList>
+        <LinkButton to="https://www.surveymonkey.co.uk/r/2JFZ785">...an Independent Student?</LinkButton>
+        <LinkButton to="https://www.surveymonkey.co.uk/r/2BVQKFF">...a Teacher?</LinkButton>
+    </LinkButtonList>
+</div>
