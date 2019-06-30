@@ -1,6 +1,8 @@
 import Quill from "quill/core";
 
 import Toolbar from "quill/modules/toolbar";
+import Syntax, { CodeBlock } from "quill/modules/syntax";
+
 import Snow from "quill/themes/snow";
 
 import Header from "quill/formats/header";
@@ -14,10 +16,11 @@ import Link from "quill/formats/link";
 import Script from "quill/formats/script";
 
 import Blockquote from "quill/formats/blockquote";
-import CodeBlock, { Code } from "quill/formats/code";
+import { Code } from "quill/formats/code";
 
 Quill.register({
   "modules/toolbar": Toolbar,
+  "modules/syntax": Syntax,
   "themes/snow": Snow,
   "formats/header": Header,
   "formats/bold": Bold,
