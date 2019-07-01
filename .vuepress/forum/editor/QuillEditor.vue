@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="quill-editor">
     <div ref="editor"></div>
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
     import("./quill").then(quillModule => {
       const Quill = quillModule.default;
       window.Quill = Quill;
-      const editor = new Quill(this.$refs.editor, {
+      this.editor = new Quill(this.$refs.editor, {
         theme: "snow",
         modules: {
           syntax: {
@@ -35,7 +35,7 @@ export default {
               setTimeout(() =>
                 this.$emit(
                   "input",
-                  editor.getText() ? editor.root.innerHTML : ""
+                  this.editor.getText() ? this.editor.root.innerHTML : ""
                 )
               );
               return result.value;
@@ -55,11 +55,40 @@ export default {
           ]
         }
       });
-      editor.root.innerHTML = this.value;
-      editor.on("text-change", () => {
-        this.$emit("input", editor.getText() ? editor.root.innerHTML : "");
+      this.editor.root.innerHTML = this.value;
+      //TODO: manually do this when the user clicks "Save" or something
+      this.editor.on("text-change", () => {
+        this.$emit(
+          "input",
+          this.editor.getText() ? this.editor.root.innerHTML : ""
+        );
       });
     });
+  },
+  destroyed() {
+    if (this.editor) {
+      this.editor.off("text-change");
+    }
   }
 };
 </script>
+
+<style lang="sass">
+.quill-editor
+  .ql-editor
+    p,
+    ol,
+    ul,
+    pre,
+    blockquote,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+      &:not(:last-child)
+        margin-bottom: 0.5rem
+  .ql-container blockquote
+    font-size: 13px
+</style>

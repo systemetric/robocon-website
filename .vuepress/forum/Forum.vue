@@ -13,8 +13,9 @@
         ></MessageItem>
       </template>
       <template v-else-if="selectedRoute.path === 'new'">
-        <QuillEditor v-model="testEditorValue" />
+        <QuillEditor v-model="testEditorValue" ref="editor" />
         <div v-html="testEditorValue"></div>
+        <!-- <a href="#" class="button" @click.prevent="getValue">Get Value?</a> -->
       </template>
     </main>
   </div>
@@ -79,6 +80,9 @@ export default {
     );
   },
   methods: {
+    // getValue() {
+    //   console.log(this.$refs.editor.editor.getText());
+    // },
     login() {
       import("./auth").then(auth => auth.service.login());
     },
