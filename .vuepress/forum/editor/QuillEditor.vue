@@ -75,6 +75,12 @@ export default {
 
 <style lang="sass">
 .quill-editor
+  > .ql-toolbar
+    border-top-left-radius: 4px
+    border-top-right-radius: 4px
+  > .ql-container
+    border-bottom-left-radius: 4px
+    border-bottom-right-radius: 4px
   .ql-editor
     p,
     ol,

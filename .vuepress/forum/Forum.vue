@@ -13,6 +13,7 @@
         ></MessageItem>
       </template>
       <template v-else-if="selectedRoute.path === 'new'">
+        <input type="text" placeholder="Title" />
         <QuillEditor v-model="testEditorValue" ref="editor" />
         <div v-html="testEditorValue"></div>
         <!-- <a href="#" class="button" @click.prevent="getValue">Get Value?</a> -->
