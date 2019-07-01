@@ -95,14 +95,14 @@ function makeGallerySidebar() {
 module.exports = {
   title: "RoboCon",
   head: [
-    ["script", { src: "/prism.js" }],
-    [
-      "script",
-      {
-        src:
-          "https://polyfill.io/v3/polyfill.min.js?flags=gated&features=default%2CArray.from"
-      }
-    ],
+    // ["script", { src: "/prism.js" }],
+    // [
+    //   "script",
+    //   {
+    //     src:
+    //       "https://polyfill.io/v3/polyfill.min.js?flags=gated&features=default%2CArray.from"
+    //   }
+    // ],
     [
       "script",
       {},

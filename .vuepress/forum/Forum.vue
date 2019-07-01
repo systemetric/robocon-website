@@ -90,13 +90,18 @@ export default {
       this.$store.commit(MUTATION_SET_USER, user);
     },
     handleRouteLoadPromise(promise, route) {
-      promise
+      //Would just use promise.finally here but it doesn't seem to work
+      //in Firefox (probably something to do with this:
+      //https://github.com/vuejs/vue-cli/issues/2012#issuecomment-410369818)
+      const promiseFinally = () => {
+        this.selectedRoute = route;
+        nprogress.done();
+      };
+      promise.then(promiseFinally).catch(err => {
         //TODO: replace this with a user facing error message
-        .catch(err => console.error(err))
-        .finally(() => {
-          this.selectedRoute = route;
-          return nprogress.done();
-        });
+        console.error(err);
+        promiseFinally();
+      });
     },
     onRouteChanged(route) {
       console.log("Route:", route);
