@@ -1,5 +1,0 @@
-# Rounds
-
-<RoboconApp/>
-
-<RoundsList/>

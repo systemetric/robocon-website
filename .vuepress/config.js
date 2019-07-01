@@ -95,7 +95,7 @@ function makeGallerySidebar() {
 module.exports = {
   title: "RoboCon",
   head: [
-    // ["script", { src: "/prism.js" }],
+    // TODO: check if this really needs to be included (required for IE?)
     // [
     //   "script",
     //   {
@@ -103,15 +103,7 @@ module.exports = {
     //       "https://polyfill.io/v3/polyfill.min.js?flags=gated&features=default%2CArray.from"
     //   }
     // ],
-    [
-      "script",
-      {},
-      "var global = global || window;var Buffer = Buffer || [];" /*
-    var process = process || {
-      env: { DEBUG: undefined },
-      version: []
-    }; */
-    ]
+    ["script", {}, "var global = global || window;var Buffer = Buffer || [];"]
   ],
   themeConfig: {
     nav: [
