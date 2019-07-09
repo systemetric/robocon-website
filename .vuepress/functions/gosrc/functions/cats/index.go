@@ -3,6 +3,7 @@ package cats
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"io"
 	"io/ioutil"
@@ -23,6 +24,11 @@ func Register(f *gin.RouterGroup) {
 }
 
 func sendCat(c *gin.Context) {
+	// Check time is appropriate to send cat
+	now := time.Now()
+	c.String(http.StatusBadRequest, fmt.Sprintf("inappropriate time to send a cat: %02d:%02d:%02d", now.Hour(), now.Minute(), now.Second()))
+	return
+
 	// Get image url of random cat
 	res, err := http.Get("http://aws.random.cat/meow")
 	if err != nil {
