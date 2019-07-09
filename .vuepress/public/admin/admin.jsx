@@ -1,7 +1,9 @@
 /* eslint-disable no-undef */
 
-CMS.registerPreviewStyle("/preview.css");
-CMS.registerPreviewStyle("/preview-extra.css");
+if (self.CMS) {
+  CMS.registerPreviewStyle("/preview.css");
+  CMS.registerPreviewStyle("/preview-extra.css");
+}
 
 const PreviewRoot = ({ children, home = false, pageClassName = "page" }) => {
   return (
@@ -96,13 +98,15 @@ const PostPreview = ({ entry, widgetFor }) => {
   );
 };
 
-CMS.registerPreviewTemplate("Home", HomePreview);
-CMS.registerPreviewTemplate("Gallery", GalleryPreview);
-CMS.registerPreviewTemplate("Data Protection Policy", GenericPreview);
+if (self.CMS) {
+  CMS.registerPreviewTemplate("Home", HomePreview);
+  CMS.registerPreviewTemplate("Gallery", GalleryPreview);
+  CMS.registerPreviewTemplate("Data Protection Policy", GenericPreview);
 
-CMS.registerPreviewTemplate("about", GenericPreview);
-CMS.registerPreviewTemplate("doc", GenericPreview);
-CMS.registerPreviewTemplate("post", PostPreview);
+  CMS.registerPreviewTemplate("about", GenericPreview);
+  CMS.registerPreviewTemplate("doc", GenericPreview);
+  CMS.registerPreviewTemplate("post", PostPreview);
+}
 
 // This component doesn't work that well as you can't include markdown in it
 /*CMS.registerEditorComponent({

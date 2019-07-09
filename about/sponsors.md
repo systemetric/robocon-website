@@ -7,19 +7,11 @@ position: 4
 
 ## Corporate sponsorship
 
-Our sponsors promote and inspire the technological skills and abilities of budding engineers. If you become a sponsor, you'll be providing an opportunity to allow a whole range of people to get involved with STEM. If you would be interested in sponsoring the team, please [contact us](/about/contact.html).
+Our sponsors promote and inspire the technological skills and abilities of budding engineers. If you become a sponsor, you'll be providing an opportunity to allow a whole range of people to get involved with STEM. If you would be interested in sponsoring the team, please [contact us](/about/contact.html), more infomation for sponsors can be found [here](/about/for-sponsors.html)
 
 Our principal sponsor for RoboCon 2019 is **Citrix**.
 
 ![Sponsors](/images/sponsors.png)
-
-## Donations
-
-You can donate to the team at team events, both in and out of college, or at any other time by [contacting us](/about/contact.html). Donations of any amount are greatly appreciated.
-
-## Mentoring
-
-If you believe you could help the team by providing your services, we would be interested in hearing from you. We can’t take on everyone, but please [contact us](/about/contact.html) with your details and the services you can provide to us and we will assess if we will be able to take you on.
 
 # Principal sponsor
 
@@ -47,4 +39,8 @@ Frontier Developments is the studio behind _Jurassic World Evolution_, _Elite Da
 
 ![CMR Logo](/images/cmrsurgical_logo_rgb_hi-res.png "CMR logo")
 
-CMR Surgical is a British company developing the next-generation surgical robot, Versius®. Versius has been created and built by the CMR Surgical team in Cambridge, United Kingdom. The company’s aim is to make minimal access surgery available to all. Versius has been designedto fit seamlessly into today’s operating rooms, work in harmony with the surgeon to improve patient outcomes and deliver value for healthcare providers.
+CMR Surgical is a British company developing the next-generation surgical robot, Versius®.
+ Versius has been created and built by the CMR Surgical team in Cambridge, United Kingdom.
+ The company’s aim is to make minimal access surgery available to all. Versius has been designed
+to fit seamlessly into today’s operating rooms, work in harmony with the surgeon to improve
+ patient outcomes and deliver value for healthcare providers.
