@@ -3,19 +3,20 @@
     <ForumHeader @login="login" @logout="logout" />
     <main>
       <template v-if="selectedRoute.path === ''">
-        <ThreadItem
-          v-for="thread in threads"
-          :key="thread.id"
-          :thread="thread"
-        ></ThreadItem>
+        <ThreadItem v-for="thread in threads" :key="thread.id" :thread="thread"></ThreadItem>
       </template>
       <template v-else-if="selectedRoute.path === 'thread'">
         <MessageItem
           v-for="message in selectedThreadsMessages"
           :key="message.id"
           :message="message"
-        >
-        </MessageItem>
+        ></MessageItem>
+      </template>
+      <template v-else-if="selectedRoute.path === 'new'">
+        <input type="text" placeholder="Title" />
+        <QuillEditor v-model="testEditorValue" ref="editor" />
+        <div v-html="testEditorValue"></div>
+        <!-- <a href="#" class="button" @click.prevent="getValue">Get Value?</a> -->
       </template>
     </main>
   </div>
@@ -25,6 +26,7 @@
 import ForumHeader from "./ForumHeader";
 import ThreadItem from "./ThreadItem";
 import MessageItem from "./MessageItem";
+import QuillEditor from "./editor/QuillEditor";
 import store, {
   ACTION_GET_MESSAGES,
   ACTION_GET_THREADS,
@@ -35,9 +37,10 @@ import nprogress from "nprogress";
 
 export default {
   name: "forum",
-  components: { MessageItem, ThreadItem, ForumHeader },
+  components: { MessageItem, ThreadItem, ForumHeader, QuillEditor },
   data() {
     return {
+      testEditorValue: "<p>Hello <b>there</b>!</p>",
       selectedRoute: {
         path: null,
         params: undefined
@@ -78,6 +81,9 @@ export default {
     );
   },
   methods: {
+    // getValue() {
+    //   console.log(this.$refs.editor.editor.getText());
+    // },
     login() {
       import("./auth").then(auth => auth.service.login());
     },
@@ -89,11 +95,18 @@ export default {
       this.$store.commit(MUTATION_SET_USER, user);
     },
     handleRouteLoadPromise(promise, route) {
-      promise
-        .then(() => (this.selectedRoute = route))
+      //Would just use promise.finally here but it doesn't seem to work
+      //in Firefox (probably something to do with this:
+      //https://github.com/vuejs/vue-cli/issues/2012#issuecomment-410369818)
+      const promiseFinally = () => {
+        this.selectedRoute = route;
+        nprogress.done();
+      };
+      promise.then(promiseFinally).catch(err => {
         //TODO: replace this with a user facing error message
-        .catch(err => console.error(err))
-        .finally(() => nprogress.done());
+        console.error(err);
+        promiseFinally();
+      });
     },
     onRouteChanged(route) {
       console.log("Route:", route);
@@ -110,6 +123,7 @@ export default {
           route
         );
       } else {
+        this.selectedRoute = route;
         //TODO: 404
       }
     }

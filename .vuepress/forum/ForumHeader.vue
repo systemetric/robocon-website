@@ -1,22 +1,22 @@
 <template>
   <header class="forum-header">
     <h1 @click="$router.push('/forum/')">Forum</h1>
-    <div v-if="!userLoaded" class="spacer"></div>
     <!--suppress HtmlUnknownTag -->
     <template v-if="userLoaded">
       <!--suppress HtmlUnknownAnchorTarget -->
       <a v-if="user" href="#new" class="button">New Thread</a>
       <ProfileImage v-if="user" :user="user">
         <Dropdown>
-          <span
-            >Welcome to the forum, <b>{{ user.nickname }}</b
-            >!<i v-if="isModerator" class="light"> (Moderator)</i></span
-          >
+          <span>
+            Welcome to the forum,
+            <b>{{ user.nickname }}</b>!
+            <i v-if="isModerator" class="light">(Moderator)</i>
+          </span>
           <hr />
-          <a href="" @click.prevent="$emit('logout')">Logout</a>
+          <a href @click.prevent="$emit('logout')">Logout</a>
         </Dropdown>
       </ProfileImage>
-      <a v-else href="" @click.prevent="$emit('login')" class="button">Login</a>
+      <a v-else href @click.prevent="$emit('login')" class="button">Login</a>
     </template>
     <Loader v-else />
   </header>
@@ -45,6 +45,7 @@ export default {
   display: flex
   flex-direction: row
   align-items: center
+  justify-content: center
   h1
     margin: 0 0 4px 0
     flex-grow: 1

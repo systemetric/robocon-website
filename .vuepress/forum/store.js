@@ -1,5 +1,7 @@
 import Vuex from "vuex";
 
+const API_BASE_URL = "https://robocon.mrbbot.co.uk";
+
 export const MUTATION_SET_USER = "SET_USER";
 export const MUTATION_SET_THREADS = "SET_THREADS";
 export const MUTATION_SET_MESSAGES = "SET_MESSAGES";
@@ -41,7 +43,7 @@ const store = new Vuex.Store({
   actions: {
     [ACTION_GET_THREADS]({ state, commit }) {
       if (state.threads === null) {
-        return fetch("http://localhost:8085/api/forum/thread/")
+        return fetch(`${API_BASE_URL}/api/forum/thread/`)
           .then(res => res.json())
           .then(parseCreatedDates)
           .then(res => commit(MUTATION_SET_THREADS, res));
@@ -50,7 +52,7 @@ const store = new Vuex.Store({
     [ACTION_GET_MESSAGES]({ state, commit }, threadId) {
       if (!state.messages[threadId]) {
         return fetch(
-          `http://localhost:8085/api/forum/thread/${encodeURIComponent(
+          `${API_BASE_URL}/api/forum/thread/${encodeURIComponent(
             threadId
           )}/message/`
         )
