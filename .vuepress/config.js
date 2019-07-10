@@ -137,6 +137,7 @@ module.exports = {
       }
     ]
   ],
+  ga: process.env["GA_ID"],
   themeConfig: {
     nav: [
       { text: "About", link: "/about/" },
