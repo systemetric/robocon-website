@@ -4,24 +4,16 @@
       <ClientOnly>
         <template v-for="(gallery, galleryI) in galleries">
           <h1 :id="gallery.id" :key="`${galleryI}-header`">
-            <a :href="`#${gallery.id}`" aria-hidden="true" class="header-anchor"
-              >#</a
-            >
+            <a :href="`#${gallery.id}`" aria-hidden="true" class="header-anchor">#</a>
             {{ gallery.name }}
           </h1>
           <button
             v-if="gallery.zipSize"
             @click="downloadZip(gallery.id)"
             :key="`${galleryI}-button`"
-          >
-            Download all as ZIP ({{ gallery.zipSize }})
-          </button>
+          >Download all as ZIP ({{ gallery.zipSize }})</button>
 
-          <masonry
-            :key="`${galleryI}-grid`"
-            :cols="{ default: 3, 768: 2, 480: 1 }"
-            :gutter="20"
-          >
+          <masonry :key="`${galleryI}-grid`" :cols="{ default: 3, 768: 2, 480: 1 }" :gutter="20">
             <!--suppress JSUnresolvedVariable -->
             <div
               v-for="(image, imageI) in gallery.images"
@@ -114,19 +106,24 @@ export default {
           zipSize: zipSizes[id]
             ? filesize(zipSizes[id], { spacer: "" })
             : false,
-          images: (gallery.images || []).map(image => ({
-            image: image,
-            // The large media transformation service is unavailable during development
-            // and loading all images at full size kills gallery performance
-            thumbnail:
-              process.env.NODE_ENV === "development"
-                ? `/thumbnails${image}`
-                : `${image}?nf_resize=fit&w=410`,
-            el: null,
-            loadStarted: false,
-            loaded: false,
-            ...sizes[image]
-          }))
+          images: (gallery.images || []).map(image => {
+            const { width, height } = sizes[image];
+            return {
+              image: image,
+              // The large media transformation service is unavailable during development
+              // and loading all images at full size kills gallery performance
+              thumbnail:
+                process.env.NODE_ENV === "development"
+                  ? `/thumbnails${image}`
+                  : `${image}?nf_resize=fit&w=410`,
+              el: null,
+              loadStarted: false,
+              loaded: false,
+              width: width,
+              height: height,
+              aspectRatio: width / height
+            };
+          })
         };
       });
     }
