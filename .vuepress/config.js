@@ -122,6 +122,8 @@ module.exports = {
     imageSizes: imageSizes,
     galleryZipSizes: galleryZipSizes
   },
+  // Seems to break hot-reloading but allows access to the development server from other devices on the network
+  //host: "0.0.0.0",
   configureWebpack: (config, isServer) => {
     const dev = process.env.NODE_ENV !== "production";
 

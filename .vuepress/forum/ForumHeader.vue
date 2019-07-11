@@ -4,7 +4,8 @@
     <!--suppress HtmlUnknownTag -->
     <template v-if="userLoaded">
       <!--suppress HtmlUnknownAnchorTarget -->
-      <a v-if="user" href="#new" class="button">New Thread</a>
+      <a v-if="user && $route.hash !== '#new'" href="#new" class="button">New Thread</a>
+      <div v-else-if="user && $route.hash === '#new'" class="spacer"></div>
       <ProfileImage v-if="user" :user="user">
         <Dropdown>
           <span>

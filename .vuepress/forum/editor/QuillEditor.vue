@@ -1,6 +1,9 @@
 <template>
   <div class="quill-editor">
     <div ref="editor"></div>
+    <div class="bottom-buttons">
+      <slot name="bottom-buttons"></slot>
+    </div>
   </div>
 </template>
 
@@ -25,20 +28,13 @@ export default {
   mounted() {
     import("./quill").then(quillModule => {
       const Quill = quillModule.default;
-      window.Quill = Quill;
       this.editor = new Quill(this.$refs.editor, {
         theme: "snow",
+        placeholder: "Message",
         modules: {
           syntax: {
             highlight: text => {
-              let result = hljs.highlightAuto(text);
-              setTimeout(() =>
-                this.$emit(
-                  "input",
-                  this.editor.getText() ? this.editor.root.innerHTML : ""
-                )
-              );
-              return result.value;
+              return hljs.highlightAuto(text).value;
             }
           },
           toolbar: [
@@ -56,18 +52,16 @@ export default {
         }
       });
       this.editor.root.innerHTML = this.value;
-      //TODO: manually do this when the user clicks "Save" or something
-      this.editor.on("text-change", () => {
-        this.$emit(
-          "input",
-          this.editor.getText() ? this.editor.root.innerHTML : ""
-        );
-      });
     });
   },
   destroyed() {
     if (this.editor) {
       this.editor.off("text-change");
+    }
+  },
+  methods: {
+    getContent() {
+      return this.editor.getText().trim() ? this.editor.root.innerHTML : "";
     }
   }
 };
@@ -95,6 +89,19 @@ export default {
     h6
       &:not(:last-child)
         margin-bottom: 0.5rem
+    &.ql-blank::before
+      margin-top: 3px
+      font-style: normal
   .ql-container blockquote
     font-size: 13px
+  .ql-container
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+    font-size: 16px
+  .bottom-buttons
+    display: flex
+    justify-content: flex-end
+    .button
+      margin-top: 1rem
+      &:not(:last-child)
+        margin-right: 1rem
 </style>

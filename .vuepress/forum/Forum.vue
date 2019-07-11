@@ -12,12 +12,7 @@
           :message="message"
         ></MessageItem>
       </template>
-      <template v-else-if="selectedRoute.path === 'new'">
-        <input type="text" placeholder="Title" />
-        <QuillEditor v-model="testEditorValue" ref="editor" />
-        <div v-html="testEditorValue"></div>
-        <!-- <a href="#" class="button" @click.prevent="getValue">Get Value?</a> -->
-      </template>
+      <NewThread v-else-if="selectedRoute.path === 'new'" />
     </main>
   </div>
 </template>
@@ -26,7 +21,7 @@
 import ForumHeader from "./ForumHeader";
 import ThreadItem from "./ThreadItem";
 import MessageItem from "./MessageItem";
-import QuillEditor from "./editor/QuillEditor";
+import NewThread from "./NewThread";
 import store, {
   ACTION_GET_MESSAGES,
   ACTION_GET_THREADS,
@@ -37,10 +32,9 @@ import nprogress from "nprogress";
 
 export default {
   name: "forum",
-  components: { MessageItem, ThreadItem, ForumHeader, QuillEditor },
+  components: { MessageItem, ThreadItem, ForumHeader, NewThread },
   data() {
     return {
-      testEditorValue: "<p>Hello <b>there</b>!</p>",
       selectedRoute: {
         path: null,
         params: undefined
@@ -81,9 +75,6 @@ export default {
     );
   },
   methods: {
-    // getValue() {
-    //   console.log(this.$refs.editor.editor.getText());
-    // },
     login() {
       import("./auth").then(auth => auth.service.login());
     },
@@ -103,7 +94,7 @@ export default {
         nprogress.done();
       };
       promise.then(promiseFinally).catch(err => {
-        //TODO: replace this with a user facing error message
+        //TODO: replace this with a user facing error message, perhaps do this in the store?
         console.error(err);
         promiseFinally();
       });
