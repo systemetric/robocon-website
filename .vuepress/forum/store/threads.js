@@ -1,4 +1,10 @@
-import { ACTION_REQUEST } from "./api";
+import { request } from "./api";
+import {
+  MODULE_NOTIFICATIONS,
+  ACTION_SHOW_NOTIFICATION
+} from "./notifications";
+
+export const MODULE_THREADS = "threads/";
 
 const _MUTATION_SET_THREADS = "SET_THREADS";
 const _MUTATION_SET_MESSAGES = "SET_MESSAGES";
@@ -51,48 +57,62 @@ export default {
   actions: {
     [ACTION_GET_THREADS]({ state, dispatch, commit }) {
       if (state.threads === null) {
-        return dispatch(
-          ACTION_REQUEST,
-          {
-            route: "/api/forum/thread/"
-          },
-          { root: true }
-        )
+        return request("GET", "/api/forum/thread/")
+          .then(res => res.json())
           .then(parseCreatedDates)
-          .then(res => commit(_MUTATION_SET_THREADS, res));
+          .then(res => commit(_MUTATION_SET_THREADS, res))
+          .catch(() =>
+            dispatch(
+              MODULE_NOTIFICATIONS + ACTION_SHOW_NOTIFICATION,
+              { level: "error", content: "An unexpected error has occurred!" },
+              { root: true }
+            )
+          );
       }
     },
     [ACTION_GET_MESSAGES]({ state, dispatch, commit }, threadId) {
       if (!state.messages[threadId]) {
-        return dispatch(
-          ACTION_REQUEST,
-          {
-            route: `/api/forum/thread/${encodeURIComponent(threadId)}/message/`
-          },
-          { root: true }
+        return request(
+          "GET",
+          `/api/forum/thread/${encodeURIComponent(threadId)}/message/`
         )
+          .then(res => res.json())
           .then(parseCreatedDates)
           .then(res =>
             commit(_MUTATION_SET_MESSAGES, { threadId, messages: res })
+          )
+          .catch(() =>
+            dispatch(
+              MODULE_NOTIFICATIONS + ACTION_SHOW_NOTIFICATION,
+              { level: "error", content: "An unexpected error has occurred!" },
+              { root: true }
+            )
           );
       }
     },
-    async [ACTION_CREATE_THREAD]({ dispatch, commit }, createThreadRequest) {
-      return dispatch(
-        ACTION_REQUEST,
-        {
-          method: "POST",
-          route: "/api/forum/thread/",
-          body: createThreadRequest
-        },
-        { root: true }
-      )
+    async [ACTION_CREATE_THREAD]({ commit, dispatch }, createThreadRequest) {
+      return request("POST", "/api/forum/thread/", createThreadRequest)
+        .then(res => res.json())
         .then(res => {
           res.created = new Date(res.created);
           res.messages[0].created = new Date(res.messages[0].created);
           return res;
         })
-        .then(res => commit(_MUTATION_ADD_THREAD_WITH_MESSAGES, res));
+        .then(res => {
+          commit(_MUTATION_ADD_THREAD_WITH_MESSAGES, res);
+          return dispatch(
+            MODULE_NOTIFICATIONS + ACTION_SHOW_NOTIFICATION,
+            { level: "success", content: "Message posted!" },
+            { root: true }
+          );
+        })
+        .catch(() =>
+          dispatch(
+            MODULE_NOTIFICATIONS + ACTION_SHOW_NOTIFICATION,
+            { level: "error", content: "An unexpected error has occurred!" },
+            { root: true }
+          )
+        );
     }
   }
 };

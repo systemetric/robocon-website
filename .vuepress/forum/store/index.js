@@ -1,26 +1,41 @@
 import Vuex from "vuex";
 
-import api from "./api";
+import notifications, {
+  MODULE_NOTIFICATIONS,
+  MUTATION_REMOVE_NOTIFICATION,
+  ACTION_SHOW_NOTIFICATION,
+  LEVEL_INFO,
+  LEVEL_SUCCESS,
+  LEVEL_WARNING,
+  LEVEL_ERROR
+} from "./notifications";
 import threads, {
+  MODULE_THREADS,
   ACTION_GET_THREADS,
   ACTION_GET_MESSAGES,
   ACTION_CREATE_THREAD
 } from "./threads";
-import user, { MUTATION_SET_USER } from "./user";
-
-export const MODULE_THREADS = "threads/";
-export const MODULE_USER = "user/";
+import user, { MODULE_USER, MUTATION_SET_USER } from "./user";
 
 export {
+  MODULE_NOTIFICATIONS,
+  MUTATION_REMOVE_NOTIFICATION,
+  ACTION_SHOW_NOTIFICATION,
+  LEVEL_INFO,
+  LEVEL_SUCCESS,
+  LEVEL_WARNING,
+  LEVEL_ERROR,
+  MODULE_THREADS,
   ACTION_GET_THREADS,
   ACTION_GET_MESSAGES,
   ACTION_CREATE_THREAD,
+  MODULE_USER,
   MUTATION_SET_USER
 };
 
 export default new Vuex.Store({
   modules: {
-    api,
+    notifications,
     threads,
     user
   }

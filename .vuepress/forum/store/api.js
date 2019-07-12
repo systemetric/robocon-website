@@ -1,7 +1,5 @@
 const API_BASE_URL = "https://robocon.mrbbot.co.uk";
-// const API_BASE_URL = "http://localhost:8085";
-
-export const ACTION_REQUEST = "REQUEST";
+//const API_BASE_URL = "http://localhost:8085";
 
 export function getAuthorizationHeaders() {
   return import("./auth")
@@ -12,19 +10,10 @@ export function getAuthorizationHeaders() {
     }));
 }
 
-export default {
-  actions: {
-    async [ACTION_REQUEST](context, { method = "GET", route, body }) {
-      const options = { method };
-      if (body) options.body = JSON.stringify(body);
-      if (method !== "GET") options.headers = await getAuthorizationHeaders();
-      console.log("Fetch:", API_BASE_URL + route, options);
-      return (
-        fetch(API_BASE_URL + route, options)
-          .then(res => res.json())
-          //TODO: show error to user
-          .catch(err => console.error(err))
-      );
-    }
-  }
-};
+export async function request(method, route, body) {
+  const options = { method };
+  if (body) options.body = JSON.stringify(body);
+  if (method !== "GET") options.headers = await getAuthorizationHeaders();
+  console.log("Fetch:", API_BASE_URL + route, options);
+  return fetch(API_BASE_URL + route, options);
+}

@@ -14,6 +14,7 @@
       </template>
       <NewThread v-else-if="selectedRoute.path === 'new'" />
     </main>
+    <Notifications />
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import ForumHeader from "./ForumHeader";
 import ThreadItem from "./ThreadItem";
 import MessageItem from "./MessageItem";
 import NewThread from "./NewThread";
+import Notifications from "./Notifications";
 import store, {
   MODULE_THREADS,
   MODULE_USER,
@@ -34,7 +36,13 @@ import nprogress from "nprogress";
 
 export default {
   name: "forum",
-  components: { MessageItem, ThreadItem, ForumHeader, NewThread },
+  components: {
+    MessageItem,
+    ThreadItem,
+    ForumHeader,
+    NewThread,
+    Notifications
+  },
   data() {
     return {
       selectedRoute: {
@@ -88,17 +96,9 @@ export default {
       this.$store.commit(MODULE_USER + MUTATION_SET_USER, user);
     },
     handleRouteLoadPromise(promise, route) {
-      //Would just use promise.finally here but it doesn't seem to work
-      //in Firefox (probably something to do with this:
-      //https://github.com/vuejs/vue-cli/issues/2012#issuecomment-410369818)
-      const promiseFinally = () => {
+      promise.then(() => {
         this.selectedRoute = route;
         nprogress.done();
-      };
-      promise.then(promiseFinally).catch(err => {
-        //TODO: replace this with a user facing error message, perhaps do this in the store?
-        console.error(err);
-        promiseFinally();
       });
     },
     onRouteChanged(route) {

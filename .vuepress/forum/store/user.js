@@ -1,3 +1,5 @@
+export const MODULE_USER = "user/";
+
 export const MUTATION_SET_USER = "SET_USER";
 
 export default {

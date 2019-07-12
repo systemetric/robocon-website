@@ -17,7 +17,13 @@
 
 <script>
 import QuillEditor from "./components/editor/QuillEditor";
-import { ACTION_CREATE_THREAD, MODULE_USER, MODULE_THREADS } from "./store";
+import {
+  ACTION_CREATE_THREAD,
+  MODULE_USER,
+  MODULE_THREADS,
+  MODULE_NOTIFICATIONS,
+  ACTION_SHOW_NOTIFICATION
+} from "./store";
 import { mapState } from "vuex";
 import nprogress from "nprogress";
 
@@ -39,10 +45,19 @@ export default {
   methods: {
     createThread() {
       if (!this.disabled) {
+        if (this.title === "") {
+          this.$store.dispatch(
+            MODULE_NOTIFICATIONS + ACTION_SHOW_NOTIFICATION,
+            { level: "warning", content: "You must give your message a title!" }
+          );
+          return;
+        }
         const content = this.$refs.editor.getContent();
-        if (this.title === "" || this.content === "") {
-          //TODO: replace this with a user facing error message, perhaps do this in the store?
-          console.warn("Thread must have title and message");
+        if (content === "") {
+          this.$store.dispatch(
+            MODULE_NOTIFICATIONS + ACTION_SHOW_NOTIFICATION,
+            { level: "warning", content: "Your message cannot be empty!" }
+          );
           return;
         }
 
@@ -55,12 +70,6 @@ export default {
           })
           .then(() => {
             this.$router.push("/forum/");
-            this.posting = false;
-            nprogress.done();
-          })
-          .catch(err => {
-            //TODO: replace this with a user facing error message, perhaps do this in the store?
-            console.error(err);
             this.posting = false;
             nprogress.done();
           });

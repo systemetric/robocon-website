@@ -1,6 +1,10 @@
 $primary-color: #0094ff
-$primary-color-light: #1a9fff
-$primary-color-dark: #0085e6
+$primary-color-light: lighten($primary-color, 5%)
+$primary-color-dark: darken($primary-color, 5%)
+
+$success-color: #00bc5f
+$warning-color: #ff9100
+$error-color: #ff0037
     
 $profile-image-size: 60px
 $profile-image-size-small: 2.5rem
@@ -8,3 +12,5 @@ $profile-image-size-small: 2.5rem
 $loader-size: 28px
 $loader-border-size: 6px
 $loader-color: $primary-color
+
+$notification-colors: ("info": $primary-color, "success": $success-color, "warning": $warning-color, "error": $error-color)
