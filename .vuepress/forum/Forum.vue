@@ -61,7 +61,7 @@ export default {
     }
   },
   mounted() {
-    import("./auth").then(auth => {
+    import("./store/auth").then(auth => {
       auth.service.addListener("user", this.onUserChanged);
       auth.service.loginSilently();
     });
@@ -72,16 +72,16 @@ export default {
     });
   },
   beforeDestroy() {
-    import("./auth").then(auth =>
+    import("./store/auth").then(auth =>
       auth.service.removeListener("user", this.onUserChanged)
     );
   },
   methods: {
     login() {
-      import("./auth").then(auth => auth.service.login());
+      import("./store/auth").then(auth => auth.service.login());
     },
     logout() {
-      import("./auth").then(auth => auth.service.logout());
+      import("./store/auth").then(auth => auth.service.logout());
     },
     onUserChanged(user) {
       console.log("User:", user);
@@ -112,10 +112,20 @@ export default {
       } else if (route.path === "thread" && route.params) {
         nprogress.start();
         this.handleRouteLoadPromise(
-          this.$store.dispatch(MODULE_THREADS + ACTION_GET_MESSAGES, route.params[0]),
+          this.$store.dispatch(
+            MODULE_THREADS + ACTION_GET_MESSAGES,
+            route.params[0]
+          ),
           route
         );
+      } else if (route.path === "new") {
+        nprogress.start();
+        import("./components/editor/quill").then(() => {
+          this.selectedRoute = route;
+          nprogress.done();
+        });
       } else {
+        console.warn("Unknown route:", route);
         this.selectedRoute = route;
         //TODO: 404
       }

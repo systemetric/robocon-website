@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="profile-image"
-    :class="{ large }"
-    :style="{ backgroundImage: `url(${imageUrl})` }"
-  >
+  <div class="profile-image" :class="{ large }" :style="{ backgroundImage: `url(${imageUrl})` }">
     <slot></slot>
   </div>
 </template>
@@ -32,7 +28,7 @@ export default {
 </script>
 
 <style lang="sass">
-@import "variables"
+@import "../variables"
 
 .profile-image
   width: $profile-image-size-small

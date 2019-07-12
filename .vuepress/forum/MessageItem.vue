@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import ProfileImage from "./ProfileImage";
+import ProfileImage from "./components/ProfileImage";
 import { mapState } from "vuex";
 import { MODULE_USER } from "./store";
 

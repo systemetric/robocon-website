@@ -4,8 +4,14 @@
     <!--suppress HtmlUnknownTag -->
     <template v-if="userLoaded">
       <!--suppress HtmlUnknownAnchorTarget -->
-      <a v-if="user && $route.hash !== '#new'" href="#new" class="button">New Thread</a>
-      <div v-else-if="user && $route.hash === '#new'" class="spacer"></div>
+      <a
+        v-if="user"
+        href="#new"
+        class="button"
+        :class="{disabled: $route.hash === '#new'}"
+      >New Thread</a>
+      <!-- <a v-if="user && $route.hash !== '#new'" href="#new" class="button">New Thread</a> -->
+      <!-- <div v-else-if="user && $route.hash === '#new'" class="spacer"></div> -->
       <ProfileImage v-if="user" :user="user">
         <Dropdown>
           <span>
@@ -24,9 +30,9 @@
 </template>
 
 <script>
-import Dropdown from "./Dropdown";
-import ProfileImage from "./ProfileImage";
-import Loader from "./Loader";
+import Dropdown from "./components/Dropdown";
+import ProfileImage from "./components/ProfileImage";
+import Loader from "./components/Loader";
 import { mapState, mapGetters } from "vuex";
 import { MODULE_USER } from "./store";
 

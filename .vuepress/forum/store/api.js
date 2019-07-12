@@ -4,7 +4,7 @@ const API_BASE_URL = "https://robocon.mrbbot.co.uk";
 export const ACTION_REQUEST = "REQUEST";
 
 export function getAuthorizationHeaders() {
-  return import("../auth")
+  return import("./auth")
     .then(auth => auth.service.getIdToken())
     .then(token => ({
       Authorization: `Bearer ${token}`,
@@ -14,13 +14,11 @@ export function getAuthorizationHeaders() {
 
 export default {
   actions: {
-    async [ACTION_REQUEST](context, { method, route, body }) {
-      const options = {};
-      if (method) options.method = method;
+    async [ACTION_REQUEST](context, { method = "GET", route, body }) {
+      const options = { method };
       if (body) options.body = JSON.stringify(body);
-      if (method && method !== "GET")
-        options.headers = await getAuthorizationHeaders();
-      console.log(API_BASE_URL + route, options);
+      if (method !== "GET") options.headers = await getAuthorizationHeaders();
+      console.log("Fetch:", API_BASE_URL + route, options);
       return (
         fetch(API_BASE_URL + route, options)
           .then(res => res.json())

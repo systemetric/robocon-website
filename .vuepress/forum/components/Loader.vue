@@ -9,7 +9,7 @@ export default {
 </script>
 
 <style lang="sass">
-@import "variables"
+@import "../variables"
 
 .forum-loader
   border: $loader-border-size solid rgba(0, 0, 0, 0.1)

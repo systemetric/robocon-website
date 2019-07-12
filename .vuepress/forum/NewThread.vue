@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import QuillEditor from "./editor/QuillEditor";
+import QuillEditor from "./components/editor/QuillEditor";
 import { ACTION_CREATE_THREAD, MODULE_USER, MODULE_THREADS } from "./store";
 import { mapState } from "vuex";
 import nprogress from "nprogress";
