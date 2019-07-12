@@ -1,9 +1,5 @@
-import Vuex from "vuex";
+import { ACTION_REQUEST } from "./api";
 
-const API_BASE_URL = "https://robocon.mrbbot.co.uk";
-// const API_BASE_URL = "http://localhost:8085";
-
-export const MUTATION_SET_USER = "SET_USER";
 const _MUTATION_SET_THREADS = "SET_THREADS";
 const _MUTATION_SET_MESSAGES = "SET_MESSAGES";
 const _MUTATION_ADD_THREAD_WITH_MESSAGES = "ADD_THREAD";
@@ -19,15 +15,6 @@ function parseCreatedDates(arr) {
   });
 }
 
-function getAuthorizationHeaders() {
-  return import("./auth")
-    .then(auth => auth.service.getIdToken())
-    .then(token => ({
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json"
-    }));
-}
-
 function sortThreads(threads) {
   threads.sort((a, b) => {
     if (a.pinned && !b.pinned) return -1;
@@ -36,23 +23,13 @@ function sortThreads(threads) {
   });
 }
 
-const store = new Vuex.Store({
+export default {
+  namespaced: true,
   state: {
     threads: null,
-    messages: {},
-    user: null,
-    userLoaded: false
-  },
-  getters: {
-    isModerator({ user }) {
-      return user && user["https://hr-robocon.org/is_moderator"];
-    }
+    messages: {}
   },
   mutations: {
-    [MUTATION_SET_USER](state, user) {
-      state.user = user;
-      state.userLoaded = true;
-    },
     [_MUTATION_SET_THREADS](state, threads) {
       state.threads = threads;
     },
@@ -72,35 +49,44 @@ const store = new Vuex.Store({
     }
   },
   actions: {
-    [ACTION_GET_THREADS]({ state, commit }) {
+    [ACTION_GET_THREADS]({ state, dispatch, commit }) {
       if (state.threads === null) {
-        return fetch(`${API_BASE_URL}/api/forum/thread/`)
-          .then(res => res.json())
+        return dispatch(
+          ACTION_REQUEST,
+          {
+            route: "/api/forum/thread/"
+          },
+          { root: true }
+        )
           .then(parseCreatedDates)
           .then(res => commit(_MUTATION_SET_THREADS, res));
       }
     },
-    [ACTION_GET_MESSAGES]({ state, commit }, threadId) {
+    [ACTION_GET_MESSAGES]({ state, dispatch, commit }, threadId) {
       if (!state.messages[threadId]) {
-        return fetch(
-          `${API_BASE_URL}/api/forum/thread/${encodeURIComponent(
-            threadId
-          )}/message/`
+        return dispatch(
+          ACTION_REQUEST,
+          {
+            route: `/api/forum/thread/${encodeURIComponent(threadId)}/message/`
+          },
+          { root: true }
         )
-          .then(res => res.json())
           .then(parseCreatedDates)
           .then(res =>
             commit(_MUTATION_SET_MESSAGES, { threadId, messages: res })
           );
       }
     },
-    async [ACTION_CREATE_THREAD]({ commit }, createThreadRequest) {
-      return fetch(`${API_BASE_URL}/api/forum/thread/`, {
-        method: "POST",
-        headers: await getAuthorizationHeaders(),
-        body: JSON.stringify(createThreadRequest)
-      })
-        .then(res => res.json())
+    async [ACTION_CREATE_THREAD]({ dispatch, commit }, createThreadRequest) {
+      return dispatch(
+        ACTION_REQUEST,
+        {
+          method: "POST",
+          route: "/api/forum/thread/",
+          body: createThreadRequest
+        },
+        { root: true }
+      )
         .then(res => {
           res.created = new Date(res.created);
           res.messages[0].created = new Date(res.messages[0].created);
@@ -109,6 +95,4 @@ const store = new Vuex.Store({
         .then(res => commit(_MUTATION_ADD_THREAD_WITH_MESSAGES, res));
     }
   }
-});
-
-export default store;
+};

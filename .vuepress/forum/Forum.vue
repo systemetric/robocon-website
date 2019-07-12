@@ -23,10 +23,12 @@ import ThreadItem from "./ThreadItem";
 import MessageItem from "./MessageItem";
 import NewThread from "./NewThread";
 import store, {
+  MODULE_THREADS,
+  MODULE_USER,
   ACTION_GET_MESSAGES,
   ACTION_GET_THREADS,
   MUTATION_SET_USER
-} from "./store";
+} from "./store/";
 import { mapState } from "vuex";
 import nprogress from "nprogress";
 
@@ -42,7 +44,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["threads", "messages"]),
+    ...mapState(MODULE_THREADS, ["threads", "messages"]),
     route() {
       let hash = this.$route.hash;
       if (hash.startsWith("#")) hash = hash.substring(1);
@@ -83,7 +85,7 @@ export default {
     },
     onUserChanged(user) {
       console.log("User:", user);
-      this.$store.commit(MUTATION_SET_USER, user);
+      this.$store.commit(MODULE_USER + MUTATION_SET_USER, user);
     },
     handleRouteLoadPromise(promise, route) {
       //Would just use promise.finally here but it doesn't seem to work
@@ -104,13 +106,13 @@ export default {
       if (route.path === "") {
         nprogress.start();
         this.handleRouteLoadPromise(
-          this.$store.dispatch(ACTION_GET_THREADS),
+          this.$store.dispatch(MODULE_THREADS + ACTION_GET_THREADS),
           route
         );
       } else if (route.path === "thread" && route.params) {
         nprogress.start();
         this.handleRouteLoadPromise(
-          this.$store.dispatch(ACTION_GET_MESSAGES, route.params[0]),
+          this.$store.dispatch(MODULE_THREADS + ACTION_GET_MESSAGES, route.params[0]),
           route
         );
       } else {

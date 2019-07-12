@@ -28,13 +28,14 @@ import Dropdown from "./Dropdown";
 import ProfileImage from "./ProfileImage";
 import Loader from "./Loader";
 import { mapState, mapGetters } from "vuex";
+import { MODULE_USER } from "./store";
 
 export default {
   name: "forum-header",
   components: { Dropdown, ProfileImage, Loader },
   computed: {
-    ...mapState(["user", "userLoaded"]),
-    ...mapGetters(["isModerator"])
+    ...mapState(MODULE_USER, ["user", "userLoaded"]),
+    ...mapGetters(MODULE_USER, ["isModerator"])
   }
 };
 </script>

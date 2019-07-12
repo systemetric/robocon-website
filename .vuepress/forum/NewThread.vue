@@ -17,7 +17,7 @@
 
 <script>
 import QuillEditor from "./editor/QuillEditor";
-import { ACTION_CREATE_THREAD } from "./store";
+import { ACTION_CREATE_THREAD, MODULE_USER, MODULE_THREADS } from "./store";
 import { mapState } from "vuex";
 import nprogress from "nprogress";
 
@@ -31,7 +31,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["user"]),
+    ...mapState(MODULE_USER, ["user"]),
     disabled() {
       return !this.user || this.posting;
     }
@@ -49,7 +49,7 @@ export default {
         this.posting = true;
         nprogress.start();
         this.$store
-          .dispatch(ACTION_CREATE_THREAD, {
+          .dispatch(MODULE_THREADS + ACTION_CREATE_THREAD, {
             title: this.title,
             content: content
           })

@@ -14,6 +14,7 @@
 <script>
 import ProfileImage from "./ProfileImage";
 import { mapState } from "vuex";
+import { MODULE_USER } from "./store";
 
 export default {
   name: "message",
@@ -25,7 +26,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(["user"]),
+    ...mapState(MODULE_USER, ["user"]),
     authorName() {
       return this.user !== null && this.user.sub === this.message.author.id
         ? "You"
