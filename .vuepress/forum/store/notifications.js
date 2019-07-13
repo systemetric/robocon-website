@@ -1,16 +1,34 @@
-export const MODULE_NOTIFICATIONS = "notifications/";
+export const MODULE_NOTIFICATIONS = "notifications";
 
 const _MUTATION_ADD_NOTIFICATION = "ADD_NOTIFICATION";
 export const MUTATION_REMOVE_NOTIFICATION = "REMOVE_NOTIFICATION";
 
-export const ACTION_SHOW_NOTIFICATION = "SHOW_NOTIFICATION";
-
-export const LEVEL_INFO = "info";
-export const LEVEL_SUCCESS = "success";
-export const LEVEL_WARNING = "warning";
-export const LEVEL_ERROR = "error";
+const _ACTION_SHOW_NOTIFICATION = "SHOW_NOTIFICATION";
 
 const MESSAGE_TIMEOUT = 3000;
+
+const LEVEL_INFO = "info";
+const LEVEL_SUCCESS = "success";
+const LEVEL_WARNING = "warning";
+const LEVEL_ERROR = "error";
+
+export const showNotification = level => content => dispatch => () =>
+  dispatch(
+    MODULE_NOTIFICATIONS + _ACTION_SHOW_NOTIFICATION,
+    { level, content },
+    {
+      root: true
+    }
+  );
+
+export const showInfo = showNotification(LEVEL_INFO);
+export const showSuccess = showNotification(LEVEL_SUCCESS);
+export const showWarning = showNotification(LEVEL_WARNING);
+export const showError = showNotification(LEVEL_ERROR);
+
+export const showUnexpectedErrorNotification = showError(
+  "An unexpected error has occurred!"
+);
 
 export default {
   namespaced: true,
@@ -30,7 +48,7 @@ export default {
     }
   },
   actions: {
-    [ACTION_SHOW_NOTIFICATION](
+    [_ACTION_SHOW_NOTIFICATION](
       { state, commit },
       { level = LEVEL_INFO, content }
     ) {

@@ -31,7 +31,7 @@ import store, {
   ACTION_GET_THREADS,
   MUTATION_SET_USER
 } from "./store/";
-import { mapState } from "vuex";
+import { mapState, mapMutations, mapActions } from "vuex";
 import nprogress from "nprogress";
 
 export default {
@@ -85,6 +85,8 @@ export default {
     );
   },
   methods: {
+    ...mapMutations(MODULE_USER, [MUTATION_SET_USER]),
+    ...mapActions(MODULE_THREADS, [ACTION_GET_THREADS, ACTION_GET_MESSAGES]),
     login() {
       import("./store/auth").then(auth => auth.service.login());
     },
@@ -93,37 +95,25 @@ export default {
     },
     onUserChanged(user) {
       console.log("User:", user);
-      this.$store.commit(MODULE_USER + MUTATION_SET_USER, user);
-    },
-    handleRouteLoadPromise(promise, route) {
-      promise.then(() => {
-        this.selectedRoute = route;
-        nprogress.done();
-      });
+      this[MUTATION_SET_USER](user);
     },
     onRouteChanged(route) {
       console.log("Route:", route);
+
+      const setSelectedRoute = () => {
+        this.selectedRoute = route;
+        nprogress.done();
+      };
+
       if (route.path === "") {
         nprogress.start();
-        this.handleRouteLoadPromise(
-          this.$store.dispatch(MODULE_THREADS + ACTION_GET_THREADS),
-          route
-        );
+        this[ACTION_GET_THREADS]().then(setSelectedRoute);
       } else if (route.path === "thread" && route.params) {
         nprogress.start();
-        this.handleRouteLoadPromise(
-          this.$store.dispatch(
-            MODULE_THREADS + ACTION_GET_MESSAGES,
-            route.params[0]
-          ),
-          route
-        );
+        this[ACTION_GET_MESSAGES](route.params[0]).then(setSelectedRoute);
       } else if (route.path === "new") {
         nprogress.start();
-        import("./components/editor/quill").then(() => {
-          this.selectedRoute = route;
-          nprogress.done();
-        });
+        import("./components/editor/quill").then(setSelectedRoute);
       } else {
         console.warn("Unknown route:", route);
         this.selectedRoute = route;

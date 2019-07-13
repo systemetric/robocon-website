@@ -21,10 +21,9 @@ import {
   ACTION_CREATE_THREAD,
   MODULE_USER,
   MODULE_THREADS,
-  MODULE_NOTIFICATIONS,
-  ACTION_SHOW_NOTIFICATION
+  showWarning
 } from "./store";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 import nprogress from "nprogress";
 
 export default {
@@ -42,38 +41,39 @@ export default {
       return !this.user || this.posting;
     }
   },
+  created() {
+    this.showTitleRequiredNotification = showWarning(
+      "You must give your message a title!"
+    )(this.$store.dispatch);
+    this.showContentRequiredNotification = showWarning(
+      "Your message cannot be empty!"
+    )(this.$store.dispatch);
+  },
   methods: {
+    ...mapActions(MODULE_THREADS, [ACTION_CREATE_THREAD]),
     createThread() {
-      if (!this.disabled) {
-        if (this.title === "") {
-          this.$store.dispatch(
-            MODULE_NOTIFICATIONS + ACTION_SHOW_NOTIFICATION,
-            { level: "warning", content: "You must give your message a title!" }
-          );
-          return;
-        }
-        const content = this.$refs.editor.getContent();
-        if (content === "") {
-          this.$store.dispatch(
-            MODULE_NOTIFICATIONS + ACTION_SHOW_NOTIFICATION,
-            { level: "warning", content: "Your message cannot be empty!" }
-          );
-          return;
-        }
+      if (this.disabled) return;
 
-        this.posting = true;
-        nprogress.start();
-        this.$store
-          .dispatch(MODULE_THREADS + ACTION_CREATE_THREAD, {
-            title: this.title,
-            content: content
-          })
-          .then(() => {
-            this.$router.push("/forum/");
-            this.posting = false;
-            nprogress.done();
-          });
+      if (this.title === "") {
+        this.showTitleRequiredNotification();
+        return;
       }
+      const content = this.$refs.editor.getContent();
+      if (content === "") {
+        this.showContentRequiredNotification();
+        return;
+      }
+
+      this.posting = true;
+      nprogress.start();
+      this[ACTION_CREATE_THREAD]({
+        title: this.title,
+        content: content
+      }).then(() => {
+        this.$router.push("/forum/");
+        this.posting = false;
+        nprogress.done();
+      });
     }
   }
 };

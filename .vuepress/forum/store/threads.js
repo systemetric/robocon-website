@@ -1,10 +1,7 @@
 import { request } from "./api";
-import {
-  MODULE_NOTIFICATIONS,
-  ACTION_SHOW_NOTIFICATION
-} from "./notifications";
+import { showSuccess, showUnexpectedErrorNotification } from "./notifications";
 
-export const MODULE_THREADS = "threads/";
+export const MODULE_THREADS = "threads";
 
 const _MUTATION_SET_THREADS = "SET_THREADS";
 const _MUTATION_SET_MESSAGES = "SET_MESSAGES";
@@ -28,6 +25,8 @@ function sortThreads(threads) {
     return b.created.getTime() - a.created.getTime();
   });
 }
+
+const showMessagePostedNotification = showSuccess("Message posted!");
 
 export default {
   namespaced: true,
@@ -61,13 +60,7 @@ export default {
           .then(res => res.json())
           .then(parseCreatedDates)
           .then(res => commit(_MUTATION_SET_THREADS, res))
-          .catch(() =>
-            dispatch(
-              MODULE_NOTIFICATIONS + ACTION_SHOW_NOTIFICATION,
-              { level: "error", content: "An unexpected error has occurred!" },
-              { root: true }
-            )
-          );
+          .catch(showUnexpectedErrorNotification(dispatch));
       }
     },
     [ACTION_GET_MESSAGES]({ state, dispatch, commit }, threadId) {
@@ -81,16 +74,10 @@ export default {
           .then(res =>
             commit(_MUTATION_SET_MESSAGES, { threadId, messages: res })
           )
-          .catch(() =>
-            dispatch(
-              MODULE_NOTIFICATIONS + ACTION_SHOW_NOTIFICATION,
-              { level: "error", content: "An unexpected error has occurred!" },
-              { root: true }
-            )
-          );
+          .catch(showUnexpectedErrorNotification(dispatch));
       }
     },
-    async [ACTION_CREATE_THREAD]({ commit, dispatch }, createThreadRequest) {
+    [ACTION_CREATE_THREAD]({ commit, dispatch }, createThreadRequest) {
       return request("POST", "/api/forum/thread/", createThreadRequest)
         .then(res => res.json())
         .then(res => {
@@ -100,19 +87,9 @@ export default {
         })
         .then(res => {
           commit(_MUTATION_ADD_THREAD_WITH_MESSAGES, res);
-          return dispatch(
-            MODULE_NOTIFICATIONS + ACTION_SHOW_NOTIFICATION,
-            { level: "success", content: "Message posted!" },
-            { root: true }
-          );
+          return showMessagePostedNotification(dispatch)();
         })
-        .catch(() =>
-          dispatch(
-            MODULE_NOTIFICATIONS + ACTION_SHOW_NOTIFICATION,
-            { level: "error", content: "An unexpected error has occurred!" },
-            { root: true }
-          )
-        );
+        .catch(showUnexpectedErrorNotification(dispatch));
     }
   }
 };

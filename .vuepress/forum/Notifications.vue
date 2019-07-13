@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 import { MODULE_NOTIFICATIONS, MUTATION_REMOVE_NOTIFICATION } from "./store/";
 
 export default {
@@ -22,11 +22,9 @@ export default {
     ...mapState(MODULE_NOTIFICATIONS, ["notifications"])
   },
   methods: {
+    ...mapMutations(MODULE_NOTIFICATIONS, [MUTATION_REMOVE_NOTIFICATION]),
     dismiss(notificationId) {
-      this.$store.commit(
-        MODULE_NOTIFICATIONS + MUTATION_REMOVE_NOTIFICATION,
-        notificationId
-      );
+      this[MUTATION_REMOVE_NOTIFICATION](notificationId);
     }
   }
 };

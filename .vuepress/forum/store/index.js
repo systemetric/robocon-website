@@ -3,11 +3,11 @@ import Vuex from "vuex";
 import notifications, {
   MODULE_NOTIFICATIONS,
   MUTATION_REMOVE_NOTIFICATION,
-  ACTION_SHOW_NOTIFICATION,
-  LEVEL_INFO,
-  LEVEL_SUCCESS,
-  LEVEL_WARNING,
-  LEVEL_ERROR
+  showNotification,
+  showInfo,
+  showSuccess,
+  showWarning,
+  showError
 } from "./notifications";
 import threads, {
   MODULE_THREADS,
@@ -20,11 +20,11 @@ import user, { MODULE_USER, MUTATION_SET_USER } from "./user";
 export {
   MODULE_NOTIFICATIONS,
   MUTATION_REMOVE_NOTIFICATION,
-  ACTION_SHOW_NOTIFICATION,
-  LEVEL_INFO,
-  LEVEL_SUCCESS,
-  LEVEL_WARNING,
-  LEVEL_ERROR,
+  showNotification,
+  showInfo,
+  showSuccess,
+  showWarning,
+  showError,
   MODULE_THREADS,
   ACTION_GET_THREADS,
   ACTION_GET_MESSAGES,
@@ -35,8 +35,8 @@ export {
 
 export default new Vuex.Store({
   modules: {
-    notifications,
-    threads,
-    user
+    [MODULE_NOTIFICATIONS]: notifications,
+    [MODULE_THREADS]: threads,
+    [MODULE_USER]: user
   }
 });
