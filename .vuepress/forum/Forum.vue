@@ -12,6 +12,12 @@
           :thread-id="selectedRoute.params[0]"
           :message="message"
         ></MessageItem>
+        <MessageItem
+          v-if="user"
+          key="creating"
+          :thread-id="selectedRoute.params[0]"
+          :creating="true"
+        ></MessageItem>
       </template>
       <NewThread v-else-if="selectedRoute.path === 'new'" />
     </main>
@@ -54,6 +60,7 @@ export default {
   },
   computed: {
     ...mapState(MODULE_THREADS, ["threads", "messages"]),
+    ...mapState(MODULE_USER, ["user"]),
     route() {
       let hash = this.$route.hash;
       if (hash.startsWith("#")) hash = hash.substring(1);

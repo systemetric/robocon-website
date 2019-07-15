@@ -62,6 +62,9 @@ export default {
   methods: {
     getContent() {
       return this.editor.getText().trim() ? this.editor.root.innerHTML : "";
+    },
+    clear() {
+      this.editor.setContents([]);
     }
   }
 };

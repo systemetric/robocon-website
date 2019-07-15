@@ -11,6 +11,7 @@ const _MUTATION_DELETE_THREAD = "DELETE_THREAD";
 const _MUTATION_EDIT_MESSAGE = "EDIT_MESSAGE";
 const _MUTATION_RESOLVE_MESSAGE = "RESOLVE_MESSAGE";
 const _MUTATION_DELETE_MESSAGE = "DELETE_MESSAGE";
+const _MUTATION_ADD_MESSAGE = "ADD_MESSAGE";
 
 export const ACTION_GET_THREADS = "GET_THREADS";
 export const ACTION_GET_MESSAGES = "GET_MESSAGES";
@@ -20,6 +21,7 @@ export const ACTION_DELETE_THREAD = "DELETE_THREAD";
 export const ACTION_EDIT_MESSAGE = "EDIT_MESSAGE";
 export const ACTION_RESOLVE_MESSAGE = "RESOLVE_MESSAGE";
 export const ACTION_DELETE_MESSAGE = "DELETE_MESSAGE";
+export const ACTION_CREATE_MESSAGE = "CREATE_MESSAGE";
 
 function parseCreatedDates(arr) {
   return arr.map(obj => {
@@ -105,6 +107,11 @@ export default {
         state.messages[threadId] = state.messages[threadId].filter(
           message => message.id !== messageId
         );
+      }
+    },
+    [_MUTATION_ADD_MESSAGE](state, { threadId, message }) {
+      if (threadId in state.messages) {
+        state.messages[threadId] = [...state.messages[threadId], message];
       }
     }
   },
@@ -210,7 +217,7 @@ export default {
         }
       )
         .then(
-          showSuccess(`Message marked as ${resolved ? "" : "un"}resolved!`)(
+          showSuccess(`Thread marked as ${resolved ? "" : "un"}resolved!`)(
             dispatch
           )
         )
@@ -225,6 +232,26 @@ export default {
         )}/message/${encodeURIComponent(messageId)}`
       )
         .then(showMessageDeletedNotification(dispatch))
+        .catch(showUnexpectedErrorNotification(dispatch));
+    },
+    [ACTION_CREATE_MESSAGE]({ commit, dispatch }, { threadId, content }) {
+      return request(
+        "POST",
+        `/api/forum/thread/${encodeURIComponent(threadId)}/message/`,
+        {
+          content
+        }
+      )
+        .then(res => res.json())
+        .then(res => {
+          res.created = new Date(res.created);
+          return res;
+        })
+        .then(res => {
+          console.log(res);
+          commit(_MUTATION_ADD_MESSAGE, { threadId, message: res });
+          return showMessagePostedNotification(dispatch)();
+        })
         .catch(showUnexpectedErrorNotification(dispatch));
     }
   }

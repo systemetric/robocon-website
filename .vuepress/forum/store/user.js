@@ -11,6 +11,15 @@ export default {
   getters: {
     isModerator({ user }) {
       return user && user["https://hr-robocon.org/is_moderator"];
+    },
+    userAsAuthor({ user }) {
+      return user
+        ? {
+            id: user.sub,
+            name: user.nickname,
+            picture: user.picture
+          }
+        : {};
     }
   },
   mutations: {

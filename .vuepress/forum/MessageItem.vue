@@ -1,11 +1,19 @@
 <template>
-  <div class="message" :class="{resolved: message.resolved}">
-    <ProfileImage :user="message.author" :large="true" />
+  <div class="message" :class="{resolved: resolved}">
+    <ProfileImage :user="creating ? userAsAuthor : message.author" :large="true" />
     <div class="message-details">
-      <QuillEditor v-if="editingContent" ref="editor" :value="message.content">
+      <QuillEditor
+        v-if="editingContent || creating"
+        ref="editor"
+        :value="creating ? '': message.content"
+      >
         <template slot="bottom-buttons">
-          <a class="button" @click="editingContent = false">Cancel</a>
-          <a class="button primary" @click="saveMessage">Save</a>
+          <a v-if="!creating" class="button" @click="editingContent = false">Cancel</a>
+          <a
+            class="button primary"
+            :class="{disabled: posting}"
+            @click="saveMessage"
+          >{{creating ? "Post Response" : "Save"}}</a>
         </template>
       </QuillEditor>
       <template v-else>
@@ -49,9 +57,11 @@ import {
   ACTION_EDIT_MESSAGE,
   ACTION_RESOLVE_MESSAGE,
   ACTION_DELETE_MESSAGE,
+  ACTION_CREATE_MESSAGE,
   showWarning,
   canEdit
 } from "./store";
+import nprogress from "nprogress";
 
 export default {
   name: "message",
@@ -68,18 +78,22 @@ export default {
       required: true
     },
     message: {
-      type: Object,
-      required: true
+      type: Object
+    },
+    creating: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
     return {
-      editingContent: false
+      editingContent: false,
+      posting: false
     };
   },
   computed: {
     ...mapState(MODULE_USER, ["user"]),
-    ...mapGetters(MODULE_USER, ["isModerator"]),
+    ...mapGetters(MODULE_USER, ["isModerator", "userAsAuthor"]),
     authorName() {
       return this.user !== null && this.user.sub === this.message.author.id
         ? "You"
@@ -87,6 +101,9 @@ export default {
     },
     canEdit() {
       return canEdit(this.message, this.$store);
+    },
+    resolved() {
+      return this.message && this.message.resolved;
     }
   },
   created() {
@@ -98,7 +115,8 @@ export default {
     ...mapActions(MODULE_THREADS, [
       ACTION_EDIT_MESSAGE,
       ACTION_RESOLVE_MESSAGE,
-      ACTION_DELETE_MESSAGE
+      ACTION_DELETE_MESSAGE,
+      ACTION_CREATE_MESSAGE
     ]),
     saveMessage() {
       const content = this.$refs.editor.getContent();
@@ -106,29 +124,43 @@ export default {
         this.showContentRequiredNotification();
         return;
       }
-      this[ACTION_EDIT_MESSAGE]({
-        threadId: this.threadId,
-        message: this.message,
-        newContent: content
-      });
-      this.editingContent = false;
+      nprogress.start();
+      if (this.creating) {
+        this.posting = true;
+        this[ACTION_CREATE_MESSAGE]({ threadId: this.threadId, content }).then(
+          () => {
+            this.posting = false;
+            this.$refs.editor.clear();
+            nprogress.done();
+          }
+        );
+      } else {
+        this[ACTION_EDIT_MESSAGE]({
+          threadId: this.threadId,
+          message: this.message,
+          newContent: content
+        }).then(() => nprogress.done());
+        this.editingContent = false;
+      }
     },
     toggleResolved() {
+      nprogress.start();
       this[ACTION_RESOLVE_MESSAGE]({
         threadId: this.threadId,
         message: this.message,
         resolved: !this.message.resolved
-      });
+      }).then(() => nprogress.done());
     },
     deleteMessage() {
       const confirmation = confirm(
         `Are you sure you want to delete this message? This is a permanent action and cannot be undone.`
       );
       if (confirmation) {
+        nprogress.start();
         this[ACTION_DELETE_MESSAGE]({
           threadId: this.threadId,
           messageId: this.message.id
-        });
+        }).then(() => nprogress.done());
       }
     }
   }

@@ -39,6 +39,7 @@ import {
   ACTION_DELETE_THREAD,
   canEdit
 } from "./store";
+import nprogress from "nprogress";
 
 export default {
   name: "thread",
@@ -74,10 +75,11 @@ export default {
       this.editingTitle = true;
     },
     saveTitle() {
+      nprogress.start();
       this[ACTION_EDIT_TITLE]({
         thread: this.thread,
         newTitle: this.title
-      });
+      }).then(() => nprogress.done());
       this.editingTitle = false;
     },
     deleteThread() {
@@ -85,7 +87,8 @@ export default {
         `Are you sure you want to delete the entire thread: "${this.thread.title}"? This is a permanent action and cannot be undone.`
       );
       if (confirmation) {
-        this[ACTION_DELETE_THREAD](this.thread.id);
+        nprogress.start();
+        this[ACTION_DELETE_THREAD](this.thread.id).then(() => nprogress.done());
       }
     }
   }
