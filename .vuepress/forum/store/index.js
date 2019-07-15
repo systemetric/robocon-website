@@ -9,6 +9,7 @@ import notifications, {
   showWarning,
   showError
 } from "./notifications";
+
 import threads, {
   MODULE_THREADS,
   ACTION_GET_THREADS,
@@ -16,9 +17,12 @@ import threads, {
   ACTION_CREATE_THREAD,
   ACTION_EDIT_TITLE,
   ACTION_DELETE_THREAD,
-  canEdit,
-  canDelete
+  ACTION_EDIT_MESSAGE,
+  ACTION_RESOLVE_MESSAGE,
+  ACTION_DELETE_MESSAGE,
+  canEdit
 } from "./threads";
+
 import user, { MODULE_USER, MUTATION_SET_USER } from "./user";
 
 export {
@@ -35,8 +39,10 @@ export {
   ACTION_CREATE_THREAD,
   ACTION_EDIT_TITLE,
   ACTION_DELETE_THREAD,
+  ACTION_EDIT_MESSAGE,
+  ACTION_RESOLVE_MESSAGE,
+  ACTION_DELETE_MESSAGE,
   canEdit,
-  canDelete,
   MODULE_USER,
   MUTATION_SET_USER
 };

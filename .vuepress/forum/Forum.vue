@@ -9,6 +9,7 @@
         <MessageItem
           v-for="message in selectedThreadsMessages"
           :key="message.id"
+          :thread-id="selectedRoute.params[0]"
           :message="message"
         ></MessageItem>
       </template>
@@ -110,6 +111,8 @@ export default {
         this[ACTION_GET_THREADS]().then(setSelectedRoute);
       } else if (route.path === "thread" && route.params) {
         nprogress.start();
+        //Preload Quill for editing threads
+        import("./components/editor/quill");
         this[ACTION_GET_MESSAGES](route.params[0]).then(setSelectedRoute);
       } else if (route.path === "new") {
         nprogress.start();

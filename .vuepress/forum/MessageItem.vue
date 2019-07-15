@@ -1,42 +1,143 @@
 <template>
-  <div class="message">
-    <ProfileImage :user="message.author" :large="true"></ProfileImage>
+  <div class="message" :class="{resolved: message.resolved}">
+    <ProfileImage :user="message.author" :large="true" />
     <div class="message-details">
-      <div class="message-content" v-html="message.content"></div>
-      <p class="light">
-        Created by {{ authorName }} on
-        {{ message.created.toLocaleString().replace(", ", " at ") }}
-      </p>
+      <QuillEditor v-if="editingContent" ref="editor" :value="message.content">
+        <template slot="bottom-buttons">
+          <a class="button" @click="editingContent = false">Cancel</a>
+          <a class="button primary" @click="saveMessage">Save</a>
+        </template>
+      </QuillEditor>
+      <template v-else>
+        <div class="message-content" v-html="message.content"></div>
+        <div class="message-meta">
+          <p class="light">
+            Created by {{ authorName }} on
+            {{ message.created.toLocaleString().replace(", ", " at ") }}
+          </p>
+          <div v-if="canEdit" class="message-button" title="Edit Message">
+            <EditIcon size="24" class="feather-button" @click="editingContent = true" />
+          </div>
+          <div
+            v-if="canEdit"
+            class="message-button"
+            :title="`Mark as ${message.resolved ? 'Unresolved' : 'Resolved'}`"
+          >
+            <CheckCircleIcon
+              size="24"
+              class="feather-button resolve-button"
+              @click="toggleResolved"
+            />
+          </div>
+          <div v-if="isModerator && !message.root" class="message-button" title="Delete Message">
+            <Trash2Icon size="24" class="feather-button" @click="deleteMessage" />
+          </div>
+        </div>
+      </template>
     </div>
   </div>
 </template>
 
 <script>
 import ProfileImage from "./components/ProfileImage";
-import { mapState } from "vuex";
-import { MODULE_USER } from "./store";
+import QuillEditor from "./components/editor/QuillEditor";
+import { EditIcon, CheckCircleIcon, Trash2Icon } from "vue-feather-icons";
+import { mapState, mapGetters, mapActions } from "vuex";
+import {
+  MODULE_USER,
+  MODULE_THREADS,
+  ACTION_EDIT_MESSAGE,
+  ACTION_RESOLVE_MESSAGE,
+  ACTION_DELETE_MESSAGE,
+  showWarning,
+  canEdit
+} from "./store";
 
 export default {
   name: "message",
-  components: { ProfileImage },
+  components: {
+    ProfileImage,
+    QuillEditor,
+    EditIcon,
+    CheckCircleIcon,
+    Trash2Icon
+  },
   props: {
+    threadId: {
+      type: String,
+      required: true
+    },
     message: {
       type: Object,
       required: true
     }
   },
+  data() {
+    return {
+      editingContent: false
+    };
+  },
   computed: {
     ...mapState(MODULE_USER, ["user"]),
+    ...mapGetters(MODULE_USER, ["isModerator"]),
     authorName() {
       return this.user !== null && this.user.sub === this.message.author.id
         ? "You"
         : this.message.author.name;
+    },
+    canEdit() {
+      return canEdit(this.message, this.$store);
+    }
+  },
+  created() {
+    this.showContentRequiredNotification = showWarning(
+      "Your message cannot be empty!"
+    )(this.$store.dispatch);
+  },
+  methods: {
+    ...mapActions(MODULE_THREADS, [
+      ACTION_EDIT_MESSAGE,
+      ACTION_RESOLVE_MESSAGE,
+      ACTION_DELETE_MESSAGE
+    ]),
+    saveMessage() {
+      const content = this.$refs.editor.getContent();
+      if (content === "") {
+        this.showContentRequiredNotification();
+        return;
+      }
+      this[ACTION_EDIT_MESSAGE]({
+        threadId: this.threadId,
+        message: this.message,
+        newContent: content
+      });
+      this.editingContent = false;
+    },
+    toggleResolved() {
+      this[ACTION_RESOLVE_MESSAGE]({
+        threadId: this.threadId,
+        message: this.message,
+        resolved: !this.message.resolved
+      });
+    },
+    deleteMessage() {
+      const confirmation = confirm(
+        `Are you sure you want to delete this message? This is a permanent action and cannot be undone.`
+      );
+      if (confirmation) {
+        this[ACTION_DELETE_MESSAGE]({
+          threadId: this.threadId,
+          messageId: this.message.id
+        });
+      }
     }
   }
 };
 </script>
 
 <style lang="sass">
+@import "variables"
+
 div.message
   display: flex
   flex-direction: row
@@ -66,6 +167,22 @@ div.message
         padding: 0.2em 0.4em
       blockquote
         font-size: 1rem
-    > p
-      margin: 0.4rem 0
+    .message-meta
+      display: flex
+      align-items: center   
+      > p
+        flex-grow: 1
+        margin: 0.4rem 0
+      > .message-button
+        min-width: 24px
+        min-height: 24px
+        display: flex
+        align-items: center
+      > *:not(:last-child)
+        margin-right: 8px
+  &.resolved
+    .message-details .message-content
+      background-color: #d8efff
+    .resolve-button
+      stroke: $primary-color
 </style>

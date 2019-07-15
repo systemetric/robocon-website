@@ -1,15 +1,24 @@
 <template>
   <a class="thread" :href="`#thread=${thread.id}`">
-    <ProfileImage :user="thread.author" :large="true"></ProfileImage>
+    <ProfileImage :user="thread.author" :large="true" />
     <div class="thread-details">
       <div class="title-edit" v-if="editingTitle">
         <input type="text" v-model="title" @click.prevent />
         <SaveIcon @click.prevent="saveTitle" class="feather-button" />
       </div>
       <h3 v-else>
-        <span>{{ thread.title }}</span>
-        <EditIcon v-if="canEdit" @click.prevent="editTitle" class="feather-button" />
-        <Trash2Icon v-if="isModerator" @click.prevent="deleteThread" class="feather-button" />
+        <span class="thread-title">{{ thread.title }}</span>
+        <span title="Edit Title">
+          <EditIcon v-if="canEdit" size="24" @click.prevent="editTitle" class="feather-button" />
+        </span>
+        <span title="Delete Thread">
+          <Trash2Icon
+            v-if="isModerator"
+            size="24"
+            @click.prevent="deleteThread"
+            class="feather-button"
+          />
+        </span>
       </h3>
       <p class="light">
         Created by {{ authorName }} on
@@ -107,14 +116,16 @@ a.thread
         margin-left: 0.5rem
     h3
       margin: 0 0 0.4rem 0
-      > *
+      > span.thread-title, > span svg,
         vertical-align: middle
+      span:first-child
+        margin-right: 4px
       .feather
         display: none
     p
       margin: 0.4rem 0
-    &:hover
-      h3 .feather
+  &:hover
+    .thread-details h3 .feather
         display: inline-block
   .icon-wrapper
     margin-left: 0.75rem

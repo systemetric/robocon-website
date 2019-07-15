@@ -8,12 +8,18 @@ const _MUTATION_SET_MESSAGES = "SET_MESSAGES";
 const _MUTATION_ADD_THREAD_WITH_MESSAGES = "ADD_THREAD";
 const _MUTATION_EDIT_TITLE = "EDIT_TITLE";
 const _MUTATION_DELETE_THREAD = "DELETE_THREAD";
+const _MUTATION_EDIT_MESSAGE = "EDIT_MESSAGE";
+const _MUTATION_RESOLVE_MESSAGE = "RESOLVE_MESSAGE";
+const _MUTATION_DELETE_MESSAGE = "DELETE_MESSAGE";
 
 export const ACTION_GET_THREADS = "GET_THREADS";
 export const ACTION_GET_MESSAGES = "GET_MESSAGES";
 export const ACTION_CREATE_THREAD = "CREATE_THREAD";
 export const ACTION_EDIT_TITLE = "EDIT_TITLE";
 export const ACTION_DELETE_THREAD = "DELETE_THREAD";
+export const ACTION_EDIT_MESSAGE = "EDIT_MESSAGE";
+export const ACTION_RESOLVE_MESSAGE = "RESOLVE_MESSAGE";
+export const ACTION_DELETE_MESSAGE = "DELETE_MESSAGE";
 
 function parseCreatedDates(arr) {
   return arr.map(obj => {
@@ -37,14 +43,11 @@ export function canEdit(object, $store) {
   return isOwner || isModerator;
 }
 
-export function canDelete(object, $store) {
-  const isModerator = $store.getters["user/isModerator"];
-  return isModerator;
-}
-
 const showMessagePostedNotification = showSuccess("Message posted!");
 const showTitleSavedNotification = showSuccess("Title saved!");
 const showThreadDeletedNotification = showSuccess("Thread deleted!");
+const showMessageEditedNotification = showSuccess("Message edited!");
+const showMessageDeletedNotification = showSuccess("Message deleted!");
 
 export default {
   namespaced: true,
@@ -57,7 +60,10 @@ export default {
       state.threads = threads;
     },
     [_MUTATION_SET_MESSAGES](state, { threadId, messages }) {
-      state.messages[threadId] = messages;
+      state.messages = {
+        ...state.messages,
+        [threadId]: messages
+      };
     },
     [_MUTATION_ADD_THREAD_WITH_MESSAGES](state, thread) {
       state.messages[thread.id] = thread.messages;
@@ -77,6 +83,29 @@ export default {
     },
     [_MUTATION_DELETE_THREAD](state, threadId) {
       state.threads = state.threads.filter(thread => thread.id !== threadId);
+    },
+    [_MUTATION_EDIT_MESSAGE](state, { threadId, messageId, newContent }) {
+      if (threadId in state.messages) {
+        state.messages[threadId] = state.messages[threadId].map(message => {
+          if (message.id === messageId) message.content = newContent;
+          return message;
+        });
+      }
+    },
+    [_MUTATION_RESOLVE_MESSAGE](state, { threadId, messageId, resolved }) {
+      if (threadId in state.messages) {
+        state.messages[threadId] = state.messages[threadId].map(message => {
+          message.resolved = message.id === messageId ? resolved : false;
+          return message;
+        });
+      }
+    },
+    [_MUTATION_DELETE_MESSAGE](state, { threadId, messageId }) {
+      if (threadId in state.messages) {
+        state.messages[threadId] = state.messages[threadId].filter(
+          message => message.id !== messageId
+        );
+      }
     }
   },
   actions: {
@@ -137,6 +166,65 @@ export default {
         `/api/forum/thread/${encodeURIComponent(threadId)}`
       )
         .then(showThreadDeletedNotification(dispatch))
+        .catch(showUnexpectedErrorNotification(dispatch));
+    },
+    [ACTION_EDIT_MESSAGE](
+      { commit, dispatch },
+      { threadId, message, newContent }
+    ) {
+      commit(_MUTATION_EDIT_MESSAGE, {
+        threadId,
+        messageId: message.id,
+        newContent
+      });
+      return request(
+        "PATCH",
+        `/api/forum/thread/${encodeURIComponent(
+          threadId
+        )}/message/${encodeURIComponent(message.id)}`,
+        {
+          content: newContent,
+          resolved: message.resolved
+        }
+      )
+        .then(showMessageEditedNotification(dispatch))
+        .catch(showUnexpectedErrorNotification(dispatch));
+    },
+    [ACTION_RESOLVE_MESSAGE](
+      { commit, dispatch },
+      { threadId, message, resolved }
+    ) {
+      commit(_MUTATION_RESOLVE_MESSAGE, {
+        threadId,
+        messageId: message.id,
+        resolved
+      });
+      return request(
+        "PATCH",
+        `/api/forum/thread/${encodeURIComponent(
+          threadId
+        )}/message/${encodeURIComponent(message.id)}`,
+        {
+          content: message.content,
+          resolved: resolved
+        }
+      )
+        .then(
+          showSuccess(`Message marked as ${resolved ? "" : "un"}resolved!`)(
+            dispatch
+          )
+        )
+        .catch(showUnexpectedErrorNotification(dispatch));
+    },
+    [ACTION_DELETE_MESSAGE]({ commit, dispatch }, { threadId, messageId }) {
+      commit(_MUTATION_DELETE_MESSAGE, { threadId, messageId });
+      return request(
+        "DELETE",
+        `/api/forum/thread/${encodeURIComponent(
+          threadId
+        )}/message/${encodeURIComponent(messageId)}`
+      )
+        .then(showMessageDeletedNotification(dispatch))
         .catch(showUnexpectedErrorNotification(dispatch));
     }
   }
