@@ -15,7 +15,9 @@ import threads, {
   ACTION_GET_MESSAGES,
   ACTION_CREATE_THREAD,
   ACTION_EDIT_TITLE,
-  canEdit
+  ACTION_DELETE_THREAD,
+  canEdit,
+  canDelete
 } from "./threads";
 import user, { MODULE_USER, MUTATION_SET_USER } from "./user";
 
@@ -32,7 +34,9 @@ export {
   ACTION_GET_MESSAGES,
   ACTION_CREATE_THREAD,
   ACTION_EDIT_TITLE,
+  ACTION_DELETE_THREAD,
   canEdit,
+  canDelete,
   MODULE_USER,
   MUTATION_SET_USER
 };

@@ -9,6 +9,7 @@
       <h3 v-else>
         <span>{{ thread.title }}</span>
         <EditIcon v-if="canEdit" @click.prevent="editTitle" class="feather-button" />
+        <Trash2Icon v-if="isModerator" @click.prevent="deleteThread" class="feather-button" />
       </h3>
       <p class="light">
         Created by {{ authorName }} on
@@ -20,19 +21,19 @@
 
 <script>
 import ProfileImage from "./components/ProfileImage";
-//TODO: check this tree shakes
-import { SaveIcon, EditIcon } from "vue-feather-icons";
-import { mapState, mapActions } from "vuex";
+import { SaveIcon, EditIcon, Trash2Icon } from "vue-feather-icons";
+import { mapState, mapGetters, mapActions } from "vuex";
 import {
   MODULE_USER,
   MODULE_THREADS,
   ACTION_EDIT_TITLE,
+  ACTION_DELETE_THREAD,
   canEdit
 } from "./store";
 
 export default {
   name: "thread",
-  components: { ProfileImage, SaveIcon, EditIcon },
+  components: { ProfileImage, SaveIcon, EditIcon, Trash2Icon },
   props: {
     thread: {
       type: Object,
@@ -47,6 +48,7 @@ export default {
   },
   computed: {
     ...mapState(MODULE_USER, ["user"]),
+    ...mapGetters(MODULE_USER, ["isModerator"]),
     authorName() {
       return this.user !== null && this.user.sub === this.thread.author.id
         ? "You"
@@ -57,7 +59,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(MODULE_THREADS, [ACTION_EDIT_TITLE]),
+    ...mapActions(MODULE_THREADS, [ACTION_EDIT_TITLE, ACTION_DELETE_THREAD]),
     editTitle() {
       this.title = this.thread.title;
       this.editingTitle = true;
@@ -68,6 +70,14 @@ export default {
         newTitle: this.title
       });
       this.editingTitle = false;
+    },
+    deleteThread() {
+      const confirmation = confirm(
+        `Are you sure you want to delete the entire thread: "${this.thread.title}"? This is a permanent action and cannot be undone.`
+      );
+      if (confirmation) {
+        this[ACTION_DELETE_THREAD](this.thread.id);
+      }
     }
   }
 };
