@@ -15,5 +15,8 @@ export async function request(method, route, body) {
   if (body) options.body = JSON.stringify(body);
   if (method !== "GET") options.headers = await getAuthorizationHeaders();
   console.log("Fetch:", API_BASE_URL + route, options);
-  return fetch(API_BASE_URL + route, options);
+  return fetch(API_BASE_URL + route, options).then(res => {
+    if (!res.ok) throw new Error("non 2** response code received");
+    return res;
+  });
 }

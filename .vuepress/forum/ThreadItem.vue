@@ -2,7 +2,14 @@
   <a class="thread" :href="`#thread=${thread.id}`">
     <ProfileImage :user="thread.author" :large="true"></ProfileImage>
     <div class="thread-details">
-      <h3>{{ thread.title }}</h3>
+      <div class="title-edit" v-if="editingTitle">
+        <input type="text" v-model="title" @click.prevent />
+        <SaveIcon @click.prevent="saveTitle" class="feather-button" />
+      </div>
+      <h3 v-else>
+        <span>{{ thread.title }}</span>
+        <EditIcon v-if="canEdit" @click.prevent="editTitle" class="feather-button" />
+      </h3>
       <p class="light">
         Created by {{ authorName }} on
         {{ thread.created.toLocaleString().replace(", ", " at ") }}
@@ -13,17 +20,30 @@
 
 <script>
 import ProfileImage from "./components/ProfileImage";
-import { mapState } from "vuex";
-import { MODULE_USER } from "./store";
+//TODO: check this tree shakes
+import { SaveIcon, EditIcon } from "vue-feather-icons";
+import { mapState, mapActions } from "vuex";
+import {
+  MODULE_USER,
+  MODULE_THREADS,
+  ACTION_EDIT_TITLE,
+  canEdit
+} from "./store";
 
 export default {
   name: "thread",
-  components: { ProfileImage },
+  components: { ProfileImage, SaveIcon, EditIcon },
   props: {
     thread: {
       type: Object,
       required: true
     }
+  },
+  data() {
+    return {
+      title: "",
+      editingTitle: false
+    };
   },
   computed: {
     ...mapState(MODULE_USER, ["user"]),
@@ -31,12 +51,31 @@ export default {
       return this.user !== null && this.user.sub === this.thread.author.id
         ? "You"
         : this.thread.author.name;
+    },
+    canEdit() {
+      return canEdit(this.thread, this.$store);
+    }
+  },
+  methods: {
+    ...mapActions(MODULE_THREADS, [ACTION_EDIT_TITLE]),
+    editTitle() {
+      this.title = this.thread.title;
+      this.editingTitle = true;
+    },
+    saveTitle() {
+      this[ACTION_EDIT_TITLE]({
+        thread: this.thread,
+        newTitle: this.title
+      });
+      this.editingTitle = false;
     }
   }
 };
 </script>
 
 <style lang="sass">
+@import "variables"
+
 a.thread
   display: flex
   flex-direction: row
@@ -49,10 +88,24 @@ a.thread
     margin-right: 1rem
   .thread-details
     flex-grow: 1
+    .title-edit
+      display: flex
+      align-items: center
+      input
+        flex-grow: 1
+      .feather
+        margin-left: 0.5rem
     h3
       margin: 0 0 0.4rem 0
+      > *
+        vertical-align: middle
+      .feather
+        display: none
     p
       margin: 0.4rem 0
+    &:hover
+      h3 .feather
+        display: inline-block
   .icon-wrapper
     margin-left: 0.75rem
     &:not(.pinned)

@@ -12,7 +12,8 @@ footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 <div class="features">
   <div class="feature">
     <h2>...a robot designer</h2>
-    <p>To make your robot a reality, discover what our kit can do.</p><router-link class="feature-button" to="/about/for-students.html">Start Making!</router-link></p>
+    <p>To make your robot a reality, discover what our kit can do.</p>
+    <router-link class="feature-button" to="/about/for-students.html">Start Making!</router-link>
   </div>
   <div class="feature">
     <h2>...an inspiring teacher</h2>

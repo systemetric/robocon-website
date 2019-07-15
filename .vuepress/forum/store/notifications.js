@@ -12,14 +12,15 @@ const LEVEL_SUCCESS = "success";
 const LEVEL_WARNING = "warning";
 const LEVEL_ERROR = "error";
 
-export const showNotification = level => content => dispatch => () =>
-  dispatch(
-    MODULE_NOTIFICATIONS + _ACTION_SHOW_NOTIFICATION,
+export const showNotification = level => content => dispatch => () => {
+  return dispatch(
+    MODULE_NOTIFICATIONS + "/" + _ACTION_SHOW_NOTIFICATION,
     { level, content },
     {
       root: true
     }
   );
+};
 
 export const showInfo = showNotification(LEVEL_INFO);
 export const showSuccess = showNotification(LEVEL_SUCCESS);
