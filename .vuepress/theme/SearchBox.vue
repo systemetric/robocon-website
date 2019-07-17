@@ -7,7 +7,7 @@
       autocomplete="off"
       spellcheck="false"
       @focus="focused = true"
-      @blur="focused = true"
+      @blur="focused = false"
       @keyup.enter="go(focusIndex)"
       @keyup.up="onUp"
       @keyup.down="onDown"
@@ -20,7 +20,7 @@
     >
       <template v-for="(s, i) in suggestions">
         <hr v-if="s.firstForumSuggestion" key="forum-separator" />
-        <p v-if="s.firstForumSuggestion" key="forum-header" class="forum-header">Forum Threads</p>
+        <p v-if="s.firstForumSuggestion" key="forum-separator-header" class="forum-separator-header">Forum Threads</p>
         <li
           class="suggestion"
           :key="s.path"
@@ -265,7 +265,7 @@ export default {
     }
   }
 
-  p.forum-header {
+  p.forum-separator-header {
     margin: 0;
     padding: 0 0.6rem;
     color: lighten($textColor, 35%);
