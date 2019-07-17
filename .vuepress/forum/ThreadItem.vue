@@ -1,5 +1,5 @@
 <template>
-  <a class="thread" :href="`#thread=${thread.id}`">
+  <a class="thread" :class="{pinned: thread.pinned}" :href="`#thread=${thread.id}`">
     <ProfileImage :user="thread.author" :large="true" />
     <div class="thread-details">
       <div class="title-edit" v-if="editingTitle">
@@ -8,16 +8,14 @@
       </div>
       <h3 v-else>
         <span class="thread-title">{{ thread.title }}</span>
-        <span title="Edit Title">
-          <EditIcon v-if="canEdit" size="24" @click.prevent="editTitle" class="feather-button" />
+        <span v-if="canEdit" title="Edit Title">
+          <EditIcon size="24" @click.prevent="editTitle" class="feather-button" />
         </span>
-        <span title="Delete Thread">
-          <Trash2Icon
-            v-if="isModerator"
-            size="24"
-            @click.prevent="deleteThread"
-            class="feather-button"
-          />
+        <span v-if="isModerator" title="Pin Thread">
+          <PinIcon @click="togglePinned" class="feather-button pin-button" />
+        </span>
+        <span v-if="isModerator" title="Delete Thread">
+          <Trash2Icon size="24" @click.prevent="deleteThread" class="feather-button" />
         </span>
       </h3>
       <p class="light">
@@ -31,19 +29,21 @@
 <script>
 import ProfileImage from "./components/ProfileImage";
 import { SaveIcon, EditIcon, Trash2Icon } from "vue-feather-icons";
+import PinIcon from "./components/PinIcon";
 import { mapState, mapGetters, mapActions } from "vuex";
 import {
   MODULE_USER,
   MODULE_THREADS,
   ACTION_EDIT_TITLE,
   ACTION_DELETE_THREAD,
+  ACTION_TOGGLE_PINNED_THREAD,
   canEdit
 } from "./store";
 import nprogress from "nprogress";
 
 export default {
   name: "thread",
-  components: { ProfileImage, SaveIcon, EditIcon, Trash2Icon },
+  components: { ProfileImage, SaveIcon, EditIcon, Trash2Icon, PinIcon },
   props: {
     thread: {
       type: Object,
@@ -69,7 +69,11 @@ export default {
     }
   },
   methods: {
-    ...mapActions(MODULE_THREADS, [ACTION_EDIT_TITLE, ACTION_DELETE_THREAD]),
+    ...mapActions(MODULE_THREADS, [
+      ACTION_EDIT_TITLE,
+      ACTION_DELETE_THREAD,
+      ACTION_TOGGLE_PINNED_THREAD
+    ]),
     editTitle() {
       this.title = this.thread.title;
       this.editingTitle = true;
@@ -82,7 +86,15 @@ export default {
       }).then(() => nprogress.done());
       this.editingTitle = false;
     },
+    togglePinned() {
+      if (!this.isModerator) return;
+      nprogress.start();
+      this[ACTION_TOGGLE_PINNED_THREAD](this.thread).then(() =>
+        nprogress.done()
+      );
+    },
     deleteThread() {
+      if (!this.isModerator) return;
       const confirmation = confirm(
         `Are you sure you want to delete the entire thread: "${this.thread.title}"? This is a permanent action and cannot be undone.`
       );
@@ -136,4 +148,7 @@ a.thread
       opacity: 0
     &.can-pin:hover
       opacity: 0.5
+  &.pinned
+    .pin-button
+      stroke: $primary-color
 </style>

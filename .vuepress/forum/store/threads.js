@@ -12,6 +12,7 @@ const _MUTATION_EDIT_MESSAGE = "EDIT_MESSAGE";
 const _MUTATION_RESOLVE_MESSAGE = "RESOLVE_MESSAGE";
 const _MUTATION_DELETE_MESSAGE = "DELETE_MESSAGE";
 const _MUTATION_ADD_MESSAGE = "ADD_MESSAGE";
+const _MUTATION_TOGGLE_PINNED_THREAD = "TOGGLE_PINNED_THREAD";
 
 export const ACTION_GET_THREADS = "GET_THREADS";
 export const ACTION_GET_MESSAGES = "GET_MESSAGES";
@@ -22,6 +23,7 @@ export const ACTION_EDIT_MESSAGE = "EDIT_MESSAGE";
 export const ACTION_RESOLVE_MESSAGE = "RESOLVE_MESSAGE";
 export const ACTION_DELETE_MESSAGE = "DELETE_MESSAGE";
 export const ACTION_CREATE_MESSAGE = "CREATE_MESSAGE";
+export const ACTION_TOGGLE_PINNED_THREAD = "TOGGLE_PINNED_THREAD";
 
 function parseCreatedDates(arr) {
   return arr.map(obj => {
@@ -112,6 +114,17 @@ export default {
     [_MUTATION_ADD_MESSAGE](state, { threadId, message }) {
       if (threadId in state.messages) {
         state.messages[threadId] = [...state.messages[threadId], message];
+      }
+    },
+    [_MUTATION_TOGGLE_PINNED_THREAD](state, threadId) {
+      if (state.threads !== null) {
+        const index = state.threads.findIndex(thread => thread.id === threadId);
+        if (index !== -1) {
+          state.threads[index].pinned = !state.threads[index].pinned;
+          const threads = [...state.threads];
+          sortThreads(threads);
+          state.threads = threads;
+        }
       }
     }
   },
@@ -252,6 +265,20 @@ export default {
           commit(_MUTATION_ADD_MESSAGE, { threadId, message: res });
           return showMessagePostedNotification(dispatch)();
         })
+        .catch(showUnexpectedErrorNotification(dispatch));
+    },
+    [ACTION_TOGGLE_PINNED_THREAD]({ commit, dispatch }, thread) {
+      const pinned = thread.pinned;
+      commit(_MUTATION_TOGGLE_PINNED_THREAD, thread.id);
+      return request(
+        "PATCH",
+        `/api/forum/thread/${encodeURIComponent(thread.id)}`,
+        {
+          title: thread.title,
+          pinned: !pinned
+        }
+      )
+        .then(showSuccess(`Thread ${pinned ? "un" : ""}pinned!`)(dispatch))
         .catch(showUnexpectedErrorNotification(dispatch));
     }
   }
