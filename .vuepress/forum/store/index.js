@@ -24,7 +24,11 @@ import threads, {
   canEdit
 } from "./threads";
 
-import user, { MODULE_USER, MUTATION_SET_USER } from "./user";
+import user, {
+  MODULE_USER,
+  MUTATION_SET_USER,
+  ACTION_REGISTER_USER
+} from "./user";
 
 export {
   MODULE_NOTIFICATIONS,
@@ -46,7 +50,8 @@ export {
   ACTION_CREATE_MESSAGE,
   canEdit,
   MODULE_USER,
-  MUTATION_SET_USER
+  MUTATION_SET_USER,
+  ACTION_REGISTER_USER
 };
 
 export default new Vuex.Store({

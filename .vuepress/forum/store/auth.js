@@ -5,7 +5,6 @@ const webAuth = new WebAuth({
   domain: "robotics.eu.auth0.com",
   redirectUri: `${window.location.origin}/forum/`,
   clientID: "POA0CxRyGzbOhE7dOtjsDyNsOwNqC14l",
-  audience: "https://server.hr-robocon.org",
   responseType: "id_token", //token
   scope: "openid profile email"
 });
@@ -25,7 +24,7 @@ class AuthService extends EventEmitter {
     if (window.location.hash.includes("_token=")) {
       this._parseHash().then(() => (window.location.hash = ""));
     } else {
-      this._renewTokens().catch(err => {
+      this.renewTokens().catch(err => {
         console.error(err);
         this.emit("user", null);
       });
@@ -46,10 +45,18 @@ class AuthService extends EventEmitter {
         resolve(this.idToken);
       } else {
         // console.log("token invalid");
-        this._renewTokens().then(authResult => {
+        this.renewTokens().then(authResult => {
           resolve(authResult.idToken);
         }, reject);
       }
+    });
+  }
+
+  renewTokens() {
+    return new Promise((resolve, reject) => {
+      webAuth.checkSession({}, (err, authResult) => {
+        err ? reject(err) : resolve(this._handleAuthResult(authResult));
+      });
     });
   }
 
@@ -62,14 +69,6 @@ class AuthService extends EventEmitter {
   _parseHash() {
     return new Promise((resolve, reject) => {
       webAuth.parseHash({}, (err, authResult) => {
-        err ? reject(err) : resolve(this._handleAuthResult(authResult));
-      });
-    });
-  }
-
-  _renewTokens() {
-    return new Promise((resolve, reject) => {
-      webAuth.checkSession({}, (err, authResult) => {
         err ? reject(err) : resolve(this._handleAuthResult(authResult));
       });
     });

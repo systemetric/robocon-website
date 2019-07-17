@@ -10,13 +10,17 @@ export function getAuthorizationHeaders() {
     }));
 }
 
-export async function request(method, route, body) {
+export async function request(method, route, body, allowError = false) {
   const options = { method };
   if (body) options.body = JSON.stringify(body);
-  if (method !== "GET") options.headers = await getAuthorizationHeaders();
+  if (method !== "GET" || route === "/api/whoami") {
+    options.headers = await getAuthorizationHeaders();
+  }
   console.log("Fetch:", API_BASE_URL + route, options);
   return fetch(API_BASE_URL + route, options).then(res => {
-    if (!res.ok) throw new Error("non 2** response code received");
+    if (!res.ok && !allowError) {
+      throw new Error("non 2** response code received");
+    }
     return res;
   });
 }

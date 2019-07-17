@@ -1,5 +1,5 @@
 <template>
-  <div class="new-thread">
+  <RequiresRegistration class="new-thread">
     <input type="text" placeholder="Title" v-model="title" />
     <QuillEditor ref="editor">
       <template slot="bottom-buttons">
@@ -12,10 +12,11 @@
         >Post Message</a>
       </template>
     </QuillEditor>
-  </div>
+  </RequiresRegistration>
 </template>
 
 <script>
+import RequiresRegistration from "./components/RequiresRegistration";
 import QuillEditor from "./components/editor/QuillEditor";
 import {
   ACTION_CREATE_THREAD,
@@ -28,7 +29,7 @@ import nprogress from "nprogress";
 
 export default {
   name: "new-thread",
-  components: { QuillEditor },
+  components: { RequiresRegistration, QuillEditor },
   data() {
     return {
       title: "",

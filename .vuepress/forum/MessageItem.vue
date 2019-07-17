@@ -2,20 +2,18 @@
   <div class="message" :class="{resolved: resolved}">
     <ProfileImage :user="creating ? userAsAuthor : message.author" :large="true" />
     <div class="message-details">
-      <QuillEditor
-        v-if="editingContent || creating"
-        ref="editor"
-        :value="creating ? '': message.content"
-      >
-        <template slot="bottom-buttons">
-          <a v-if="!creating" class="button" @click="editingContent = false">Cancel</a>
-          <a
-            class="button primary"
-            :class="{disabled: posting}"
-            @click="saveMessage"
-          >{{creating ? "Post Response" : "Save"}}</a>
-        </template>
-      </QuillEditor>
+      <RequiresRegistration v-if="editingContent || creating" action="reply to this thread">
+        <QuillEditor ref="editor" :value="creating ? '': message.content">
+          <template slot="bottom-buttons">
+            <a v-if="!creating" class="button" @click="editingContent = false">Cancel</a>
+            <a
+              class="button primary"
+              :class="{disabled: posting}"
+              @click="saveMessage"
+            >{{creating ? "Post Response" : "Save"}}</a>
+          </template>
+        </QuillEditor>
+      </RequiresRegistration>
       <template v-else>
         <div class="message-content" v-html="message.content"></div>
         <div class="message-meta">
@@ -48,6 +46,7 @@
 
 <script>
 import ProfileImage from "./components/ProfileImage";
+import RequiresRegistration from "./components/RequiresRegistration";
 import QuillEditor from "./components/editor/QuillEditor";
 import { EditIcon, CheckCircleIcon, Trash2Icon } from "vue-feather-icons";
 import { mapState, mapGetters, mapActions } from "vuex";
@@ -67,6 +66,7 @@ export default {
   name: "message",
   components: {
     ProfileImage,
+    RequiresRegistration,
     QuillEditor,
     EditIcon,
     CheckCircleIcon,
@@ -208,7 +208,7 @@ div.message
       > .message-button
         min-width: 24px
         min-height: 24px
-        display: flex
+        display: none
         align-items: center
       > *:not(:last-child)
         margin-right: 8px
@@ -217,4 +217,7 @@ div.message
       background-color: #d8efff
     .resolve-button
       stroke: $primary-color
+  &:hover
+    .message-details .message-meta > .message-button
+      display: flex
 </style>
