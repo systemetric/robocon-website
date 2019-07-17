@@ -41,7 +41,7 @@ function sortThreads(threads) {
 }
 
 export function canEdit(object, $store) {
-  const user = $store.state.user.user;
+  const user = $store.getters["user/userAsAuthor"];
   const isOwner = user && object.author.id === user.id;
   const isModerator = $store.getters["user/isModerator"];
   return isOwner || isModerator;
@@ -70,7 +70,10 @@ export default {
       };
     },
     [_MUTATION_ADD_THREAD_WITH_MESSAGES](state, thread) {
-      state.messages[thread.id] = thread.messages;
+      state.messages = {
+        ...state.messages,
+        [thread.id]: thread.messages
+      };
       const threadCopy = { ...thread };
       delete threadCopy.messages;
       if (state.threads !== null) {

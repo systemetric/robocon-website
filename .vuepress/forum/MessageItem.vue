@@ -25,7 +25,7 @@
             <EditIcon size="24" class="feather-button" @click="editingContent = true" />
           </div>
           <div
-            v-if="canEdit"
+            v-if="canEditThread"
             class="message-button"
             :title="`Mark as ${message.resolved ? 'Unresolved' : 'Resolved'}`"
           >
@@ -92,6 +92,7 @@ export default {
     };
   },
   computed: {
+    ...mapState(MODULE_THREADS, ["messages"]),
     ...mapState(MODULE_USER, ["user"]),
     ...mapGetters(MODULE_USER, ["isModerator", "userAsAuthor"]),
     authorName() {
@@ -101,6 +102,10 @@ export default {
     },
     canEdit() {
       return canEdit(this.message, this.$store);
+    },
+    canEditThread() {
+      const rootMessage = this.messages[this.threadId][0];
+      return canEdit(rootMessage, this.$store);
     },
     resolved() {
       return this.message && this.message.resolved;

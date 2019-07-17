@@ -19,6 +19,10 @@
             <b>{{ user.nickname }}</b>!
             <i v-if="isModerator" class="light">(Moderator)</i>
           </span>
+          <template v-if="development">
+            <hr />
+            <span class="user-id">{{ user.sub }}</span>
+          </template>
           <hr />
           <a href @click.prevent="$emit('logout')">Logout</a>
         </Dropdown>
@@ -41,7 +45,10 @@ export default {
   components: { Dropdown, ProfileImage, Loader },
   computed: {
     ...mapState(MODULE_USER, ["user", "userLoaded"]),
-    ...mapGetters(MODULE_USER, ["isModerator"])
+    ...mapGetters(MODULE_USER, ["isModerator"]),
+    development() {
+      return process.env.NODE_ENV === "development";
+    }
   }
 };
 </script>
@@ -81,6 +88,10 @@ export default {
       top: $profile-image-size-small
       right: 0
       display: none
+      .user-id
+        text-overflow: ellipsis
+        white-space: nowrap
+        overflow: hidden
     &:hover .forum-dropdown
       display: block
   > *:not(:last-child)
