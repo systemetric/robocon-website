@@ -13,7 +13,7 @@ export function getAuthorizationHeaders() {
 export async function request(method, route, body, allowError = false) {
   const options = { method };
   if (body) options.body = JSON.stringify(body);
-  if (method !== "GET" || route === "/api/whoami") {
+  if (method !== "GET") {
     options.headers = await getAuthorizationHeaders();
   }
   console.log("Fetch:", API_BASE_URL + route, options);
