@@ -19,8 +19,15 @@
       @mouseleave="unfocus"
     >
       <template v-for="(s, i) in suggestions">
-        <hr v-if="s.firstForumSuggestion" key="forum-separator" />
-        <p v-if="s.firstForumSuggestion" key="forum-separator-header" class="forum-separator-header">Forum Threads</p>
+        <hr
+          v-if="s.firstForumSuggestion && markdownSuggestions && markdownSuggestions.length"
+          key="forum-separator"
+        />
+        <p
+          v-if="s.firstForumSuggestion"
+          key="forum-separator-header"
+          class="forum-separator-header"
+        >Forum Threads</p>
         <li
           class="suggestion"
           :key="s.path"
@@ -35,7 +42,7 @@
         </li>
       </template>
       <li v-if="searchingForum" class="forum-suggestion-loader">
-        <hr v-if="suggestions && suggestions.length" />
+        <hr v-if="markdownSuggestions && markdownSuggestions.length" />
         <div>
           <Loader />
           <p>Searching forum posts...</p>
@@ -71,7 +78,7 @@ export default {
         ((this.suggestions && this.suggestions.length) || this.searchingForum)
       );
     },
-    suggestions() {
+    markdownSuggestions() {
       const query = this.query.trim().toLowerCase();
       if (!query) {
         return;
@@ -107,8 +114,12 @@ export default {
           }
         }
       }
-
-      return [...res, ...this.forumSuggestions];
+      return res;
+    },
+    suggestions() {
+      const markdownSuggestions = this.markdownSuggestions;
+      if (!markdownSuggestions) return;
+      return [...markdownSuggestions, ...this.forumSuggestions];
     },
     // make suggestions align right when there are not enough items
     alignRight() {
@@ -171,12 +182,10 @@ export default {
       } else {
         this.searchingForum = true;
         this.forumSearchTimeoutId = setTimeout(() => {
-          console.log(query);
           request("GET", `/api/forum/thread/?q=${encodeURIComponent(query)}`)
             .then(res => res.json())
             .then(res => {
               if (query === this.query) {
-                console.log(res);
                 this.forumSuggestions = res.map((thread, i) => ({
                   title: thread.title,
                   path: `/forum/#thread=${thread.id}`,
