@@ -184,6 +184,7 @@ div.message
     margin-right: 1rem
   .message-details
     flex-grow: 1
+    min-width: 0
     .message-content
       padding: 1rem
       background-color: #eeeeee
@@ -196,6 +197,8 @@ div.message
           margin-bottom: 0.5rem
       h1, h2, h3
         padding: 0
+      img
+        width: 100%
       code
         background-color: rgba(27, 31, 35, 0.05)
         border-radius: 3px

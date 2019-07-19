@@ -11,11 +11,10 @@
 import hljs from "highlight.js/lib/highlight";
 import javascript from "highlight.js/lib/languages/javascript";
 import python from "highlight.js/lib/languages/python";
+import xml from "highlight.js/lib/languages/xml";
 hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("python", python);
-hljs.configure({
-  languages: ["javascript", "python"]
-});
+hljs.registerLanguage("xml", xml);
 
 export default {
   name: "quill-editor",
@@ -37,18 +36,31 @@ export default {
               return hljs.highlightAuto(text).value;
             }
           },
-          toolbar: [
-            [{ header: [1, 2, 3, false] }],
-            ["bold", "italic", "underline"],
-            [
-              { color: [] },
-              "link",
-              "code",
-              { script: "sub" },
-              { script: "super" }
+          toolbar: {
+            container: [
+              [{ header: [1, 2, 3, false] }],
+              ["bold", "italic", "underline"],
+              [
+                { color: [] },
+                "link",
+                "code",
+                { script: "sub" },
+                { script: "super" }
+              ],
+              ["image", "video"],
+              [
+                { list: "ordered" },
+                { list: "bullet" },
+                "blockquote",
+                "code-block"
+              ]
             ],
-            ["blockquote", "code-block"]
-          ]
+            handlers: {
+              image: () => {
+                this.editor.theme.tooltip.edit("image");
+              }
+            }
+          }
         }
       });
       this.editor.root.innerHTML = this.value;
@@ -95,6 +107,8 @@ export default {
     &.ql-blank::before
       margin-top: 3px
       font-style: normal
+    ol, ul
+      padding-left: 0
   .ql-container blockquote
     font-size: 13px
   .ql-container
@@ -107,4 +121,6 @@ export default {
       margin-top: 1rem
       &:not(:last-child)
         margin-right: 1rem
+  .ql-snow .ql-tooltip[data-mode=image]::before
+    content: "Enter image:"
 </style>

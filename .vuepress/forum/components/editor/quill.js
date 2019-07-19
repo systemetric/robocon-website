@@ -3,7 +3,7 @@ import Quill from "quill/core";
 import Toolbar from "quill/modules/toolbar";
 import Syntax, { CodeBlock } from "quill/modules/syntax";
 
-import Snow from "quill/themes/snow";
+import SnowTheme from "./theme";
 
 import Header from "quill/formats/header";
 
@@ -15,13 +15,17 @@ import { ColorStyle } from "quill/formats/color";
 import Link from "quill/formats/link";
 import Script from "quill/formats/script";
 
+import Image from "quill/formats/image";
+import Video from "quill/formats/video";
+
+import List, { ListItem } from "quill/formats/list";
 import Blockquote from "quill/formats/blockquote";
 import { Code } from "quill/formats/code";
 
 Quill.register({
   "modules/toolbar": Toolbar,
   "modules/syntax": Syntax,
-  "themes/snow": Snow,
+  "themes/snow": SnowTheme,
   "formats/header": Header,
   "formats/bold": Bold,
   "formats/italic": Italic,
@@ -29,6 +33,10 @@ Quill.register({
   "formats/color": ColorStyle,
   "formats/link": Link,
   "formats/script": Script,
+  "formats/image": Image,
+  "formats/video": Video,
+  "formats/list": List,
+  "formats/list-item": ListItem,
   "formats/blockquote": Blockquote,
   "formats/code-block": CodeBlock,
   "formats/code": Code

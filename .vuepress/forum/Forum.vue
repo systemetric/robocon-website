@@ -74,6 +74,12 @@ export default {
       return this.selectedRoute.path === "thread" && this.selectedRoute.params
         ? this.messages[this.selectedRoute.params[0]]
         : undefined;
+    },
+    isIE() {
+      return (
+        "-ms-scroll-limit" in document.documentElement.style &&
+        "-ms-ime-align" in document.documentElement.style
+      );
     }
   },
   mounted() {
@@ -86,8 +92,17 @@ export default {
       immediate: true,
       handler: this.onRouteChanged
     });
+
+    // Fix route hash detection in IE11
+    console.log("IE:", this.isIE);
+    if (this.isIE) {
+      window.addEventListener("hashchange", this.ieOnRouteChanged, false);
+    }
   },
   beforeDestroy() {
+    if (this.isIE) {
+      window.removeEventListener("hashchange", this.ieOnRouteChanged);
+    }
     import("./store/auth").then(auth =>
       auth.service.removeListener("user", this.onUserChanged)
     );
@@ -128,6 +143,12 @@ export default {
         console.warn("Unknown route:", route);
         this.selectedRoute = route;
         //TODO: 404
+      }
+    },
+    ieOnRouteChanged(e) {
+      const currentPath = window.location.hash;
+      if (this.$route.hash !== currentPath) {
+        this.$router.push(currentPath);
       }
     }
   },

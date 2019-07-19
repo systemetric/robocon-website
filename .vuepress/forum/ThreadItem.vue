@@ -115,7 +115,7 @@ a.thread
   flex-direction: row
   align-items: flex-start
   margin-top: 1rem
-  color: unset
+  color: #2c3e50
   font-weight: unset
   text-decoration: none
   .profile-image

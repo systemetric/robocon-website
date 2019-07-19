@@ -95,14 +95,13 @@ function makeGallerySidebar() {
 module.exports = {
   title: "RoboCon",
   head: [
-    // TODO: check if this really needs to be included (required for IE?)
-    // [
-    //   "script",
-    //   {
-    //     src:
-    //       "https://polyfill.io/v3/polyfill.min.js?flags=gated&features=default%2CArray.from"
-    //   }
-    // ],
+    [
+      "script",
+      {
+        src:
+          "https://polyfill.io/v3/polyfill.min.js?features=default%2CNodeList.prototype.forEach%2Cfetch"
+      }
+    ],
     ["script", {}, "var global = global || window;var Buffer = Buffer || [];"]
   ],
   themeConfig: {
@@ -128,11 +127,28 @@ module.exports = {
     const dev = process.env.NODE_ENV !== "production";
 
     if (!isServer) {
+      // Modify the default JS rule
+      const jsRule = config.module.rules.find(rule =>
+        rule.test.toString().includes("js")
+      );
+      const originalJsExclude = jsRule.exclude[0];
+      jsRule.exclude[0] = filePath => {
+        // Make sure quill is transpiled so that ES classes are transpiled both for IE and to allow extended them
+        if (/node_modules(\/|\\)quill(\/|\\)/.test(filePath)) {
+          return false;
+        }
+        return originalJsExclude(filePath);
+      };
+      const jsBabelLoader = jsRule.use.find(
+        loader => loader.loader === "babel-loader"
+      );
+      const vueBabelPresetAppPath = jsBabelLoader.options.presets[0];
+
       // Quill requires its SVG icons to be loaded inline, not via a file,
       // so it needs to be excluded from the normal SVG rule and a new rule
       // including it needs to be added
       config.module.rules
-        .filter(rule => /svg/.test(rule.test.toString()))
+        .filter(rule => rule.test.toString().includes("svg"))
         .forEach(rule => (rule.exclude = /quill/));
       // Make sure this rule is first in the list
       config.module.rules.unshift({
@@ -156,6 +172,7 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
+            presets: [[vueBabelPresetAppPath, { jsx: false }]],
             plugins: [["@babel/plugin-transform-react-jsx", { pragma: "h" }]]
           }
         }
