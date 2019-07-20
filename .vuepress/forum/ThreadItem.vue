@@ -8,6 +8,7 @@
       </div>
       <h3 v-else>
         <span class="thread-title">{{ thread.title }}</span>
+        <!-- <span v-for="tag in thread.tags" :key="tag" class="tag">{{tag}}</span> -->
         <span v-if="canEdit" title="Edit Title">
           <EditIcon size="24" @click.prevent="editTitle" class="feather-button" />
         </span>
@@ -131,10 +132,18 @@ a.thread
         margin-left: 0.5rem
     h3
       margin: 0 0 0.4rem 0
-      > span.thread-title, > span svg,
+      > span.thread-title, > span.tag, > span svg,
         vertical-align: middle
       span:first-child
         margin-right: 4px
+      > span.tag
+        background-color: #eeeeee
+        margin-right: 6px
+        font-size: 0.9rem
+        font-weight: normal
+        padding: 0.2rem 0.5rem
+        display: inline-block
+        border-radius: 14px
       .feather
         display: none
     p
