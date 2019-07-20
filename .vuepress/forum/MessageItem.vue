@@ -198,7 +198,7 @@ div.message
       h1, h2, h3
         padding: 0
       img
-        width: 100%
+        max-width: 100%
       code
         background-color: rgba(27, 31, 35, 0.05)
         border-radius: 3px

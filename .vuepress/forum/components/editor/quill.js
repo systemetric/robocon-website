@@ -16,8 +16,6 @@ import Link from "quill/formats/link";
 import Script from "quill/formats/script";
 
 import Image from "quill/formats/image";
-import Video from "quill/formats/video";
-
 import List, { ListItem } from "quill/formats/list";
 import Blockquote from "quill/formats/blockquote";
 import { Code } from "quill/formats/code";
@@ -34,7 +32,6 @@ Quill.register({
   "formats/link": Link,
   "formats/script": Script,
   "formats/image": Image,
-  "formats/video": Video,
   "formats/list": List,
   "formats/list-item": ListItem,
   "formats/blockquote": Blockquote,

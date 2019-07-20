@@ -47,8 +47,8 @@ export default {
                 { script: "sub" },
                 { script: "super" }
               ],
-              ["image", "video"],
               [
+                "image",
                 { list: "ordered" },
                 { list: "bullet" },
                 "blockquote",
