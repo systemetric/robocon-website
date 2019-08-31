@@ -9,6 +9,8 @@ position: 4
 
 Our sponsors promote and inspire the technological skills and abilities of budding engineers. If you become a sponsor, you'll be providing an opportunity to allow a whole range of people to get involved with STEM. If you would be interested in sponsoring the team, please [contact us](/about/contact.html), more infomation for sponsors can be found [here](/about/for-sponsors.html)
 
+## Sponsors from 2019
+
 Our principal sponsor for RoboCon 2019 is **Citrix**.
 
 ![Sponsors](/images/sponsors.png)
