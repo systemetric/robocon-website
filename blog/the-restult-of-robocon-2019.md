@@ -1,5 +1,5 @@
 ---
-title: The Restult of RoboCon 2019!
+title: The Result of RoboCon 2019!
 image: /images/img_5774.jpg
 date: '2019-06-19 09:29:30'
 excerpt: >-
