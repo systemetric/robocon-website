@@ -12,7 +12,11 @@ footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 
 <p><strong>Registration for Robocon 2020 is now open!</strong></p>
 
-<div style="width: 250px; position: center; border-style: solid; "><a href="/signup/">Signup for RoboCon 2020 now!</a></div>
+<form action="https://www.surveymonkey.co.uk/r/2BVQKFF">
+
+ <input type="submit" style="background-color: #0094FF; border: none;color: white; padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;border-radius: 4px;font-weight: bold; " value="Sign up for Robocon 2020 now!" />
+
+</form>
 
 </div>
 
