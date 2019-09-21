@@ -5,9 +5,18 @@ heroText: RoboCon 2019
 tagline: Don't Walk. Do The Robot!
 actionText: Learn More
 actionLink: /about/
-titleText: I want to be...
+titleText: RoboCon
 footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 ---
+<div style="text-align:center; border-style: solid; padding-bottom: 25px; border-width:1px; border-color: grey; border-radius: 10px;">
+
+<p><strong>Registration for Robocon 2020 is now open!</strong></p>
+
+<div style="width: 250px; position: center; border-style: solid; "><a href="/signup/">Signup for RoboCon 2020 now!</a></div>
+
+</div>
+
+<h1>I want to be...</h1>
 
 <div class="features">
   <div class="feature">
