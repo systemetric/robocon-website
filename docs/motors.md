@@ -13,8 +13,6 @@ When you control motors, you can choose how much power you want to give them. Th
 Avoid immediately starting your motors at 100%. This may cause them to stall. Instead, start at a lower value such as 20% and work your way up. 
 :::
 
-Due to the motors we give out at launch being rated at 3V at a maximum, the robot object automatically clamps the power to 25%. If you are using your own motors you can oveveride the clamp to the rated voltage of the motors. To do this see **Initialising the Robot** page
-
 If you want to spin your motors in reverse, just stick a negative sign in front of your percentage.
 
 ## Python
