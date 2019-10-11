@@ -5,7 +5,7 @@ position: 4
 ---
 # USB Tricks
 
-![](/images/usbstick.jpg)
+![USB Stick](/images/usbstick.jpg)
 
 **INFO** : 
 
