@@ -5,11 +5,11 @@ position: 4
 ---
 # USB Tricks
 
-**INFO** : The brain only checks for the presence of USB sticks at boot, only plug and unplug USB sticks when the brain is off (front panel blue light off).
+**INFO** : 
 
-**INFO** : Code uploaded using the USB stick will not appear in the editor.
-
-**INFO** : To run the code uploaded from the USB stick use the Black "Start Button" or http://robot.go/run. The code can only be run once per boot.
+* The brain only checks for the presence of USB sticks at boot, only plug and unplug USB sticks when the brain is off (front panel blue light off).
+* Code uploaded using the USB stick will not appear in the editor.
+* To run the code uploaded from the USB stick use the Black "Start Button" or http://robot.go/run. The code can only be run once per boot.
 
 ## **Running your code from a USB :**
 
