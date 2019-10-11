@@ -5,6 +5,8 @@ position: 4
 ---
 # USB Tricks
 
+![](/images/usbstick.webp)
+
 **INFO** : 
 
 * The brain only checks for the presence of USB sticks at boot, only plug and unplug USB sticks when the brain is off (front panel blue light off).
