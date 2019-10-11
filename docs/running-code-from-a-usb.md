@@ -1,9 +1,9 @@
 ---
-title: Running code from a USB
+title: USB Tricks
 category: Tools
 position: 4
 ---
-# Running code from a USB
+# USB Tricks
 
 If you're unable to access Shepherd or the web editors you can copy robot code from a USB stick plugged into the robot. This is also useful is have you different programs you want to run in the arena that do different things.
 
