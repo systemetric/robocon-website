@@ -25,11 +25,9 @@ When started, using the start button the robot will default to running the last 
 :::warning  
 
 * During the competition we need to have unrestricted access to at least one USB port, if you want to use a USB stick during the competition it must leave enough space around at least one port to insert our low profile arena stick.
-* Code copied from USB sticks is not listed, sufficiently broken code may crash not just the user code, but also the web interface preventing the robot from reaching "Blinky". See [troubleshooting](https://hr-robocon.org/docs/troubleshooting.html#troubleshooting) for details about what the LEDs mean. It is highly recommended for users to export working code from the editor to the USB stick rather than editing code directly. See [troubleshooting]((https://hr-robocon.org/docs/troubleshooting.html#the-brainbox-appears-to-power-up-but-i-can-t-connect-to-the-website-and-the-blue-led-lights-but-never-starts-flashing).) for how to recover a robot which does not boot to Blinky .
+* Code copied from USB sticks is not listed, sufficiently broken code may crash not just the user code, but also the web interface preventing the robot from reaching "Blinky". See [troubleshooting](https://hr-robocon.org/docs/troubleshooting.html#troubleshooting) for details about what the LEDs mean. It is highly recommended for users to export working code from the editor to the USB stick rather than editing code directly. See [troubleshooting]((https://hr-robocon.org/docs/troubleshooting.html#the-brainbox-appears-to-power-up-but-i-can-t-connect-to-the-website-and-the-blue-led-lights-but-never-starts-flashing).) for how to recover a robot which does not boot to Blinky.
 
 :::
-
-
 
 **INFO** : Code uploaded using the USB stick will not appear in the editor.
 
