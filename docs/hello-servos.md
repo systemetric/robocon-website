@@ -17,10 +17,13 @@ import time
 
 R = robot.Robot()
 
+# Input range -100 to 100
 while True:
     R.servos[1] = -50
     
     time.sleep(2)
     
     R.servos[1] = 50
+    
+    time.sleep(2)
 ```
