@@ -21,6 +21,7 @@ WARNING : Be careful when reusing USB sticks to avoid accidentally running code 
 
 INFO : The log files are also collected during system shutdown leading to worrying messages like
 
+```py
 Exception in thread Thread-2:
 
 Traceback (most recent call last):
@@ -49,4 +50,6 @@ IOError: \[Errno 121] Remote I/O error
 
 
 
-\    These can safely be ignored unless you also see them on the web interface
+\
+```
+These can safely be ignored unless you also see them on the web interface
