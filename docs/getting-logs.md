@@ -3,17 +3,13 @@ title: Getting Logs
 category: Tools
 position: 3
 ---
+# Getting Logs
+
 When running your robot code you can see the logs from the robot in the editor. Sometimes its useful to be able to view the logs later to analyse what happened.
 
-
-
-1   Insert a USB stick in the robot before turning it on.
-
-2   The log file will be automatically written to the USB stick as "logs.txt"
-
-3   Remember to fully power down the robot before removing the USB stick
-
-
+1. Insert a USB stick in the robot before turning it on.
+2. The log file will be automatically written to the USB stick as "logs.txt"
+3. Remember to fully power down the robot before removing the USB stick   
 
 :::tip
 INFO : Logs are collected whatever way the code is run, but only the most recent logs are preserved
@@ -58,4 +54,5 @@ IOError: \[Errno 121] Remote I/O error
 
 \
 ```
+
 These can safely be ignored unless you also see them on the web interface
