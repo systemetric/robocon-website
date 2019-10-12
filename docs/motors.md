@@ -27,14 +27,14 @@ To control the second motor instead, replace `motors[1]` with `motors[2]`.
 
 To stop both motors:
 
-```python
+```py
 R.motors[1] = 0
 R.motors[2] = 0
 ```
 
 Here's a more complete example:
 
-```python
+```py
 import robot
 
 R = robot.Robot()
