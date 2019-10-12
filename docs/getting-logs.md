@@ -15,11 +15,17 @@ When running your robot code you can see the logs from the robot in the editor. 
 
 
 
+:::tip
 INFO : Logs are collected whatever way the code is run, but only the most recent logs are preserved
+:::
 
+:::warning
 WARNING : Be careful when reusing USB sticks to avoid accidentally running code from the USB Stick!
+:::
 
+:::tip
 INFO : The log files are also collected during system shutdown leading to worrying messages like
+:::
 
 ```py
 Exception in thread Thread-2:
