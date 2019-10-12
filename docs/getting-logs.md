@@ -11,7 +11,7 @@ When running your robot code you can see the logs from the robot in the editor. 
 2. The log file will be automatically written to the USB stick as "logs.txt"
 3. Remember to fully power down the robot before removing the USB stick   
 
-:::info
+:::tip
 INFO : Logs are collected whatever way the code is run, but only the most recent logs are preserved
 :::
 
