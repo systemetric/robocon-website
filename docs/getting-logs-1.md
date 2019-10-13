@@ -3,6 +3,8 @@ title: Getting Logs
 category: Tools
 position: 5
 ---
+![](/images/binarycode.jpg)
+
 # Getting Logs
 
 When running your robot code you can see the logs from the robot in the editor. Sometimes it's useful to be able to view the logs later to analyse what happened.
@@ -17,9 +19,7 @@ When running your robot code you can see the logs from the robot in the editor. 
 2. The log file will be automatically written to the USB stick as "logs.txt"
 3. Remember to fully power down the robot before removing the USB stick
 
-
-
-INFO : 
+**INFO** **:** 
 
 * Logs are collected whatever way the code is run, but only the most recent logs are preserved
 * The log files are also collected during system shutdown leading to worrying messages like:
