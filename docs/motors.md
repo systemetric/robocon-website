@@ -15,6 +15,8 @@ Avoid immediately starting your motors at 100%. This may cause them to stall. In
 
 If you want to spin your motors in reverse, just stick a negative sign in front of your percentage.
 
+
+
 ## Python
 
 You can control motors using the `motors` property of the `Robot` object. To set the power of the first motor to 20% use:
@@ -53,3 +55,15 @@ R.motors[2] = 0
 ## Blockly
 
 Blocks for controlling motors can be found in the **Movement** section.
+
+## Using larger motors than supplied
+
+The Brainbox outputs 12v pulses and by default is restricted to 25% for safe use with the 6v motors, if you wish to use other motors you may wish to change the maximum duty cycle, for example 12v motors may accept 100% duty cycles.
+
+You can use any motors you like with the brain box as long as the total current requested does not exceed 20A.
+
+The maximum motor current is a feature of the robot and can only be set when first initialising the robot object:
+
+```
+R = robot.Robot(motor_max=100)
+```
