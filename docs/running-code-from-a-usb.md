@@ -8,11 +8,11 @@ position: 4
 ![USB Stick](/images/usbstick.jpg)
 
 :::tip
-**INFO** : The brain only checks for the presence of USB sticks at boot, only plug and unplug USB sticks when the brain is off (front panel blue light off).
+The brain only checks for the presence of USB sticks at boot, only plug and unplug USB sticks when the brain is off (front panel blue light off).
 :::
 
 :::warning
-**WARNING** : During the competition we need to have unrestricted access to at least one USB port, if you want to use a USB stick during the competition it must leave enough space around at least one port to insert our low profile arena stick.
+During the competition we need to have unrestricted access to at least one USB port, if you want to use a USB stick during the competition it must leave enough space around at least one port to insert our low profile arena stick.
 :::
 
 ## Running your code from a USB :
