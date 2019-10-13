@@ -15,7 +15,7 @@ The brain only checks for the presence of USB sticks at boot, only plug and unpl
 During the competition we need to have unrestricted access to at least one USB port, if you want to use a USB stick during the competition it must leave enough space around at least one port to insert our low profile arena stick.
 :::
 
-# Running your code from a USB :
+## Running your code from a USB :
 
 When started, using the start button the robot will default to running the last piece of code written in the editor. In some cases at the competition it can be useful to be able to run code from a USB stick.
 
@@ -32,7 +32,7 @@ When started, using the start button the robot will default to running the last 
 :::
 
 
-# Getting Logs
+## Getting Logs
 
 When running your robot code you can see the logs from the robot in the editor. Sometimes it's useful to be able to view the logs later to analyse what happened.
 
@@ -72,7 +72,7 @@ IOError: \[Errno 121] Remote I/O error
 
  These can safely be ignored unless you also see them on the web interface.
 
-# Collecting iamges and raw analysis
+## Collecting iamges and raw analysis
 
 Every time the robot takes a picture it is updated on the web interface, during development it is occasionally useful to be able to also keep a log of pictures that have been analysed to check camera focus, motion blur etc.
 
@@ -82,7 +82,7 @@ Every time the robot takes a picture it is updated on the web interface, during 
 4. Remember to fully shut down the robot before removing the USB stick
 WARNING: Collecting all images may slow down the processing time from your robot - Use with care!
 
-# Updating your team image
+## Updating your team image
 
 When the robot boots, it loads a default image which is displayed until the robot takes a picture, in the arena these images are displayed on an overhead projector. You can change the default image.
 1. Save your Image as 440x330 pixels in jpeg format onto the USB stick as "team_logo.jpg"
