@@ -11,7 +11,7 @@ position: 4
 The brain only checks for the presence of USB sticks at boot, only plug and unplug USB sticks when the brain is off (front panel blue light off).
 :::
 
-## Running your code from a USB :
+## Running your code from a USB
 
 When started, using the start button the robot will default to running the last piece of code written in the editor. In some cases at the competition it can be useful to be able to run code from a USB stick.
 
