@@ -9,6 +9,7 @@ Computer Vision allows your robots to understand their environment. For the comp
 
 When you tell you robot to `see`, it will give you a list of all the markers it can see. The objects it returns will give you information about the type of the marker, the distance/angle to the marker along with other assorted information.
 
+
 ## Python
 
 To look for markers call `see()`:
@@ -54,7 +55,7 @@ You must use one of the following resolutions:
 * `(1920, 1088)`
 * `(1920, 1440)`
 
-:::tip
+:::warning
 Using a higher resolution will increase the amount of time it takes to process the image, but you may be able to see more. Using a smaller resolution will be faster, but markers further away may stop being visible.
 :::
 
@@ -141,7 +142,6 @@ It has the following attributes:
 :   The timestamp at which the image was taken (a float).
 
 ### `MarkerInfo`
-
 - - -
 
 The `MarkerInfo` object contains information about a marker.
@@ -168,6 +168,7 @@ It has the following attributes:
 
 `offset`
 :   The offset of the numeric code of the marker from the lowest numbered marker of its type.
+   
 
 `size`
 :   The size of the marker in metres.
@@ -194,6 +195,7 @@ These are accessed through the following attributes:
 :   The [polar coordinates](https://en.wikipedia.org/wiki/Polar_coordinate_system) of the point in 3D space.<br />
 This has three attributes:
 
+
 `length`
 :   The distance to the point.
 
@@ -208,14 +210,15 @@ This has three attributes:
 For example, the following code displays the polar coordinate of a `Point` object 
 
 ```python
+
     print "length", p.polar.length
     print "rot_x", p.polar.rot_x
     print "rot_y", p.polar.rot_y
+
 ```
 
 ### `Orientation`
-
-- - -
+--------
 
 An `Orientation` object describes the orientation of a marker.  It has three attributes:
 
@@ -233,6 +236,7 @@ Turning a marker clockwise (as viewed from above) increases the value of
 `rot_y`, while turning it anticlockwise decreases it. A value of 0 means
 that the marker is perpendicular to the line of sight of the camera.
 
+
 `rot_z`
 :   Rotation of the marker about the z-axis.
 
@@ -240,7 +244,7 @@ Turning a marker anticlockwise (as viewed from the camera) increases the
 value of `rot_z`, while turning it clockwise decreases it. A value of 0
 indicates that the marker is upright.
 
-## Using USB cameras
+## Using USB camera's
 
 :::warning
 Your robots ability to see is very much dependant on the camera you use. We strongly recomend testing your webcams accuracy and maxium distance against that of the Pi cam in the Brain Box. 
@@ -249,6 +253,7 @@ Cheap webcameras do tend to hurt how well your robot can see.
 :::
 
 To use a USB camera you will need to initialize the robot object with the `use_usb_camera` parameter. Then just call `R.see()` as you would normally. 
+
 
 ```python
 import robot
@@ -287,6 +292,7 @@ while True:
         dist = marker.dist
         rot_y = marker.rot_y
         print "dist:", dist, "rot_y:", rot_y
+
 ```
 
 We recommend that you tune this value by placing a marker exactly 2m away, printing `R.see()` (remember to take an average), and tuning the focal length up or down until you get a value that is close to 2m. If you are feeling fancy you could even write a function to automatically tune the value.    
@@ -302,3 +308,4 @@ usbcamera_focal_lengths = {
     (640, 480): (463, 463),
 }
 ```
+
