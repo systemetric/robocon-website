@@ -14,7 +14,7 @@ Shipping can sometimes be quite rough for the kit and so we require the followin
 *  Most couriers have rules and regulations regarding shippment of Lithium batteries, you must check with any courier before hand about lithium batteries. In most cases it is required for the batteries to be in a device meaning that the **lose batteries provided in the RoboCon kit can not be shipped**. You may find it easier to return the kit to Hills Road in person. Shippment is at your own risk.
 * Hills Road Robotics will **not** fund the shipment of kit back to us.
 
-If you plan to return the kit to Hills Road in person then please email [robotics@hrsfc.ac.uk](robotics@hrsfc.ac.uk) and we will organise a time to have someone meet you at reception. 
+If you plan to return the kit to Hills Road in person then please email [robotics@hrsfc.ac.uk](robotics@hrsfc.ac.uk) and we will organise a time to have someone meet you at reception.
 
 ## Items to be returned:
 ### Containers:
@@ -22,7 +22,8 @@ If you plan to return the kit to Hills Road in person then please email [robotic
 ## Electronics Kit:
 *  1 Brainbox
 *  1 microservo 9g SG90
-*  1 fuse in line with Brainbox
+*  1 6 pin GPIO connector
+*  1 2 pin 12V connector
 ### Switches:
 *  Red switch, black connector: ON/OFF (latching)
 *  Black switch, green connector: Start (momentary)
@@ -35,5 +36,5 @@ If you plan to return the kit to Hills Road in person then please email [robotic
 *  1 Charging brick
 *  1 Kettle lead
 ### Note
-You may keep the minibot
+Please return any surviving parts of the minibot
 
