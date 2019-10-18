@@ -38,12 +38,10 @@ const requestSizeOf = require("request-image-size");
 
   const addSize = (image, sizeObject) => {
     const { width, height } = sizeObject;
-    const aspectRatio = width / height;
 
     sizes[`/images/${image}`] = {
       width,
-      height,
-      aspectRatio
+      height
     };
   };
 

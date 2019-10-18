@@ -1,53 +1,30 @@
 <template>
-  <div class="loader">
-    <PacmanLoader color="#AAA" size="50px" />
-    <p>{{ phrase }}</p>
-  </div>
+  <div class="forum-loader"></div>
 </template>
 
 <script>
-import { PacmanLoader } from "vue-loaders";
-
-//const phrases = ["Loading posts...", "", "Phrase 3"];
-
 export default {
-  name: "loader",
-  components: {
-    PacmanLoader
-  },
-  data() {
-    return {
-      intervalId: -1
-    };
-  },
-  props: {
-    phrase: {
-      type: String,
-      default: "Loading posts..."
-    }
-  }
-  /*mounted() {
-    clearInterval(this.intervalId);
-    this.intervalId = -1;
-    this.newPhrase();
-    this.intervalId = setInterval(() => {
-      this.newPhrase();
-    }, 1000);
-  },
-  beforeDestroy() {
-    this.intervalId = -1;
-    clearInterval(this.intervalId);
-  },
-  methods: {
-    newPhrase() {
-      let newPhrase = this.phrase;
-      while (newPhrase === this.phrase) {
-        newPhrase = phrases[Math.floor(Math.random() * phrases.length)];
-      }
-      this.phrase = newPhrase;
-    }
-  }*/
+  name: "loader"
 };
 </script>
 
-<style></style>
+<style lang="sass">
+@import "../variables"
+
+.forum-loader
+  border: $loader-border-size solid rgba(0, 0, 0, 0.1)
+  border-left-color: $loader-color
+  animation: spin 0.8s infinite linear
+  position: relative
+  display: inline-block
+  vertical-align: top
+  border-radius: 50%
+  width: $loader-size
+  height: $loader-size
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+</style>

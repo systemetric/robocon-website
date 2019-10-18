@@ -101,14 +101,20 @@ export default {
     nprogress.configure({ showSpinner: false });
 
     this.$router.beforeEach((to, fromRoute, next) => {
-      if (to.path !== fromRoute.path && !Vue.component(to.name)) {
+      if (
+        to.path !== fromRoute.path &&
+        !Vue.component(to.name) &&
+        to.path !== "/forum/"
+      ) {
         nprogress.start();
       }
       next();
     });
 
-    this.$router.afterEach(() => {
-      nprogress.done();
+    this.$router.afterEach(to => {
+      if (to.path !== "/forum/") {
+        nprogress.done();
+      }
       this.isSidebarOpen = false;
     });
   },
