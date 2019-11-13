@@ -18,7 +18,7 @@ To look for markers call `see()`:
 markers = R.see()
 ```
 
-`markers` is now a Python list of `marker objects`. Each `marker` object contains the following properties.
+`markers` is now a Python list of `marker objects`. Full reference of the properties are further below but some useful properties are:
 
 | Property                  | Description                                                           |
 | ------------------------- | --------------------------------------------------------------------- |
@@ -26,7 +26,7 @@ markers = R.see()
 | `marker.rot_y`            | Angle to the marker in degrees                                        |
 | `marker.info.code`        | Numeric code of the marker                                            |
 | `marker.info.marker_type` | One of `MARKER_ARENA` or `MARKER_TOKEN`                               |
-| `marker.info.token_type`  | One of `TOKEN_NONE`, `TOKEN_ORE`, `TOKEN_GOLD`, or `TOKEN_FOOLS_GOLD` |
+| `marker.info.basket`  | Numeric code of which basket the marker belongs to. |
 
 ## Blockly
 
@@ -154,17 +154,11 @@ It has the following attributes:
 :   The type of object that this marker represents.<br />
     One of:
 
-* `MARKER_ARENA`
-* `MARKER_TOKEN`
+* `MARKER_TYPE_ARENA`
+* `MARKER_TYPE_BASKET`
 
-`token_type`
-:    The type of token the marker represents.<br />
-     One of:
-
-* `TOKEN_NONE`
-* `TOKEN_ORE`
-* `TOKEN_GOLD`
-* `TOKEN_FOOLS_GOLD`
+`basket`
+:    The numeric code of the basket the marker belongs to.<br />
 
 `offset`
 :   The offset of the numeric code of the marker from the lowest numbered marker of its type.
