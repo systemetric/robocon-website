@@ -37,11 +37,13 @@ The kit that was put together for the teams is simple enough for anyone to get r
 
 ### What are the dates for the competition?
 
-The competition was launched on the 17th November and the competition will be on the 10th and the 11th April 2019!
+The rules of this year's competition were released in October and we still have a small number of spaces for new teams. The competition will be on the 8th and the 9th April 2020.
+Throughout the year we run tech days where new teams can learn about the competition (kickoff activity) and existing teams can get help with building and programming their robot. The next two tech days will be held on Saturday 23rd November and Saturday 11th January.
+If you are interested in coming to a tech day please let us know in advance.
 
-### What will the kickoff consist of?
+### What will a kickoff consist of ?
 
-The kickoff consists of a workshop event where teams are tasked with performing a set of basic software challenges. Each of these challenges will see a function of the supplied kit be exercised. While it is not a requirement to attend the kickoff, it is highly recommendable. Last year we had a few visitors which were "teacher-only", as well as a few schools asking for the kit to be mailed. Though these schools found it harder to get started, most made it to the competition with a working robot.
+The kickoff consists of a workshop event where teams are tasked with performing a set of basic software challenges. Each of these challenges will see a function of the supplied kit be exercised. While it is not a requirement to attend a kickoff, it is highly recommendable. Last year we had a few visitors which were "teacher-only", as well as a few schools asking for the kit to be mailed. Though these schools found it harder to get started, most made it to the competition with a working robot.
 
 ### What if our robot doesn't work during the final?
 
