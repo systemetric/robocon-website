@@ -1,9 +1,9 @@
 ---
-title: Last Year
+title: Previous Years
 category: None
 position: 6
 ---
-# Last Year's Competition
+# 2018 Competition
 
 Sponsored by Cheffins, we welcomed eight teams from schools across the region to put their robotics and engineering skills to the test over a two-day event. The winning team has been awarded with a guided tour of Cambridge Medical Robotics- one of the world’s leading robotics and engineering companies. 
 
