@@ -39,7 +39,7 @@ The kit that was put together for the teams is simple enough for anyone to get r
 
 The rules of this year's competition were released in October and we still have a small number of spaces for new teams. The competition will be on the 8th and the 9th April 2020.
 
-Throughout the year we run tech days where new teams can learn about the competition (kickoff activity) and existing teams can get help with building and programming their robot. The next two tech days will be held on Saturday 23rd November and Saturday 11th January.
+Throughout the year we run tech days where new teams can learn about the competition (kickoff activity) and existing teams can get help with building and programming their robot. The next tech day will be held on Saturday 11th January 2020.
 
 If you are interested in coming to a tech day please let us know in advance.
 
