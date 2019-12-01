@@ -10,15 +10,8 @@ position: 2
 RoboCon is a free to enter robotics competition aimed towards year nine to eleven students, no matter the level of experience and expertise they may have in these fields. If you are interested in coming to the competition or find out more yourself, please [contact us](./contact.md).
 
 <div style="text-align:center;">
-
-<form action="https://www.surveymonkey.co.uk/r/2BVQKFF">
-
- <input type="submit" style="background-color: #0094FF; border: none;color: white; padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;border-radius: 4px;font-weight: bold; " value="Sign up for Robocon 2020 now!" />
-
-</form>
-
+<a href="https://www.surveymonkey.co.uk/r/2BVQKFF" class="link-button" style="display: inline-block">Sign up for Robocon 2020 now!</a>
 </div>
-
 ⠀
 
 ![Team](/images/030-C3140COMPRSD.jpg)

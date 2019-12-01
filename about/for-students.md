@@ -12,13 +12,7 @@ The objective of the competition will be anounced in the Autum term of 2019 and 
 This is a opportunity to put theory into practice, learn about the real world and most importantly have fun playing with real robots!
 
 <div style="text-align:center;">
-
-<form action="https://www.surveymonkey.co.uk/r/2JFZ785">
-
- <input type="submit" style="background-color: #0094FF; border: none;color: white; padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;border-radius: 4px;font-weight: bold; " value="Sign up for Robocon 2020 now!" />
-
-</form>
-
+<a href="https://www.surveymonkey.co.uk/r/2JFZ785" class="link-button" style="display: inline-block">Sign up for Robocon 2020 now!</a>
 </div>
 
 _Don't Walk._ **Do The Robot!**
