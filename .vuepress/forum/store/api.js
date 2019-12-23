@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://robocon.mrbbot.co.uk";
+const API_BASE_URL = "https://robocon.server.mrbbot.dev";
 //const API_BASE_URL = "http://localhost:8085";
 
 export function getAuthorizationHeaders() {
