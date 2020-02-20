@@ -8,19 +8,12 @@ actionLink: /about/
 titleText: Welcome to RoboCon 2020
 footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 ---
-<div style="text-align:center; border-style: solid; padding-bottom: 25px; border-width:1px; border-color: #ffffff; border-radius: 10px; background-color: #ffffff; font-size: 21px">
+<div style="text-align:center; border-style: solid; padding-bottom: 25px; border-width:1px; border-color: #eee; border-radius: 10px; background-color: #eee; font-size: 21px">
 <p>
-<strong>The dates and times for Robocon 2020!</strong>
-</p>
-
-<p>
-Wednesday 8th April
+<strong>Doors open at 10:00 Wednesday 8th & 9th April</strong>
 </p>
 <p>
-Thursday 9th April
-</p>
-<p>
-Doors open at 10:00
+  We look forward to seeing you all at Hills Road
 </p>
 </div>
 
