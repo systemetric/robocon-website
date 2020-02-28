@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /images/fungroupphotocompressed.jpg
-heroText: RoboCon 2019
+heroText: RoboCon 2020
 tagline: Don't Walk. Do The Robot!
 actionText: Learn More
 actionLink: /about/
