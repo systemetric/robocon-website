@@ -8,12 +8,12 @@ actionLink: /about/
 titleText: Welcome to RoboCon 2020
 footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 ---
-<div style="text-align:center; border-style: solid; border-width:1px; border-color: #eee; border-radius: 10px; background-color: #eee; font-size: 21px; padding: 0 1rem;">
+<div style="text-align:center; border-style: solid; border-width:1px; border-color: #f04343; border-radius: 10px; background-color: #edc2c2; font-size: 21px; padding: 0 1rem;">
 <p>
-<strong>Doors open at 10:00 Wednesday 8th & 9th April</strong>
+<strong>RoboCon Suspended due to COVID-19</strong>
 </p>
 <p>
-  We look forward to seeing you all at Hills Road
+We are hoping to run the competition later in the year, if COVID-19 precautions allow it. At the moment we are looking to mid-July for possible dates.
 </p>
 </div>
 
