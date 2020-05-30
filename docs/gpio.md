@@ -17,6 +17,10 @@ There are 4 modes:
 |Analog Input|`robot.INPUT_ANALOG`|Allows you to read a voltage, like a voltmeter|
 |Pullup Input|`robot.INPUT_PULLUP`|Like analog, but uses a [weak pullup resistor](/docs/gpio.html#pull-ups)|
 
+:::tip
+The GPIO are numbered 0-3
+:::
+
 ## Python
 
 To write a digital signal on pin 1:
