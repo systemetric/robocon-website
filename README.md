@@ -1,11 +1,11 @@
 ---
 home: true
 heroImage: /images/fungroupphotocompressed.jpg
-heroText: RoboCon 2020
+heroText: RoboCon
 tagline: Don't Walk. Do The Robot!
 actionText: Learn More
 actionLink: /about/
-titleText: Welcome to RoboCon 2020
+titleText: RoboCon
 footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 ---
 <div style="text-align:center; border-style: solid; border-width:1px; border-color: #f04343; border-radius: 10px; background-color: #edc2c2; font-size: 21px; padding: 0 1rem;">
@@ -13,7 +13,8 @@ footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 <strong>RoboCon Suspended due to COVID-19</strong>
 </p>
 <p>
-We are hoping to run the competition later in the year, if COVID-19 precautions allow it. At the moment we are looking to mid-July for possible dates.
+Unfortunately, we could not run RoboCon 2021 due to COVID-19 restrictions. We are currently planning RoboCon 2022.
+
 </p>
 </div>
 
