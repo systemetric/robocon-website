@@ -8,12 +8,12 @@ actionLink: /about/
 titleText: RoboCon
 footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 ---
-<div style="text-align:center; border-style: solid; border-width:1px; border-color: #f04343; border-radius: 10px; background-color: #edc2c2; font-size: 21px; padding: 0 1rem;">
+<div style="text-align:center; border-style: solid; border-width:1px; border-color: #f04343; border-radius: 10px; background-color: #28529e; font-size: 21px; padding: 0 1rem; color:white;">
 <p>
-<strong>RoboCon Suspended due to COVID-19</strong>
+<strong>Sign up for RoboCon 2022 now!</strong>
 </p>
 <p>
-Unfortunately, we could not run RoboCon 2021 due to COVID-19 restrictions. We are currently planning RoboCon 2022.
+<router-link style="background-color:#0596ff;padding: 10px; border-radius: 5px; color:white;" class="feature-button" to="/signup">Sign up!</router-link>
 
 </p>
 </div>
