@@ -8,7 +8,7 @@ actionLink: /about/
 titleText: RoboCon
 footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 ---
-<div style="text-align:center; border-style: solid; border-width:1px; border-color: #f04343; border-radius: 10px; background-color: #28529e; font-size: 21px; padding: 0 1rem; color:white;">
+<div style="text-align:center; border-style: solid; border-width:1px; border-color: #000000; border-radius: 10px; background-color: #28529e; font-size: 21px; padding: 0 1rem; color:white;">
 <p>
 <strong>Sign up for RoboCon 2022 now!</strong>
 </p>
