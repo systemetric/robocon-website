@@ -18,7 +18,7 @@ RoboCon is a free to enter robotics competition aimed towards year nine to eleve
 
 ### What is the aim?
 
-By the end of the season, students will have built and programmed a totally autonomous robot to compete in a two-day final round. The only interaction the students have with the robot during the competition rounds is to push the "GO" button. This is partially done for safety reasons, but also because it matches the real world of software in a far more accurate manner. The team will have access to see what the robot logs and what it sees, however that is as far as their interaction with the team's robot will go.
+By the end of the season, students will have built and programmed a totally autonomous robot to compete in a two-day final round. The only interaction the students have with the robot during the competition rounds is to push the "GO" button. This is partially done for safety reasons, but also because it matches the real world of software in a far more accurate manner. The team will have access to see what the robot logs and what it sees, but that is as far as their interaction with the team's robot will go.
 
 ### Won't this be really hard?
 
@@ -52,13 +52,13 @@ You don't need to put in too much work, especially not throughout the allocated 
 
 ### Can we compete if we don't have any spare IT at our school?
 
-At the kickoff event, we provide a kit which includes a Windows based tablet. This allows teams wireless connection directly to their robot for programming and debugging. The tablet is pre-installed with everything you need to program the robot. You may need access to the internet from a separate device to contact our online help-desk, and the occasional check for blog updates from the RoboCon Team. Otherwise, you don't need anything from your IT. The website is mobile-friendly for students who have their own smart phones.
+At the kickoff event, we provide a kit which includes a Windows-based tablet. This allows teams wireless connection directly to their robot for programming and debugging. The tablet is pre-installed with everything you need to program the robot. You may need access to the internet from a separate device to contact our online help-desk, and the occasional check for blog updates from the RoboCon Team. Otherwise, you don't need anything from your IT. The website is mobile-friendly for students who have their own smart phones.
 
 ![Kickoff](/images/IMG_4219.JPG)
 
 ### What else is in the kit?
 
-Within the center of the kit is a "Brain Box" which contains the computing and vision module, and is everything needed to run two substantial DC motors and up to four servos. It also offers some digital and analog IO to control optional additional external circuitry. Most teams will not need to use the ability to extend the electronics although for more adventurous teams, as the kit is Raspberry PI based, generic tutorials for how to attach any USB, UART or I2C device to a PI can be found online. We provide guidance for the most common and simple tasks that students might try to get their robot to perform- such as how to run a high current device like a pump.
+Within the centre of the kit is a "Brain Box" which contains the computing and vision module, and is everything needed to run two substantial DC motors and up to four servos. It also offers some digital and analogue IO to control optional additional external circuitry. Most teams will not need to use the ability to extend the electronics although for more adventurous teams, as the kit is Raspberry PI based, generic tutorials for how to attach any USB, UART or I2C device to a PI can be found online. We provide guidance for the most common and simple tasks that students might try to get their robot to perform- such as how to run a high current device like a pump.
 
 The kit also includes a basic robot chassis with two small DC motors, wheels and a small servo.
 
@@ -66,11 +66,11 @@ The kit also includes a basic robot chassis with two small DC motors, wheels and
 
 ### How do the students program their robot?
 
-Software wise we have developed a python library- this greatly reduces the complexity of using the kit including all the computer vision. Coding can all be done on the tablet provided.
+Software-wise we have developed a Python library - this greatly reduces the complexity of using the kit including all the computer vision. Coding can all be done on the tablet provided.
 
 ### Python is not accessible to all my students. Can they still join in?
 
-We provide both a python and a scratch-like interface, so those who might find python intimidating are not excluded. If you have students who would rather use their own editor, laptop or phone to develop and upload code then this is also possible.
+We provide both a Python and a Scratch-like interface, so those who might find Python intimidating are not excluded. If you have students who would rather use their own editor, laptop or phone to develop and upload code then this is also possible.
 
 <BlocklySnippet img="vissnip.png" width="779" height="188"/>
 
@@ -92,7 +92,7 @@ If the possibility for resources is available, teams will probably benefit from 
 
 ### Will we still be able to compete with a low cost robot?
 
-Yes, absolutely. Don't let this put you off- the simplest robots are frequently the best because they have less to go wrong and teams can focus on programming and testing.
+Yes, absolutely. Don't let this put you off - the simplest robots are frequently the best because they have less to go wrong and teams can focus on programming and testing.
 
 ## Assistance
 
