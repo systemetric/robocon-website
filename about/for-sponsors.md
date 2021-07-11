@@ -13,7 +13,7 @@ position: 5
 
 # Why extracurricular?
 
-Since 2016 GCSE's have become more accedemic, depriving students of any opotinuity to learn how to put theory in to practice. Therefore there is a need to promote STEM actively outside of lessons to ensure that students feel willing and able to choose STEM based A-levels. This ensures students are not blocked from STEM career paths further down the line.
+Since 2016 GCSEs have become more academic, depriving students of any opportunity to learn how to put theory in to practice. Therefore there is a need to promote STEM actively outside of lessons to ensure that students feel willing and able to choose STEM based A-levels. This ensures students are not blocked from STEM career paths further down the line.
 
 ![](/images/IMG_4259.JPG)
 
@@ -32,4 +32,3 @@ If you are interested in helping us in any way please [contact us](/about/contac
 ![](/images/IMG_3080COMPRSD.jpg)
 
 ![](/images/img_4139-min.jpg)
-
