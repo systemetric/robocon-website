@@ -10,7 +10,7 @@ position: 2
 RoboCon is a free to enter robotics competition aimed towards year nine to eleven students, no matter the level of experience and expertise they may have in these fields. If you are interested in coming to the competition or find out more yourself, please [contact us](./contact.md).
 
 <div style="text-align:center;">
-<a href="https://www.surveymonkey.co.uk/r/2BVQKFF" class="link-button" style="display: inline-block">Sign up for Robocon 2020 now!</a>
+<a href="https://forms.office.com/r/56Zn1CFQar" class="link-button" style="display: inline-block">Sign up for Robocon 2022 now!</a>
 </div>
 ⠀
 
@@ -36,7 +36,7 @@ Throughout the year we run tech days where new teams can learn about the competi
 
 If you are interested in coming to a tech day please let us know in advance.
 
-### What will a kickoff consist of ?
+### What will a kickoff consist of?
 
 A kickoff consists of a workshop event where teams are tasked with performing a set of basic software challenges. Each of these challenges will see a function of the supplied kit be exercised. While it is not a requirement to attend a kickoff, it is highly recommendable. Last year we had a few visitors which were "teacher-only", as well as a few schools asking for the kit to be mailed. Though these schools found it harder to get started, most made it to the competition with a working robot.
 
