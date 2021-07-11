@@ -13,7 +13,7 @@ footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 <strong>Sign up for RoboCon 2022 now!</strong>
 </p>
 <p>
-<a href="https://hr-robocon/signup" class="link-button" style="display: inline-block">Sign up!</a>
+<a href="/signup" class="link-button" style="display: inline-block">Sign up!</a>
 
 </p>
 </div>
