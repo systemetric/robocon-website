@@ -30,11 +30,7 @@ The kit that was put together for the teams is simple enough for anyone to get r
 
 ### What are the dates for the competition?
 
-The rules of this year's competition were released in October and we still have a small number of spaces for new teams. The competition will be on the 8th and the 9th April 2020.
-
-Throughout the year we run tech days where new teams can learn about the competition (kickoff activity) and existing teams can get help with building and programming their robot. The next tech day will be held on Saturday 11th January 2020.
-
-If you are interested in coming to a tech day please let us know in advance.
+We're currently planning RoboCon 2022 - the kickoff is likely to be in November 2021 with the final competition in April 2022. Dates will be confirmed near the start of the coming academic year.
 
 ### What will a kickoff consist of?
 
