@@ -13,7 +13,7 @@ The competition was launched in November 2017, when the challenges were announce
 
 The competition was judged by some of the biggest names in robotics engineering, including Jeffrey Temple- Head from Aurora Space, Carmelo D’Agostino from ARM Holdings, and Dr Ross Henrywood from Cambridge Medical Robotics. 
 
-David Massey, leader of Hills Road Robotics Group, stated “We started planning this competition in October 2107, when we learned that the robotics competition we were planning to enter (Student Robotics) was having a hiatus for a year.
+David Massey, leader of Hills Road Robotics Group, stated “We started planning this competition in October 2017, when we learned that the robotics competition we were planning to enter (Student Robotics) was having a hiatus for a year.
 
 "With the help of Cheffins’ sponsorship, we were able to design a set of electronics to allow other teams to build an autonomous robot and to invent a suitable competition for them to enter. We launched RoboCon 2018 in November 2017 and had 12 teams sign up for the competition. In the ensuing months, four teams withdrew and we ended up with eight successful teams who came to the competition in April.
 
@@ -31,6 +31,6 @@ Second Place – The Perse School, Cambridge.
 
 Third Place – Richard Collyers College, Sussex.
 
-It was **_great_**!
+It was ***great***!
 
 ![null](/images/003-c3140compressed.jpg)
