@@ -38,13 +38,12 @@ print(markers)
 
  Full reference of the properties are further below but some useful properties are:
 
-| Property                  | Description                                                                               |
-| ------------------------- | ----------------------------------------------------------------------------------------- |
-| `marker.dist`             | Distance to the marker in metres                                                          |
-| `marker.bearing.y`        | The angle your robot needs to turn to get to the marker in degrees                                                            |
-| `marker.code`             | Numeric code of the marker                                                                |
-| `marker.type`             | One of `MARKER_TYPE_ARENA` or `MARKER_TYPE_BASKET`                                        |
-
+| Property | Description |
+| ------------------------- |------------------------------------------------- |
+| `marker.dist`             | Distance to the marker in metres                 |
+| `marker.bearing.y`        | The angle your robot needs to turn to get to the marker in degrees |
+| `marker.code`             | Numeric code of the marker                       |
+| `marker.type`             | One of `MARKER_TYPE_ARENA` or `MARKER_TYPE_BASKET` |
 
 
 ## Blockly
