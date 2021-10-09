@@ -5,9 +5,7 @@ position: 6
 ---
 # Vision
 
-Computer Vision allows your robots to understand their environment. For the competition, this is used to locate cubes and arena walls.
-
-When you tell you robot to `see`, it will give you a list of all the markers it can see. The objects it returns will give you information about the type of the marker, the distance/angle to the marker along with other assorted information.
+Computer Vision allows your robots to understand their environment. For the competition, this is used to locate markers. It will give you information about the type of the marker, the distance/angle to the marker, etc.
 
 ## Python
 
@@ -15,17 +13,37 @@ To look for markers call `see()`:
 
 ```python
 markers = R.see()
+
+print(markers)
 ```
 
-`markers` is now a Python list of `marker objects`. Full reference of the properties are further below but some useful properties are:
+`markers` is a Python list of `marker objects`. Which looks like a the following:
+
+```
+[arena Marker 0: 0.856m @0.754 degrees
+{
+  type = arena
+  code = 0
+  dist = 0.856
+  bearing.y = 0.754
+  bearing.x = 1.03e+02
+  rotation.y = 5.1
+  rotation.x = -11.4
+  rotation.z = 9.47
+  info = TO BIG TO PRINT
+  detection = TO BIG TO PRINT
+}
+]
+```
+
+ Full reference of the properties are further below but some useful properties are:
 
 | Property                  | Description                                                                               |
 | ------------------------- | ----------------------------------------------------------------------------------------- |
 | `marker.dist`             | Distance to the marker in metres                                                          |
-| `marker.rot_y`            | Angle to the marker in degrees                                                            |
-| `marker.info.code`        | Numeric code of the marker                                                                |
-| `marker.info.marker_type` | One of `MARKER_TYPE_ARENA` or `MARKER_TYPE_BASKET`                                        |
-| `marker.info.basket`      | Numeric code of which basket the marker belongs to. `None` if the marker is not a basket. |
+| `marker.bearing.y`        | The angle your robot needs to turn to get to the marker in degrees                                                            |
+| `marker.code`             | Numeric code of the marker                                                                |
+| `marker.type`             | One of `MARKER_TYPE_ARENA` or `MARKER_TYPE_BASKET`                                        |
 
 
 
@@ -40,64 +58,6 @@ Here's an example of a Blockly program that does some basic vision stuff:
 <BlocklySnippet img="vissnip.png" width="779" height="188" />
 <!--END_PI_REMOVE-->
 
-## Changing the resolution
-
-The default the camera takes pictures at a resolution of **640x480px**. You can change this by specifying a `res` parameter to `R.see()`. This maybe be helpful when trying to see things far away.
-
-```python
-markers = R.see(res=(1920, 1088))
-```
-
-You must use one of the following resolutions:
-
-* `(640, 480)`
-* `(1296, 736)` *(default)*
-* `(1296, 976)`
-* `(1920, 1088)`
-* `(1920, 1440)`
-
-:::warning Using a higher resolution will increase the amount of time it takes to process the image, but you may be able to see more. Using a smaller resolution will be faster, but markers further away may stop being visible.
-:::
-
-Here's a more complete example:
-
-```python
-import robot
-
-R = robot.Robot()
-
-markers = R.see()
-
-for marker in markers:
-   if marker.info.token_type == robot.TOKEN_GOLD:
-       move(marker.dist)
-```
-
-## Definition of Axes
-
-The vision system describes the markers it can see using three coordinate systems. These are intended to be complementary to each other and contain
-the same information in different forms.
-
-The individual coordinate systems used are detailed below on the `Point` object, which represents a point in space. Both it and the `Orientation` object provide further details about what measurements of rotation or position mean for their
-attributes.
-
-The axis definitions match those in common use, as follows:
-
-**x-axis** :   The horizontal axis running left-to-right in front of the camera.
-    Rotation about this axis is equivalent to leaning towards or away from
-    the camera.
-
-**y-axis** :   The vertical axis running top-to-bottom in front of the camera.
-    Rotation about this axis is equivalent to turning on the spot,
-    to the left or right.
-
-**z-axis** :   The axis leading away from the camera to infinity.
-    Rotation about this axis is equivalent to being rolled sideways.
-
-:::tip Note that the axes are all defined relative to the camera. Since we have
-no way to know how you've mounted your camera, you may need to account
-for that in your usage of the vision system's data.
-:::
 
 ## Objects of the Vision System
 
@@ -107,22 +67,17 @@ for that in your usage of the vision system's data.
 
 A `Marker` object contains information about a *detected* marker. It has the following attributes:
 
-`info` :   A `MarkerInfo` object containing information about the type of marker that was detected.
+`dist` :   The distance to the marker from the camera in meters.
 
-`centre` :   A `Point` describing the position of the centre of the marker.
+`bearing` :   How far the BrainBox would have to rotate to face that marker in degrees. Uses `x` and `y` to describe the rotation from a line projected straight ahead from the BrainBox. See [bearing](#Bearing) for a definition of axises.
 
-`vertices` :   A list of 4 `Point` instances, each representing the position of the black corners of the marker.
+`rotation` :   How much the marker would need to be rotated to face the BrainBox. See [rotation](#Rotation) for a definition of axises.
 
-`dist` :   An alias for `centre.polar.length`
+`code`  : What is the ID number of the marker?
 
-`rot_y` :   An alias for `centre.polar.rot_y`
+`type`  : What kind of marker
 
-`orientation` :   An `Orientation` instance describing the orientation of the marker.
-
-`res` :   The resolution of the image that was taken from the webcam.
-    A 2-item tuple: (width, height).
-
-`timestamp` :   The timestamp at which the image was taken (a float).
+`info` :   A [`MarkerInfo` object](#MarkerInfo) describing static properties of the marker.
 
 ### `MarkerInfo`
 
@@ -166,7 +121,7 @@ A `Point` object describes a position in three different ways. These are accesse
 `rot_y` :   Rotation about the y-axis in degrees.
     Positions to the right of the camera are positive.
 
-For example, the following code displays the polar coordinate of a `Point` object 
+For example, the following code displays the polar coordinate of a `Point` object
 
 ```python
     print "length", p.polar.length
@@ -193,25 +148,79 @@ Turning a marker clockwise (as viewed from above) increases the value of `rot_y`
 
 Turning a marker anticlockwise (as viewed from the camera) increases the value of `rot_z`, while turning it clockwise decreases it. A value of 0 indicates that the marker is upright.
 
-## Using USB camera's
 
-:::warning Your robots ability to see is very much dependant on the camera you use. We strongly recomend testing your webcams accuracy and maxium distance against that of the Pi cam in the Brain Box. 
+## Definition of Axes
 
-Cheap webcameras do tend to hurt how well your robot can see. :::
+The axis definitions match those in common use, as follows:
 
-To use a USB camera you will need to initialize the robot object with the `use_usb_camera` parameter. Then just call `R.see()` as you would normally. 
+**x-axis** :   The horizontal axis running left-to-right in front of the camera.
+    Rotation about this axis is equivalent to leaning towards or away from
+    the camera.
+
+**y-axis** :   The vertical axis running top-to-bottom in front of the camera.
+    Rotation about this axis is equivalent to turning on the spot,
+    to the left or right.
+
+**z-axis** :   The axis leading away from the camera to infinity.
+    Rotation about this axis is equivalent to being rolled sideways.
+
+:::tip
+Axes are all defined relative to the camera not your robot. Since we have
+no way to know how you've mounted your camera
+:::
+
+## Changing the resolution
+
+The default the camera takes pictures at a resolution of **640x480px**. You can change this by specifying a `res` parameter to `R.see()`. This maybe be helpful when trying to see things far away with more accuracy.
+
+```python
+markers = R.see(res=(1920, 1088))
+```
+
+You must use one of the following resolutions:
+
+* `(640, 480)`
+* `(1296, 736)` *(default)*
+* `(1296, 976)`
+* `(1920, 1088)`
+* `(1920, 1440)`
+
+:::warning Using a higher resolution will increase the amount of time it takes to process the image, but you may be able to see more. Using a smaller resolution will be faster, but markers further away may stop being visible.
+:::
+
+Here's a more complete example:
 
 ```python
 import robot
 
-R = robot.Robot(use_usb_camera=True) 
+R = robot.Robot()
+
+markers = R.see()
+
+for marker in markers:
+   if marker.info.token_type == robot.TOKEN_GOLD:
+       move(marker.dist)
+```
+
+## Using USB camera's
+
+:::warning Your robots ability to see is very much dependant on the camera you use. We strongly recomend testing your webcams accuracy and maxium distance against that of the Pi cam in the Brain Box.
+
+Cheap webcameras do tend to hurt how well your robot can see. :::
+
+To use a USB camera you will need to initialize the robot object with the `use_usb_camera` parameter. Then just call `R.see()` as you would normally.
+
+```python
+import robot
+
+R = robot.Robot(use_usb_camera=True)
 
 print R.see()
 ```
 
-You will then need to calibrate your camera as the distance that it reports will not be accurate. You can do this by changing the value in the `usbcamera_focal_lengths` dictionary up or down. 
+You will then need to calibrate your camera as the distance that it reports will not be accurate. You can do this by changing the value in the `usbcamera_focal_lengths` dictionary up or down.
 
-To get the current value print it: 
+To get the current value print it:
 
 ```python
 import robot.vision as vision
@@ -219,10 +228,10 @@ import robot.vision as vision
 print vision.usbcamera_focal_lengths
 ```
 
-Assign a new value and print the distance and rotation use the following code. 
+Assign a new value and print the distance and rotation use the following code.
 
 ```python
-# usbcamera_focal_lengths[(resx, resy)] = (newValue,newValue) 
+# usbcamera_focal_lengths[(resx, resy)] = (newValue,newValue)
 # Where (resx, resy) is the resolution that you want to tune
 # To set the resolution (640, 480) to the focal length (100,100) do
 
@@ -240,7 +249,7 @@ while True:
         print "dist:", dist, "rot_y:", rot_y
 ```
 
-We recommend that you tune this value by placing a marker exactly 2m away, printing `R.see()` (remember to take an average), and tuning the focal length up or down until you get a value that is close to 2m. If you are feeling fancy you could even write a function to automatically tune the value.    
+We recommend that you tune this value by placing a marker exactly 2m away, printing `R.see()` (remember to take an average), and tuning the focal length up or down until you get a value that is close to 2m. If you are feeling fancy you could even write a function to automatically tune the value.
 
 The default resolutions are as follows.
 
