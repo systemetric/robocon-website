@@ -59,7 +59,12 @@ Here's an example of a Blockly program that does some basic vision:
 
 ## Example
 
-After reading the [motors documentation](docs/motors.html) you should be able to create a function which moves your robot by a number of meters as well as turn.
+After reading the [motors documentation](docs/motors.html) you should be able to create a function which moves your robot by a number of meters as well as turn. We can then use this to write some code where a robot:
+ * Looks for a marker
+ * If it can see a marker:
+    * Turn so that it is facing the marker
+    * Drive the distance to the marker
+ * If there is no marker in sight turn a bit and look again, maybe there is a marker out of view.
 
 ```python
 import robot
@@ -67,9 +72,11 @@ import robot
 R = robot.Robot()
 
 def move(distance):
+    """The robot drives `distance` meters forwards"""
     print("PUT YOUR MOVE CODE HERE")
 
 def turn(rotation):
+    """The robot turns `rotation` degrees"""
     print("PUT YOUR TURN CODE HERE")
 
 while True:
