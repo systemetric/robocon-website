@@ -34,14 +34,14 @@ To read a digital signal on pin 2:
 
 ```python
 R.gpio[2].mode = robot.INPUT
-print R.gpio[2].digital
+print(R.gpio[2].digital)
 ```
 
 To read an analog signal on pin 3:
 
 ```python
 R.gpio[3].mode = robot.INPUT_ANALOG
-print R.gpio[3].analog
+print(R.gpio[3].analog)
 ```
 
 :::tip
@@ -57,11 +57,11 @@ R = robot.Robot()
 
 # read digital value from GPIO 1
 R.gpio[1].mode = robot.INPUT
-print R.gpio[1].digital
+print(R.gpio[1].digital)
 
 # read analog value from GPIO 2
 R.gpio[2].mode = robot.INPUT_ANALOG
-print R.gpio[2].analog
+print(R.gpio[2].analog)
 
 # write digital value to GPIO 3
 R.gpio[3].mode = robot.OUTPUT
