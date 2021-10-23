@@ -24,7 +24,7 @@ R.motors[1] = 60
 ```
 
 :::warning
-If you are using the mini-bot or similar motors. Do not exceed a motor power of 25% otherwise they will burn out.
+If you are using the mini-bot or similar motors, do not exceed a motor power of 25% otherwise they will burn out.
 :::
 
 To control the second motor instead, replace `motors[1]` with `motors[2]`.
