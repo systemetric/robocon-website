@@ -58,14 +58,16 @@ R.motors[2] = 0
 
 Blocks for controlling motors can be found in the **Movement** section.
 
-# Using larger motors than supplied
-The Brainbox outputs 12v pulses and by default is restricted to 25% for safe use with the 6v motors, if you wish to use other motors you may wish to change the maximum duty cycle, for example 12v motors may accept 100% duty cycles.
-You can use any motors you like with the brain box as long as the total current requested does not exceed 20A.
-
-The maximum motor current is a feature of the robot and can only be set when first initilizing the robot object
+# Using different motors
+The BrainBox outputs 12V pulses to the motors, which is by default restricted to a 25% duty cycle for the 6V motors. If you wish to use other motors, you may need to change the maximum allowed voltage to avoid overpowering them (which can burn them out) or underpowering them according to the specifications of your motors: 
 
 ```python
 import robot
 
-R = robot.Robot(motor_max=100)
+R = robot.Robot(max_motor_voltage=12)   # this sets the maximum voltage across each motor to 12V
 ```
+
+This maximum voltage limit can only be set in this constructor when the robot is initialised. 
+
+You can use any motors you like with the BrainBox as long as the total current draw does not exceed 20A.
+
