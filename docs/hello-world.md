@@ -28,7 +28,7 @@ We're going to make the robot write "Hello World!" into the output logs!
 
 There are two ways to go about writing code for the robot:<br>
 
-1. Python - The main language used to program robots with the brainbox.<br>
+1. Python - The main language used to program robots with the BrainBox.<br>
 2. Blockly - A Scratch-like language that allows you to write programs connecting blocks. This will automatically produce a python script that can be run in the robot.
 
 Both can be used to program a winning robot for the competition and it is up to you which one you develop your robot with. However for the following tutorials python will be used.
