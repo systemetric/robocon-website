@@ -38,12 +38,12 @@ print(markers)
 
  Full reference of the properties are further below but some useful properties are:
 
-| Property                    | Description                                                                                                                                                                                                                                          | 
-| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | 
-| `marker.dist`               | Distance to the marker in metres                                                                                                                                                                                                                     |    
-| `marker.bearing.y`          | The angle your robot needs to turn to get to the marker in degrees                                                                                                                                                                                   |  
-| `marker.code`               | Numeric code of the marker                                                                                                                                                                                                                           |   
-| `marker.type`               | One of `MARKER_TYPE_ARENA` or `MARKER_TYPE_BASKET`                                                                                                                                                                                                   |  
+| Property           | Description                                                        |
+| ------------------ | ------------------------------------------------------------------ |
+| `marker.dist`      | Distance to the marker in metres                                   |
+| `marker.bearing.y` | The angle your robot needs to turn to get to the marker in degrees |
+| `marker.code`      | Numeric code of the marker                                         |
+| `marker.type`      | One of `MARKER_TYPE_ARENA` or `MARKER_TYPE_BASKET`                 |
 
 ## Blockly
 
@@ -59,11 +59,13 @@ Here's an example of a Blockly program that does some basic vision:
 ## Example
 
 After reading the [motors documentation](docs/motors.html) you should be able to create a function which moves your robot by a number of meters as well as turn. We can then use this to write some code where a robot:
- * Looks for a marker
- * If it can see a marker:
-    * Turn so that it is facing the marker
-    * Drive the distance to the marker
- * If there is no marker in sight turn a bit and look again, maybe there is a marker out of view.
+
+* Looks for a marker
+* If it can see a marker:
+
+  * Turn so that it is facing the marker
+  * Drive the distance to the marker
+* If there is no marker in sight turn a bit and look again, maybe there is a marker out of view.
 
 ```python
 import robot
@@ -116,12 +118,13 @@ A `Marker` object contains information about a *detected* marker. It has the fol
 | `rotation.y`                | The **pitch** of the marker                                                                                                                                                                                                                          |
 | `rotation.z`                | The **yaw** of the marker                                                                                                                                                                                                                            |
 | `code`                      | The ID number of the marker                                                                                                                                                                                                                          |
-| `type`                      | The kind of marker, one of [`MARKER_TYPE_ARENA`, `MARKER_TYPE_BASKET`]                                                                                                                                                                               |
+| `type`                      | The kind of marker, one of \["arena",""winkie", "gillikan","quadling","munchkin"]                                                                                                                                                                    |
 | `info`                      | A `MarkerInfo` object describing static properties of the marker.                                                                                                                                                                                    |
 | `info.code`                 | The ID number of the marker                                                                                                                                                                                                                          |
-| `info.type`                 | The kind of marker, one of [`MARKER_TYPE_ARENA`, `MARKER_TYPE_BASKET`]                                                                                                                                                                               |
+| `info.type`                 | The kind of marker, one of \["arena",""winkie", "gillikan","quadling","munchkin"]                                                                                                                                                                    |
 | `info.size`                 | The length of the black edge of the marker in meters.                                                                                                                                                                                                |
 | `info.bounding_box_colour`  | A RGB tuple describing the colour which is drawn around the marker in the preview image.                                                                                                                                                             |
+| `info.species`  | Either 'arena' or 'cube'                                                                                                                                                 |
 | `detection`                 | Technical information which has been inferred from the image.                                                                                                                                                                                        |
 | `detection.tag_family`      | The family of AprilTag which is detected. RoboCon currently only uses `tag36h11`.                                                                                                                                                                    |
 | `detection.tag_id`          | The ID number of the detected marker. Aliased by `marker.code`.                                                                                                                                                                                      |
@@ -134,9 +137,8 @@ A `Marker` object contains information about a *detected* marker. It has the fol
 | `detection.pose_T`          | The 1x3 translation vector of the marker in meters.                                                                                                                                                                                                  |
 | `detection.pose_err`        | The uncertainty of the detection in meters. This number can vary massively between detections depending on if local minima were bypassed. See [Apriltag: A robust and flexible visual fiducial system](https://ieeexplore.ieee.org/document/5979561) |
 | `dectection.dist`           | The distance to the marker in meters.                                                                                                                                                                                                                |
-| `detection.rotation`        | How much the **Marker** would need to be rotated to face the **BrainBox**. `(0,0,0)` Is if the marker was facing the BrainBox in the upright position.                                                                                               | 
+| `detection.rotation`        | How much the **Marker** would need to be rotated to face the **BrainBox**. `(0,0,0)` Is if the marker was facing the BrainBox in the upright position.                                                                                               |
 | `detection.bearing`         | How far the **BrainBox** would have to rotate to face that **Marker** in degrees.                                                                                                                                                                    |
-
 
 :::tip
 Axes are all defined relative to the camera not your robot. Since we have
