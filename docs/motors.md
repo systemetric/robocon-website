@@ -23,10 +23,6 @@ You can control motors using the `motors` property of the `Robot` object. To set
 R.motors[1] = 60
 ```
 
-:::warning
-If you are using the mini-bot or similar motors, do not exceed a motor power of 25% otherwise they will burn out.
-:::
-
 To control the second motor instead, replace `motors[1]` with `motors[2]`.
 
 To stop both motors:
@@ -54,20 +50,16 @@ R.motors[1] = 0
 R.motors[2] = 0
 ```
 
+:::tip
+By default the BrainBox is designed to work safely with the TT motors supplied, these are 6V motors. If you choose to use motors that have a diffrent nominal voltage, then you can specify this when initalising the robot object. For example when using 9V motors:
+
+```python
+R = robot.Robot(max_motor_voltage=9)
+```
+
+We do not recommend running motors above their design voltage, it may (sometimes dramatically) shorten the lifespan of your motors. If you choose to overvolt your motors you should be prepared to swap them with spares and design your robot to ensure you have access to replace them.
+:::
+
 ## Blockly
 
 Blocks for controlling motors can be found in the **Movement** section.
-
-# Using different motors
-The BrainBox outputs 12V pulses to the motors, which is by default restricted to a 25% duty cycle for the 6V motors. If you wish to use other motors, you may need to change the maximum allowed voltage to avoid overpowering them (which can burn them out) or underpowering them according to the specifications of your motors: 
-
-```python
-import robot
-
-R = robot.Robot(max_motor_voltage=12)   # this sets the maximum voltage across each motor to 12V
-```
-
-This maximum voltage limit can only be set in this constructor when the robot is initialised. 
-
-You can use any motors you like with the BrainBox as long as the total current draw does not exceed 20A.
-
