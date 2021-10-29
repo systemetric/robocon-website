@@ -46,6 +46,20 @@ print(markers)
 | `marker.info`      | What the marker is on:  `arena`,`winkie`, `gillikan`,`quadling`,`munchkin`|
 | `marker.info.species`      | One of `arena` or `cube`                 |
 
+## Codes
+Every april tag has a code:
+
+* April tags 0-23 will around the arena on the walls. See the rules.
+
+* April tags 100+ will be used for cubes. Note each country will have 5 cubes in the game but each zone has 10 codes attached to it.
+
+| Code               | Country                                                            |
+| ------------------ | ------------------------------------------------------------------ |
+| `100`to`109`      | Winkie Country                                   |
+| `110`to`119`  | Gillikin Country   |
+| `120`to`129`       | Quadling Country                                          |
+| `130`to`139`      | Munchkin Country                 |
+
 ## Blockly
 
 Blocks for vision can be found in the **Vision** section.
