@@ -13,8 +13,6 @@ footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 <strong>Robocon 2022 is still open for entries!</strong>
 </p>
 
-
-
 <p>
 <a href="https://hr-robocon.org/signup" class="link-button" style="display: inline-block">Sign up now!</a>
 
@@ -32,7 +30,7 @@ footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 <strong>Already competing?!</strong>
 </p>
 <p>
-<a href="https://hr-robocon.org/signup" class="link-button" style="display: inline-block">Sign up now!</a>
+<a href="https://hr-robocon.org/docs" class="link-button" style="display: inline-block">Go the docs!</a>
 
 </p>
 </div>
