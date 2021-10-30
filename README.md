@@ -30,7 +30,7 @@ footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 <strong>Already competing?</strong>
 </p>
 <p>
-<a href="https://hr-robocon.org/docs" class="redlink" style="display: inline-block">Go to the docs!</a>
+<a href="https://hr-robocon.org/docs" class="link-button redlink" style="display: inline-block">Go to the docs!</a>
 
 
 </p>
