@@ -86,3 +86,7 @@ Many pieces of off-the-shelf electronics that have some form of standard I/O out
 However, the built-in pull-up resistor alleviates this need. It essentially wires in a resistor connected to 5V, meaning that when this option is enabled, an input pin will “default” to being high. This means you can simply connect a switch between the input pin and a ground pin without any need of resistors - when the switch is open, the pin will read high; when closed, it will read low.
 
 ![An example weak pull up](/images/capture.png)
+
+## Setting inputs and outputs
+
+When you set your GPIO pin modes, you need to set your output pins before your input pins. This is due to how the brainbox manages setting input and output pins.
