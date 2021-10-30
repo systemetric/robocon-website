@@ -47,6 +47,32 @@ print(R.see())
 ```
 If this prints out the markers then the issue is probably with your code, please see the [vision docs](https://hr-robocon.org/docs/vision.html)
 
+## My GPIO input doesn't seem to work.
+If you set both inputs and outputs, you'll need to set the outputs before you set the inputs. 
+```python
+# Wrong
+R = robot.Robot()
+
+OUT_PIN = 1
+IN_PIN = 2
+
+R.gpio[IN_PIN].mode = robot.INPUT
+R.gpio[OUT_PIN].mode = robot.OUTPUT
+# The input is set before the output, so may not work
+```
+```python
+# Right
+R = robot.Robot()
+
+OUT_PIN = 1
+IN_PIN = 2
+
+R.gpio[OUT_PIN].mode = robot.OUTPUT
+R.gpio[IN_PIN].mode = robot.INPUT
+# This will successfully set your input and output pins
+```
+This is due to how the brainbox manages setting outputs and inputs.
+
 ## Can you post a kit to or from Hills Road
 
 We can post kits from Hills Road however you will need to cover the costs of shipping
