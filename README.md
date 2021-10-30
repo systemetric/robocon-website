@@ -8,7 +8,7 @@ actionLink: /about/
 titleText: RoboCon
 footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 ---
-<div style="text-align:center; border-style: solid; border-width:1px; border-color: #000000; border-radius: 10px; padding-bottom: 1000; background-color: #28529e; font-size: 21px; padding: 0 1rem; color:white;">
+<div style="text-align:center; border-style: solid; border-width:1px; border-color: #000000; border-radius: 10px;  background-color: #28529e; font-size: 21px; padding: 0 1rem; color:white;">
 <p>
 <strong>Robocon 2022 is still open for entries!</strong>
 </p>
@@ -25,9 +25,9 @@ footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 
 </p>
 
-<div style="text-align:center; border-style: solid; border-width:1px; border-color: #000000; border-radius: 10px; background-color: #28529e; font-size: 21px; padding: 0 1rem; color:white;">
+<div style="text-align:center; border-style: solid; border-width:1px; border-color: #000000; border-radius: 10px; background-color: #800000; font-size: 21px; padding: 0 1rem; color:white;">
 <p>
-<strong>Already competing?!</strong>
+<strong>Already competing?</strong>
 </p>
 <p>
 <a href="https://hr-robocon.org/docs" class="link-button" style="display: inline-block">Go the docs!</a>
