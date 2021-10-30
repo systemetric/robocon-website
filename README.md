@@ -58,7 +58,7 @@ footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 
 <style>
 a.redlink.link-button {
-    backgound-color: #e60000 !important;
+    background-color: #e60000 !important;
     border-bottom: 1px solid #850000 !important;
 }
 a.redlink.link-button:hover {
