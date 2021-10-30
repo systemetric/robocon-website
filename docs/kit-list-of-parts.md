@@ -20,7 +20,7 @@ If you plan to return the kit to Hills Road in person then please email [robotic
 ### Containers:
 *  1 x 12L Really Useful Box
 ## Electronics Kit:
-*  1 Brainbox
+*  1 BrainBox
 *  1 microservo 9g SG90
 *  1 6 pin GPIO connector
 *  1 2 pin 12V connector

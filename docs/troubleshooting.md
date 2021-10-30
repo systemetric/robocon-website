@@ -9,7 +9,7 @@ Here are a few *common* issues you might have and some solutions to them. Studen
 
 ## I've connected a battery and the power switch to the black connector but never get any lights on The BrainBox.
 
-Unless the battery is really very low the front led will blink very briefly when the switch is first pressed. If this happens you need to charge the battery. The BrainBox will not switch on at all when the voltage of the battery is very low. If the battery is freshly charged, it's possible that the switch has failed or become internally disconnected. For testing purposes, you can swap the power switch for a single piece of wire. NOTE: at the competition, you must have a red power switch to control your robot as per the rules. Finally - in exceptional circumstances the fuse in the cable may have failed, if this has happened then there must have been some terminal problem internal to the brainbox - Contact us on robotics@hillsroad.ac.uk for instructions.
+Unless the battery is really very low the front led will blink very briefly when the switch is first pressed. If this happens you need to charge the battery. The BrainBox will not switch on at all when the voltage of the battery is very low. If the battery is freshly charged, it's possible that the switch has failed or become internally disconnected. For testing purposes, you can swap the power switch for a single piece of wire. NOTE: at the competition, you must have a red power switch to control your robot as per the rules. Finally - in exceptional circumstances the fuse in the cable may have failed, if this has happened then there must have been some terminal problem internal to the BrainBox - Contact us on robotics@hillsroad.ac.uk for instructions.
 
 ## The BrainBox appears to power up, but I can't connect to the website and the blue LED lights but never starts flashing.
 
@@ -29,7 +29,7 @@ Some modern browsers default to a web search if they do not understand the web a
 
 ## I've connected to the web interface and can run code, but my motors never turn on.
 
-The BrainBox will automatically cut power to the 12V socket and the motor outputs if it every detects a current surge exceeding 20A. When this happens, the LED viewable next to where the battery lead enters the brain box will appear red rather than primarily green. If the LED is not green, first disconnect the motors and power cycle The BrainBox to see if this resolves the problem. If it does, then your motors are probably too large.
+The BrainBox will automatically cut power to the 12V socket and the motor outputs if it every detects a current surge exceeding 20A. When this happens, the LED viewable next to where the battery lead enters the BrainBox will appear red rather than primarily green. If the LED is not green, first disconnect the motors and power cycle The BrainBox to see if this resolves the problem. If it does, then your motors are probably too large.
 
 It is possible to enable/disable this power output from software. When the output is disabled, there will be no light at all visible through this hole. If you can see no light through the hole when the robot is running code check that you have not disabled the motor output by uploading a [simple file](/simple.py).
 
@@ -53,7 +53,7 @@ We can post kits from Hills Road however you will need to cover the costs of shi
 
 ## What is the patch and how do I install it?
 
-The patch is an update which improve your brain box, by adding more docs, more blocks to blocky, faster boot times and more! To patch your robot please follow the instructions [here](https://hr-robocon.org/docs/patching-the-robot.html).
+The patch is an update which improve your BrainBox, by adding more docs, more blocks to blocky, faster boot times and more! To patch your robot please follow the instructions [here](https://hr-robocon.org/docs/patching-the-robot.html).
 
 ## Why is the time wrong
 

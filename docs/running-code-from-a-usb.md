@@ -8,7 +8,7 @@ position: 4
 ![USB Stick](/images/usbstick.jpg)
 
 :::tip
-The brain only checks for the presence of USB sticks at boot, only plug and unplug USB sticks when the brain is off (front panel blue light off).
+The BrainBox only checks for the presence of USB sticks at boot, only plug and unplug USB sticks when the BrainBox is off (front panel blue light off).
 :::
 
 :::warning

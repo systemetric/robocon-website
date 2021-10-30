@@ -9,7 +9,7 @@ GPIO, or General Purpose Input Output, is the main way you'll interface with sim
 
 ## GPIO Pins
 
-On the side of your brainbox, there are 4 regular pins and a "+5v" and "-" pin. The top of the brain box labels which pin corresponds to which number. Different devices need to be plugged into different pins.
+On the side of your BrainBox, there are 4 regular pins and a "+5v" and "-" pin. The top of the BrainBox labels which pin corresponds to which number. Different devices need to be plugged into different pins.
 
 ## LED Output
 

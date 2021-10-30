@@ -3,15 +3,15 @@ title: The BrainBox
 category: Hardware
 position: 2
 ---
-# The Brain Box
+# The BrainBox
 
-The brain box is the center of the kit, it controls power, provides you with useful electronics and is where your code runs. Do **NOT** open the brain box unless given written permission by Hills Road RoboCon.
+The BrainBox is the center of the kit, it controls power, provides you with useful electronics and is where your code runs. Do **NOT** open the BrainBox unless given written permission by Hills Road RoboCon.
 
 ![The brain box](/images/brainbox.jpg)
 
 ## Power
 
-The BrainBox distributes power to the robot from the battery. It provides both 12V and 5V power out. All power must go through the brain box and the fuse should never be replaced.
+The BrainBox distributes power to the robot from the battery. It provides both 12V and 5V power out. All power must go through the BrainBox and the fuse should never be replaced.
 
 The On|Off switch also plugs into the BrainBox as well as the Start button which is used to start your robot code running.
 
@@ -33,7 +33,7 @@ You can toggle the 12V which allows you to turn 12V devices on and off easily. H
 
 ### GPIO - Out
 
-All of the Brain boxes GPIO pins are connected in-series with a 1K Ohm resistor, to provide current limiting. This means that you can plug devices such as LED's straight into your brain box.
+All of the BrainBox's GPIO pins are connected in-series with a 1K Ohm resistor, to provide current limiting. This means that you can plug devices such as LED's straight into your BrainBox.
 
 Nominally they operate at 5V but depending on your load the true output will vary. You can calculate the voltage you will get across your load by measuring its resistance, then doing the sum:
 
@@ -47,7 +47,7 @@ If you need to sense something with an impedance of more than 9K then you will n
 
 ### GPIO - Limits
 
-Do not try and sink or source more than 25mA into the brainbox's GPIO, it may damage some of the internal components.
+Do not try and sink or source more than 25mA into the BrainBox's GPIO, it may damage some of the internal components.
 
 ## PWM Pins
 
