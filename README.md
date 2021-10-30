@@ -8,12 +8,30 @@ actionLink: /about/
 titleText: RoboCon
 footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 ---
-<div style="text-align:center; border-style: solid; border-width:1px; border-color: #000000; border-radius: 10px; background-color: #28529e; font-size: 21px; padding: 0 1rem; color:white;">
+<div style="text-align:center; border-style: solid; border-width:1px; border-color: #000000; border-radius: 10px;  background-color: #28529e; font-size: 21px; padding: 0 1rem; color:white;">
 <p>
-<strong>Sign up for RoboCon 2022 now!</strong>
+<strong>Robocon 2022 is still open for entries!</strong>
+</p>
+
+<p>
+<a href="https://hr-robocon.org/signup" class="link-button" style="display: inline-block">Sign up now!</a>
+
+</p>
+</div>
+
+<p>
+
+<h>   </h>
+
+</p>
+
+<div style="text-align:center; border-style: solid; border-width:1px; border-color: #000000; border-radius: 10px; background-color: #800000; font-size: 21px; padding: 0 1rem; color:white;">
+<p>
+<strong>Already competing?</strong>
 </p>
 <p>
-<a href="https://hr-robocon.org/signup" class="link-button" style="display: inline-block">Sign up!</a>
+<a href="https://hr-robocon.org/docs" class="redlink" style="display: inline-block">Go to the docs!</a>
+
 
 </p>
 </div>
@@ -37,3 +55,13 @@ footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
     <router-link class="feature-button" to="/about/for-sponsors.html">Do something great!</router-link>
   </div>
 </div>
+
+<style>
+a.redlink {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+
+</style>
