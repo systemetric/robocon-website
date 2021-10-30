@@ -68,30 +68,3 @@ R.gpio[POT_PIN].mode = robot.INPUT_ANALOG
 while True:
     print(R.gpio[POT_PIN].analog)
 ```
-
-## Setting both inputs and outputs
-
-If you set both inputs and outputs, you'll need to set the outputs before you set the inputs. 
-```python
-# Wrong
-R = robot.Robot()
-
-OUT_PIN = 1
-IN_PIN = 2
-
-R.gpio[IN_PIN].mode = robot.INPUT
-R.gpio[OUT_PIN].mode = robot.OUTPUT
-# The input is set before the output, so this may not work
-```
-```python
-# Right
-R = robot.Robot()
-
-OUT_PIN = 1
-IN_PIN = 2
-
-R.gpio[OUT_PIN].mode = robot.OUTPUT
-R.gpio[IN_PIN].mode = robot.INPUT
-# This will successfully set your input and output pins
-```
-This is due to how the brainbox manages setting outputs and inputs.

@@ -87,6 +87,33 @@ However, the built-in pull-up resistor alleviates this need. It essentially wire
 
 ![An example weak pull up](/images/capture.png)
 
-## Setting inputs and outputs
+## Setting multiple pins
 
-When you set your GPIO pin modes, you need to set your output pins before your input pins. This is due to how the brainbox manages setting input and output pins.
+When you set multiple pins, you'll need to set them in order. This is due to how the brainbox internally sets pins
+
+For example...<br/>
+This won't work:
+```python
+# Wrong
+import robot
+
+R = robot.Robot()
+
+R.gpio[1].mode = robot.INPUT
+R.gpio[3].mode = robot.INPUT_PULLUP
+R.gpio[2].mode = robot.OUTPUT
+
+# Pin 3 is set before pin 2, which won't work
+```
+But this will:
+```python
+# Right
+import robot
+
+R = robot.Robot()
+
+R.gpio[1].mode = robot.INPUT
+R.gpio[2].mode = robot.OUTPUT
+R.gpio[3].mode = robot.INPUT_PULLUP
+# As all the GPIO pins are set in order, this is fine
+```

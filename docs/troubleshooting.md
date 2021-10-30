@@ -48,30 +48,34 @@ print(R.see())
 If this prints out the markers then the issue is probably with your code, please see the [vision docs](https://hr-robocon.org/docs/vision.html)
 
 ## My GPIO input doesn't seem to work.
-If you set both inputs and outputs, you'll need to set the outputs before you set the inputs. 
+When you set multiple pins, you'll need to set them in order.<br/>
+This won't work:
 ```python
 # Wrong
+import robot
+
 R = robot.Robot()
 
-OUT_PIN = 1
-IN_PIN = 2
+R.gpio[1].mode = robot.INPUT
+R.gpio[3].mode = robot.INPUT_PULLUP
+R.gpio[2].mode = robot.OUTPUT
 
-R.gpio[IN_PIN].mode = robot.INPUT
-R.gpio[OUT_PIN].mode = robot.OUTPUT
-# The input is set before the output, so may not work
+# Pin 3 is set before pin 2, which won't work
 ```
+But this will:
 ```python
 # Right
+import robot
+
 R = robot.Robot()
 
-OUT_PIN = 1
-IN_PIN = 2
-
-R.gpio[OUT_PIN].mode = robot.OUTPUT
-R.gpio[IN_PIN].mode = robot.INPUT
-# This will successfully set your input and output pins
+R.gpio[1].mode = robot.INPUT
+R.gpio[2].mode = robot.OUTPUT
+R.gpio[3].mode = robot.INPUT_PULLUP
+# As all the GPIO pins are set in order, this is fine
 ```
-This is due to how the brainbox manages setting outputs and inputs.
+
+This is due to how the brianboix internally sets pins.
 
 ## Can you post a kit to or from Hills Road
 
