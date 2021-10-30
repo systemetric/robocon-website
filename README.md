@@ -30,7 +30,8 @@ footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 <strong>Already competing?</strong>
 </p>
 <p>
-<a href="https://hr-robocon.org/docs" class="link-button" style="display: inline-block">Go the docs!</a>
+<a href="https://hr-robocon.org/docs" class="redlink" style="display: inline-block">Go to the docs!</a>
+
 
 </p>
 </div>
@@ -54,3 +55,13 @@ footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
     <router-link class="feature-button" to="/about/for-sponsors.html">Do something great!</router-link>
   </div>
 </div>
+
+<style>
+a.redlink {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+
+</style>
