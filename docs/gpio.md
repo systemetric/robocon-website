@@ -86,3 +86,34 @@ Many pieces of off-the-shelf electronics that have some form of standard I/O out
 However, the built-in pull-up resistor alleviates this need. It essentially wires in a resistor connected to 5V, meaning that when this option is enabled, an input pin will “default” to being high. This means you can simply connect a switch between the input pin and a ground pin without any need of resistors - when the switch is open, the pin will read high; when closed, it will read low.
 
 ![An example weak pull up](/images/capture.png)
+
+## Setting multiple pins
+
+When you set multiple pins, you'll need to set them in order. This is due to how the brainbox internally sets pins
+
+For example...<br/>
+This won't work:
+```python
+# Wrong
+import robot
+
+R = robot.Robot()
+
+R.gpio[1].mode = robot.INPUT
+R.gpio[3].mode = robot.INPUT_PULLUP
+R.gpio[2].mode = robot.OUTPUT
+
+# Pin 3 is set before pin 2, which won't work
+```
+But this will:
+```python
+# Right
+import robot
+
+R = robot.Robot()
+
+R.gpio[1].mode = robot.INPUT
+R.gpio[2].mode = robot.OUTPUT
+R.gpio[3].mode = robot.INPUT_PULLUP
+# As all the GPIO pins are set in order, this is fine
+```
