@@ -1,6 +1,6 @@
 ---
 title: RoboCon 2022 Launched!
-date: 2021-10-30 14:31:09
+date: '2021-10-30 14:31:09'
 excerpt: "Today was the official launch of RoboCon 2022: Gifts for the Wizard."
 layout: PostLayout
 ---
