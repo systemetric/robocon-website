@@ -21,7 +21,7 @@ If you are interested in the I2C protocol there is a good guide to find out more
 
 ## USB
 
-You can use usb devices using the [`serial`](https://pyserial.readthedocs.io/en/latest/shortintro.html) library. The connection will probably open on something similar to `dev/ttyUSB0` but if you can't find it where you expect then connect the device to a Raspberry Pi running a recent OS image and observe where it appears.
+You can use USB devices using the [`serial`](https://pyserial.readthedocs.io/en/latest/shortintro.html) library. The connection will probably open on something similar to `dev/ttyUSB0` but if you can't find it where you expect then connect the device to a Raspberry Pi running a recent OS image and observe where it appears.
 
 ## UART
 
