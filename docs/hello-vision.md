@@ -16,7 +16,7 @@ Unlike in the previous tutorial, [Hello World](/docs/hello-world.html), we are g
 import robot
 R = robot.Robot()
 ```
-This creates a "Robot" object, and places it inside the variable "R". This allows us to use robot functions through the R variable, such as `R.See()`. If you are using Blockly, the robot is intialised automatically.
+This creates a "Robot" object, and places it inside the variable "R". This allows us to use robot functions through the R variable, such as `R.See()`. If you are using Blockly, the robot is initialised automatically.
 
 [Here](https://www.makeuseof.com/tag/object-oriented-programming-explained/) is a basic introduction into what Object Oriented Programing is.
 
