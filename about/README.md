@@ -13,4 +13,6 @@ RoboCon is aimed at students in years nine to eleven. After announcing the year'
 
 Below is a map showing where all the schools who are competing in this year's RoboCon are located!
 
-<Embed :aspect-ratio="640/480"><iframe src="https://www.google.com/maps/d/embed?mid=1ZvYMUXqFV7pSWY5x5CjJ-bBvq_1KUWm5" width="640" height="480"></iframe></Embed>
+<Embed :aspect-ratio="640/480"><iframe src="https://www.google.com/maps/d/embed?mid=160TDYZ84zzZyABjIeSQH624Cu7Cf8UVx&ehbc=2E312F" width="640" height="480"></iframe></Embed>
+
+
