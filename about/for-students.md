@@ -11,10 +11,6 @@ The objective of the competition will be announced in the Autumn term of 2021 an
 
 This is a opportunity to put theory into practice, learn about the real world and most importantly have fun playing with real robots!
 
-<div style="text-align:center;">
-<a href="https://forms.office.com/r/64Rt27zjG5" class="link-button" style="display: inline-block">Sign up for RoboCon 2022 now!</a>
-</div>
-
 *Don't Walk.* **Do The Robot!**
 
 ![Team](/images/030-C3140COMPRSD.jpg)
