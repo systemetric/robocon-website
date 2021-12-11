@@ -5,7 +5,7 @@ position: 6
 ---
 # Patching the Robot
 
-An important part of looking after your robot is making sure its software is up to date. Over time **RoboCon** may release patches which will allow you to upgrade your robot. Follow the steps bellow to bring your robot upto date.
+An important part of looking after your robot is making sure its software is up to date. Over time **RoboCon** may release patches which will allow you to upgrade your robot. Follow the steps bellow to bring your robot up to date.
 
 ## Steps to Patch
 
@@ -21,4 +21,3 @@ An important part of looking after your robot is making sure its software is up 
 :::tip
 Your robot will restart as part of the patching process, so you will loose connectivity with it for about half a minute. Your laptop should automatically reconnect to the robot when it turns back on. If you cannot connect to your robot, please contact us using the [forum](/forum/).
 :::
-
