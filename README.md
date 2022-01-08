@@ -8,38 +8,37 @@ actionLink: /about/
 titleText: RoboCon
 footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 ---
+
 <p>
 
-<h>   </h>
+RoboCon is a free and accessible robotics competition aimed at GCSE students run by Hills Road Sixth Form College.  
 
+We provide a kit containing all the equipment necessary to build a simple robot, including a laptop that you can use to program it. Teams are encouraged to use this kit as inspiration to create a robot as simple or complex as they would like. 
+
+No previous experience is required, and we provide support throughout the year through our kick-off event and various tech days. 
 </p>
 
-<div style="text-align:center; border-style: solid; border-width:1px; border-color: #000000; border-radius: 10px; background-color: #800000; font-size: 21px; padding: 0 1rem; color:white;">
-<p>
-<strong>Already competing?</strong>
-</p>
-<p>
-<a href="https://hr-robocon.org/docs" class="link-button redlink" style="display: inline-block">Go to the docs!</a>
+<br>
 
+<h2>
 
-</p>
-</div>
+Learn More About Robocon 
 
-<h1>I want to be...</h1>
+</h2>
 
-<div class="features">
+<div class="features" style= "border: none; margin-top: none">
   <div class="feature">
-    <h2>...a robot designer</h2>
+    <h2>Students</h2>
     <p>To make your robot a reality, discover what our kit can do.</p>
     <router-link class="feature-button" to="/about/for-students.html">Start Making!</router-link>
   </div>
   <div class="feature">
-    <h2>...an inspiring teacher</h2>
+    <h2>Teachers</h2>
     <p>We're a ready-to-go activity made to make leading a STEM activity easy.</p>
     <router-link class="feature-button" to="/about/for-teachers.html">Start inspiring!</router-link>
   </div>
   <div class="feature">
-    <h2>...an impactful sponsor</h2>
+    <h2>Sponsers</h2>
     <p>Sponsor a far-reaching STEM activity building tomorrow's engineers.</p>
     <router-link class="feature-button" to="/about/for-sponsors.html">Do something great!</router-link>
   </div>
@@ -48,7 +47,7 @@ footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 <style>
 a.redlink.link-button {
     background-color: #e60000 !important;
-    border-bottom: 1px solid #850000 !important;
+    border-bottom: 5px solid #850000 !important;
 }
 a.redlink.link-button:hover {
     background-color: red;
