@@ -3,12 +3,12 @@
     <slot v-if="isRegistered" />
     <template v-else-if="user">
       <p>
-        In order to {{action}}, you'll need a registration code. You'll get one of these at the kickoff. If you didn't attend the kickoff, please email
+        In order to {{action}}, you'll need a registration code. This code is the same as the password printed on your teams brainbox, which can also be found on the lid of your teams box, please email
         <a
           href="mailto:robotics@hrsfc.ac.uk"
           target="_blank"
           rel="noopener noreferrer"
-        >robotics@hrsfc.ac.uk</a> to get one.
+        >robotics@hrsfc.ac.uk</a> if you have any issues.
       </p>
       <div class="code-input">
         <input type="text" placeholder="Code" v-model="code" @keypress="onKeyPress" />
