@@ -25,7 +25,7 @@ The kit that was put together for the teams is simple enough for anyone to get r
 
 ### What are the dates for the competition?
 
-We're currently planning RoboCon 2022 - the kickoff is likely to be in November 2021 with the final competition in April 2022. Dates will be confirmed near the start of the coming academic year.
+RoboCon 2022 launched on 30 October 2021, and the final will be held in the Easter holidays on the 13th and 14th of April 2022.
 
 ### What will a kickoff consist of?
 
