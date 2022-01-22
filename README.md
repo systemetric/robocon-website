@@ -78,7 +78,7 @@ Learn More About Robocon
 
 </h2>
 
-<div class="features" style= "border: none; margin-top: none">
+<div class="features">
   <div class="feature">
     <h2>Students</h2>
     <p>To make your robot a reality, discover what our kit can do.</p>
