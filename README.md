@@ -48,17 +48,25 @@ We encourage teams to create an Instagram account and share their progress with 
 
 </div>
 
-<div style = "background: #3270ed; color: #fff; margin: 0 auto; padding: 0; overflow: hidden;">
+<div style = "background: #8f1158; color: #fff; margin: 0 auto; padding: 0; overflow: hidden;">
 
 <h3 style ="margin-top: 16px;"> Each Year We Support</h3>
 
 <div style = "max-width: 100%; margin-left: auto; margin-right: auto; overflow: hidden;">
 
-<div style= "box-sizing: border-box; float: left;padding-left: 0.5em;padding-right:0.5em;width: 100%;>ksjefksdjf</div>
+<div style= "box-sizing: border-box; float: left;padding-left: 0.5em;padding-right:0.5em;width: 100%;">
 
-<div> sldkfjldks</div>
+<p style ="color: #fff; font-size: 3.9375rem; margin-bottom: 0; text-align: center;">30+ </p>
 
-<div> lskfjlsdj</div>
+<p style = "font-size: 1.5rem; color: #f5f3f4; font-weight: bold; text-align: center;"> 
+
+schools</p>
+
+</div>
+
+<div> </div>
+
+<div> </div>
 
 </div>
 
