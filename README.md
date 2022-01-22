@@ -26,6 +26,22 @@ Robocon 2022 will be held on the 13th and 14th April
 
 </h2>
 
+<div>
+
+<h3>
+
+Reach us on Instagram!
+
+</h3>
+
+<p>
+
+<a href=https://www.instagram.com/hillsroadrobocon/  ><b>@hillsroadrobocon</b> </a>
+
+</p>
+
+</div>
+
 <h2>
 
 Learn More About Robocon 
