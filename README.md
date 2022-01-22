@@ -38,6 +38,12 @@ Reach us on Instagram!
 
 <a href=https://www.instagram.com/hillsroadrobocon/  ><b>@hillsroadrobocon</b> </a>
 
+<p>
+
+We encourage teams to create an Instagram account and share their progress with us by tagging this account.</p>
+
+![Monke](images/monke.png "Monke")
+
 </p>
 
 </div>
