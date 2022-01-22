@@ -8,7 +8,6 @@ actionLink: /about/
 titleText: RoboCon
 footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 ---
-
 <p>
 
 RoboCon is a free and accessible robotics competition aimed at GCSE students run by Hills Road Sixth Form College.  
@@ -16,9 +15,16 @@ RoboCon is a free and accessible robotics competition aimed at GCSE students r
 We provide a kit containing all the equipment necessary to build a simple robot, including a laptop that you can use to program it. Teams are encouraged to use this kit as inspiration to create a robot as simple or complex as they would like. 
 
 No previous experience is required, and we provide support throughout the year through our kick-off event and various tech days. 
+
 </p>
 
 <br>
+
+<h2>
+
+Robocon 2022 will be held on the 13th and 14th April
+
+</h2>
 
 <h2>
 
@@ -43,15 +49,3 @@ Learn More About Robocon
     <router-link class="feature-button" to="/about/for-sponsors.html">Do something great!</router-link>
   </div>
 </div>
-
-<style>
-a.redlink.link-button {
-    background-color: #e60000 !important;
-    border-bottom: 5px solid #850000 !important;
-}
-a.redlink.link-button:hover {
-    background-color: red;
-}
-
-
-</style>
