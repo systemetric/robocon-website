@@ -14,6 +14,7 @@ RoboCon is a free and accessible robotics competition aimed at GCSE students r
 We provide a kit containing all the equipment necessary to build a simple robot, including a laptop that you can use to program it. Teams are encouraged to use this kit as inspiration to create a robot as simple or complex as they would like. 
 
 No previous experience is required, and we provide support throughout the year through our kick-off event and various tech days. 
+
 </p>
 
 <h2>Robocon 2022 will be held on the 13th and 14th April</h2>
@@ -28,6 +29,7 @@ No previous experience is required, and we provide support throughout the year t
 <p>We encourage teams to create an Instagram account and share their progress with us by tagging this account.</p>
 
 ![Monke](images/monke.png "Monke")
+
 </div>
 
 <div style = "stats">
@@ -75,5 +77,3 @@ row   {box-sizing: border-box; float: left; padding-left: 0.5em;padding-right
 collumn {max-width: 100%; margin-left: auto; margin-right: auto; overflow: hidden;}
 stats {background: #8f1158; color: #fff; margin: 0 auto; padding: 0; overflow: hidden;}
 </style>
-
->
