@@ -52,7 +52,6 @@ No previous experience is required, and we provide support throughout the year t
 
 <h2>Learn More About Robocon </h2>
 
-<div class="features">
   <div class="feature">
     <h2>Students</h2>
     <p>To make your robot a reality, discover what our kit can do.</p>
@@ -68,12 +67,11 @@ No previous experience is required, and we provide support throughout the year t
     <p>Sponsor a far-reaching STEM activity building tomorrow's engineers.</p>
     <router-link class="feature-button" to="/about/for-sponsors.html">Do something great!</router-link>
   </div>
-</div>
 
 <style>
 rowFigure {color: #fff; font-size: 3rem; margin-bottom: 0; #text-align: center;}
 rowText  {font-size: 2rem; color: #f5f3f4; font-weight: bold; text-align: center;}
-row   {box-sizing: border-box; float: left; padding-left: 0.5em;padding-right:0.5em;width: 100%;}
+row   {box-sizing: border-box; float: left; padding-left:0.5em; padding-right:0.5em;width: 100%;}
 collumn {max-width: 100%; margin-left: auto; margin-right: auto; overflow: hidden;}
 stats {background: #8f1158; color: #fff; margin: 0 auto; padding: 0; overflow: hidden;}
 </style>
