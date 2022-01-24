@@ -34,16 +34,16 @@ No previous experience is required, and we provide support throughout the year t
 
 <div class = "stats">
     <h3 style ="margin-top: 16px;"> Each Year We Support</h3>
-    <div class = "statsBlock">
-        <div class= "row">
+    <div class = "row">
+        <div class= "collumn">
         <p class ="rowFigure"> 30+ </p>
         <p class = "rowText"> schools </p>
         </div>
-        <div class = "row">
+        <div class = "collumn">
         <p class ="rowFigure"> 100+ </p>
         <p class = "rowText"> volunteers </p>
         </div>
-        <div class = "row">
+        <div class = "collumn">
         <p class ="rowFigure"> 500+ </p>
         <p class = "rowText"> students </p>
         </div>
@@ -51,7 +51,6 @@ No previous experience is required, and we provide support throughout the year t
 </div>
 
 <h2>Learn More About Robocon </h2>
-
   <div class="feature">
     <h2>Students</h2>
     <p>To make your robot a reality, discover what our kit can do.</p>
@@ -71,7 +70,7 @@ No previous experience is required, and we provide support throughout the year t
 <style>
 .rowFigure {color: #fff; font-size: 3rem; margin-bottom: 0; #text-align: center;}
 .rowText {font-size: 2rem; color: #f5f3f4; font-weight: bold; text-align: center;}
-.row {box-sizing: border-box; float: left; padding-left:0.5em; padding-right:0.5em;width: 100%;}
-.statsBlock {max-width: 100%; margin-left: auto; margin-right: auto; overflow: hidden;}
+.collumn {box-sizing: border-box; float: left; padding-left:0.5em; padding-right:0.5em;width: 100%;}
+.row {max-width: 100%; margin-left: auto; margin-right: auto; overflow: hidden;}
 .stats {background: #8f1158; color: #fff; margin: 0 auto; padding: 0; overflow: hidden;}
 </style>
