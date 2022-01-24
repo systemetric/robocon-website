@@ -33,19 +33,19 @@ No previous experience is required, and we provide support throughout the year t
 </div>
 
 <div class = "stats">
-    <h3 style ="margin-top: 16px;"> Each Year We Support</h3>
+    <h1 style ="margin-top: 16px;"> Each Year We Support</h1>
     <div class = "row">
         <div class= "collumn">
         <p class ="rowFigure"> 30+ </p>
-        <p class = "rowText"> schools </p>
+        <p class = "rowText"> Schools </p>
         </div>
         <div class = "collumn">
-        <p class ="rowFigure"> 100+ </p>
-        <p class = "rowText"> volunteers </p>
+        <p class ="rowFigure"> 10+ </p>
+        <p class = "rowText"> Volunteers </p>
         </div>
         <div class = "collumn">
         <p class ="rowFigure"> 500+ </p>
-        <p class = "rowText"> students </p>
+        <p class = "rowText"> Students </p>
         </div>
     </div>
 </div>
@@ -68,10 +68,9 @@ No previous experience is required, and we provide support throughout the year t
   </div>
 
 <style>
-div {block;}
 .rowFigure {color: #fff; font-size: 3rem; margin-bottom: 0; #text-align: center;}
 .rowText {font-size: 2rem; color: #f5f3f4; font-weight: bold; text-align: center;}
-.collumn {box-sizing: border-box; float: left; padding-left:0.5em; padding-right:0.5em;width: 100%;}
+.collumn {position: relative; display: inline-block; box-sizing: border-box; float: left; padding-left:0.5em; padding-right:0.5em;width: 100%;}
 .row {max-width: 100%; margin-left: auto; margin-right: auto; overflow: hidden;}
 .stats {background: #8f1158; color: #fff; margin: 0 auto; padding: 0; overflow: hidden;}
 </style>
