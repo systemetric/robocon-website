@@ -99,7 +99,7 @@ Learn More About Robocon
 <style>\
 rowFigure {color: #fff; font-size: 3rem; margin-bottom: 0; #text-align: center;}
 
-rowText  {font-size: 1.5rem; color: #f5f3f4; font-weight: bold; text-align: center;}
+rowText  {font-size: 2rem; color: #f5f3f4; font-weight: bold; text-align: center;}
 
 row   {box-sizing: border-box; float: left; padding-left: 0.5em;padding-right:0.5em;width: 100%;}
 
