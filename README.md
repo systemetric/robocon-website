@@ -9,74 +9,46 @@ titleText: RoboCon
 footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 ---
 <p>
-
 RoboCon is a free and accessible robotics competition aimed at GCSE students run by Hills Road Sixth Form College.  
 
 We provide a kit containing all the equipment necessary to build a simple robot, including a laptop that you can use to program it. Teams are encouraged to use this kit as inspiration to create a robot as simple or complex as they would like. 
 
 No previous experience is required, and we provide support throughout the year through our kick-off event and various tech days. 
-
 </p>
 
-<br>
-
-<h2>
-
-Robocon 2022 will be held on the 13th and 14th April
-
-</h2>
+<h2>Robocon 2022 will be held on the 13th and 14th April</h2>
 
 <div>
-
-<h3>
-
-Reach us on Instagram!
-
-</h3>
+<h3>Reach us on Instagram!</h3>
 
 <p>
+<a href=https://www.instagram.com/hillsroadrobocon/  ><b>@hillsroadrobocon</b> 
+</a></p>
 
-<a href=https://www.instagram.com/hillsroadrobocon/  ><b>@hillsroadrobocon</b> </a>
-
-<p>
-
-We encourage teams to create an Instagram account and share their progress with us by tagging this account.</p>
+<p>We encourage teams to create an Instagram account and share their progress with us by tagging this account.</p>
 
 ![Monke](images/monke.png "Monke")
-
-</p>
-
 </div>
 
 <div style = "stats">
-
-<h3 style ="margin-top: 16px;"> Each Year We Support</h3>
-
-<div style = "collumn">
-
-<div style= "row">
-
-<p style ="rowFigure">30+ </p>
-
-<p style = "rowText"> 
-
-schools</p>
-
+    <h3 style ="margin-top: 16px;"> Each Year We Support</h3>
+    <div style = "collumn">
+        <div style= "row">
+        <p style ="rowFigure">30+ </p>
+        <p style = "rowText"> schools </p>
+        </div>
+        <div>
+        <p style ="rowFigure">100+ </p>
+        <p style = "rowText"> volunteers </p>
+        </div>
+        <div>
+        <p style ="rowFigure">500+ </p>
+        <p style = "rowText"> students </p>
+        </div>
+    </div>
 </div>
 
-<div> </div>
-
-<div> </div>
-
-</div>
-
-</div>
-
-<h2>
-
-Learn More About Robocon 
-
-</h2>
+<h2>Learn More About Robocon </h2>
 
 <div class="features">
   <div class="feature">
@@ -96,17 +68,12 @@ Learn More About Robocon
   </div>
 </div>
 
-<style>\
+<style>
 rowFigure {color: #fff; font-size: 3rem; margin-bottom: 0; #text-align: center;}
-
 rowText  {font-size: 2rem; color: #f5f3f4; font-weight: bold; text-align: center;}
-
 row   {box-sizing: border-box; float: left; padding-left: 0.5em;padding-right:0.5em;width: 100%;}
-
 collumn {max-width: 100%; margin-left: auto; margin-right: auto; overflow: hidden;}
-
 stats {background: #8f1158; color: #fff; margin: 0 auto; padding: 0; overflow: hidden;}
-
 </style>
 
 >
