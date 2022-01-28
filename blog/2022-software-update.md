@@ -1,6 +1,6 @@
 ---
 title: 2022 Software Update
-date: 2022-01-24 22:21:16
+date: '2022-01-24 22:21:16'
 excerpt: >+
   We've released a patch for teams which fixes Blockly and a couple of other
   issues.
