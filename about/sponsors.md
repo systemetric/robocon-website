@@ -11,7 +11,7 @@ Our sponsors promote and inspire the technological skills and abilities of buddi
 
 ## Sponsors from 2022
 
-![](/images/logos.png)
+![](images/logos2.png)
 
 ## Sponsors from 2020
 
