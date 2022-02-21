@@ -17,7 +17,7 @@ No previous experience is required, and we provide support throughout the year t
 
 </p>
 
-<h2>Robocon 2022 will be held on the 13th and 14th April</h2>
+<h2>The Robocon 2022 final will be held on the 13th and 14th April at Hills Road Sixth Form, 10am-4pm</h2>
 
 <div>
 <h3>Reach us on Instagram!</h3>
@@ -36,15 +36,15 @@ No previous experience is required, and we provide support throughout the year t
     <h1 style ="margin-top: 16px;"> Each Year We Support</h1>
     <div class = "row">
         <div class= "collumn">
-        <p class ="rowFigure"> 30+ </p>
+        <p class ="rowFigure"> 20+ </p>
         <p class = "rowText"> Schools </p>
         </div>
         <div class = "collumn">
-        <p class ="rowFigure"> 10+ </p>
+        <p class ="rowFigure"> 30+ </p>
         <p class = "rowText"> Volunteers </p>
         </div>
         <div class = "collumn">
-        <p class ="rowFigure"> 500+ </p>
+        <p class ="rowFigure"> 100+ </p>
         <p class = "rowText"> Students </p>
         </div>
     </div>
@@ -53,17 +53,14 @@ No previous experience is required, and we provide support throughout the year t
 <h2>Learn More About Robocon </h2>
   <div class="feature">
     <h2>Students</h2>
-    <p>To make your robot a reality, discover what our kit can do.</p>
-    <router-link class="feature-button" to="/about/for-students.html">Start Making!</router-link>
+    <router-link class="feature-button" to="/about/for-students.html">Start making!</router-link>
   </div>
   <div class="feature">
     <h2>Teachers</h2>
-    <p>We're a ready-to-go activity made to make leading a STEM activity easy.</p>
     <router-link class="feature-button" to="/about/for-teachers.html">Start inspiring!</router-link>
   </div>
   <div class="feature">
-    <h2>Sponsers</h2>
-    <p>Sponsor a far-reaching STEM activity building tomorrow's engineers.</p>
+    <h2>Sponsors</h2>
     <router-link class="feature-button" to="/about/for-sponsors.html">Do something great!</router-link>
   </div>
 
