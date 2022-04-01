@@ -1,6 +1,6 @@
 ---
 title: Information about RoboCon 2022 Final
-date: 2022-03-28 14:13:31
+date: '2022-03-28 14:13:31'
 excerpt: The competition final is fast approaching, and we can't wait to see you
   there! This post has everything you need to know about attending the RoboCon
   final.
@@ -16,7 +16,7 @@ We've had a couple of requests for details about the competition final from team
 
 
 
-The competition will be running on the **13th and 14th of April, 10am-4pm**. It will be held at Hills Road Sixth Form College. Directions to the competition area are here, and there will be signs around the college site. There is parking in the college carpark on Purbeck Road, open to all teams over the course of the competition. 
+The competition will be running on the **13th and 14th of April, 10am-4pm**. It will be held at Hills Road Sixth Form College. Directions to the competition area are [here](/GettingToRoboCon2022.pdf), and there will be signs around the college site. There is parking in the college carpark on Purbeck Road, open to all teams over the course of the competition. 
 
 
 
@@ -38,7 +38,7 @@ Over the course of the competition final, we will have representatives from our 
 
 
 
-Finally, and crucially, **you must fill out a media consent form to attend the competition final**. You can find the form here, and all attendees must complete it. Students under the age of 16 will need this to be done by their parents/guardians. 
+Finally, and crucially, **you must fill out a media consent form to attend the competition final**. You can find the form [here](/RoboConMediaConsentReleaseForm.pdf), and all attendees must complete it. Students under the age of 16 will need this to be done by their parents/guardians. 
 
 
 
