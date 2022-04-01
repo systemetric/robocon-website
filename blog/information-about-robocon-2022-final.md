@@ -1,6 +1,6 @@
 ---
 title: Information about RoboCon 2022 Final
-date: 2022-03-28 14:13:31
+date: '2022-03-28 14:13:31'
 excerpt: The competition final is fast approaching, and we can't wait to see you
   there! This post has everything you need to know about attending the RoboCon
   final.
