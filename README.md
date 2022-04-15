@@ -32,7 +32,7 @@ No previous experience is required, and we provide support throughout the year t
 
 
 
-<div id="theme-image">
+<div class="theme-image">
 
 ![Monke](images/monke.png "Monke")
 
@@ -81,5 +81,5 @@ No previous experience is required, and we provide support throughout the year t
 .row {max-width: 100%; margin-left: auto; margin-right: auto; overflow: hidden;}
 .stats {background: #8f1158; color: #fff; margin: 0 auto; padding: 0 0 40px 0; overflow: hidden;}
 
-\#theme-image {width: 70%;}
+.theme-image img {width: 40%;}
 </style>
