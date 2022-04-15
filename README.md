@@ -30,7 +30,13 @@ No previous experience is required, and we provide support throughout the year t
 
 <p>We encourage teams to create an Instagram account and share their progress with us by tagging this account.</p>
 
+
+
+<div id="theme-image">
+
 ![Monke](images/monke.png "Monke")
+
+</div>
 
 </div>
 
@@ -74,4 +80,6 @@ No previous experience is required, and we provide support throughout the year t
 .column {position: relative; display: inline-block; box-sizing: border-box; float: left; padding-left:0.5em; padding-right:0.5em;width: 100%;}
 .row {max-width: 100%; margin-left: auto; margin-right: auto; overflow: hidden;}
 .stats {background: #8f1158; color: #fff; margin: 0 auto; padding: 0 0 40px 0; overflow: hidden;}
+
+\#theme-image {width: 70%;}
 </style>
