@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /images/fungroupphotocompressed.jpg
+heroImage: images/all-wave.png
 heroText: RoboCon
 tagline: Don't Walk. Do The Robot!
 actionText: Learn More
@@ -9,15 +9,17 @@ titleText: RoboCon
 footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 ---
 <p>
-RoboCon is a free and accessible robotics competition aimed at GCSE students run by Hills Road Sixth Form College.  
+RoboCon is a free and accessible robotics competition aimed at GCSE students run by the Robotics Society at Hills Road Sixth Form College. 
 
-We provide a kit containing all the equipment necessary to build a simple robot, including a laptop that you can use to program it. Teams are encouraged to use this kit as inspiration to create a robot as simple or complex as they would like. 
+We provide a kit containing all the equipment necessary to build a simple robot, including our BrainBox and a laptop that you can use to program it. Teams are encouraged to use this kit as inspiration to create a robot as simple or complex as they would like. 
 
 No previous experience is required, and we provide support throughout the year through our kick-off event and various tech days. 
 
 </p>
 
-<h2>The Robocon 2022 final will be held on the 13th and 14th April at Hills Road Sixth Form, 10am-4pm</h2>
+<p><b>The Robocon 2022 finals took place on the 13th and 14th April.</b></p>
+
+<br>
 
 <div>
 <h3>Reach us on Instagram!</h3>
@@ -28,24 +30,30 @@ No previous experience is required, and we provide support throughout the year t
 
 <p>We encourage teams to create an Instagram account and share their progress with us by tagging this account.</p>
 
+
+
+<div class="theme-image">
+
 ![Monke](images/monke.png "Monke")
 
 </div>
 
+</div>
+
 <div class = "stats">
-    <h1 style ="margin-top: 16px;"> Each Year We Support</h1>
+    <h1 style ="margin-top: 16px;">At RoboCon 2022, we supported...</h1>
     <div class = "row">
-        <div class= "collumn">
-        <p class ="rowFigure"> 20+ </p>
+        <div class= "column">
+        <p class ="rowFigure"> 21 </p>
         <p class = "rowText"> Schools </p>
         </div>
-        <div class = "collumn">
+        <div class = "column">
+        <p class ="rowFigure"> 150+ </p>
+        <p class = "rowText"> Students </p>
+        </div>
+        <div class = "column">
         <p class ="rowFigure"> 30+ </p>
         <p class = "rowText"> Volunteers </p>
-        </div>
-        <div class = "collumn">
-        <p class ="rowFigure"> 100+ </p>
-        <p class = "rowText"> Students </p>
         </div>
     </div>
 </div>
@@ -64,10 +72,14 @@ No previous experience is required, and we provide support throughout the year t
     <router-link class="feature-button" to="/about/for-sponsors.html">Do something great!</router-link>
   </div>
 
+<br>
+
 <style>
-.rowFigure {color: #fff; font-size: 3rem; margin-bottom: 0; #text-align: center;}
-.rowText {font-size: 2rem; color: #f5f3f4; font-weight: bold; text-align: center;}
-.collumn {position: relative; display: inline-block; box-sizing: border-box; float: left; padding-left:0.5em; padding-right:0.5em;width: 100%;}
+.rowFigure {color: #fff; font-size: 3rem; margin: 20px 0 0 0; #text-align: center;}
+.rowText {font-size: 2rem; color: #f5f3f4; font-weight: bold; text-align: center; margin:0; }
+.column {position: relative; display: inline-block; box-sizing: border-box; float: left; padding-left:0.5em; padding-right:0.5em;width: 100%;}
 .row {max-width: 100%; margin-left: auto; margin-right: auto; overflow: hidden;}
-.stats {background: #8f1158; color: #fff; margin: 0 auto; padding: 0; overflow: hidden;}
+.stats {background: #8f1158; color: #fff; margin: 0 auto; padding: 0 0 40px 0; overflow: hidden;}
+
+.theme-image img {width: 40%;}
 </style>
