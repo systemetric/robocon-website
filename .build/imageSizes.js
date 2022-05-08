@@ -9,6 +9,21 @@ const sizeOf = promisify(require("image-size"));
 const request = require("request-promise-native");
 const requestSizeOf = require("request-image-size");
 
+function walkDir(root) {
+  const names = [];
+  for (const name of fs.readdirSync(root)) {
+    const filePath = path.join(root, name);
+    if (fs.statSync(filePath).isDirectory()) {
+      names.push(
+        ...walkDir(filePath).map((childName) => path.join(name, childName))
+      );
+    } else {
+      names.push(name);
+    }
+  }
+  return names;
+}
+
 (async () => {
   const imagesPath = path.resolve(
     __dirname,
@@ -18,7 +33,7 @@ const requestSizeOf = require("request-image-size");
     "images"
   );
 
-  const images = fs.readdirSync(imagesPath);
+  const images = walkDir(imagesPath);
   const imagesLength = images.length;
 
   let sizes = {};
