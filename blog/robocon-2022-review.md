@@ -25,6 +25,9 @@ We are also pleased to award:
 **The Tin Man Award -** Bottisham Village College (Team 2) *\- for fantastic style, presented by Frontier Developments.*\
 **The Scarecrow Award -** Cranbrook School *\- for inginuity and problem solving, presented by TTP.* 
 
-And of course a massive congratulations to all of the teams that competed in RoboCon 2022 for their outstanding progress and development! 
+And of course a massive congratulations to all of the teams that competed in RoboCon 2022 for their outstanding progress and development! \
+We'd also like to thank our sponsors: Frontier Developments, Citrix, Redgate, The Technology Partnership, and CMR Surgical. 
+
+\---
 
 Watch this space for information about RoboCon 2023, but for now, don't walk, *do the robot!*
