@@ -23,7 +23,7 @@ We are also pleased to award:
 
 **The Lion Award -** Parkside Community College *\- for courage and perseverance, presented by CMR.*\
 **The Tin Man Award -** Bottisham Village College (Team 2) *\- for fantastic style, presented by Frontier Developments.*\
-**The Scarecrow Award - PLEASE FILL ME IN** *\- for inginuity and problem solving, presented by TTP.* 
+**The Scarecrow Award -** Cranbrook School *\- for inginuity and problem solving, presented by TTP.* 
 
 And of course a massive congratulations to all of the teams that competed in RoboCon 2022 for their outstanding progress and development! 
 
