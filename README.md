@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: images/all-wave.png
+heroImage: images/2022-all-wave.jpg
 heroText: RoboCon
 tagline: Don't Walk. Do The Robot!
 actionText: Learn More
