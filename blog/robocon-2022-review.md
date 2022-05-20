@@ -1,7 +1,7 @@
 ---
 title: RoboCon 2022 Review
 image: images/2022-all-wave.jpg
-date: '2022-05-10 20:24:54'
+date: 2022-05-10 20:24:54
 excerpt: See the results of a very successful RoboCon 2022!
 layout: PostLayout
 ---
@@ -17,11 +17,19 @@ The competition was hosted at Hills Road Sixth Form College on 13th and 14th Apr
 
 **First, our supplementary awards for characteristics that set teams apart from the rest.** 
 
-**The Lion Award -** Parkside Community College *\- for courage and perseverance, presented by CMR.*\
-**The Tin Man Award -** Bottisham Village College (Team 2) *\- for fantastic style, presented by Frontier Developments.*\
+**The Lion Award -** Parkside Community College *\- for courage and perseverance, presented by CMR.* 
+
+![](images/2022-parkside-cmr-lion-award1.JPG)
+
+\
+**The Tin Man Award -** Bottisham Village College (Team 2) *\- for fantastic style, presented by Frontier Developments.* \
 **The Scarecrow Award -** Cranbrook School *\- for ingenuity and problem solving, presented by TTP.* 
 
-**<br/>**
+![](images/2022-cranbrook-robot.jpg)
+
+*Above is the Cranbrook robot with its clever plough/gate mechanism.* 
+
+<br/>
 
 **And now, the podium positions:**
 
@@ -31,6 +39,10 @@ The competition was hosted at Hills Road Sixth Form College on 13th and 14th Apr
 **And finally:**\
 🥁🥁🥁\
 **1st - Bottisham Village College (Team 2)!**
+
+![](images/2022-podiums.JPG)
+
+*The podium position teams. Left to right: Longsands Academy (3rd), Bottisham Village College (Team 2) (1st), Cranbrook School (2nd).* 
 
 <br/><br/>
 
