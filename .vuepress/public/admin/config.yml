@@ -119,7 +119,6 @@ collections:
         label: "Date",
         name: "date",
         widget: "datetime",
-        format: "'YYYY-MM-DD HH:mm:ss'",
       }
       - { label: "Excerpt", name: "excerpt", widget: "text" }
       - {
