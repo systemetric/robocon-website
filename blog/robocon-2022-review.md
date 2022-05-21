@@ -1,6 +1,6 @@
 ---
 title: RoboCon 2022 Review
-image: images/2022-all-wave.jpg
+image: /images/2022-all-wave.jpg
 date: '2022-05-10 20:24:54'
 excerpt: See the results of a very successful RoboCon 2022!
 layout: PostLayout
