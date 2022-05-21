@@ -9,6 +9,8 @@ RoboCon 2022 launched in October 2021 with the game "Gifts for the Wizard", a *W
 
 **Read to the bottom to see this year's winners!**
 
+![](/images/2022-P1080760.JPG)
+
 ![Robots in the RoboCon 2022 arena. ](/images/2022-cranbrook-vs-bottisham2-final.JPG)
 
 The competition was hosted at Hills Road Sixth Form College on 13th and 14th April 2022. 
