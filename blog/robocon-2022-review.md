@@ -1,7 +1,7 @@
 ---
 title: RoboCon 2022 Review
 image: /images/2022-all-wave.jpg
-date: '2022-05-10 20:24:54'
+date: 2022-05-10 20:24:54
 excerpt: See the results of a very successful RoboCon 2022!
 layout: PostLayout
 ---
@@ -25,7 +25,7 @@ The competition was hosted at Hills Road Sixth Form College on 13th and 14th Apr
 **The Tin Man Award -** Bottisham Village College (Team 2) *\- for fantastic style, presented by Frontier Developments.* \
 **The Scarecrow Award -** Cranbrook School *\- for ingenuity and problem solving, presented by TTP.* 
 
-![](/images/2022-cranbrook-robot.jpg)
+![](/images/2022-P1080823.JPG)
 
 *Above is the Cranbrook robot with its clever plough/gate mechanism.* 
 
