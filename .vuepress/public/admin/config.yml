@@ -5,7 +5,7 @@ backend:
     - editor
 publish_mode: editorial_workflow
 media_folder: ".vuepress/public/images"
-public_folder: "images"
+public_folder: "/images"
 collections:
   - label: "Pages"
     name: "pages"
