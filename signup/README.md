@@ -1,4 +1,6 @@
 <div style="text-align: center;">
-    <h1>We are now taking signup for RoboCon 2023</h1>
-    <p>Please fill out this form: <https://forms.gle/jnvBskVWA1qAvaecA> to register your interest for RoboCon 2023.
+    <h1>Register your interest for RoboCon 2023 now!</h1>
+    <LinkButtonList>
+        <LinkButton to="https://forms.gle/YW9dcV37kueUZVUz5">Sign up</LinkButton>
+    </LinkButtonList>
 </div>
