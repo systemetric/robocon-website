@@ -5,3 +5,11 @@
 
 [context.production]
   environment = { GO_VERSION = "1.12.4" }
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = '''
+    max-age=63072000;
+    includeSubDomains;
+    preload'''
