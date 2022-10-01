@@ -184,3 +184,6 @@ $RECYCLE.BIN/
 .env
 
 .vscode/
+
+# direnv
+.direnv/
