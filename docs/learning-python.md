@@ -8,7 +8,7 @@ position: 1
 Python is an interpreted high-level programming language for general-purpose programming. First released in 1991, Python has a design philosophy that emphasises code readability, notably using significant whitespace.
 
 :::tip
-If you don't know Python, why not try out Blockly? It's just as powerful, but lets you use a simple drag and drag interface to program the robot.
+If you don't know Python, why not try out Blockly? It's just as powerful, but lets you use a simple drag and drop interface to program the robot.
 :::
 
 There are many resources online for learning Python, here are a few good ones.

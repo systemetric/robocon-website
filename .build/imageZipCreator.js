@@ -31,6 +31,7 @@ function archive(gallery) {
     zip.pipe(fs.createWriteStream(path.join(galleryZipsDir, id + ".zip")));
 
     for (const image of images) {
+      console.log(image);
       zip.file(
         path.resolve(
           __dirname,

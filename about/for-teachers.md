@@ -9,11 +9,6 @@ position: 2
 
 RoboCon is a free to enter robotics competition aimed towards year nine to eleven students, no matter the level of experience and expertise they may have in these fields. If you are interested in coming to the competition or find out more yourself, please [contact us](./contact.md).
 
-<div style="text-align:center;">
-<a href="https://forms.office.com/r/56Zn1CFQar" class="link-button" style="display: inline-block">Sign up for Robocon 2022 now!</a>
-</div>
-⠀
-
 ![Team](/images/030-C3140COMPRSD.jpg)
 
 ### What is the aim?
@@ -30,7 +25,7 @@ The kit that was put together for the teams is simple enough for anyone to get r
 
 ### What are the dates for the competition?
 
-We're currently planning RoboCon 2022 - the kickoff is likely to be in November 2021 with the final competition in April 2022. Dates will be confirmed near the start of the coming academic year.
+RoboCon 2022 launched on 30 October 2021, and the final will be held in the Easter holidays on the 13th and 14th of April 2022.
 
 ### What will a kickoff consist of?
 

@@ -9,7 +9,7 @@ GPIO, or General Purpose Input Output, is the main way you'll interface with sim
 
 ## GPIO Pins
 
-On the side of your BrainBox, there are 4 regular pins and a "+5v" and "-" pin. The top of the BrainBox labels which pin corresponds to which number. Different devices need to be plugged into different pins.
+On the side of your BrainBox, there are 4 regular pins and a "+5V" and "-" pin. The top of the BrainBox labels which pin corresponds to which number. Different devices need to be plugged into different pins.
 
 ## LED Output
 
@@ -17,7 +17,7 @@ On the side of your BrainBox, there are 4 regular pins and a "+5v" and "-" pin. 
 GPIO outputs are already protected by a 1k Ohm current limiting resistor, you can connect LEDs directly!
 :::
 
-If you want to put an LED on your robot, for testing or just for looks, you'll need to plug one side of the LED into the `-` (gound) pin, and the other side of the LED into any regular pin (such as 1). Then, use the following code to set up the pin in `OUTPUT` mode and turn the LED on:
+If you want to put an LED on your robot, for testing or just for looks, you'll need to plug one side of the LED into the `-` (ground) pin, and the other side of the LED into any regular pin (such as 1). Then, use the following code to set up the pin in `OUTPUT` mode and turn the LED on:
 
 ```python
 import robot
@@ -54,7 +54,7 @@ Try making a light turn on or off depending on if a button is pressed. An explai
 
 ## Potentiometers
 
-Another form of input is a potentiometer or a variable resistor. Potentiometers should be plugged into the +5v, a regular pin (such as 3) and the - pin. Using `INPUT_ANALOG` mode, you can read the voltage output of the resistor (between 0V and 5V).
+Another form of input is a potentiometer or a variable resistor. Potentiometers should be plugged into the +5V, a regular pin (such as 3) and the - pin. Using `INPUT_ANALOG` mode, you can read the voltage output of the resistor (between 0V and 5V).
 
 ```python
 import robot

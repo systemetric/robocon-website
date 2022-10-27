@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /images/fungroupphotocompressed.jpg
+heroImage: images/2022-all-wave.jpg
 heroText: RoboCon
 tagline: Don't Walk. Do The Robot!
 actionText: Learn More
@@ -8,62 +8,78 @@ actionLink: /about/
 titleText: RoboCon
 footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 ---
-<div style="text-align:center; border-style: solid; border-width:1px; border-color: #000000; border-radius: 10px;  background-color: #28529e; font-size: 21px; padding: 0 1rem; color:white;">
 <p>
-<strong>Robocon 2022 is still open for entries!</strong>
+RoboCon is a free and accessible robotics competition aimed at GCSE students run by the Robotics Society at Hills Road Sixth Form College. 
+
+We provide a kit containing all the equipment necessary to build a simple robot, including our BrainBox and a laptop that you can use to program it. Teams are encouraged to use this kit as inspiration to create a robot as simple or complex as they would like. 
+
+No previous experience is required, and we provide support throughout the year through our kick-off event and various tech days. 
+
 </p>
 
-<p>
-<a href="https://hr-robocon.org/signup" class="link-button" style="display: inline-block">Sign up now!</a>
+<p><b>The Robocon 2022 finals took place on the 13th and 14th April.</b></p>
 
-</p>
+<br>
+
+<div>
+<h3>Reach us on Instagram!</h3>
+
+<p>
+<a href=https://www.instagram.com/hillsroadrobocon/  ><b>@hillsroadrobocon</b> 
+</a></p>
+
+<p>We encourage teams to create an Instagram account and share their progress with us by tagging this account.</p>
+
+
+
+<div class="theme-image">
+
+![Monke](images/monke.png "Monke")
+
 </div>
 
-<p>
-
-<h>   </h>
-
-</p>
-
-<div style="text-align:center; border-style: solid; border-width:1px; border-color: #000000; border-radius: 10px; background-color: #800000; font-size: 21px; padding: 0 1rem; color:white;">
-<p>
-<strong>Already competing?</strong>
-</p>
-<p>
-<a href="https://hr-robocon.org/docs" class="link-button redlink" style="display: inline-block">Go to the docs!</a>
-
-
-</p>
 </div>
 
-<h1>I want to be...</h1>
+<div class = "stats">
+    <h1 style ="margin-top: 16px;">At RoboCon 2022, we supported...</h1>
+    <div class = "row">
+        <div class= "column">
+        <p class ="rowFigure"> 21 </p>
+        <p class = "rowText"> Schools </p>
+        </div>
+        <div class = "column">
+        <p class ="rowFigure"> 150+ </p>
+        <p class = "rowText"> Students </p>
+        </div>
+        <div class = "column">
+        <p class ="rowFigure"> 30+ </p>
+        <p class = "rowText"> Volunteers </p>
+        </div>
+    </div>
+</div>
 
-<div class="features">
+<h2>Learn More About Robocon </h2>
   <div class="feature">
-    <h2>...a robot designer</h2>
-    <p>To make your robot a reality, discover what our kit can do.</p>
-    <router-link class="feature-button" to="/about/for-students.html">Start Making!</router-link>
+    <h2>Students</h2>
+    <router-link class="feature-button" to="/about/for-students.html">Start making!</router-link>
   </div>
   <div class="feature">
-    <h2>...an inspiring teacher</h2>
-    <p>We're a ready-to-go activity made to make leading a STEM activity easy.</p>
+    <h2>Teachers</h2>
     <router-link class="feature-button" to="/about/for-teachers.html">Start inspiring!</router-link>
   </div>
   <div class="feature">
-    <h2>...an impactful sponsor</h2>
-    <p>Sponsor a far-reaching STEM activity building tomorrow's engineers.</p>
+    <h2>Sponsors</h2>
     <router-link class="feature-button" to="/about/for-sponsors.html">Do something great!</router-link>
   </div>
-</div>
+
+<br>
 
 <style>
-a.redlink.link-button {
-    background-color: #e60000 !important;
-    border-bottom: 1px solid #850000 !important;
-}
-a.redlink.link-button:hover {
-    background-color: red;
-}
+.rowFigure {color: #fff; font-size: 3rem; margin: 20px 0 0 0; #text-align: center;}
+.rowText {font-size: 2rem; color: #f5f3f4; font-weight: bold; text-align: center; margin:0; }
+.column {position: relative; display: inline-block; box-sizing: border-box; float: left; padding-left:0.5em; padding-right:0.5em;width: 100%;}
+.row {max-width: 100%; margin-left: auto; margin-right: auto; overflow: hidden;}
+.stats {background: #8f1158; color: #fff; margin: 0 auto; padding: 0 0 40px 0; overflow: hidden;}
 
-
+.theme-image img {width: 40%;}
 </style>

@@ -29,7 +29,7 @@ export default {
         .filter(page => page.path.startsWith("/blog/") && page.path.length > 6)
         .map(page => ({
           post: page,
-          date: new Date(page.frontmatter.date.replace(" ", "T") + "Z")
+          date: new Date(page.frontmatter.date)
         }))
         .sort((a, b) => b.date.getTime() - a.date.getTime());
     }

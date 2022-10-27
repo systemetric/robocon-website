@@ -7,7 +7,11 @@ position: 4
 
 ## Corporate sponsorship
 
-Our sponsors promote and inspire the technological skills and abilities of budding engineers. If you become a sponsor, you'll be providing an opportunity to allow a whole range of people to get involved with STEM. If you would be interested in sponsoring the team, please [contact us](/about/contact.html), more infomation for sponsors can be found [here](/about/for-sponsors.html)
+Our sponsors promote and inspire the technological skills and abilities of budding engineers. If you become a sponsor, you'll be providing an opportunity to allow a whole range of people to get involved with STEM. If you would be interested in sponsoring the team, please [contact us](/about/contact.html), more information for sponsors can be found [here](/about/for-sponsors.html).
+
+## Sponsors from 2022
+
+![](/images/logos2.png)
 
 ## Sponsors from 2020
 
@@ -23,7 +27,7 @@ Our principal sponsor for RoboCon 2020 is **Citrix**.
 
 Citrix is powering a better way to work with unified workspace, networking, and analytics solutions that help organizations unlock innovation, engage customers, and boost productivity, without sacrificing security. With Citrix, users get a seamless work experience and IT has a unified platform to secure, manage, and monitor diverse technologies in complex cloud environments. Citrix solutions are in use by more than 400,000 organizations including 99 percent of the Fortune 100 and 98 percent of the Fortune 500.
 
-# Sponsors from 2019
+## Sponsors from 2019
 
 ### Arm
 
@@ -35,7 +39,7 @@ Arm technology is at the heart of a computing and connectivity revolution that i
 
 ![](/images/frontier_developments.svg)
 
-Frontier Developments is the studio behind _Jurassic World Evolution_, _Elite Dangerous_, _LostWinds_ and _Planet Coaster_, founded in 1994 by games industry veteran David Braben. Frontier’s development strengths are immersive and fun gameplay design with unparalleled artistic quality, all enabled by its cutting-edge in-house COBRA game development technology and a talent for getting the best out of hardware and UI.
+Frontier Developments is the studio behind *Jurassic World Evolution*, *Elite Dangerous*, *LostWinds* and *Planet Coaster*, founded in 1994 by games industry veteran David Braben. Frontier’s development strengths are immersive and fun gameplay design with unparalleled artistic quality, all enabled by its cutting-edge in-house COBRA game development technology and a talent for getting the best out of hardware and UI.
 
 ### CMR Surgical
 
