@@ -27,7 +27,7 @@ Our principal sponsor for RoboCon 2020 is **Citrix**.
 
 Citrix is powering a better way to work with unified workspace, networking, and analytics solutions that help organizations unlock innovation, engage customers, and boost productivity, without sacrificing security. With Citrix, users get a seamless work experience and IT has a unified platform to secure, manage, and monitor diverse technologies in complex cloud environments. Citrix solutions are in use by more than 400,000 organizations including 99 percent of the Fortune 100 and 98 percent of the Fortune 500.
 
-# Sponsors from 2019
+## Sponsors from 2019
 
 ### Arm
 
