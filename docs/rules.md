@@ -1,6 +1,11 @@
+---
+title: Rules
+category: None
+position: 2
+---
 # Rules
 
-You can download the official rules for 2022 [here](/2022-game-rules.pdf).
+You can download the official rules for 2023 [here](/2023-game-rules.pdf).
 
 :::tip
 
@@ -8,4 +13,4 @@ If you are viewing this page on your BrainBox then please check the website for 
 
 :::
 
-![Game logo](/images/2022-monke.png)
+![Game logo](/images/roboconHeader.png)

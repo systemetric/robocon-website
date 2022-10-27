@@ -22,43 +22,41 @@ print(markers)
 ```
 [arena Marker 0: 0.856m @0.754 degrees
 {
-  type = arena
-  code = 0
   dist = 0.856
   bearing.y = 0.754
   bearing.x = 1.03e+02
   rotation.y = 5.1
   rotation.x = -11.4
   rotation.z = 9.47
-  info = TO BIG TO PRINT
-  detection = TO BIG TO PRINT
+  info = TOO BIG TO PRINT
+  detection = TOO BIG TO PRINT
 }
 ]
 ```
 
  Full reference of the properties are further below but some useful properties are:
 
-| Property           | Description                                                        |
-| ------------------ | ------------------------------------------------------------------ |
-| `marker.dist`      | Distance to the marker in metres                                   |
-| `marker.bearing.y` | The angle your robot needs to turn to get to the marker in degrees |
-| `marker.code`      | Numeric code of the marker                                         |
-| `marker.info`      | What the marker is on:  `arena`,`winkie`, `gillikan`,`quadling`,`munchkin`|
-| `marker.info.species`      | One of `arena` or `cube`                 |
+| Property              | Description                                                                |
+| --------------------- | -------------------------------------------------------------------------- |
+| `marker.dist`         | Distance to the marker in metres                                           |
+| `marker.bearing.y`    | The angle your robot needs to turn to get to the marker in degrees         |
+| `marker.code`         | Numeric code of the marker                                                 |
+| `marker.info`         | What the marker is on:  `arena`,`winkie`, `gillikan`,`quadling`,`munchkin` |
+| `marker.info.species` | One of `arena` or `cube`                                                   |
 
 ## Codes
+
 Every april tag has a code:
 
 * April tags 0-23 will around the arena on the walls. See the rules.
-
 * April tags 100+ will be used for cubes. Note each country will have 5 cubes in the game but each zone has 10 codes attached to it.
 
-| Code               | Country                                                            |
-| ------------------ | ------------------------------------------------------------------ |
-| `100`to`109`      | Winkie Country                                   |
-| `110`to`119`  | Gillikin Country   |
-| `120`to`129`       | Quadling Country                                          |
-| `130`to`139`      | Munchkin Country                 |
+| Code         | Country          |
+| ------------ | ---------------- |
+| `100`to`109` | Winkie Country   |
+| `110`to`119` | Gillikin Country |
+| `120`to`129` | Quadling Country |
+| `130`to`139` | Munchkin Country |
 
 ## Blockly
 
@@ -115,7 +113,7 @@ for marker in markers:
     print(marker.dist)       # The distance to the marker in meters
     print(marker.bearing.y)  # The rotation the robot would need to turn to
                              # face the marker
-    print(marker.info.code)  # The number of the marker
+    print(marker.info.id)  # The number of the marker
 else:
     print("The robot didn't see any markers and skipped the for loop!")
 ```
@@ -125,21 +123,22 @@ A `Marker` object contains information about a *detected* marker. It has the fol
 | Attribute                   | What it does                                                                                                                                                                                                                                         |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `dist`                      | The distance to the Marker from the camera in meters.                                                                                                                                                                                                |
-| `bearing`                   | How far the **BrainBox** would have to rotate to face that **Marker** in degrees.                                                                                                                                                                    |
+| `bearing`                   | How far the **BrainBox** would have to rotate to face that **Marker** in degrees                                                                                                                                                                     |
 | `bearing.x`                 | The **up/down** bearing. 0 is vertically bellow the camera                                                                                                                                                                                           |
-| `bearing.y`                 | The **left/right** bearing. 0 is straight ahead from the camera.                                                                                                                                                                                     |
-| `rotation`                  | How much the **Marker** would need to be rotated to face the **BrainBox**. `(0,0,0)` Is if the marker was facing the BrainBox in the upright position.                                                                                               |
+| `bearing.y`                 | The **left/right** bearing. 0 is straight ahead from the camera                                                                                                                                                                                      |
+| `rotation`                  | How much the **Marker** would need to be rotated to face the **BrainBox**. `(0,0,0)` Is if the marker was facing the BrainBox in the upright position                                                                                                |
 | `rotation.x`                | The  **roll** of the marker                                                                                                                                                                                                                          |
 | `rotation.y`                | The **pitch** of the marker                                                                                                                                                                                                                          |
 | `rotation.z`                | The **yaw** of the marker                                                                                                                                                                                                                            |
-| `code`                      | The ID number of the marker                                                                                                                                                                                                                          |
-| `type`                      | The kind of marker, one of \["arena",""winkie", "gillikan","quadling","munchkin"]                                                                                                                                                                    |
-| `info`                      | A `MarkerInfo` object describing static properties of the marker.                                                                                                                                                                                    |
-| `info.code`                 | The ID number of the marker                                                                                                                                                                                                                          |
-| `info.type`                 | The kind of marker, one of \["arena",""winkie", "gillikan","quadling","munchkin"]                                                                                                                                                                    |
-| `info.size`                 | The length of the black edge of the marker in meters.                                                                                                                                                                                                |
-| `info.bounding_box_colour`  | A RGB tuple describing the colour which is drawn around the marker in the preview image.                                                                                                                                                             |
-| `info.species`  | Either 'arena' or 'cube'                                                                                                                                                 |
+| `info`                      | An object with various information about the marker                                                                                                                                                                                                  |
+| `info.id`                   | The ID number of the marker                                                                                                                                                                                                                          |
+| `info.type`                 | The type of marker, one of MARKER_TYPE                                                                                                                                                                                                               |
+| `info.size`                 | The length of the black edge of the marker in meters                                                                                                                                                                                                 |
+| `info.owner`                | W﻿ho or what owns the marker, a `MARKER_OWNER`                                                                                                                                                                                                       |
+| `info.type`                 | The type of marker, a `MARKER_TYPE`                                                                                                                                                                                                                  |
+| `info.owning_team`          | Which team owns the marker, a `TEAM`, only set when `info.owner` is not `MARKER_OWNER.ARENA`                                                                                                                                                         |
+| `info.wool_type`            | What type of wool the sheep has, a `WOOL_TYPE`, only set when `info.type` is `MARKER_TYPE.SHEEP`                                                                                                                                                     |
+| `info.bounding_box_colour`  | A tuple describing the colour which is drawn around the marker in the preview image (Blue, Red, Green)                                                                                                                                               |
 | `detection`                 | Technical information which has been inferred from the image.                                                                                                                                                                                        |
 | `detection.tag_family`      | The family of AprilTag which is detected. RoboCon currently only uses `tag36h11`.                                                                                                                                                                    |
 | `detection.tag_id`          | The ID number of the detected marker. Aliased by `marker.code`.                                                                                                                                                                                      |
@@ -159,6 +158,27 @@ A `Marker` object contains information about a *detected* marker. It has the fol
 Axes are all defined relative to the camera not your robot. Since we have
 no way to know how you've mounted your camera. You may need to account for this.
 :::
+
+:﻿::tip\
+Y﻿ou can import `MARKER_OWNER`, `MARKER_TYPE`, `WOOL_TYPE` and `TEAM` from `robot`,   for example...  
+
+`﻿``python
+i﻿mport robot
+
+R﻿ = robot.Robot()
+
+m﻿arkers = R.see()
+
+f﻿or marker in markers:
+ ﻿   if marker.info.owner == robot.MARKER_OWNER.ARENA:
+ ﻿       print(f"Marker {marker.info.id} is owned by the arena")
+ ﻿   elif marker.info.owning_team == R.zone:
+ ﻿       print(f"I own {marker.info.id}")
+ ﻿   else:
+ ﻿       print(f"Marker {marker.info.id} is owned by {marker.info.owning_team}")
+`﻿``
+
+:﻿::
 
 ## The `Camera` object
 
@@ -207,7 +227,7 @@ image.colour_type # The encoding method used to store the colour_frame defaults 
 image.time # A `datetime` object representing approximately the capture time.
 ```
 
-### Using USB camera's
+### Using USB cameras
 
 To use a USB camera you will need to initialize the `Robot` with something which inherits from `robot.vision.Camera`. Then just call `R.see()` as you would normally.
 
