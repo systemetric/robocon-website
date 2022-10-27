@@ -11,7 +11,7 @@ position: 1
 2. Click on the WiFi icon in the bottom right and connect to `RoboConYYYY-TeamXX` where `YYYY` is the competition year and `XX` is your team number.
 3. Navigate to <http://robot.go> in your web browser of choice (**Chrome** or **Firefox** is recommended). You should see an interface similar to this:
 
-![The Interface](/images/shepherd-a-game-of-chicken-and-egg.png)
+![The Interface](/images/shepherd.png)
 
 From now on, this will be referred to as the **Shepherd Homepage**.
 
