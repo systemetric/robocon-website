@@ -3,6 +3,7 @@ title: Vision
 category: Programming
 position: 6
 ---
+
 # Vision
 
 Computer Vision allows your robots to understand their environment. For the competition, this is used to locate markers. It will give you information about the type of the marker, the distance/angle to the marker, etc.
@@ -34,29 +35,32 @@ print(markers)
 ]
 ```
 
- Full reference of the properties are further below but some useful properties are:
+Full reference of the properties are further below but some useful properties are:
 
-| Property              | Description                                                                |
-| --------------------- | -------------------------------------------------------------------------- |
-| `marker.dist`         | Distance to the marker in metres                                           |
-| `marker.bearing.y`    | The angle your robot needs to turn to get to the marker in degrees         |
-| `marker.code`         | Numeric code of the marker                                                 |
-| `marker.info`         | What the marker is on:  `arena`,`winkie`, `gillikan`,`quadling`,`munchkin` |
-| `marker.info.species` | One of `arena` or `cube`                                                   |
+| Property           | Description                                                        |
+| ------------------ | ------------------------------------------------------------------ |
+| `marker.dist`      | Distance to the marker in metres                                   |
+| `marker.bearing.y` | The angle your robot needs to turn to get to the marker in degrees |
+| `marker.info.id`   | Numeric code of the marker                                         |
+| `marker.info.type` | One of `arena` or `cube`                                           |
 
 ## Codes
 
 Every april tag has a code:
 
-* April tags 0-23 will around the arena on the walls. See the rules.
-* April tags 100+ will be used for cubes. Note each country will have 5 cubes in the game but each zone has 10 codes attached to it.
+- April tags 0-39 will be used for cubes. Although each shepherdess only has 6
+  sheep to find, there are 9 codes allocated to each team. This is to allow us
+  to have spare sheep incase some get damaged during play
 
-| Code         | Country          |
-| ------------ | ---------------- |
-| `100`to`109` | Winkie Country   |
-| `110`to`119` | Gillikin Country |
-| `120`to`129` | Quadling Country |
-| `130`to`139` | Munchkin Country |
+- April tags 100+ will around the arena on the walls. See the rules for
+  specifics on where around the rules they will be placed
+
+| Code     | Team  |
+| -------- | ----- |
+| 0 to 9   | Leon  |
+| 10 to 19 | Zhora |
+| 20 to 29 | Pris  |
+| 30 to 39 | Roy   |
 
 ## Blockly
 
@@ -73,12 +77,13 @@ Here's an example of a Blockly program that does some basic vision:
 
 After reading the [motors documentation](docs/motors.html) you should be able to create a function which moves your robot by a number of meters as well as turn. We can then use this to write some code where a robot:
 
-* Looks for a marker
-* If it can see a marker:
+- Looks for a marker
+- If it can see a marker:
 
-  * Turn so that it is facing the marker
-  * Drive the distance to the marker
-* If there is no marker in sight turn a bit and look again, maybe there is a marker out of view.
+  - Turn so that it is facing the marker
+  - Drive the distance to the marker
+
+- If there is no marker in sight turn a bit and look again, maybe there is a marker out of view.
 
 ```python
 import robot
@@ -118,13 +123,14 @@ else:
     print("The robot didn't see any markers and skipped the for loop!")
 ```
 
-A `Marker` object contains information about a *detected* marker. It has the following attributes:
+A `Marker` object contains information about a _detected_ marker. It has the following attributes:
 
 | Attribute                   | What it does                                                                                                                                                                                                                                         |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `dist`                      | The distance to the Marker from the camera in meters.                                                                                                                                                                                                |
 | `bearing`                   | How far the **BrainBox** would have to rotate to face that **Marker** in degrees                                                                                                                                                                     |
 | `bearing.x`                 | The **up/down** bearing. 0 is vertically bellow the camera                                                                                                                                                                                           |
+<<<<<<< HEAD
 | `bearing.y`                 | The **left/right** bearing. 0 is straight ahead from the camera                                                                                                                                                                                      |
 | `rotation`                  | How much the **Marker** would need to be rotated to face the **BrainBox**. `(0,0,0)` Is if the marker was facing the BrainBox in the upright position                                                                                                |
 | `rotation.x`                | The  **roll** of the marker                                                                                                                                                                                                                          |
@@ -139,6 +145,21 @@ A `Marker` object contains information about a *detected* marker. It has the fol
 | `info.owning_team`          | Which team owns the marker, a `TEAM`, only set when `info.owner` is not `MARKER_OWNER.ARENA`                                                                                                                                                         |
 | `info.wool_type`            | What type of wool the sheep has, a `WOOL_TYPE`, only set when `info.type` is `MARKER_TYPE.SHEEP`                                                                                                                                                     |
 | `info.bounding_box_colour`  | A tuple describing the colour which is drawn around the marker in the preview image (Blue, Red, Green)                                                                                                                                               |
+=======
+| `bearing.y`                 | The **left/right** bearing. 0 is straight ahead from the camera.                                                                                                                                                                                     |
+| `rotation`                  | How much the **Marker** would need to be rotated to face the **BrainBox**. `(0,0,0)` Is if the marker was facing the BrainBox in the upright position.                                                                                               |
+| `rotation.x`                | The **roll** of the marker                                                                                                                                                                                                                           |
+| `rotation.y`                | The **pitch** of the marker                                                                                                                                                                                                                          |
+| `rotation.z`                | The **yaw** of the marker                                                                                                                                                                                                                            |
+| `code`                      | The ID number of the marker                                                                                                                                                                                                                          |
+| `type`                      | The kind of marker, one of \["arena",""winkie", "gillikan","quadling","munchkin"]                                                                                                                                                                    |
+| `info`                      | A `MarkerInfo` object describing static properties of the marker.                                                                                                                                                                                    |
+| `info.code`                 | The ID number of the marker                                                                                                                                                                                                                          |
+| `info.type`                 | The kind of marker, one of \["arena",""winkie", "gillikan","quadling","munchkin"]                                                                                                                                                                    |
+| `info.size`                 | The length of the black edge of the marker in meters.                                                                                                                                                                                                |
+| `info.bounding_box_colour`  | A RGB tuple describing the colour which is drawn around the marker in the preview image.                                                                                                                                                             |
+| `info.species`              | Either 'arena' or 'cube'                                                                                                                                                                                                                             |
+>>>>>>> c643666 (Update the marker table)
 | `detection`                 | Technical information which has been inferred from the image.                                                                                                                                                                                        |
 | `detection.tag_family`      | The family of AprilTag which is detected. RoboCon currently only uses `tag36h11`.                                                                                                                                                                    |
 | `detection.tag_id`          | The ID number of the detected marker. Aliased by `marker.code`.                                                                                                                                                                                      |
@@ -200,14 +221,14 @@ print(f"The current res is set to {R.camera.res}")
 
 You must use one of the following resolutions:
 
-* `(640, 480)` *(default)*
-* `(1296, 736)`
-* `(1296, 976)`
-* `(1920, 1088)`
-* `(1920, 1440)`
+- `(640, 480)` _(default)_
+- `(1296, 736)`
+- `(1296, 976)`
+- `(1920, 1088)`
+- `(1920, 1440)`
 
 :::tip
- Using a higher resolution will increase the amount of time it takes to process the image, but you may be able to see more. Using a smaller resolution will be faster, but markers further away may stop being visible.
+Using a higher resolution will increase the amount of time it takes to process the image, but you may be able to see more. Using a smaller resolution will be faster, but markers further away may stop being visible.
 :::
 
 ### Get data straight from the camera
