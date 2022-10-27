@@ -5,7 +5,7 @@ position: 2
 ---
 # Rules
 
-You can download the official rules for 2023 [here](/2023-game-rules.pdf).
+You can download the official rules for 2023 [here](/rulebook.pdf).
 
 :::tip
 
