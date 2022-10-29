@@ -11,18 +11,18 @@ Your code will probably need to look for different markers depending on the zone
 
 `R.zone` will be equal to the the start zone of the robot, and will be equal to one of the teams.
 
-|﻿ **Team** | **Code** |
-|﻿ --- | --- |
-|﻿ Leon | `robot.TEAM.LEON` |
-|﻿ Zhora | `robot.TEAM.ZHORA` |
-|﻿ Pris | `robot.TEAM.PRIS` |
-|﻿ Roy | `robot.TEAM.ROY` |
+| **Team** | **Code** |
+| --- | --- |
+| Leon | `robot.TEAM.LEON` |
+| Zhora | `robot.TEAM.ZHORA` |
+| Pris | `robot.TEAM.PRIS` |
+| Roy | `robot.TEAM.ROY` |
 Here's an example:
 
 ```python
-i﻿mport robot
+import robot
 
-R﻿ = robot.Robot()
+R = robot.Robot()
 
 if R.zone == robot.TEAM.LEON:
     print("Do something!")
