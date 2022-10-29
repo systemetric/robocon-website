@@ -3,6 +3,23 @@ layout: GalleryLayout
 sidebar: true
 galleries:
   - images:
+      - /images/RoboConLaunch2023_5965.JPG
+      - /images/RoboConLaunch2023_5966.JPG
+      - /images/RoboConLaunch2023_5967.JPG
+      - /images/RoboConLaunch2023_5968.JPG
+      - /images/RoboConLaunch2023_5969.JPG
+      - /images/RoboConLaunch2023_5970.JPG
+      - /images/RoboConLaunch2023_5971.JPG
+      - /images/RoboConLaunch2023_5972.JPG
+      - /images/RoboConLaunch2023_5973.JPG
+      - /images/RoboConLaunch2023_5974.JPG
+      - /images/RoboConLaunch2023_5975.JPG
+      - /images/RoboConLaunch2023_5976.JPG
+      - /images/RoboConLaunch2023_5977.JPG
+      - /images/RoboConLaunch2023_5978.JPG
+      - /images/RoboConLaunch2023_5979.JPG
+    name: RoboCon Launch 2023
+  - images:
       - /images/2022-IMG_5625.JPG
       - /images/2022-P1080846.JPG
       - /images/2022-IMG_5654.JPG
