@@ -164,26 +164,26 @@ Axes are all defined relative to the camera not your robot. Since we have
 no way to know how you've mounted your camera. You may need to account for this.
 :::
 
-:﻿::tip\
-Y﻿ou can import `MARKER_OWNER`, `MARKER_TYPE`, `WOOL_TYPE` and `TEAM` from `robot`,   for example...  
+:::tip
+You can import `MARKER_OWNER`, `MARKER_TYPE`, `WOOL_TYPE` and `TEAM` from `robot`,   for example...  
 
-`﻿``python
-i﻿mport robot
+```python
+import robot
 
-R﻿ = robot.Robot()
+R = robot.Robot()
 
-m﻿arkers = R.see()
+markers = R.see()
 
-f﻿or marker in markers:
- ﻿   if marker.info.owner == robot.MARKER_OWNER.ARENA:
- ﻿       print(f"Marker {marker.info.id} is owned by the arena")
- ﻿   elif marker.info.owning_team == R.zone:
- ﻿       print(f"I own {marker.info.id}")
- ﻿   else:
- ﻿       print(f"Marker {marker.info.id} is owned by {marker.info.owning_team}")
-`﻿``
+for marker in markers:
+    if marker.info.owner == robot.MARKER_OWNER.ARENA:
+        print(f"Marker {marker.info.id} is owned by the arena")
+    elif marker.info.owning_team == R.zone:
+        print(f"I own {marker.info.id}")
+    else:
+        print(f"Marker {marker.info.id} is owned by {marker.info.owning_team}")
+```
 
-:﻿::
+:::
 
 ## The `Camera` object
 
