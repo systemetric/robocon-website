@@ -15,7 +15,7 @@ The following are challenges for you to attempt and might give you a some help f
 # More challenges
 
 At the launch, we gave teams a PDF of challenges to complete. [You can find a
-copy of that here](https://www.robocon.uk/challenges.pdf).
+copy of that here](/challenges.pdf).
 
 # Next Steps
 
