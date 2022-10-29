@@ -1,5 +1,6 @@
 ---
 title: RoboCon 2023 Launched
+image: /images/roboconlaunch2023_5974.jpg
 date: 2022-10-29T14:04:32.027Z
 excerpt: "On the 29th October 2022, we launched RoboCon 2023: \"do androids
   dream of electric sheepdogs?\" for 31 students and 6 teachers. It was a great
