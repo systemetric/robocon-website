@@ -17,7 +17,7 @@ No previous experience is required, and we provide support throughout the year t
 
 </p>
 
-<p><b>The Robocon 2022 finals took place on the 13th and 14th April.</b></p>
+<p><b>RoboCon 2023 launched on the 29th October 2022. The finals will be held on April 12th and 13th 2023</b></p>
 
 <br>
 
@@ -34,7 +34,7 @@ No previous experience is required, and we provide support throughout the year t
 
 <div class="theme-image">
 
-![Monke](images/monke.png "Monke")
+![Electric sheep](images/electricsheep.png "Electric sheep")
 
 </div>
 
