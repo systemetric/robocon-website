@@ -29,7 +29,7 @@
     <slot name="bottom"/>
   </div>
 </template>
-
+<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
 
