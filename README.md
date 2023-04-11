@@ -8,6 +8,10 @@ actionLink: /about/
 titleText: RoboCon
 footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 ---
+> # *RoboCon Finals are happening now! We're in Hills Road 6th Form College on Wednesday and Thursday (12th and 13th April) to play your robots off against each other... See you there and may the best robot win!*
+
+
+
 <p>
 RoboCon is a free and accessible robotics competition aimed at GCSE students run by the Robotics Society at Hills Road Sixth Form College. 
 
@@ -29,8 +33,6 @@ No previous experience is required, and we provide support throughout the year t
 </a></p>
 
 <p>We encourage teams to create an Instagram account and share their progress with us by tagging this account.</p>
-
-
 
 <div class="theme-image">
 
