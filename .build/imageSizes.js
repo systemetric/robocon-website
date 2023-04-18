@@ -154,13 +154,19 @@ function walkDir(root) {
           (i / objectsLength) * 100
         )}%] requesting image size of ${image}...`
       );
-      let imageSize;
-      try {
-        imageSize = await sizeOf(download);
-      } catch (e) {
-        console.log(e);
-        continue;
-      }
+      const sizePromise = Promise.new(function(resolve, reject) {
+        http.get(options, function (response) {
+          const chunks = []
+          response.on('data', function (chunk) {
+            chunks.push(chunk)
+          }).on('end', async function() {
+            const buffer = Buffer.concat(chunks)
+            const imageSize = await sizeOf(buffer)
+            resolve(imageSize);
+          })
+        })
+      })
+      const imageSize = await sizePromise;
       addSize(image, imageSize);
       // noinspection JSUnresolvedVariable
       console.log(
