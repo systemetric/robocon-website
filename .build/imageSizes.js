@@ -154,7 +154,7 @@ function walkDir(root) {
           (i / objectsLength) * 100
         )}%] requesting image size of ${image}...`
       );
-      const sizePromise = Promise.new(function(resolve, reject) {
+      const sizePromise = new Promise(function(resolve, reject) {
         http.get(options, function (response) {
           const chunks = []
           response.on('data', function (chunk) {
