@@ -19,7 +19,7 @@ galleries:
       - /images/2023/innovation-winner.jpg
       - /images/2023/jeb_-winner.jpg
       - /images/2023/KingsEly.jpg
-      - /images/2023/redshirts.png
+      - /images/2023/redshirts.jpg
       - /images/2023/SawstonVillageCollege.jpg
       - /images/2023/second-winner.jpg
       - /images/2023/third-winner.jpg
