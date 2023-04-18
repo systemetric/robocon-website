@@ -8,7 +8,7 @@ const path = require("path");
 const sizeOf = promisify(require("image-size"));
 const request = require("request-promise-native");
 const requestSizeOf = require("request-image-size");
-const http = require("http");
+const https = require("https");
 const url = require('url');
 
 function walkDir(root) {
@@ -157,7 +157,7 @@ function walkDir(root) {
         )}%] requesting image size of ${image}...`
       );
       const sizePromise = new Promise(function(resolve, reject) {
-        http.get(url.parse(download), function (response) {
+        https.get(url.parse(download), function (response) {
           const chunks = []
           response.on('data', function (chunk) {
             chunks.push(chunk)
