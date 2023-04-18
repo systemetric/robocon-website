@@ -3,6 +3,31 @@ layout: GalleryLayout
 sidebar: true
 galleries:
   - images:
+      - 6609.jpg
+      - 6690.jpg
+      - 6756.jpg
+      - 6812.jpg
+      - 6829.jpg
+      - 6866.jpg
+      - BottishamVillageCollege.jpg
+      - core-values-winner.jpg
+      - Cranbrook.jpg
+      - dQw4w9WgXcQ-winner.jpg
+      - first-winner.jpg
+      - HertswoodAcademy.jpg
+      - ImpingtonVillageCollege.jpg
+      - innovation-winner.jpg
+      - jeb_-winner.jpg
+      - KingsEly.jpg
+      - redshirts.png
+      - SawstonVillageCollege.jpg
+      - second-winner.jpg
+      - third-winner.jpg
+      - TrumpingtonCommunityCollege1.jpg
+      - TrumpingtonCommunityCollege2.jpg
+      - TrumpingtonCommunityCollege3.jpg
+    name: RoboCon Final 2023
+  - images:
       - /images/RoboConLaunch2023_5965.JPG
       - /images/RoboConLaunch2023_5966.JPG
       - /images/RoboConLaunch2023_5967.JPG
