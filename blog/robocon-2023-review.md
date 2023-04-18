@@ -1,7 +1,7 @@
 ---
 title: RoboCon 2023 Review
 image: /images/2023-all-wave.jpg
-date: 2022-05-10 20:24:54
+date: 2023-04-18 12:36:00
 excerpt: See the results of an incredible 2023 RoboCon!
 layout: PostLayout
 ---

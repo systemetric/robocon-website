@@ -39,23 +39,23 @@ No previous experience is required, and we provide support throughout the year t
 
 </div>
 
-<div class = "stats">
-    <h1 style ="margin-top: 16px;">At RoboCon 2022, we supported...</h1>
-    <div class = "row">
-        <div class= "column">
-        <p class ="rowFigure"> 21 </p>
-        <p class = "rowText"> Schools </p>
-        </div>
-        <div class = "column">
-        <p class ="rowFigure"> 150+ </p>
-        <p class = "rowText"> Students </p>
-        </div>
-        <div class = "column">
-        <p class ="rowFigure"> 30+ </p>
-        <p class = "rowText"> Volunteers </p>
-        </div>
-    </div>
-</div>
+<!-- <div class = "stats"> -->
+<!--     <h1 style ="margin-top: 16px;">At RoboCon 2022, we supported...</h1> -->
+<!--     <div class = "row"> -->
+<!--         <div class= "column"> -->
+<!--         <p class ="rowFigure"> 21 </p> -->
+<!--         <p class = "rowText"> Schools </p> -->
+<!--         </div> -->
+<!--         <div class = "column"> -->
+<!--         <p class ="rowFigure"> 150+ </p> -->
+<!--         <p class = "rowText"> Students </p> -->
+<!--         </div> -->
+<!--         <div class = "column"> -->
+<!--         <p class ="rowFigure"> 30+ </p> -->
+<!--         <p class = "rowText"> Volunteers </p> -->
+<!--         </div> -->
+<!--     </div> -->
+<!-- </div> -->
 
 <h2>Learn More About Robocon </h2>
   <div class="feature">
