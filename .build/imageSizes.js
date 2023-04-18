@@ -154,7 +154,12 @@ function walkDir(root) {
           (i / objectsLength) * 100
         )}%] requesting image size of ${image}...`
       );
-      const imageSize = await requestSizeOf(download);
+      let imageSize;
+      try {
+        imageSize = await requestSizeOf(download);
+      } catch (e) {
+        continue;
+      }
       addSize(image, imageSize);
       // noinspection JSUnresolvedVariable
       console.log(
