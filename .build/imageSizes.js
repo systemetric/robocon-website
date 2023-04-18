@@ -159,7 +159,7 @@ function walkDir(root) {
       console.log(
         `info: [${Math.floor(
           ((i + 1) / objectsLength) * 100
-        )}%] got size of ${image} (in ${imageSize.downloaded} bytes)`
+        )}%] got size of ${image}`
       );
     }
   } else {
