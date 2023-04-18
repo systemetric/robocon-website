@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: images/2022-all-wave.jpg
+heroImage: images/2023-all-wave.jpg
 heroText: RoboCon
 tagline: Don't Walk. Do The Robot!
 actionText: Learn More
@@ -8,9 +8,6 @@ actionLink: /about/
 titleText: RoboCon
 footer: © Hills Road Sixth Form College | Don't Walk. Do The Robot!
 ---
-> # *RoboCon Finals are happening now! We're in Hills Road 6th Form College on Wednesday and Thursday (12th and 13th April) to play your robots off against each other... See you there and may the best robot win!*
-
-
 
 <p>
 RoboCon is a free and accessible robotics competition aimed at GCSE students run by the Robotics Society at Hills Road Sixth Form College. 
@@ -21,7 +18,7 @@ No previous experience is required, and we provide support throughout the year t
 
 </p>
 
-<p><b>RoboCon 2023 launched on the 29th October 2022. The finals will be held on April 12th and 13th 2023</b></p>
+<p><b>RoboCon 2023 finals were be held on April 12th and 13th 2023, stay tuned for the launch of RoboCon 2024!</b></p>
 
 <br>
 
