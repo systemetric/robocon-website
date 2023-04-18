@@ -6,10 +6,9 @@ const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 const path = require("path");
 const sizeOf = promisify(require("image-size"));
+const syncSizeOf = require("image-size");
 const request = require("request-promise-native");
 const requestSizeOf = require("request-image-size");
-const https = require("https");
-const url = require('url');
 
 function walkDir(root) {
   const names = [];
@@ -46,7 +45,7 @@ function walkDir(root) {
   if (fs.existsSync(cachedSizesPath)) {
     console.log(`info: loading sizes cache from ${cachedSizesPath}...`);
     const cachedSizesJson = await readFile(cachedSizesPath, {
-      encoding: "utf8"
+      encoding: "utf8",
     });
     sizes = JSON.parse(cachedSizesJson);
   } else {
@@ -58,7 +57,7 @@ function walkDir(root) {
 
     sizes[`/images/${image}`] = {
       width,
-      height
+      height,
     };
   };
 
@@ -94,7 +93,7 @@ function walkDir(root) {
 
         objectsToRequest.push({
           oid,
-          size
+          size,
         });
         lfsFileCount++;
       } else {
@@ -124,25 +123,21 @@ function walkDir(root) {
         Accept: "application/vnd.git-lfs+json; charset=utf-8",
         Authorization: `Basic ${Buffer.from(
           `access-token:${process.env.LFS_ACCESS_TOKEN}`
-        ).toString("base64")}`
+        ).toString("base64")}`,
       },
       body: {
         operation: "download",
         objects: objectsToRequest,
         ref: {
-          name: "refs/heads/master"
-        }
+          name: "refs/heads/master",
+        },
       },
-      json: true
+      json: true,
     };
     console.log(
       `info: requesting lfs info for ${objectsToRequest.length} images...`
     );
     const lfsRes = await request(lfsReq);
-    /*const lfsRes = JSON.parse(
-      '{"transfer":"basic","objects":[{"oid":"1685e73e503c83945ab722213b22c09f3811a724bd6308c79c0180035f8bf74e","size":69163,"authenticated":true,"actions":{"download":{"href":"https://nf-git-lfs-jfk-production.s3.amazonaws.com/e9902a70-1150-4450-b04d-0b67a720cfb2/1685e73e503c83945ab722213b22c09f3811a724bd6308c79c0180035f8bf74e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI45QHABMIC4EDVSA%2F20190415%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190415T094953Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=b704a80019c690a3dcfc1e9212ae20288a5ad77d5d939e0d3719f96c4c9d509d","expires_in":900}}},{"oid":"a6c03904e52b2628ac342f58676e1c88c733aa1596bc36a9f6ec0808d2ed5edf","size":760209,"authenticated":true,"actions":{"download":{"href":"https://nf-git-lfs-jfk-production.s3.amazonaws.com/e9902a70-1150-4450-b04d-0b67a720cfb2/a6c03904e52b2628ac342f58676e1c88c733aa1596bc36a9f6ec0808d2ed5edf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI45QHABMIC4EDVSA%2F20190415%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190415T094953Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=9971634476e33a9dd94f424af98a987da29d6fe2f705491e9f0ebdf24ca46e93","expires_in":900}}},{"oid":"02cf30dc79bcb50fcf3e874f7f3e5ed903a3c250bcf76d6061e3e020b8311c93","size":48773,"authenticated":true,"actions":{"download":{"href":"https://nf-git-lfs-jfk-production.s3.amazonaws.com/e9902a70-1150-4450-b04d-0b67a720cfb2/02cf30dc79bcb50fcf3e874f7f3e5ed903a3c250bcf76d6061e3e020b8311c93?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI45QHABMIC4EDVSA%2F20190415%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190415T094953Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=24311b37a7edea79e22ddc50af93fdbd59a3da11135cb45aa69e874c494992f3","expires_in":900}}}]}\n'
-    );*/
-
     const objectsLength = lfsRes.objects.length;
     for (let i = 0; i < objectsLength; i++) {
       const object = lfsRes.objects[i];
@@ -156,19 +151,9 @@ function walkDir(root) {
           (i / objectsLength) * 100
         )}%] requesting image size of ${image}...`
       );
-      const sizePromise = new Promise(function(resolve, reject) {
-        https.get(url.parse(download), function (response) {
-          const chunks = []
-          response.on('data', function (chunk) {
-            chunks.push(chunk)
-          }).on('end', async function() {
-            const buffer = Buffer.concat(chunks)
-            const imageSize = await sizeOf(buffer)
-            resolve(imageSize);
-          })
-        })
-      })
-      const imageSize = await sizePromise;
+
+      const result = await request.get({ uri: download, encoding: null });
+      const imageSize = syncSizeOf(result);
       addSize(image, imageSize);
       // noinspection JSUnresolvedVariable
       console.log(
@@ -183,12 +168,12 @@ function walkDir(root) {
 
   const sizesJson = JSON.stringify(sizes);
   await writeFile(sizesPath, sizesJson, {
-    encoding: "utf8"
+    encoding: "utf8",
   });
   console.log(`info: wrote sizes to ${sizesPath}`);
   if (cachedSizesPath !== sizesPath) {
     await writeFile(cachedSizesPath, sizesJson, {
-      encoding: "utf8"
+      encoding: "utf8",
     });
     console.log(`info: wrote sizes cache to ${cachedSizesPath}`);
   } else {
