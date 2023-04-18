@@ -158,6 +158,7 @@ function walkDir(root) {
       try {
         imageSize = await sizeOf(download);
       } catch (e) {
+        console.log(e);
         continue;
       }
       addSize(image, imageSize);
