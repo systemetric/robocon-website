@@ -87,4 +87,4 @@ Watch this space for information about RoboCon 2024 in the coming months!
 
 Don’t walk, do the robot! 
 
-[All of the Red Shirts](/images/2023/redshirts.jpg)
+![All of the Red Shirts](/images/2023/redshirts.jpg)
