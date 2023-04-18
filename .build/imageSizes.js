@@ -8,6 +8,7 @@ const path = require("path");
 const sizeOf = promisify(require("image-size"));
 const request = require("request-promise-native");
 const requestSizeOf = require("request-image-size");
+const http = require("http");
 
 function walkDir(root) {
   const names = [];
