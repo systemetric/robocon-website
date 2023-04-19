@@ -65,7 +65,7 @@ const imageSizes = JSON.parse(
 );
 
 const galleryZipSizes = {};
-const zipsPath = path.resolve(__dirname, "public", "galleryzips");
+const zipsPath = path.resolve(__dirname, "..", ".non-vuepress-public", "galleryzips");
 for (const zip of fs.readdirSync(zipsPath)) {
   const zipPath = path.join(zipsPath, zip);
 

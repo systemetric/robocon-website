@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "yarn images:zip && yarn images:sizes && yarn build:vuepress && yarn build:functions",
-    "build:vuepress": "vuepress build && cp ./.vuepress/dist/assets/js/admin.*.js ./.vuepress/dist/assets/js/admin.js",
+    "build:vuepress": "vuepress build && cp ./.vuepress/dist/assets/js/admin.*.js ./.vuepress/dist/assets/js/admin.js && cp -r .non-vuepress-public/* .vuepress/dist/",
     "build:functions": "cd ./.vuepress/functions/gosrc && make build",
     "images:compress": "node ./.build/imageCompressor.js",
     "images:sizes": "node ./.build/imageSizes.js",

@@ -14,8 +14,7 @@ const galleries = fm(
 const galleryZipsDir = path.resolve(
   __dirname,
   "..",
-  ".vuepress",
-  "public",
+  ".non-vuepress-public",
   "galleryzips"
 );
 
