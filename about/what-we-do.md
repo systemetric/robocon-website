@@ -11,4 +11,6 @@ From 2002-2011 the robotics group entered the [FIRST Robotics Competition](https
 
 *Don't Walk.* **Do The Robot**!
 
-![null](/images/1winners.jpg)
+![RC18 Team](/images/1winners.jpg)
+
+![RC23 Team](/images/team-photo.jpg)
