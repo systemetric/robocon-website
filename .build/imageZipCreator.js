@@ -138,6 +138,13 @@ function archive(gallery) {
       console.log(
         `${gallery.name} is already cached, copying cache to main location`
       );
+
+      const cacheFileSize = fs.statSync(
+        path.join(cachedGalleryZipsDir, gallery.name.toLowerCase().replace(/ /g, "-") + ".zip")
+      ).size;
+
+      console.log(`cache file size: ${cacheFileSize}`);
+
       fs.copyFileSync(
         path.join(
           cachedGalleryZipsDir,
