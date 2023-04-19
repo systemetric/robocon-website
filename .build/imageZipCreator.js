@@ -63,7 +63,7 @@ function archive(gallery) {
         "public",
         image.substring(1)
       );
-      const lfsData = await fs.readFile(imagePath, { encoding: "utf8" }).split("\n");
+      const lfsData = (await fs.readFile(imagePath, { encoding: "utf8" })).split("\n");
       if (lfsData[0] === "version https://git-lfs.github.com/spec/v1") {
         const oid = lfsData[1].split(" ")[1].split(":")[1];
         const size = parseInt(lfsData[2].split(" ")[1]);
