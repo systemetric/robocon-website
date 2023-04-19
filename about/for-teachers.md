@@ -1,7 +1,7 @@
 ---
 title: For Teachers
 category: None
-position: 2
+position: 3
 ---
 # For Teachers FAQ
 
