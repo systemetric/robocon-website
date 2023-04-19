@@ -3,17 +3,6 @@ layout: GalleryLayout
 sidebar: true
 galleries:
   - images:
-      - /images/2023/gallery-final/IMG_5973.JPG
-      - /images/2023/gallery-final/IMG_5974.JPG
-      - /images/2023/gallery-final/IMG_5975.JPG
-      - /images/2023/gallery-final/IMG_5976.JPG
-      - /images/2023/gallery-final/IMG_5977.JPG
-      - /images/2023/gallery-final/IMG_5978.JPG
-      - /images/2023/gallery-final/IMG_5979.JPG
-      - /images/2023/gallery-final/IMG_5980.JPG
-      - /images/2023/gallery-final/IMG_5981.JPG
-      - /images/2023/gallery-final/IMG_5982.JPG
-      - /images/2023/gallery-final/IMG_6234.JPG
       - /images/2023/gallery-final/IMG_6237.JPG
       - /images/2023/gallery-final/IMG_6238.JPG
       - /images/2023/gallery-final/IMG_6239.JPG
