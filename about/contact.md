@@ -5,7 +5,7 @@ position: 5
 ---
 # Contact
 
-You can contact Hills Road Robotics by emailing [robotics@hrsfc.ac.uk](mailto:robotics@hrsfc.ac.uk).
+You can contact Hills Road Robotics by emailing [robotics@hrsfc.ac.uk](mailto:robotics@hrsfc.ac.uk). Please note that responses may be slower outside of term time.
 
 You can find us on [Facebook](https://www.facebook.com/systemetric/), [Twitter](https://twitter.com/SystemetricLabs), or [Instagram](https://https://https://www.instagram.com/hr.robotics/).
 
