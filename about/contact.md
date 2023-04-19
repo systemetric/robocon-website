@@ -7,6 +7,6 @@ position: 5
 
 You can contact Hills Road Robotics by emailing [robotics@hrsfc.ac.uk](mailto:robotics@hrsfc.ac.uk).
 
-You can find us on [Facebook](https://www.facebook.com/systemetric/), [Twitter](https://twitter.com/SystemetricLabs), or [Instagram](https://www.instagram.com/hr.robocon/).
+You can find us on [Facebook](https://www.facebook.com/systemetric/), [Twitter](https://twitter.com/SystemetricLabs), or [Instagram](https://https://https://www.instagram.com/hr.robotics/).
 
-We are based at Hills Road Sixth Form College, (Hills Rd, Cambridge CB2 8PE).
+We are based at Hills Road Sixth Form College (Hills Road, Cambridge CB2 8PE).
