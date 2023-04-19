@@ -90,6 +90,7 @@ function archive(gallery) {
           body: {
             operation: "download",
             objects: [{ oid, size }],
+            // TODO: Optimize this to request once for everything
             ref: {
               name: "refs/heads/master",
             },
