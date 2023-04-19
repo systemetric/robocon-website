@@ -3,7 +3,7 @@ title: Who are we?
 category: None
 position: 2
 ---
-# Who Are We?
+# Who are we?
 
 We are the Hills Road Robotics Society, a group of students at [Hills Road Sixth Form College](http://www.hillsroad.ac.uk/), who run a Robotics Competition, RoboCon, as well as competing in [Student Robotics](https://studentrobotics.org/). We have competed in Student Robotics every year that it has run since its initial launch, and we were the first team from outside Southampton to participate. However, in 2018 Student Robotics did not run. So we decided to run our own robotics competition instead, and thus RoboCon was born. Every year we now run [RoboCon for students in year 9-11](/blog/robocon-2023-review.html). 
 
