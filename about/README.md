@@ -1,5 +1,5 @@
 ---
-title: What is RoboCon
+title: What is RoboCon?
 category: None
 position: 1
 ---
