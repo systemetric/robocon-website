@@ -1,5 +1,5 @@
 ---
-title: Who Are We?
+title: Who are we?
 category: None
 position: 2
 ---
