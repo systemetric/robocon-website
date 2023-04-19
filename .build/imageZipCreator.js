@@ -24,7 +24,7 @@ function archive(gallery) {
     const { name, images } = gallery;
     const id = name.toLowerCase().replace(/ /g, "-");
 
-    const zip = archiver("zip", {});
+    const zip = archiver("zip", { zlib: { level: 9 } });
     zip.on("close", resolve);
     zip.on("finish", resolve);
     zip.on("error", reject);
