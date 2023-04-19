@@ -25,7 +25,7 @@ The kit that was put together for the teams is simple enough for anyone to get r
 
 ### What are the dates for the competition?
 
-RoboCon 2022 launched on 30 October 2021, and the final will be held in the Easter holidays on the 13th and 14th of April 2022.
+RoboCon is launched in the October half term, and the final is held on the second Wednesday and Thursday in the Easter holidays. In 2023, this was the 12th and 13th of April.
 
 ### What will a kickoff consist of?
 
@@ -43,13 +43,13 @@ You don't need to put in too much work, especially not throughout the allocated 
 
 ### Can we compete if we don't have any spare IT at our school?
 
-At the kickoff event, we provide a kit which includes a Windows-based tablet. This allows teams wireless connection directly to their robot for programming and debugging. The tablet is pre-installed with everything you need to program the robot. You may need access to the internet from a separate device to contact our online help-desk, and the occasional check for blog updates from the RoboCon Team. Otherwise, you don't need anything from your IT. The website is mobile-friendly for students who have their own smart phones.
+At the kickoff event, we provide a kit which includes a Windows-based laptop. This allows teams wireless connection directly to their robot for programming and debugging. The laptop is pre-installed with everything you need to program the robot. You may need access to the internet from a separate device to contact our online help-desk, and the occasional check for blog updates from the RoboCon Team. Otherwise, you don't need anything from your IT. The website is mobile-friendly for students who have their own smart phones.
 
 ![Kickoff](/images/IMG_4219.JPG)
 
 ### What else is in the kit?
 
-Within the centre of the kit is a "Brain Box" which contains the computing and vision module, and is everything needed to run two substantial DC motors and up to four servos. It also offers some digital and analogue IO to control optional additional external circuitry. Most teams will not need to use the ability to extend the electronics although for more adventurous teams, as the kit is Raspberry PI based, generic tutorials for how to attach any USB, UART or I2C device to a PI can be found online. We provide guidance for the most common and simple tasks that students might try to get their robot to perform- such as how to run a high current device like a pump.
+Within the centre of the kit is a "Brain Box" which contains the computing and vision module, and is everything needed to run two substantial DC motors and up to four servos. It also offers some digital and analogue IO to control optional additional external circuitry. Most teams will not need to use the ability to extend the electronics although for more adventurous teams, as the kit is Raspberry PI based, generic tutorials for how to attach any USB, UART or I2C device to a PI can be found online. We provide guidance for the most common and simple tasks that students might try to get their robot to perform - such as how to run a high current device like a pump.
 
 The kit also includes a basic robot chassis with two small DC motors, wheels and a small servo.
 
@@ -57,7 +57,7 @@ The kit also includes a basic robot chassis with two small DC motors, wheels and
 
 ### How do the students program their robot?
 
-Software-wise we have developed a Python library - this greatly reduces the complexity of using the kit including all the computer vision. Coding can all be done on the tablet provided.
+Software-wise we have developed a Python library - this greatly reduces the complexity of using the kit including all the computer vision. Coding can all be done on the laptop provided.
 
 ### Python is not accessible to all my students. Can they still join in?
 
@@ -79,7 +79,7 @@ We place no restriction on how teams can add to the components in the kit to rea
 
 ### What resources are useful?
 
-If the possibility for resources is available, teams will probably benefit from more substantial servos for whatever manipulation is required. Last year, 3D printed parts and vacuum cups were popular additions with some teams. We can offer advice on buying additional parts, and they don't have to be expensive if brought through the right channels. As an example, eBay vendors are selling packs of four servos for six pounds. In general additions can be bought quite cheaply, especially if students plan ahead and are prepared to wait for shipping. There is deliberately time in the schedule to allow for this.
+If the possibility for resources is available, teams will probably benefit from more substantial servos for whatever manipulation is required. 3D printed parts and vacuum cups have been popular additions with some teams. We can offer advice on buying additional parts, and they don't have to be expensive if bought through the right channels. As an example, eBay vendors are selling packs of four servos for six pounds. In general, additions can be bought quite cheaply, especially if students plan ahead and are prepared to wait for shipping. There is deliberately time in the schedule to allow for this.
 
 ### Will we still be able to compete with a low cost robot?
 
@@ -94,4 +94,4 @@ We will be offering the following assistance to enable teams to be successful:
 * Tutorials at the kickoff. 
 * Online support through our forums, blog and documentation.
 * Email support for teacher questions.
-* Saturday drop in sessions at Hills Road.
+* Saturday drop-in sessions at Hills Road.
