@@ -7,7 +7,7 @@ position: 4
 
 ## Corporate sponsorship
 
-Our sponsors promote and inspire the technological skills and abilities of budding engineers. If you become a sponsor, you'll be providing an opportunity to allow a whole range of people to get involved with STEM. If you would be interested in sponsoring RoboCon, please [contact us](/about/contact.html)More information for sponsors can be found [here](/about/for-sponsors.html).
+Our sponsors promote and inspire the technological skills and abilities of budding engineers. If you become a sponsor, you'll be providing an opportunity to allow a whole range of people to get involved with STEM. If you would be interested in sponsoring RoboCon, please [contact us](/about/contact.html). More information for sponsors can be found [here](/about/for-sponsors.html).
 
 ## S﻿ponsors from 2023
 
