@@ -187,3 +187,6 @@ $RECYCLE.BIN/
 
 # direnv
 .direnv/
+
+# gallery zips that are too large
+.vuepress/public/galleryzips/robocon-final-2023.zip
