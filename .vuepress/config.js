@@ -65,15 +65,17 @@ const imageSizes = JSON.parse(
 );
 
 const galleryZipSizes = {};
-const zipsPath = path.resolve(__dirname, "public", "galleryzips");
+const zipsPath = path.resolve(__dirname, "..", ".non-vuepress-public", "galleryzips");
 for (const zip of fs.readdirSync(zipsPath)) {
   const zipPath = path.join(zipsPath, zip);
 
   let size = fs.statSync(zipPath).size;
-  const data = fs.readFileSync(zipPath, { encoding: "utf8" });
-  if (data.startsWith("version https://git-lfs.github.com/spec/v1")) {
-    const lines = data.split("\n");
-    size = parseInt(lines[2].split(" ")[1]);
+  if (size <= 2147483647) {  // If the file is bigger than a buffer it isn't a lfs pointer
+    const data = fs.readFileSync(zipPath, { encoding: "utf8" });
+    if (data.startsWith("version https://git-lfs.github.com/spec/v1")) {
+      const lines = data.split("\n");
+      size = parseInt(lines[2].split(" ")[1]);
+    }
   }
 
   galleryZipSizes[zip.substring(0, zip.length - 4)] = size;

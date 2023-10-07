@@ -1,5 +1,5 @@
 .vuepress/public/*.pdf filter=lfs diff=lfs merge=lfs -text
 .vuepress/public/*.zip filter=lfs diff=lfs merge=lfs -text
 .vuepress/public/images/*.* filter=lfs diff=lfs merge=lfs -text
-.vuepress/public/galleryzips/*.zip filter=lfs diff=lfs merge=lfs -text
-.vuepress/public/images/*/*.* filter=lfs diff=lfs merge=lfs -text
+.non-vuepress-public/galleryzips/*.zip filter=lfs diff=lfs merge=lfs -text
+.vuepress/public/images/**/*.* filter=lfs diff=lfs merge=lfs -text
