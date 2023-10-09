@@ -155,7 +155,7 @@ export default {
 <style lang="stylus">
 .cookie-notice
   position: fixed
-  top: 3.6rem
+  top: 6.5rem
   left: 0
   right: 0
   z-index: 100

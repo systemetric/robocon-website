@@ -1,5 +1,6 @@
 <template>
   <div class="home-root">
+    <Banner />
     <div
       v-if="data.heroImage"
       class="img"
@@ -37,9 +38,10 @@
 
 <script>
 import NavLink from "./NavLink.vue";
+import Banner from "./Banner.vue";
 
 export default {
-  components: { NavLink },
+  components: {Banner, NavLink },
   computed: {
     data() {
       return this.$page.frontmatter;
@@ -60,6 +62,7 @@ export default {
 $heroHeight = 8rem;
 
 .home-root .img {
+  margin-top: 5rem
   width: 100%;
   height: calc(100vh - 3.6rem - 8rem);
   background-position: center;
