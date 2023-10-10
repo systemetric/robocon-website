@@ -62,7 +62,7 @@ export default {
 $heroHeight = 8rem;
 
 .home-root .img {
-  margin-top: 5rem
+  margin-top: 3.5rem
   width: 100%;
   height: calc(100vh - 3.6rem - 8rem);
   background-position: center;
