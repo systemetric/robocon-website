@@ -54,6 +54,26 @@ body
   border-right 1px solid $borderColor
   overflow-y auto
 
+.banner
+  position sticky !important
+  z-index 20
+  top 3.5rem
+  left 0
+  margin none
+  display flex
+  align-items center
+  justify-content  center
+  padding 6px
+  box-sizing border-box
+  width 100%
+  height 3rem
+  background-color #2d4051
+
+.banner h1 {
+  color white
+  font-size 1.3rem
+}
+
 .content:not(.custom)
   @extend $wrapper
   > *:first-child
