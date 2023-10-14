@@ -48,6 +48,8 @@ Now that the brainbox is powered on, turn on your laptop and open the User accou
 
    ![Look Like This](/images/picture2.jpg "Editing Window")
 
+
+
 ## Motors & 12V Power
 
 The specifications for the motor board can be found [here](/CytronBoardDocs.pdf), however to summarize:
