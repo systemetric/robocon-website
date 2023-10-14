@@ -7,8 +7,6 @@ position: 2
 
 The BrainBox is the center of the kit, it controls power, provides you with useful electronics and is where your code runs. Do **NOT** open the BrainBox unless given written permission by Hills Road RoboCon.
 
-
-
 ![The brain box](/images/brainbox.jpg)
 
 ## Power
@@ -33,7 +31,22 @@ Powering on the BrainBox: 
 
 <!--EndFragment-->
 
+### C﻿onnecting to the BrainBox and setting up code:
 
+Now that the brainbox is powered on, turn on your laptop and open the User account. 
+
+1. Open the Wi-Fi menu. You should see a network called “RoboCon\[Current Year]-Team\[Team No.]”, for example, RoboCon1234-Team1
+   The team number should match the number on the laptop.
+2. Select this network. When prompted for a password, enter the one found on the bottom of the BrainBox.
+3. Navigate to the web address found on the BrainBox.
+4. You should be given options for Rules, Editor, Docs, and Run. 
+   a.	Rules will contain a copy of the competition’s rules.
+   b.	Editor will allow you access to the code on the robot.
+   c.	Docs will contain the documentation for the code.
+   d.	Run will run the currently loaded .py script on the robot.
+5. Navigate to the Editor window. It should look as below.
+
+   ![Look Like This](/images/picture2.jpg)
 
 ## Motors & 12V Power
 
