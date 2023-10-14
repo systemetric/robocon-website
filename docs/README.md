@@ -5,7 +5,7 @@ position: 1
 ---
 # Getting Started
 
-Welcome to the docs for **Robocon 2023**!
+Welcome to the docs for **Robocon 2024**!
 
 We suggest you first get familiar with the [rules](/docs/rules.md). Once you've done that, you'll need to [turn your robot on](/docs/turning-everything-on.html).
 
