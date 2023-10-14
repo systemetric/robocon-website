@@ -31,24 +31,24 @@ When started, using the start button the robot will default to running the last 
 
 :::
 
-
 # Getting Logs
 
 When running your robot code you can see the logs from the robot in the editor. Sometimes it's useful to be able to view the logs later to analyse what happened.
 
 :::warning
+
 * Be careful when reusing USB sticks to avoid accidentally running code from the USB Stick!
-:::
+  :::
 
 1. Insert a USB stick in the robot before turning it on.
 2. The log file will be automatically written to the USB stick as `logs.txt`
 3. Remember to fully power down the robot before removing the USB stick
 
-
 :::tip
+
 * Logs are collected whatever way the code is run, but only the most recent logs are preserved
 * The log files are also collected during system shutdown leading to worrying messages like:
-:::
+  :::
 
 ```
 Exception in thread Thread-2:
@@ -72,7 +72,7 @@ IOError: \[Errno 121] Remote I/O error
 
  These can safely be ignored unless you also see them on the web interface.
 
-# Collecting iamges and raw analysis
+# Collecting images and raw analysis
 
 Every time the robot takes a picture it is updated on the web interface, during development it is occasionally useful to be able to also keep a log of pictures that have been analysed to check camera focus, motion blur etc.
 
@@ -80,11 +80,12 @@ Every time the robot takes a picture it is updated on the web interface, during 
 2. Add a file with the name "log_markers.txt" to the USB stick to collect analysis of images
 3. Insert the stick before turning the robot on
 4. Remember to fully shut down the robot before removing the USB stick
-WARNING: Collecting all images may slow down the processing time from your robot - Use with care!
+   WARNING: Collecting all images may slow down the processing time from your robot - Use with care!
 
 # Updating your team image
 
 When the robot boots, it loads a default image which is displayed until the robot takes a picture, in the arena these images are displayed on an overhead projector. You can change the default image.
+
 1. Save your Image as 440x330 pixels in jpeg format onto the USB stick as "team_logo.jpg"
 2. Boot the robot once to install the image
 3. Fully shut down the robot
