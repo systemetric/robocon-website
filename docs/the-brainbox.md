@@ -46,7 +46,7 @@ Now that the brainbox is powered on, turn on your laptop and open the User accou
    d.	Run will run the currently loaded .py script on the robot.
 5. Navigate to the Editor window. It should look as below.
 
-   ![Look Like This](/images/picture2.jpg)
+   ![Look Like This](/images/picture2.jpg "Editing Window")
 
 ## Motors & 12V Power
 
