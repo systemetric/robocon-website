@@ -19,7 +19,7 @@
       <slot name="page-top" slot="top" />
       <slot name="page-bottom" slot="bottom" />
     </Page>
-<div class="cookie-notice u" id="cookie" v-if="showCookieNotice">
+        <div class="cookie-notice" id="cookie" v-if="showCookieNotice">
           Nom nom! Want some cookies? By continuing to use this site you're letting
           us give you some. You're also accepting our
           <router-link to="/privacy.html">Data Protection Policy</router-link>.
@@ -108,13 +108,14 @@ export default {
         nprogress.start();
       }
       next();
-      console.log(window.location.pathname);
- const cookie = document.getElementById("cookie");
-    const top = window.location.pathname == "/"? "u" : "";
-    cookie.className.includes("u")? console.log("meow") : cookie.className.add("u"); console.log("meow2");
-    });
+    
+        });
 
     this.$router.afterEach(to => {
+  console.log(window.location.pathname);
+ const cookie = document.getElementById("cookie");
+    const top = window.location.pathname == "/"? "u" : "";
+    cookie.className.includes("u")? cookie.className = "cookie-notice" : cookie.className = "cookie-notice u";    
       if (to.path !== "/forum/") {
         nprogress.done();
       }
@@ -171,5 +172,5 @@ export default {
   text-align: center
 
 .u 
-  top: 60rem !important
+  top: 3.5rem !important
 </style>
