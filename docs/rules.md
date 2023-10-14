@@ -5,7 +5,9 @@ position: 2
 ---
 # Rules
 
+
 You can download the official rules for 2023(Outdated)[here](/rulebook.pdf).
+
 
 :::tip
 
