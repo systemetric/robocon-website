@@ -7,6 +7,8 @@ position: 2
 
 The BrainBox is the center of the kit, it controls power, provides you with useful electronics and is where your code runs. Do **NOT** open the BrainBox unless given written permission by Hills Road RoboCon.
 
+
+
 ![The brain box](/images/brainbox.jpg)
 
 ## Power
@@ -14,6 +16,24 @@ The BrainBox is the center of the kit, it controls power, provides you with usef
 The BrainBox distributes power to the robot from the battery. It provides both 12V and 5V power out. All power must go through the BrainBox and the fuse should never be replaced.
 
 The On|Off switch also plugs into the BrainBox as well as the Start button which is used to start your robot code running.
+
+<!--StartFragment-->
+
+### **In order to attach a battery to the BrainBox:** 
+
+1. Make sure it is disconnected from its charger. 
+2. Plug the yellow (XT60) connector into the corresponding socket on the brainbox (the socket should also be yellow) 
+
+Powering on the BrainBox: 
+
+1. Find your provided power switch. 
+2. Plug the black connector end into the black socket labelled “Power Switch” on the BrainBox. (See diagram for details) 
+3. Press the power switch button. The status indicators on the battery should turn on. 
+4. Wait for these to stop flashing. Your BrainBox is now powered on!
+
+<!--EndFragment-->
+
+
 
 ## Motors & 12V Power
 
