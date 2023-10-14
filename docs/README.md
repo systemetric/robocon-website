@@ -7,7 +7,7 @@ position: 1
 
 Welcome to the docs for **Robocon 2024**!
 
-We suggest you first get familiar with the [rules](/docs/rules.md). Once you've done that, you'll need to [turn your robot on](/docs/turning-everything-on.html).
+We suggest you first get familiar with the (Outdated) [rules](/docs/rules.md). Once you've done that, you'll need to [turn your robot on](/docs/turning-everything-on.html).
 
 <!--PI_REMOVE-->
 
