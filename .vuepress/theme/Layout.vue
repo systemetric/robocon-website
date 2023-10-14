@@ -112,11 +112,12 @@ export default {
         });
 
     this.$router.afterEach(to => {
-  console.log(window.location.pathname);
- const cookie = document.getElementById("cookie");
-    const top = window.location.pathname == "/"? "u" : "";
-    cookie.className.includes("u")? cookie.className = "cookie-notice" : cookie.className = "cookie-notice u";    
-      if (to.path !== "/forum/") {
+      //i'm so sorry 
+      const cookie = document.getElementById("cookie");
+      if(window.location.pathname != "/"){cookie.className = "cookie-notice u"} else {
+        cookie.className = "cookie-notice"
+      }
+            if (to.path !== "/forum/") {
         nprogress.done();
       }
       this.isSidebarOpen = false;
