@@ -25,7 +25,7 @@ The kit that was put together for the teams is simple enough for anyone to get r
 
 ### What are the dates for the competition?
 
-RoboCon is launched in the October half term, and the final is held on the second Wednesday and Thursday in the Easter holidays. In 2023, this was the 12th and 13th of April.
+RoboCon is launched in the October half term, and the final is held on Wednesday(12th) Thursday(13th) April
 
 ### What will a kickoff consist of?
 
