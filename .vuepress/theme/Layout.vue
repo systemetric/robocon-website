@@ -5,8 +5,8 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-    <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
-    <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
+     <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
+        <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
     <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
       <slot name="sidebar-top" slot="top" />
       <slot name="sidebar-bottom" slot="bottom" />
@@ -19,13 +19,13 @@
       <slot name="page-top" slot="top" />
       <slot name="page-bottom" slot="bottom" />
     </Page>
-    <div class="cookie-notice" v-if="showCookieNotice">
-      Nom nom! Want some cookies? By continuing to use this site you're letting
-      us give you some. You're also accepting our
-      <router-link to="/privacy.html">Data Protection Policy</router-link>.
-      <a href="#" @click.prevent="acceptCookies">(dismiss)</a>
-    </div>
-  </div>
+<div class="cookie-notice u" id="cookie" v-if="showCookieNotice">
+          Nom nom! Want some cookies? By continuing to use this site you're letting
+          us give you some. You're also accepting our
+          <router-link to="/privacy.html">Data Protection Policy</router-link>.
+          <a href="#" @click.prevent="acceptCookies">(dismiss)</a>
+        </div>
+     </div>
 </template>
 
 <script>
@@ -36,7 +36,6 @@ import Navbar from "./Navbar.vue";
 import Page from "./Page.vue";
 import Sidebar from "./Sidebar.vue";
 import { resolveSidebarItems } from "./util";
-
 export default {
   components: { Home, Page, Sidebar, Navbar },
   data() {
@@ -97,7 +96,7 @@ export default {
 
     window.addEventListener("scroll", this.onScroll);
 
-    // configure progress bar
+       // configure progress bar
     nprogress.configure({ showSpinner: false });
 
     this.$router.beforeEach((to, fromRoute, next) => {
@@ -109,6 +108,10 @@ export default {
         nprogress.start();
       }
       next();
+      console.log(window.location.pathname);
+ const cookie = document.getElementById("cookie");
+    const top = window.location.pathname == "/"? "u" : "";
+    cookie.className.includes("u")? console.log("meow") : cookie.className.add("u"); console.log("meow2");
     });
 
     this.$router.afterEach(to => {
@@ -147,6 +150,8 @@ export default {
     }
   }
 };
+
+
 </script>
 
 <style src="prismjs/themes/prism-tomorrow.css"></style>
@@ -154,14 +159,17 @@ export default {
 
 <style lang="stylus">
 .cookie-notice
-  position: fixed
+  position: absolute
   top: 6.5rem
   left: 0
   right: 0
-  z-index: 100
+  z-index: 99
   background-color: #333333
   color: white
   padding: 10px 24px
   line-height: 1.2
   text-align: center
+
+.u 
+  top: 60rem !important
 </style>
