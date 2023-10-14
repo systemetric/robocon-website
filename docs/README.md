@@ -7,9 +7,25 @@ position: 1
 
 Welcome to the docs for **Robocon 2024**!
 
-We suggest you first get familiar with the (Outdated) [rules](/docs/rules.md). Once you've done that, you'll need to [turn your robot on](/docs/turning-everything-on.html).
+We suggest you first get familiar with the (Outdated) [rules](/docs/rules.md). Once you've done that, you'll need to turn your robot on.
 
-<!--PI_REMOVE-->
+To begin, get familiar with the kit provided. It includes : <!--StartFragment-->
+
+
+
+| C﻿ount  | P﻿arts                     |
+| ------- | -------------------------- |
+| 2﻿      | L﻿ithium Polymer Batteries |
+| 1﻿      | B﻿attery Bag               |
+| 1﻿      | B﻿attery Charger           |
+| 1﻿      | B﻿rainBox                  |
+| 2﻿      | M﻿otor                     |
+| 2﻿      | W﻿heels                    |
+| 1﻿      | C﻿aster Wheel              |
+| 1﻿      | C﻿hassis Kit               |
+| 2﻿      | S﻿ervo Motor               |
+| 1﻿      | S﻿tart Button              |
+| 1﻿      | P﻿ower Switch              |
 
 :::tip
 You can also access these docs from your robot. Go to <http://robot.go/docs> when you're connected to your robot.
