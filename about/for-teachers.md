@@ -25,7 +25,9 @@ The kit that was put together for the teams is simple enough for anyone to get r
 
 ### What are the dates for the competition?
 
+
 RoboCon Kickoff is held on the 28th of October, with the finals being on the 10th and 11th of April 2024!
+
 ### What will a kickoff consist of?
 
 A kickoff consists of a workshop event where teams are tasked with performing a set of basic software challenges. Each of these challenges will see a function of the supplied kit be exercised. While it is not a requirement to attend a kickoff, it is highly recommendable. Last year we had a few visitors which were "teacher-only", as well as a few schools asking for the kit to be mailed. Though these schools found it harder to get started, most made it to the competition with a working robot.

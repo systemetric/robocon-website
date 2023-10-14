@@ -18,7 +18,9 @@ No previous experience is required, and we provide support throughout the year t
 
 </p>
 
+
 <p><b>The RoboCon 2023 finals were held on the 12th and 13th of April 2023, Robocon 2024 Kickoff is live on the 28th of October!</b></p>
+
 
 <br>
 
