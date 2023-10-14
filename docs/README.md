@@ -8,6 +8,7 @@ position: 1
 Welcome to the docs for **Robocon 2024**!
 
 We suggest you first grasp the (Outdated) idea of the [rules](/docs/rules.md). 
+
 :::tip
 
 If you are viewing this page on your BrainBox then please check the website for the latest revision.
