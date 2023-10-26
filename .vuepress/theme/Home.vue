@@ -1,12 +1,8 @@
 <template>
   <div class="home-root">
     <Banner />
-    <div
-      v-if="data.heroImage"
-      class="img"
-      :style="{ backgroundImage: `url('${$withBase(data.heroImage)}')` }"
-      alt="hero"
-    ></div>
+    <div v-if="data.heroImage" class="img" :style="{ backgroundImage: `url('${$withBase(data.heroImage)}')` }" alt="hero">
+    </div>
     <div class="home">
       <h1 class="title-text">{{ data.titleText }}</h1>
       <div class="features" v-if="data.features && data.features.length">
@@ -26,10 +22,7 @@
           <router-link to="/privacy.html"> Data Protection Policy</router-link>
         </p>
         <a href="https://www.netlify.com">
-          <img
-            alt="Deploys by Netlify"
-            src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg"
-          />
+          <img alt="Deploys by Netlify" src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" />
         </a>
       </div>
     </div>
@@ -41,7 +34,7 @@ import NavLink from "./NavLink.vue";
 import Banner from "./Banner.vue";
 
 export default {
-  components: {Banner, NavLink },
+  components: { Banner, NavLink },
   computed: {
     data() {
       return this.$page.frontmatter;
