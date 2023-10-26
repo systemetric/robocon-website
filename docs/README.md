@@ -34,7 +34,9 @@ To begin, get familiar with the kit provided. It includes : <!--StartFragment-->
 | 1﻿     | S﻿tart Button              |
 | 1﻿     | P﻿ower Switch              |
 
-:﻿::caution- Handling batteries incorrectly can be dangerous. Make sure you follow these [safety guidelines](/docs/charging.html) at all times.
+:﻿:: caution- Handling batteries incorrectly can be dangerous. Make sure you follow these [safety guidelines](/docs/charging.html) at all times.
+
+:::
 
 :::tip
 You can also access these docs from your robot. Go to <http://robot.go/docs> when you're connected to your robot.
