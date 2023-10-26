@@ -19,7 +19,7 @@ An important part of looking after your robot is making sure its software is up 
 6. Select the patch file in the left-hand panel. The patch will show on the code view as Base64 encoded data (random-looking text). 
 7. Click the "Run" button (green arrow on the right-hand panel). 
 
-   ![](/images/run-button.png)
+   ![](/images/run-button.jpg)
 8. After a few moments, your BrainBox should reboot, and the LED will either turn off or remain on. You will lose connection with it while it does this. Do not turn off your BrainBox - the LED may stay off for up to a minute.
 9. The BrainBox LED will eventually start flashing again to show it has rebooted successfully. 
 10. If your PC has not automatically connected, connect to it using the WiFi. Once reconnected, refresh your browser and open a project from the left-hand side of the editor. Check that the patch version is correct in the right-hand panel.  
