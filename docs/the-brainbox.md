@@ -48,8 +48,6 @@ Now that the brainbox is powered on, turn on your laptop and open the User accou
 
    ![Look Like This](/images/picture2.jpg "Editing Window")
 
-
-
 ## Motors & 12V Power
 
 The specifications for the motor board can be found [here](/CytronBoardDocs.pdf), however to summarize:
@@ -121,3 +119,11 @@ The PWM pins ranges:
 ## Expansion I2C, UART & USB
 
 For expansion please see the [expansion page](/docs/expanding-functionality.html).
+
+<!--StartFragment-->
+
+## Minibot Assembly
+
+You can download instructions on how  to make your minibot [here](/HowToAssembleYourMiniBot.pdf).
+
+<!--EndFragment-->
