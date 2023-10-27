@@ -69,4 +69,4 @@ Always make sure that you charge the battery in a LiPo-safe bag. If you have any
 
 :::
 
-When the battery is charged all 3 LED's will turn green, if the LED's flash red it means that there is a problem with your battery and you should contact us immediately.
+When the battery is charged all 3 LED's will turn green, if the LED's flash red it means that there is a problem with your battery and you should \*\*CONTACT US\*\* immediately.
