@@ -11,6 +11,6 @@ The day started with a presentation from two of our students about this year's c
 
 The students then got to complete a set of mini challenges. These challenges are a great way to explore the capabilities of our new spud-tacular version 3 BrainBoxes.    
 
-We wish this years teams the best of luck with their robot building.  
+We wish this year's teams the best of luck with their robot building.  
 
 I﻿f you missed it, you can find the docs at <https://www.robocon.uk/docs/> and the rules at <https://www.robocon.uk/rulebook.pdf>. For any more help, email us at robotics@hrsfc.ac.uk. Happy robot-making!
