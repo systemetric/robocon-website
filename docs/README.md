@@ -7,7 +7,7 @@ position: 1
 
 Welcome to the docs for **Robocon 2024**!
 
-We suggest you first grasp the idea of the [rules](/docs/rules.md). 
+We suggest you first grasp the idea of the [rules](/rulebook.pdf). 
 :::tip
 
 If you are viewing this page on your BrainBox then please check the website for the latest revision.
@@ -33,14 +33,10 @@ To begin, get familiar with the kit provided. It includes : <!--StartFragment-->
 | 1﻿     | S﻿tart Button              |
 | 1﻿     | P﻿ower Switch              |
 
-<<<<<<< HEAD
 :::warning 
  Handling batteries incorrectly can be dangerous. Make sure you follow these [safety guidelines](/docs/charging.html) at all times.
 :::
-=======
-:﻿:: caution- Handling batteries incorrectly can be dangerous. Make sure you follow these [safety guidelines](/docs/charging.html) at all times. :::
 
->>>>>>> 3d6b8260aa5318bbb3721980ae30ca0f1476f41c
 :::tip
 You can also access these docs from your robot. Go to <http://robot.go/docs> when you're connected to your robot.
 :::
