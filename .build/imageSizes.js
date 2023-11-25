@@ -134,6 +134,7 @@ function walkDir(root) {
       },
       json: true,
     };
+    console.log(lfsReq);
     console.log(
       `info: requesting lfs info for ${objectsToRequest.length} images...`
     );
