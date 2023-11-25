@@ -70,4 +70,3 @@ while True:
 ```
 
 ## Using distance sensors with retroreflective tape
-//TODO 
