@@ -21,6 +21,7 @@
           (yarn.override {nodejs = node;})
           python2
           go
+          netlify-cli
         ];
         buildInputs = [];
       };

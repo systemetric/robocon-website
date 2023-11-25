@@ -36,7 +36,7 @@ function promisesAllSerial(promises) {
   // noinspection JSCheckFunctionSignatures
   await promisesAllSerial(
     images
-      .filter(image => image.endsWith(".jpg") || image.endsWith(".jpeg"))
+      .filter(image => image.endsWith(".jpg") || image.endsWith(".jpeg") || image.endsWith(".JPG") || image.endsWith(".JPEG"))
       .map(
         (image, i) =>
           new Promise(async resolve => {
