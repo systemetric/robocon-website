@@ -127,7 +127,7 @@ function walkDir(root) {
       },
       body: {
         operation: "download",
-          objects: objectsToRequest.slice(0,999),
+          objects: objectsToRequest.slice(0,900),
         ref: {
           name: "refs/heads/master",
         },
