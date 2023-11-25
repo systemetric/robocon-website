@@ -19,6 +19,9 @@ This can happen if erroneous code which does not start with `R = robot.Robot()` 
 Using this file will overwrite the current robot code. It will not touch any files you have stored in the editor.
 :::
 
+## I've connected a battery and the power switch to the black connector but never get any lights on the Brainbox
+If the battery is fresh, it's possible that the switch has failed or become internally disconnected. For testing purposes, you can swap the power switch for a single piece of wire. NOTE: at the competition, you must have a red power switch to control your robot as per the rules. Finally - in exceptional circumstances the fuse in the cable may have failed, if this has happened then there must have been some terminal problem internal to the BrainBox - Contact us on robotics@hillsroad.ac.uk for instructions. 
+
 ## The BrainBox appears to power up, the blue LED light flashes but I cannot connect to it using the WiFi.
 
 We apologise for the poor choice of font, zeroes and capital-o's can be confused as can capital-i's and number ones. Try swapping these.
@@ -47,35 +50,6 @@ print(R.see())
 ```
 If this prints out the markers then the issue is probably with your code, please see the [vision docs](https://hr-robocon.org/docs/vision.html)
 
-## My GPIO input doesn't seem to work.
-When you set multiple pins, you'll need to set them in order.<br/>
-This won't work:
-```python
-# Wrong
-import robot
-
-R = robot.Robot()
-
-R.gpio[1].mode = robot.INPUT
-R.gpio[3].mode = robot.INPUT_PULLUP
-R.gpio[2].mode = robot.OUTPUT
-
-# Pin 3 is set before pin 2, which won't work
-```
-But this will:
-```python
-# Right
-import robot
-
-R = robot.Robot()
-
-R.gpio[1].mode = robot.INPUT
-R.gpio[2].mode = robot.OUTPUT
-R.gpio[3].mode = robot.INPUT_PULLUP
-# As all the GPIO pins are set in order, this is fine
-```
-
-This is due to how the brianboix internally sets pins.
 
 ## Can you post a kit to or from Hills Road
 
@@ -89,8 +63,3 @@ The patch is an update which improve your BrainBox, by adding more docs, more bl
 
 The Raspberry Pi does not keep time when it is off and so has no way of knowing how much time has passed since it was turned off.
 
-## Can't fit the 12v socket because of the case design
-
-I can't fit in the 12v socket because of the case design
-
-Sorry about that, the studs are positioned and sized to take lego, you can slim down the offending stud using a hot blade or a Dremmel tool.

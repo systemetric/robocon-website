@@ -68,3 +68,5 @@ R.gpio[POT_PIN].mode = robot.INPUT_ANALOG
 while True:
     print(R.gpio[POT_PIN].analog)
 ```
+
+## Using distance sensors with retroreflective tape

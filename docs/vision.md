@@ -55,12 +55,14 @@ Every april tag has a code:
 - April tags 100+ will around the arena on the walls. See the rules for
   specifics on where around the rules they will be placed
 
-| Code     | Team  |
+| Codes    | Team  |
 | -------- | ----- |
-| 0 to 9   | Leon  |
-| 10 to 19 | Zhora |
-| 20 to 29 | Pris  |
-| 30 to 39 | Roy   |
+| 100-123   | Arena Marker  |
+| 00,20 | Russet jacket potatoes |
+| 01,21  | Sweet potatoes jacket potatoes  |
+| 02,22 | Maris piper jacket potatoes  |
+|03,23| Purple potato jacket potatoes|
+|04-19, 24-39| Arena owned hot potatoes |
 
 ## Blockly
 
