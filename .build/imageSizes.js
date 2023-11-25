@@ -127,7 +127,7 @@ function walkDir(root) {
       },
       body: {
         operation: "download",
-          objects: objectsToRequest.slice(0,900),
+          objects: objectsToRequest.slice(0,999),
         ref: {
           name: "refs/heads/master",
         },
@@ -138,7 +138,10 @@ function walkDir(root) {
       `info: requesting lfs info for ${objectsToRequest.length} images...`
     );
     
-    const lfsRes = await request(lfsReq);
+     var lfsRes;
+    try {
+      lfsRes = await request(lfsReq);}
+    catch {console.log("errored")};
     console.log(lfsRes);
     for(let i = 0; i< objectsToRequest.length() / 7; i++ ){
       
