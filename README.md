@@ -34,13 +34,13 @@ No previous experience is required, and we provide support throughout the year t
 </a></p>
 <p>We encourage teams to create an Instagram account and share their progress with us by tagging this account.</p>
 
-<h5>Facebook & Twitter (X)</h5>
+<h5>Other Places...</h5>
 <p>
 <a href=https://www.facebook.com/HRobocon ><b>Facebook - @HRobocon</b> 
 </a></p>
 
 <p>
-<a href=https://twitter.com/HRobocon ><b>Twitter - @HRobocon</b> 
+<a href=https://twitter.com/HRobocon ><b>Twitter (X) - @HRobocon</b> 
 </a></p>
 
 
