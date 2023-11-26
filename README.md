@@ -19,19 +19,31 @@ No previous experience is required, and we provide support throughout the year t
 </p>
 
 
-<p><b>Robocon 2024's kickoff event was held on the 24th October.<br>This year's competition will be held on the 11th and 12th of April 2024. </b></p>
+<p><b>Robocon 2024's kickoff event was held on the 24th October.<br>This year's competition will be held on the 11th and 12th of April 2024.</b></p>
 
 
 <br>
 
 <div>
-<h3>Reach us on Instagram!</h3>
+<h3>We're on Social Media!</h3>
 
+<h5>Instagram</h5>
 <p>
 <a href=https://www.instagram.com/hillsroadrobocon/  ><b>@hillsroadrobocon</b> 
 </a></p>
-
 <p>We encourage teams to create an Instagram account and share their progress with us by tagging this account.</p>
+
+<h5>Facebook</h5>
+<p>
+<a href=https://www.facebook.com/HRobocon ><b>@HRobocon</b> 
+</a></p>
+
+<h5>Twitter (X)</h5>
+<p>
+<a href=https://twitter.com/HRobocon ><b>@HRobocon</b> 
+</a></p>
+
+
 
 <div class="theme-image">
 
