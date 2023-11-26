@@ -15,7 +15,7 @@ If you are viewing this page on your BrainBox then please check the website for 
 
 :::
 
-![Game logo](/images/2024/Large-logo-sponsors.jpg)
+![Game logo](/images/2024/Logo-with-sponsors.jpg)
 Once you've done that, you'll need to turn your robot on.
 
 To begin, get familiar with the kit provided. It includes : <!--StartFragment-->
