@@ -25,7 +25,8 @@ No previous experience is required, and we provide support throughout the year t
 <br>
 
 <div>
-<h3>We're on Social Media!</h3>
+<h3>Follow Us!</h3>
+<p>Keep up to date with Robocon.</p>
 
 <h5>Instagram</h5>
 <p>
