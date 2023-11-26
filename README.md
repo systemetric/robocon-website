@@ -19,7 +19,7 @@ No previous experience is required, and we provide support throughout the year t
 </p>
 
 
-<p><b>The RoboCon 2023 finals were held on the 12th and 13th of April 2023, Robocon 2024 Kickoff ran successfully on the 28th of October!</b></p>
+<p><b>Robocon 2024's kickoff event was held on the 24th October.<br>This year's competition will be held on the 11th and 12th of April 2024. </b></p>
 
 
 <br>
@@ -35,7 +35,7 @@ No previous experience is required, and we provide support throughout the year t
 
 <div class="theme-image">
 
-![Electric sheep](images/electricsheep.png "Electric sheep")
+![Hot Potato](images/2024/Logo-with-sponsors.jpg "Hot Potato")
 
 </div>
 
