@@ -15,7 +15,7 @@ position: 5
 
 Since 2016 GCSEs have become more academic, depriving students of any opportunity to learn how to put theory in to practice. Therefore there is a need to promote STEM actively outside of lessons to ensure that students feel willing and able to choose STEM based A-levels. This ensures students are not blocked from STEM career paths further down the line.
 
-![](/images/2024/IMG_6975.JPG)
+![Soldering and problem solving group](/images/2024/IMG_6975.JPG)
 
 # Why RoboCon?
 
@@ -31,4 +31,4 @@ If you are interested in helping us in any way please [contact us](/about/contac
 
 ![](/images/IMG_3080COMPRSD.jpg)
 
-![](/images/2024/IMG_6983.JPG)
+![Programming](/images/2024/IMG_6983.JPG)
