@@ -31,4 +31,4 @@ If you are interested in helping us in any way please [contact us](/about/contac
 
 ![](/images/IMG_3080COMPRSD.jpg)
 
-![Programming](/images/2024/IMG_6983.JPG)
+![Programming the brains](/images/2024/IMG_6983.JPG)
