@@ -19,23 +19,36 @@ No previous experience is required, and we provide support throughout the year t
 </p>
 
 
-<p><b>The RoboCon 2023 finals were held on the 12th and 13th of April 2023, Robocon 2024 Kickoff is live on the 28th of October!</b></p>
+<p><b>Robocon 2024's kickoff event was held on the 28th October. <a href="/blog/robocon-2024-kick-off-1.html">Read more...</a> </b>
+<br>This year's game is Hot Potato. <a href="/rulebook.pdf">Read the rules</a><br>The competition will be held on the 10th and 11th of April 2024.</b></p>
 
 
 <br>
 
 <div>
-<h3>Reach us on Instagram!</h3>
+<h3>Follow Us!</h3>
+<p>Keep up to date with Robocon.</p>
 
+<h5>Instagram</h5>
 <p>
 <a href=https://www.instagram.com/hillsroadrobocon/  ><b>@hillsroadrobocon</b> 
 </a></p>
-
 <p>We encourage teams to create an Instagram account and share their progress with us by tagging this account.</p>
+
+<h5>Other Places...</h5>
+<p>
+<a href=https://www.facebook.com/HRobocon><b>Facebook - @HRobocon</b> 
+</a></p>
+q
+<p>
+<a href=https://twitter.com/HRobocon ><b>Twitter (X) - @HRobocon</b> 
+</a></p>
+
+
 
 <div class="theme-image">
 
-![Electric sheep](images/electricsheep.png "Electric sheep")
+![Hot Potato](images/2024/Logo-with-sponsors.jpg "Hot Potato")
 
 </div>
 
