@@ -38,7 +38,7 @@ R.servos[3].mode = robot.PWM_SERVO
 R.servos[0] = 50
 
 # set servo 3 to the -100% position
-R.servos[0] = -100
+R.servos[3] = -100
 
 # set servos 0 & 3 to the default positions
 R.servos[0] = 0
