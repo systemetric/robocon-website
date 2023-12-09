@@ -1,7 +1,7 @@
 ---
 title: GPIO
 category: Programming
-position: 5
+position: 6
 ---
 # GPIO
 
