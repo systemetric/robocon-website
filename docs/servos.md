@@ -31,8 +31,8 @@ Here's a more complete example:
 import robot
 
 R = robot.Robot()
-R.servos[0].mode = robot.PWM_SERVO`
-R.servos[3].mode = robot.PWM_SERVO`
+R.servos[0].mode = robot.PWM_SERVO
+R.servos[3].mode = robot.PWM_SERVO
 
 # set servo 0 to the 50% position
 R.servos[0] = 50
