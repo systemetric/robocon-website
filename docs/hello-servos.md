@@ -14,6 +14,7 @@ import robot
 import time
 
 R = robot.Robot()
+R.servos[1].mode = robot.PWM_SERVO
 
 # Input range -100 to 100
 while True:
