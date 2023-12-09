@@ -11,8 +11,7 @@ RoboCon is a robotics competition which engages and inspires young minds. We pro
 
 RoboCon is aimed at students in years nine to eleven. After announcing the year's game, we give teams time to engineer their creations. We mentor teams throughout this time, as well as supply them with documents on our website that explains the code which they are using, giving worked examples. Thanks to our sponsors, we are able to provide this to the teams free of charge.
 
-Below is a map showing where all the schools who competed in RoboCon 2022 were located!
-
-<Embed :aspect-ratio="640/480"><iframe src="https://www.google.com/maps/d/embed?mid=160TDYZ84zzZyABjIeSQH624Cu7Cf8UVx&ehbc=2E312F" width="640" height="480"></iframe></Embed>
+Below is a map showing where all the schools who competed in RoboCon 2023 were located!
 
 
+<Embed :aspect-ratio="640/480"><iframe src="https://www.google.com/maps/d/u/0/embed?mid=1E5GCw2ZlI9knon1gbY2vwgr21eP8yZI&ehbc=2E312F&noprof=1" width="640" height="480"></iframe> </Embed>
