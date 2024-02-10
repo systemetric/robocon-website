@@ -114,53 +114,55 @@ function walkDir(root) {
       lfsConfig
     )[0];
 
-    const lfsReq = {
-      uri: `${largeMediaUrl}/objects/batch`,
-      method: "POST",
-      headers: {
-        "User-Agent":
-          "git-lfs/2.7.1 (GitHub; windows amd64; go 1.11.5; git 6b7fb6e3)",
-        Accept: "application/vnd.git-lfs+json; charset=utf-8",
-        Authorization: `Basic ${Buffer.from(
-          `access-token:${process.env.LFS_ACCESS_TOKEN}`
-        ).toString("base64")}`,
-      },
-      body: {
-        operation: "download",
-        objects: objectsToRequest,
-        ref: {
-          name: "refs/heads/master",
+    for (let i = 0; i < objectsToRequest.length; i += 10) {
+      const lfsReq = {
+        uri: `${largeMediaUrl}/objects/batch`,
+        method: "POST",
+        headers: {
+          "User-Agent":
+            "git-lfs/2.7.1 (GitHub; windows amd64; go 1.11.5; git 6b7fb6e3)",
+          Accept: "application/vnd.git-lfs+json; charset=utf-8",
+          Authorization: `Basic ${Buffer.from(
+            `access-token:${process.env.LFS_ACCESS_TOKEN}`
+          ).toString("base64")}`,
         },
-      },
-      json: true,
-    };
-    console.log(
-      `info: requesting lfs info for ${objectsToRequest.length} images...`
-    );
-    const lfsRes = await request(lfsReq);
-    const objectsLength = lfsRes.objects.length;
-    for (let i = 0; i < objectsLength; i++) {
-      const object = lfsRes.objects[i];
-
-      const oid = object.oid;
-      const image = oidMap[oid];
-      const download = object.actions.download.href;
-
+        body: {
+          operation: "download",
+          objects: objectsToRequest.slice(i, i + 10),
+          ref: {
+            name: "refs/heads/master",
+          },
+        },
+        json: true,
+      };
       console.log(
-        `info: [${Math.floor(
-          (i / objectsLength) * 100
-        )}%] requesting image size of ${image}...`
+        `info: current image chunk being requsted is ${i} of ${objectsToRequest.length}...`
       );
-
-      const result = await request.get({ uri: download, encoding: null });
-      const imageSize = syncSizeOf(result);
-      addSize(image, imageSize);
-      // noinspection JSUnresolvedVariable
-      console.log(
-        `info: [${Math.floor(
-          ((i + 1) / objectsLength) * 100
-        )}%] got size of ${image}`
-      );
+      const lfsRes = await request(lfsReq);
+      const objectsLength = lfsRes.objects.length;
+      for (let i = 0; i < objectsLength; i++) {
+        const object = lfsRes.objects[i];
+  
+        const oid = object.oid;
+        const image = oidMap[oid];
+        const download = object.actions.download.href;
+  
+        console.log(
+          `info: [${Math.floor(
+            (i / objectsLength) * 100
+          )}%] requesting image size of ${image}...`
+        );
+  
+        const result = await request.get({ uri: download, encoding: null });
+        const imageSize = syncSizeOf(result);
+        addSize(image, imageSize);
+        // noinspection JSUnresolvedVariable
+        console.log(
+          `info: [${Math.floor(
+            ((i + 1) / objectsLength) * 100
+          )}%] got size of ${image}`
+        );
+      }
     }
   } else {
     console.log("info: no lfs files to request");
