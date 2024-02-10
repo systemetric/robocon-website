@@ -136,7 +136,7 @@ function walkDir(root) {
         json: true,
       };
       console.log(
-        `info: requesting lfs info for ${objectsToRequest.length} images...`
+        `info: current image chunk being requsted is ${i} of ${objectsToRequest.length}...`
       );
       const lfsRes = await request(lfsReq);
       const objectsLength = lfsRes.objects.length;
