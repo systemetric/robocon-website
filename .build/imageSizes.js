@@ -138,11 +138,8 @@ function walkDir(root) {
       console.log(
         `info: requesting lfs info for ${objectsToRequest.length} images...`
       );
-      console.log(lfsReq);
       const lfsRes = await request(lfsReq);
-      console.log("Requested lsfReq");
       const objectsLength = lfsRes.objects.length;
-      console.log("Got objects length");
       for (let i = 0; i < objectsLength; i++) {
         const object = lfsRes.objects[i];
   
