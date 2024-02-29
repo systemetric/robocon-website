@@ -9,7 +9,17 @@
     flake-utils,
   }:
     flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = if system == "aarch64-darwin"
+                   then [
+                     (final: prev: {
+                       curl = prev.curl.overrideAttrs (prevAttrs: {doCheck = false;});
+                       bison = prev.bison.overrideAttrs (prevAttrs: {doCheck = false;});
+                     })
+                   ]
+                   else [];
+      };
 
       node =
         pkgs.nodejs-12_x.overrideAttrs
