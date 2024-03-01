@@ -38,9 +38,8 @@ No previous experience is required, and we provide support throughout the year t
 <h5>Other Places...</h5>
 <p>
 <a href=https://www.facebook.com/HRobocon><b>Facebook - @HRobocon</b> 
-</a></p>
-q
-<p>
+</a>
+<br>
 <a href=https://twitter.com/HRobocon ><b>Twitter (X) - @HRobocon</b> 
 </a></p>
 
