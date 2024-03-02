@@ -5,4 +5,4 @@ position: 7
 ---
 # Markers
 
-You can download a PDF document with all of this year's markers in [here](/Markers-2024.pdf).
+You can download a zip file with all of the marker's in [here](/markers.zip)
