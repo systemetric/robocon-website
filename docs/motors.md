@@ -20,16 +20,16 @@ If you want to spin your motors in reverse, just stick a negative sign in front 
 You can control motors using the `motors` property of the `Robot` object. To set the power of the first motor to 60% use:
 
 ```python
-R.motors[1] = 60
+R.motors[0] = 60
 ```
 
-To control the second motor instead, replace `motors[1]` with `motors[2]`.
+To control the second motor instead, replace `motors[0]` with `motors[1]`.
 
 To stop both motors:
 
 ```python
+R.motors[0] = 0
 R.motors[1] = 0
-R.motors[2] = 0
 ```
 
 Here's a more complete example:
@@ -39,15 +39,15 @@ import robot
 
 R = robot.Robot()
 
-# set motor 1 to 60% power
-R.motors[1] = 60
+# set motor 0 to 60% power
+R.motors[0] = 60
 
-# set motor 2 to 60% power in the backwards direction
-R.motors[2] = -60
+# set motor 1 to 60% power in the backwards direction
+R.motors[1] = -60
 
 # turn both motors off
+R.motors[0] = 0
 R.motors[1] = 0
-R.motors[2] = 0
 ```
 
 :::tip
