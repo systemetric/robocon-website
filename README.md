@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: images/2023-all-wave.jpg
+heroImage: images/2024/2024-all-wave.jpg
 heroText: RoboCon
 tagline: Don't Walk. Do The Robot!
 actionText: Learn More
@@ -19,8 +19,8 @@ No previous experience is required, and we provide support throughout the year t
 </p>
 
 
-<p><b>Robocon 2024's kickoff event was held on the 28th October. <a href="/blog/robocon-2024-kick-off-1.html">Read more...</a> </b>
-<br>This year's game is Hot Potato. <a href="/rulebook.pdf">Read the rules</a><br>The competition will be held on the 10th and 11th of April 2024.</b></p>
+<p><b>The RoboCon 2024 competition was held on the 10th and 11th April. <a href="/blog/robocon-2024-review.html">Read all about it here!</a> </b>
+<br>RoboCon 2025 is just around the corner! With a new game and theme to be decided in September. Sign up for RoboCon 2025 <a href="https://forms.office.com/pages/responsepage.aspx?id=PW2KbsDDEESLIT8VaLr1ntknXAzFX7pDr_N4WAup4D9UQTNSOEg0NU1JQVIzVllDMlVEWFIyV1k2SS4u">here</a>! </b></p>
 
 
 <br>
