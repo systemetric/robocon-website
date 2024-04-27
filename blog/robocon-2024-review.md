@@ -32,7 +32,7 @@ Next we have the team perseverance award, given to the team who showed great res
 
 The “A-Peeling Artistry” award is given in praise of robot and team flair, shown through the eye-catching and clever aesthetic design of the robot. Presented by Redgate.
 
-![](/images/img_7648.jpg "Bottisham Village College with Redgate Theme Award")
+![](/images/img_7649.jpg "Bottisham Village College with Redgate Theme Award")
 
 **3rd Place** – Trumpington Team 1
 
