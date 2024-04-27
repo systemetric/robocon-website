@@ -1,18 +1,16 @@
 ---
 title: RoboCon 2024 Review
 image: /images/img_7629.jpg
-date: 2024-04-27T11:35:02.193Z
+date: 2024-04-11T16:00:02.193Z
 excerpt: Read all about this year's "Hot Potato" themed competition, the
   results, and the highlights from the event!
 layout: PostLayout
 ---
-The fifth instalment of the Hills Road RoboCon competition took place on the 10th and 11th April 2024. The competition launched in October 2023, and saw several teams come in to begin planning their designs and strategies. The blog post from the launch can be found [here](https://www.robocon.uk/blog/https://www.robocon.uk/blog/robocon-2024-kick-off-1.html).
+The fifth instalment of the Hills Road RoboCon competition took place on the 10th and 11th April 2024. The competition launched in October 2023, and saw several teams come in to begin planning their designs and strategies. The blog post from the launch can be found [here](https://www.robocon.uk/blog/robocon-2024-kick-off-1.html).
 
 This year the theme was “Hot Potato” which involved a game where robots were tasked with removing potatoes (cubes) from their quadrant of the arena, while also aiming to secure their jacket potato, located opposite to their pasture. After six months of developing their designs and programming their robots, a total of 16 teams put their final products to the test in the RoboCon arena. View the rules of the "Hot Potato" game [here](https://www.robocon.uk/rulebook.pdf).
 
 ![](/images/img_7514.jpg "Impington Village College's Robot")
-
-
 
 ![](/images/img_7580.jpg "Robots in the arena")
 
@@ -44,7 +42,7 @@ The team employed a popular quadrant sweeping sequence at the beginning of each 
 
 **2nd Place** – Trumpington Team 3
 
-Trumpington 3’s robot went straight for the jacket potato in the later rounds, displaying accurate and effective movement which consistently retrieved their target. It was impressive to see their code and calibration develop so fast over the course of the competition. 
+Trumpington Team 3’s robot went straight for the jacket potato in the later rounds, displaying accurate and effective movement which consistently retrieved their target. It was impressive to see their code and calibration develop so fast over the course of the competition. 
 
 ![](/images/img_7666.jpg "Trumpington Team 3 with 2nd Place")
 
@@ -84,7 +82,7 @@ Thank you to all teams who competed in RoboCon 2024 for a fantastic competition,
 
 RoboCon is funded in its entirety by the generous support from a myriad of businesses, so we would like to thank our sponsors: CMR Surgical, Frontier Developments, The Technology Partnership, Redgate and Microsoft. 
 
-For our final thank you, we’d like to show appreciation for our mentors: Will Munns and David Massey, whose support kept us afloat during both the setup and competition phases. Without them, RoboCon would not exist and their work is invaluable to us.
+For our final thank you, we’d like to show appreciation for our mentors: Will Munns, Matthew Smalley and David Massey, whose support kept us afloat during both the setup and competition phases. Without them, RoboCon would not exist and their work is invaluable to us.
 
 Keep an eye on this page for information about RoboCon 2025 in the coming months! And remember…
 
