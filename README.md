@@ -20,7 +20,8 @@ No previous experience is required, and we provide support throughout the year t
 
 
 <p><b>The RoboCon 2024 competition was held on the 10th and 11th April. <a href="/blog/robocon-2024-review.html">Read all about it here!</a> </b>
-<br>RoboCon 2025 is just around the corner! With a new game and theme to be decided in September. Sign up for RoboCon 2025 <a href="https://forms.office.com/pages/responsepage.aspx?id=PW2KbsDDEESLIT8VaLr1ntknXAzFX7pDr_N4WAup4D9UQTNSOEg0NU1JQVIzVllDMlVEWFIyV1k2SS4u">here</a>! </b></p>
+  <p><b>The kickoff event for RoboCon 2025 is on Saturday 2nd November.</b> We are looking forward to introducing our new game and theme!</p>
+<br>Sign up for RoboCon 2025 <a href="https://forms.office.com/pages/responsepage.aspx?id=PW2KbsDDEESLIT8VaLr1ntknXAzFX7pDr_N4WAup4D9UQTNSOEg0NU1JQVIzVllDMlVEWFIyV1k2SS4u">here</a>! </b></p>
 
 
 <br>
