@@ -34,7 +34,7 @@ To begin, get familiar with the kit provided. It includes:
 | 1﻿     | S﻿tart Button              |
 | 1﻿     | P﻿ower Switch              |
 
-:﻿::warning 
+:﻿::warning
 
 Handling batteries incorrectly can be dangerous. Make sure you follow these [safety guidelines](/docs/charging.html) at all times.
 
