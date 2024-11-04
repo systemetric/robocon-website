@@ -15,6 +15,4 @@ After the introduction of our exciting new competition, students then got to com
 
 We wish this year's teams the best of luck with their robot building! Don’t forget, we offer plenty of ongoing support available throughout the competition. This is available over email, video calls, in-person visits to your school, or drop-in visits to Hills Road Sixth Form College on a Saturday (pre-arrangement necessary). Email us at [robotics@hrsfc.ac.uk](mailto:robotics@hrsfc.ac.uk) for any help, support or queries.
 
-Missed the event? View the presentation here: <https://www.robocon.uk/kickoff-2024-presentation.pdf>.
-
 You can find the docs at <https://www.robocon.uk/docs/> and the rules at <https://www.robocon.uk/rulebook-2025.pdf>. 
