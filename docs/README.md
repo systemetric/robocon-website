@@ -5,16 +5,17 @@ position: 1
 ---
 # Getting Started
 
-Welcome to the docs for **Robocon 2024**!
+Welcome to the docs for **Robocon 2025**!
 
-We suggest you first grasp the idea of the [rules](http://robot.local/docs/RoboCon-2024-Rulebook.pdf). 
+We suggest you first grasp the idea of the [rules](/rulebook-2025.pdf). 
+
 :::tip
 
 If you are viewing this page on your BrainBox then please check the website for the latest revision.
 
 :::
 
-![Game logo](/images/roboconHeader.jpg)
+![Game logo](/images/2025/Logo-with-sponsors.jpg)
 Once you've done that, you'll need to turn your robot on.
 
 To begin, get familiar with the kit provided. It includes : <!--StartFragment-->
@@ -28,18 +29,17 @@ To begin, get familiar with the kit provided. It includes : <!--StartFragment-->
 | 2﻿     | M﻿otor                     |
 | 2﻿     | W﻿heels                    |
 | 1﻿     | C﻿aster Wheel              |
-| 1﻿     | C﻿hassis              |
+| 1﻿     | C﻿hassis Kit               |
 | 2﻿     | S﻿ervo Motor               |
 | 1﻿     | S﻿tart Button              |
 | 1﻿     | P﻿ower Switch              |
 
-:::warning 
- Handling batteries incorrectly can be dangerous. Make sure you follow these [safety guidelines](/charging.md) at all times.
-:::
+:﻿:: caution- Handling batteries incorrectly can be dangerous. Make sure you follow these [safety guidelines](/docs/charging.html) at all times. :::
+
 :::tip
-You can also access these docs from your robot. Go to <http://robot.local/docs> when you're connected to your robot.
+You can also access these docs from your robot. Go to <http://robot.go/docs> when you're connected to your robot.
 :::
 
-If you have any questions related to the competition, the brainboxes, or any ideas or struggles you have, feel free to [drop us an email](mailto:robotics@hrsfc.ac.uk) - we are happy to help!
+It might also be a good idea to sign up for the [forum](/forum/). You can do this using the registration code provided in your kit. This is a great place to ask questions on anything related to the competition, the kit, or robot programming.
 
 <!--END_PI_REMOVE-->
