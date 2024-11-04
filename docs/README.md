@@ -18,7 +18,7 @@ If you are viewing this page on your BrainBox then please check the website for 
 ![Game logo](/images/2025/logo-with-sponsors.png)
 Once you've done that, you'll need to turn your robot on.
 
-To begin, get familiar with the kit provided. It includes : <!--StartFragment-->
+To begin, get familiar with the kit provided. It includes:
 
 | C﻿ount | P﻿arts                     |
 | ------ | -------------------------- |
