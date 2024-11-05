@@ -5,9 +5,9 @@ position: 1
 ---
 # Getting Started
 
-Welcome to the docs for **Robocon 2024**!
+Welcome to the docs for **Robocon 2025**!
 
-We suggest you first grasp the idea of the [rules](/rulebook.pdf). 
+We suggest you first grasp the idea of the [rules](/rulebook-2025.pdf). 
 
 :::tip
 
@@ -15,10 +15,10 @@ If you are viewing this page on your BrainBox then please check the website for 
 
 :::
 
-![Game logo](/images/2024/Logo-with-sponsors.jpg)
+![Game logo](/images/2025/logo-with-sponsors.png)
 Once you've done that, you'll need to turn your robot on.
 
-To begin, get familiar with the kit provided. It includes : <!--StartFragment-->
+To begin, get familiar with the kit provided. It includes:
 
 | C﻿ount | P﻿arts                     |
 | ------ | -------------------------- |
@@ -34,7 +34,11 @@ To begin, get familiar with the kit provided. It includes : <!--StartFragment-->
 | 1﻿     | S﻿tart Button              |
 | 1﻿     | P﻿ower Switch              |
 
-:﻿:: caution- Handling batteries incorrectly can be dangerous. Make sure you follow these [safety guidelines](/docs/charging.html) at all times. :::
+:﻿::warning
+
+Handling batteries incorrectly can be dangerous. Make sure you follow these [safety guidelines](/docs/charging.html) at all times.
+
+:::
 
 :::tip
 You can also access these docs from your robot. Go to <http://robot.go/docs> when you're connected to your robot.

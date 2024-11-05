@@ -5,4 +5,4 @@ position: 7
 ---
 # Markers
 
-You can download a zip file with all of the markers in [here](/markers.zip)
+You can download a zip of all of the markers [here](/docs/markers.zip).
