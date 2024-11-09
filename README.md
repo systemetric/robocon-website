@@ -48,7 +48,7 @@ No previous experience is required, and we provide support throughout the year t
 
 <div class="theme-image">
 
-![Hot Potato](images/2024/Logo-with-sponsors.jpg "Hot Potato")
+![Dragon's Lair](images/2025/logo-with-sponsors.jpg "Dragon's Lair")
 
 </div>
 
