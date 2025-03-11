@@ -144,7 +144,7 @@ module.exports = {
     nav: [
       { text: "About", link: "/about/" },
       { text: "Gallery", link: "/gallery/" },
-      { text: "Docs", link: "/docs/" },
+      { text: "Docs", link: "https://docs.robocon.uk/" },
       { text: "Blog", link: "/blog/" },
       { text: "Forum", link: "/forum/" },
     ],
