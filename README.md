@@ -20,7 +20,7 @@ No previous experience is required, and we provide support throughout the year t
 
 
 <p><b>RoboCon 2025 is now live! <a href="/blog/robocon-2025-kickoff.html">Read all about it here!</a></b>
-<br>The competition will be held on the 9th and 10th April 2025. If you are competing this year and bump into any issues when building your robot, and the <a href="/docs">docs</a> don't have an answer - please don't hesitate to get in touch with us at <a href="mailto:robotics@hrsfc.ac.uk">robotics@hrsfc.ac.uk</a>.</p>
+<br>The competition will be held on the 9th and 10th April 2025. If you are competing this year and bump into any issues when building your robot, and the <a href="https://docs.robocon.uk/">docs</a> don't have an answer - please don't hesitate to get in touch with us at <a href="mailto:robotics@hrsfc.ac.uk">robotics@hrsfc.ac.uk</a>.</p>
 
 <p>There's still time to get involved if you haven't signed up already! Please send us an email using the email address at <a href="mailto:robotics@hrsfc.ac.uk">robotics@hrsfc.ac.uk</a>.</p>
 
